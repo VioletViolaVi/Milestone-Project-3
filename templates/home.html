@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for booking in bookings %}
+        {{ booking.date_name }} <br>
+        {{ booking.location_name }} <br>
+        {{ booking.movie_name }} <br>
+        {{ booking.own_review }} <br>
+        {{ booking.ticket_quantity }} <br>
+        {{ booking.user_name }} <br>
+    {% endfor %}
+</body>
+</html>
