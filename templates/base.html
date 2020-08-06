@@ -1,13 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- font awesome link-->
+	<script src="https://kit.fontawesome.com/bfcbb8f6a3.js" crossorigin="anonymous"></script>
+	<!-- materialize css link -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+		type="text/css">
+	<!--inherited custom css link -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" type="text/css">
+	<!-- specific custom css link -->
+	{% block styles %}
+	{% endblock styles %}
+	<title>Document</title>
 </head>
+
 <body>
-    <h1> Base template's header</h1>
-    {% block content %}
-    {% endblock content %}
+	<h1> Base template's header</h1>
+	{% block content %}
+	{% endblock content %}
+
+	<!-- jquery cdn link-->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"
+		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+	<!-- materialize js link -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<!-- inherited custom js link -->
+	<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+	<!-- specific custom js link -->
+	{% block scripts %}
+	{% endblock scripts %}
 </body>
+
 </html>
