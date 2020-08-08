@@ -48,7 +48,7 @@ nav {
   width: 220px;
 }
 
-/************************************************************************* bootstrap breakpoints */
+/************************************************************************* bootstrap breakpoints *************************************************************************/
 
 /* Small devices */
 @media (min-width: 576px) {
@@ -92,4 +92,8 @@ nav {
 
 /* Extra large devices */
 @media (min-width: 1200px) {
+  /* bars button */
+  .fas.fa-bars {
+    margin: 10px;
+  }
 }
