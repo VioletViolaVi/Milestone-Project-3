@@ -1,6 +1,44 @@
+/* universal properties */
 * {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-  background-color: lightcoral;
+  list-style: none;
+  font-family: "Scada", sans-serif;
+}
+
+/************************************************************************* top nav */
+
+/* designs link pages in top nav */
+.top-nav-links {
+  visibility: hidden;
+}
+
+/* top nav size */
+nav {
+  height: 7%;
+}
+
+/* bars button */
+.fas.fa-bars {
+  font-size: 3rem;
+  margin: 0px 5px 0px;
+}
+
+/************************************************************************* side nav */
+
+/* changes hover colour of sidenav */
+.sidenav li > a:hover {
+  background-color: white;
+}
+
+/* designs link pages in side nav*/
+.side-nav-links.black-text.waves-effect {
+  font-size: 2rem;
+  margin-top: 30px;
+}
+
+/* increases size of side nav */
+.sidenav {
+  width: 70%;
 }

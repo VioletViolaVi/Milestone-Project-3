@@ -1,3 +1,4 @@
 $(document).ready(function () {
-  console.log("hello world");
+    // materialize sidenave
+  $('.sidenav').sidenav();
 });
