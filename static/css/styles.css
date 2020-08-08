@@ -27,6 +27,11 @@ nav {
 
 /************************************************************************* side nav */
 
+/* centers side nav links in side nav */
+#sideNavLinksContainer {
+  padding-top: 100px;
+}
+
 /* changes hover colour of sidenav */
 .sidenav li > a:hover {
   background-color: white;
@@ -40,5 +45,51 @@ nav {
 
 /* increases size of side nav */
 .sidenav {
-  width: 70%;
+  width: 220px;
+}
+
+/************************************************************************* bootstrap breakpoints */
+
+/* Small devices */
+@media (min-width: 576px) {
+}
+
+/* Medium devices  */
+@media (min-width: 768px) {
+}
+
+/* Large devices */
+@media (min-width: 992px) {
+  /************************************************************************* top nav */
+  /* designs link pages in top nav */
+  .top-nav-links {
+    font-size: 2rem;
+    visibility: visible;
+  }
+
+  /* top nav size */
+  nav {
+    height: 10%;
+  }
+
+  /* moves top nave links to the right */
+  #topNavLinksContainer {
+    float: right;
+    list-style: inline;
+  }
+
+  /* bars button */
+  .fas.fa-bars {
+    margin: 5px;
+  }
+  /************************************************************************* side nav */
+
+  /* increases size of side nav */
+  .sidenav {
+    width: 250px;
+  }
+}
+
+/* Extra large devices */
+@media (min-width: 1200px) {
 }
