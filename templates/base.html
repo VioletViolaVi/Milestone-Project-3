@@ -24,13 +24,14 @@
     />
     <!-- specific custom css link -->
     {% block styles %} {% endblock styles %}
-    <title>Cinemajestic</title>
+    <title>Cinemagic</title>
   </head>
 
   <body>
     <!-- content in top nav -->
-    <nav class="grey darken-3">
-        <i data-target="slide-out" class="sidenav-trigger fas fa-bars"></i>
+    <nav class="yellow accent-2">
+        <i data-target="slide-out" class="sidenav-trigger fas fa-bars black-text"></i>
+        <h1 id="mainTitle" class="black-text">Cinemagic</h1>
         <ul>
         <div id="topNavLinksContainer">
             <li><a class="top-nav-links grey-text" href="#!">Home</a></li>
@@ -42,10 +43,8 @@
         </ul>
     </nav>
 
-    <h1>Cinemajestic</h1>
-
     <!-- slides sidenav -->
-    <ul id="slide-out" class="sidenav grey lighten-4">
+    <ul id="slide-out" class="sidenav yellow accent-2">
       <!-- content in side nav -->
         <div id="sideNavLinksContainer">
             <li><a class="side-nav-links black-text waves-effect" href="#!">Home</a></li>
@@ -56,33 +55,45 @@
         </div>
     </ul>
 
-    <footer id="socials">
-		<a href="https://www.instagram.com/" target="_blank">
-			<i class="fab fa-instagram grey-text"></i>
-		</a>
-		<a href="https://twitter.com/" target="_blank">
-			<i class="fab fa-twitter grey-text"></i>
-		</a>
-		<a href="https://www.youtube.com/" target="_blank">
-			<i class="fab fa-youtube grey-text"></i>
-		</a>
-		<a href="https://www.pinterest.com/" target="_blank">
-			<i class="fab fa-pinterest grey-text"></i>
-		</a>
-		<a href="https://www.facebook.com/" target="_blank">
-			<i class="fab fa-facebook-square grey-text"></i>
-		</a>
-		<a href="https://www.snapchat.com/" target="_blank">
-			<i class="fab fa-snapchat-ghost grey-text"></i>
-		</a>       
-    </footer>
+    <section id="spaceForFooter">
+        <!-- put template inheritance here -->
+    </section>
 
-    <footer id="contacts">
-		<p>+789 4268 3334</p>
-        <p>cinemajestic@dmail.com</p>
-        <p>50 Runners Way Street A4W 8UN</p>
+
+    <footer id="socials" class="yellow accent-2">
+        <div class="container">
+
+            <div class="row">
+                <div class="col s12" id="icons">
+                    <a href="https://www.instagram.com/" target="_blank">
+		            	<i class="fab fa-instagram black-text accent-4"></i>
+		            </a>
+		            <a href="https://twitter.com/" target="_blank">
+		            	<i class="fab fa-twitter black-text accent-4"></i>
+		            </a>
+		            <a href="https://www.youtube.com/" target="_blank">
+		            	<i class="fab fa-youtube black-text accent-4"></i>
+		            </a>
+		            <a href="https://www.pinterest.com/" target="_blank">
+		            	<i class="fab fa-pinterest black-text accent-4"></i>
+		            </a>
+		            <a href="https://www.facebook.com/" target="_blank">
+		            	<i class="fab fa-facebook-square black-text accent-4"></i>
+		            </a>
+		            <a href="https://www.snapchat.com/" target="_blank">
+		            	<i class="fab fa-snapchat-ghost black-text accent-4"></i>
+		            </a>
+                </div> 
+
+       	        <div class="col s12" id="contacts">
+                   <p>+789 4268 3334</p>
+                    <p>cinemagic@dmail.com</p>
+                    <p>50 Runners Way Street A4W 8UN</p>  
+                </div>
+            
+            </div>
+        </div>
     </footer>
-    
 
 
       

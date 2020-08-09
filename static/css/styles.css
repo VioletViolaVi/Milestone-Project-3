@@ -7,22 +7,36 @@
   font-family: "Scada", sans-serif;
 }
 
+/* helps keeps footer down */
+body {
+  position: relative;
+  padding-bottom: 100px;
+}
+
+/************************************************************************* title */
+/* styles main title */
+#mainTitle {
+  font-size: 3rem;
+  text-align: center;
+  margin: 0px;
+}
+
 /************************************************************************* top nav */
 
 /* designs link pages in top nav */
 .top-nav-links {
-  visibility: hidden;
+  display: none;
 }
 
 /* top nav size */
 nav {
-  height: 7%;
+  height: 9%;
 }
 
 /* bars button */
 .fas.fa-bars {
-  font-size: 3rem;
-  margin: 0px 5px 0px;
+  font-size: 2rem;
+  margin: 11px 0px 0px 5px;
 }
 
 /************************************************************************* side nav */
@@ -34,7 +48,7 @@ nav {
 
 /* changes hover colour of sidenav */
 .sidenav li > a:hover {
-  background-color: white;
+  background-color: rgb(180, 180, 3)
 }
 
 /* designs link pages in side nav*/
@@ -48,6 +62,35 @@ nav {
   width: 220px;
 }
 
+/************************************************************************* footer*/
+
+/* stlyes footer background */
+#socials {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+}
+
+/* styles icons */
+#icons {
+  /* margin-top: 35px; */
+  font-size: 1.5rem;
+  padding: 0px;
+  text-align: center;
+}
+
+/* styles contact details */
+#contacts {
+  padding: 0px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* removes bottom gap */
+.row{
+    margin-bottom: 0px;
+}
 /************************************************************************* bootstrap breakpoints *************************************************************************/
 
 /* Small devices */
@@ -64,7 +107,7 @@ nav {
   /* designs link pages in top nav */
   .top-nav-links {
     font-size: 2rem;
-    visibility: visible;
+    display: inline;
   }
 
   /* top nav size */
