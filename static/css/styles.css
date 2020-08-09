@@ -48,7 +48,7 @@ nav {
 
 /* changes hover colour of sidenav */
 .sidenav li > a:hover {
-  background-color: rgb(180, 180, 3)
+  background-color: rgb(180, 180, 3);
 }
 
 /* designs link pages in side nav*/
@@ -74,7 +74,6 @@ nav {
 
 /* styles icons */
 #icons {
-  /* margin-top: 35px; */
   font-size: 1.5rem;
   padding: 0px;
   text-align: center;
@@ -88,20 +87,41 @@ nav {
 }
 
 /* removes bottom gap */
-.row{
-    margin-bottom: 0px;
+.row {
+  margin-bottom: 0px;
 }
-/************************************************************************* bootstrap breakpoints *************************************************************************/
+/************************************************************************* responsive breakpoints *************************************************************************/
 
-/* Small devices */
+/* Bootstrap: Small devices */
 @media (min-width: 576px) {
 }
 
-/* Medium devices  */
+/* accommodate materialize */
+@media (min-width: 601px) {
+  /************************************************************************* footer*/
+  /* stlyes footer background */
+  #socials {
+    height: 120px;
+  }
+
+  /* styles icons */
+  #icons {
+    font-size: 2rem;
+    margin-top: 35px;
+  }
+
+  /* styles contacts */
+  #contacts {
+    margin-top: 10px;
+    font-size: 1.3rem;
+  }
+}
+
+/* Bootstrap: Medium devices  */
 @media (min-width: 768px) {
 }
 
-/* Large devices */
+/* Bootstrap: Large devices */
 @media (min-width: 992px) {
   /************************************************************************* top nav */
   /* designs link pages in top nav */
@@ -115,7 +135,7 @@ nav {
     height: 10%;
   }
 
-  /* moves top nave links to the right */
+  /* moves top nav links to the right */
   #topNavLinksContainer {
     float: right;
     list-style: inline;
@@ -131,9 +151,55 @@ nav {
   .sidenav {
     width: 250px;
   }
+
+  /************************************************************************* footer*/
+  /* stlyes footer background */
+  #socials {
+    height: 130px;
+  }
+
+  /* styles icons */
+  #icons {
+    font-size: 2.4rem;
+    margin-top: 40px;
+  }
+
+  /* styles contacts */
+  #contacts {
+    margin-top: 15px;
+    font-size: 1.7rem;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
-/* Extra large devices */
+/* Bootstrap: Extra large devices */
 @media (min-width: 1200px) {
   /* bars button */
   .fas.fa-bars {
