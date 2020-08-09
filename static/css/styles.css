@@ -1,4 +1,4 @@
-/* universal properties */
+/************************************************************************* universal properties *************************************************************************/
 * {
   padding: 0px;
   margin: 0px;
@@ -7,14 +7,7 @@
   font-family: "Scada", sans-serif;
 }
 
-/* helps keeps footer down */
-body {
-  position: relative;
-  padding-bottom: 100px;
-  min-height: 100vh;
-}
-
-/************************************************************************* title */
+/************************************************************************* main title */
 /* styles main title */
 #mainTitle {
   font-size: 3rem;
@@ -23,7 +16,6 @@ body {
 }
 
 /************************************************************************* top nav */
-
 /* designs link pages in top nav */
 .top-nav-links {
   display: none;
@@ -41,7 +33,6 @@ nav {
 }
 
 /************************************************************************* side nav */
-
 /* increases size of side nav */
 .sidenav {
   width: 230px;
@@ -69,6 +60,12 @@ nav {
 }
 
 /************************************************************************* footer*/
+/* helps keeps footer down */
+body {
+  position: relative;
+  padding-bottom: 150px;
+  min-height: 100vh;
+}
 
 /* stlyes footer background */
 #socials {
@@ -96,6 +93,13 @@ nav {
 .row {
   margin-bottom: 0px;
 }
+
+/************************************************************************* homepage *************************************************************************/
+/* styles home title */
+#homeTitle{
+    text-align: center;
+}
+
 /************************************************************************* responsive breakpoints *************************************************************************/
 
 /* Bootstrap: Small devices */
