@@ -123,16 +123,28 @@ nav {
 
 /* Bootstrap: Large devices */
 @media (min-width: 992px) {
-  /************************************************************************* top nav */
-  /* designs link pages in top nav */
-  .top-nav-links {
-    font-size: 2rem;
+  /************************************************************************* title */
+  /* styles main title */
+  #mainTitle {
+    text-align: left;
     display: inline;
+  }
+
+  /************************************************************************* top nav */
+  /* bars button */
+  .fas.fa-bars {
+    display: none;
   }
 
   /* top nav size */
   nav {
     height: 10%;
+  }
+
+  /* designs links in top nav */
+  .top-nav-links {
+    font-size: 2rem;
+    display: inline;
   }
 
   /* moves top nav links to the right */
@@ -141,12 +153,17 @@ nav {
     list-style: inline;
   }
 
-  /* bars button */
-  .fas.fa-bars {
-    margin: 5px;
+  /* puts top nav links on nav bar */
+  ul {
+    display: inline;
   }
-  /************************************************************************* side nav */
 
+  /* changes hover colour of sidenav */
+  .top-nav li > a:hover {
+    background-color: rgb(180, 180, 3);
+  }
+
+  /************************************************************************* side nav */
   /* increases size of side nav */
   .sidenav {
     width: 250px;
@@ -167,40 +184,13 @@ nav {
   /* styles contacts */
   #contacts {
     margin-top: 15px;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 /* Bootstrap: Extra large devices */
 @media (min-width: 1200px) {
+  /************************************************************************* top nav */
   /* bars button */
   .fas.fa-bars {
     margin: 10px;
