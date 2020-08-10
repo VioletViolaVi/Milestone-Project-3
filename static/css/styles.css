@@ -23,7 +23,7 @@
 
 /* top nav size */
 nav {
-  height: 9%;
+  height: 55px;
 }
 
 /* bars button */
@@ -39,8 +39,8 @@ nav {
 }
 
 /* pushes side nav links to the left */
-.side-nav-links.black-text.waves-effect{
-    padding: 0px 0px 0px 10px;
+.side-nav-links.black-text.waves-effect {
+  padding: 0px 0px 0px 10px;
 }
 
 /* centers side nav links in side nav */
@@ -59,7 +59,7 @@ nav {
   margin-top: 30px;
 }
 
-/************************************************************************* footer*/
+/************************************************************************* footer */
 /* helps keeps footer down */
 body {
   position: relative;
@@ -96,8 +96,31 @@ body {
 
 /************************************************************************* homepage *************************************************************************/
 /* styles home title */
-#homeTitle{
-    text-align: center;
+#homeTitle {
+  text-align: center;
+}
+
+/************************************************************************* carousel */
+/* carousel images */
+.carousel-images {
+  height: 60%;
+}
+
+/* indicator colours */
+.carousel .indicators .indicator-item {
+  background-color: rgba(180, 180, 3, 0.466);
+  width: 5%;
+  height: 12px;
+}
+
+/* active indicator colour */
+.carousel .indicators .indicator-item.active {
+  background-color: yellow;
+}
+
+/* keeps indicators on top of images */
+.carousel.carousel-slider.center {
+  height: 250px;
 }
 
 /************************************************************************* responsive breakpoints *************************************************************************/
@@ -108,7 +131,7 @@ body {
 
 /* accommodate materialize */
 @media (min-width: 601px) {
-  /************************************************************************* footer*/
+  /************************************************************************* footer */
   /* stlyes footer background */
   #socials {
     height: 120px;
@@ -179,7 +202,7 @@ body {
     width: 250px;
   }
 
-  /************************************************************************* footer*/
+  /************************************************************************* footer */
   /* stlyes footer background */
   #socials {
     height: 130px;
