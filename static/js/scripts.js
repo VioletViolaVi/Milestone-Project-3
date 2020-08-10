@@ -5,6 +5,6 @@ $(document).ready(function () {
   $(".carousel.carousel-slider").carousel({
     fullWidth: true,
     indicators: true,
-    duration: 600,
+    duration: 500,
   });
 });
