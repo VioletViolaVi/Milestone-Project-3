@@ -90,7 +90,7 @@ body {
 }
 
 /* removes bottom gap */
-.row {
+#socials .row {
   margin-bottom: 0px;
 }
 
@@ -102,32 +102,20 @@ body {
 }
 
 /************************************************************************* carousel */
-/* height of carousel*/
+/* styles basis of carousel */
 .carousel.carousel-slider.center {
-  height: 400px;
+  height: 450px;
+  border: solid black 2px;
 }
 
-/* carousel images */
-.carousel-images {
-  height: 80%;
+/* styles carousel photos */
+.carousel .carousel-item>img {
+    height: 100%;
 }
 
 /* styles review button */
-#reviews {
-  font-weight: bold;
-  font-size: 1.5rem;
-  border: 2px solid black;
-  border-radius: 3px;
-  background-color: yellow;
-  position: absolute;
-  top: 62%;
-  left: 36%;
-  cursor: pointer;
-}
-
-/* places indicators on images */
-ul.indicators {
-  padding-bottom: 70px;
+.reviews {
+  font-weight: 800;
 }
 
 /* styles indicators */
@@ -142,106 +130,8 @@ ul.indicators {
   background-color: yellow;
 }
 
-/************************************************************************* movie poster text */
-/* font for dog movie text */
-#dogActor1,
-#dogActor2,
-#dogActor3,
-#dogActor4,
-#dogActor5,
-#dogActorLastName1,
-#dogActorLastName2,
-#dogActorLastName3,
-#dogActorLastName4,
-#dogActorLastName5,
-#dogTextTitle,
-#dogTextTagLine,
-#dogReleaseDate,
-#dogBillingBlock {
-  font-family: "Underdog", cursive;
-}
+/************************************************************************* hands movie */
 
-/* matching code for dog movie actors and text */
-#dogActor1,
-#dogActor2,
-#dogActor3,
-#dogActor4,
-#dogActor5,
-#dogTextTitle,
-#dogTextTagLine,
-#dogReleaseDate,
-#dogBillingBlock {
-  position: absolute;
-  color: brown;
-}
-
-/* matching code for dog movie actors and text */
-#dogActor1,
-#dogActor2,
-#dogActor3,
-#dogActor4,
-#dogActor5,
-#dogTextTagLine,
-#dogReleaseDate {
-  font-size: 1rem;
-}
-
-/* matching code for dog movie actor names */
-#dogActor1,
-#dogActor2,
-#dogActor3,
-#dogActor4,
-#dogActor5 {
-  top: 0%;
-  padding: 0px;
-}
-
-/* position of dog movie actor's */
-#dogActor1 {
-  left: 3%;
-}
-#dogActor2 {
-  left: 23%;
-}
-#dogActor3 {
-  left: 40%;
-}
-#dogActor4 {
-  left: 56%;
-}
-#dogActor5 {
-  left: 82%;
-}
-
-/* styles dog movie title */
-#dogTextTitle {
-  top: 63%;
-  left: 50%;
-  font-size: 3rem;
-  margin: 0px;
-  transform: translate(-90%, -600%);
-}
-
-/* styles dog movie tag line */
-#dogTextTagLine {
-  top: 24%;
-  left: 45%;
-}
-
-/* styles dog movie release date */
-#dogReleaseDate {
-  top: 45%;
-  left: 65%;
-  font-weight: bolder;
-}
-
-/* styles dog movie billing block */
-#dogBillingBlock {
-  top: 60%;
-  left: 0%;
-  font-size: 0.5rem;
-  font-weight: bold;
-}
 
 /************************************************************************* responsive breakpoints *************************************************************************/
 
