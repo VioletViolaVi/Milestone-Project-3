@@ -109,8 +109,8 @@ body {
 }
 
 /* styles carousel photos */
-.carousel .carousel-item>img {
-    height: 100%;
+.carousel .carousel-item > img {
+  height: 100%;
 }
 
 /* styles review button */
@@ -130,8 +130,75 @@ body {
   background-color: yellow;
 }
 
-/************************************************************************* hands movie */
+/************************************************************************* movie poster */
+/* extra for actors */
+ul.col.s12 {
+  padding: 0px;
+}
 
+/* positions and styles actor names */
+.actors {
+  top: 0px;
+  font-size: 7vw;
+
+}
+
+/* positions movie title */
+.titlePosition {
+  top: 130px;
+}
+
+/* styles movie title */
+#title {
+  font-size: 16vw;
+}
+
+/* positions movie tag line */
+.tagLinePosition {
+  top: 245px;
+}
+
+/* styles movie tag line */
+#tagLine {
+  font-size: 9vw;
+}
+
+/* positions movie release date */
+#datePosition {
+  top: 85px;
+}
+
+/* styles movie release date */
+#date {
+  font-size: 10vw;
+}
+
+/* positions movie billing block  */
+#billingBlockPosition {
+  bottom: 10px;
+}
+
+/* extra to push credits down */
+#billingBlockPosition .row {
+  margin-bottom: 0px;
+}
+
+/* styles movie billing block */
+#billingBlock {
+  font-size: 2.2vw;
+}
+
+/* common properties and values for movie poster */
+.actors li,
+#title,
+#tagLine,
+#date,
+#billingBlock {
+  color: whitesmoke;
+  padding: 0px;
+  font-family: "Almendra Display", cursive;
+  font-weight: 1000;
+}
 
 /************************************************************************* responsive breakpoints *************************************************************************/
 
