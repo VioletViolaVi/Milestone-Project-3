@@ -1,7 +1,8 @@
-https://randomkeygen.com/
 https://www.mongodb.com/cloud
+https://randomkeygen.com/ - random password generator
 https://www.w3schools.com/howto/howto_css_image_text.asp - text on images
 https://www.name-generator.org.uk/quick/ - name generator
+https://www.fantasynamegenerators.com/film-studio-names.php - studio generator
 
 https://unsplash.com/photos/ig7vN6OkGNE - boxing, Photo by Attentie Attentie
 https://unsplash.com/photos/oMpAz-DN-9I - moon, Photo by Greg Rakozy 

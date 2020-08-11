@@ -139,43 +139,43 @@ ul.col.s12 {
 /* positions and styles actor names */
 .actors {
   top: 0px;
-  font-size: 7vw;
-
+  font-size: 8vw;
 }
 
 /* positions movie title */
 .titlePosition {
-  top: 130px;
+  top: 70px;
 }
 
 /* styles movie title */
 #title {
-  font-size: 16vw;
+  font-size: 19vw;
 }
 
 /* positions movie tag line */
 .tagLinePosition {
-  top: 245px;
+  top: 180px;
 }
 
 /* styles movie tag line */
 #tagLine {
-  font-size: 9vw;
+  font-size: 10vw;
 }
 
 /* positions movie release date */
 #datePosition {
-  top: 85px;
+  bottom: 142px;
 }
 
 /* styles movie release date */
 #date {
-  font-size: 10vw;
+  font-size: 12vw;
 }
 
 /* positions movie billing block  */
 #billingBlockPosition {
   bottom: 10px;
+  left: 80px;
 }
 
 /* extra to push credits down */
@@ -196,8 +196,8 @@ ul.col.s12 {
 #billingBlock {
   color: whitesmoke;
   padding: 0px;
-  font-family: "Almendra Display", cursive;
-  font-weight: 1000;
+  font-family: "Vibes", cursive;
+  font-weight: 900;
 }
 
 /************************************************************************* responsive breakpoints *************************************************************************/
