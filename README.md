@@ -21,8 +21,8 @@ https://unsplash.com/photos/Jigc7F9q7Ik - skull, Photo by Max Kleinen
 https://unsplash.com/photos/AbNO2iejoXA - dog, Photo by Ryan Walton
 https://unsplash.com/photos/5Rgr_zI7pBw - ship, Photo by Dorian Mongel 
 https://unsplash.com/photos/9cRDDvhpBRw - handholding, Photo by Valentin Antonucci 
-https://unsplash.com/photos/DJ_kZaITX78 - couple1, Photo by Abdul Gani M
-https://unsplash.com/photos/hQuQwfY8QoE - couple2, Photo by Filipe Almeida
+https://unsplash.com/photos/DJ_kZaITX78 - couple, Photo by Abdul Gani M
 https://unsplash.com/photos/xgsbOPIx75I - rose, Photo by Mathilda Khoo
 https://unsplash.com/photos/hYr1wGeDSU0 - woman, Photo by Dollar Gill
-https://unsplash.com/photos/EZNEEgWSV3k - joker, Photo by Daniel Lincoln 
+https://unsplash.com/photos/Sj0iMtq_Z4w - people, Photo by Chang Duong 
+https://unsplash.com/photos/aoEwuEH7YAs - man, Photo by Lucas Gouvêa
