@@ -1,6 +1,9 @@
 {% extends "base.html" %} {% block home %}
 
-    <h2 id="homeTitle">Movies</h2>
+    <div class="center">
+        <h2 id="homeTitle">Movies</h2>
+    </div>
+
 
     <!-- carousel from materialize -->
     <div class="carousel carousel-slider center">
@@ -9,47 +12,76 @@
             <a class="btn waves-effect yellow black-text darken-text-4 reviews">Reviews</a>
         </div>
         <!-- dog movie -->
-        <a class="carousel-item" href="#one!">
-            <img src="static/images/dog.PNG" alt="A picture of a movie poster showing a dog.">
-        </a>
+        <figure> 
+            <a class="carousel-item" href="#one!">        
+                <img src="static/images/dog.PNG" alt="A picture of a movie poster showing a dog.">
+            </a>
+        </figure>
         <!-- handholding movie -->
-        <a class="carousel-item" href="#two!">
-            <img src="static/images/handholding.PNG" alt="A picture of a movie poster showing holding hands.">
-        </a>
+        <figure>
+            <a class="carousel-item" href="#two!">
+                <img src="static/images/handholding.PNG" alt="A picture of a movie poster showing holding hands.">
+            </a>
+        </figure>
         <!-- survival movie -->
-        <a class="carousel-item" href="#three!">
-            <img src="static/images/survival.PNG" alt="A picture of a movie poster showing a pair of hands grabbing onto land.">
-        </a>     
+        <figure>
+            <a class="carousel-item" href="#three!">
+                <img src="static/images/survival.PNG" alt="A picture of a movie poster showing a pair of hands grabbing onto land.">
+            </a>     
+        </figure>
         <!-- rose movie -->
-        <a class="carousel-item" href="#five!">
-            <img src="static/images/rose.PNG" alt="A picture of a movie poster showing a blood covered rose.">
-        </a>
+        <figure>
+            <a class="carousel-item" href="#five!">
+                <img src="static/images/rose.PNG" alt="A picture of a movie poster showing a blood covered rose.">
+            </a>
+        </figure>
         <!-- moon movie -->
-        <a class="carousel-item" href="#four!">
-            <img src="static/images/moon.PNG" alt="A picture of a movie poster showing a person and the moon.">
-        </a>
+        <figure>
+            <a class="carousel-item" href="#four!">
+                <img src="static/images/moon.PNG" alt="A picture of a movie poster showing a person and the moon.">
+            </a>
+        </figure>
         <!-- skull movie -->
-        <a class="carousel-item" href="#seven!">
-            <img src="static/images/skull.PNG" alt="A picture of a movie poster showing a skull.">
-        </a>
+        <figure>
+            <a class="carousel-item" href="#seven!">
+                <img src="static/images/skull.PNG" alt="A picture of a movie poster showing a skull.">
+            </a>
+        </figure>
         <!-- woman movie -->
-        <a class="carousel-item" href="#three!">
-            <img src="static/images/woman.PNG" alt="A picture of a movie poster showing a woman.">
-        </a>  
+        <figure>
+            <a class="carousel-item" href="#three!">
+                <img src="static/images/woman.PNG" alt="A picture of a movie poster showing a woman.">
+            </a> 
+        </figure>
         <!-- drowning movie -->
-        <a class="carousel-item" href="#seven!">
-            <img src="static/images/drowning.PNG" alt="A picture of a movie poster showing someone drowning.">
-        </a>
+        <figure>
+            <a class="carousel-item" href="#seven!">
+                <img src="static/images/drowning.PNG" alt="A picture of a movie poster showing someone drowning.">
+            </a>
+        </figure>
         <!-- man movie -->
-        <a class="carousel-item" href="#three!">
-            <img src="static/images/man.PNG" alt="A picture of a movie poster showing a man.">
-        </a>   
+        <figure>
+            <a class="carousel-item" href="#three!">
+                <img src="static/images/man.PNG" alt="A picture of a movie poster showing a man.">
+            </a>   
+        </figure>
         <!-- seaport movie -->
-        <a class="carousel-item" href="#six!">
-            <img src="static/images/seaport.PNG" alt="A picture of a movie poster showing a a person at sea.">
-        </a>
+        <figure>
+            <a class="carousel-item" href="#six!">
+                <img src="static/images/seaport.PNG" alt="A picture of a movie poster showing a a person at sea.">
+            </a>
+        </figure>
     </div>
 
-    <button></button>
+
+    <div class="center">
+        <a class="col s12 btn waves-effect yellow black-text darken-text-4 book-now">BOOK NOW</a>
+    </div>
+
+    <div class="center">
+        <h3 id="reviewsTitle">REVIEWS</h3>
+    </div>
+
+    
 
 {% endblock %}

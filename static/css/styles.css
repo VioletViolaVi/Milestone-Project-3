@@ -97,7 +97,6 @@ body {
 /************************************************************************* homepage *************************************************************************/
 /* styles home title */
 #homeTitle {
-  text-align: center;
   margin: 5px 0px;
 }
 
@@ -113,11 +112,6 @@ body {
   height: 100%;
 }
 
-/* styles review button */
-.reviews {
-  font-weight: 800;
-}
-
 /* styles indicators */
 .carousel .indicators .indicator-item {
   background-color: rgba(180, 180, 3, 0.466);
@@ -128,6 +122,17 @@ body {
 /* styles active indicators */
 .carousel .indicators .indicator-item.active {
   background-color: yellow;
+}
+
+/* styles book now button */
+.book-now {
+  margin-top: 20px;
+}
+
+/* styles review and book now button */
+.reviews,.book-now {
+  font-weight: 800;
+  margin-top: 20px;
 }
 
 /************************************************************************* responsive breakpoints *************************************************************************/
