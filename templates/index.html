@@ -78,25 +78,27 @@
 
 <!-- modal from materialize -->
     <div id="modal1" class="modal">
-        <div class="modal-content">
-            <h4>Rate It</h4>
+        <div class="modal-content center">
+            <h4 class="modal-title">Rate It</h4>
             <form class="flip-stars">
-                <input type="radio" name="starRating" id="starRating-1">
                 <label for="starRating-1" class="fas fa-star"></label>
+                <input type="radio" name="starRating" id="starRating-1">
+
+                <label for="starRating-2" class="fas fa-star"></label>                
                 <input type="radio" name="starRating" id="starRating-2">
-                <label for="starRating-2" class="fas fa-star"></label>
-                <input type="radio" name="starRating" id="starRating-3">
+
                 <label for="starRating-3" class="fas fa-star"></label>
-                <input type="radio" name="starRating" id="starRating-4">
+                <input type="radio" name="starRating" id="starRating-3">
+
                 <label for="starRating-4" class="fas fa-star"></label>
-                <input type="radio" name="starRating" id="starRating-5">
+                <input type="radio" name="starRating" id="starRating-4">
+
                 <label for="starRating-5" class="fas fa-star"></label>
+                <input type="radio" name="starRating" id="starRating-5">
             </form>  
-            <h4>My Review</h4>
+            <h4 class="modal-title">My Review</h4>
             <label for="userReviews"></label>
-            <textarea name="userReviews" id="userReviews" cols="30" rows="10"></textarea>     
-        </div>
-        <div class="modal-footer">
+            <textarea name="userReviews" id="userReviews"></textarea>
             <a href="#!" class="modal-close btn btn-flat waves-effect waves-black yellow black-text darken-text-4 booking-btn">SUBMIT</a>
         </div>
     </div>
@@ -376,5 +378,5 @@
         <hr>      
     </div>
 
-    
+
 {% endblock %}

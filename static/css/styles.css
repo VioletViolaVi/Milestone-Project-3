@@ -133,6 +133,12 @@ body {
 }
 
 /************************************************************************* reviews */
+/* keeps review pics and reviews in two columns */
+figure.col.s6{
+    margin: 0px;
+    padding: 0px;
+}
+
 /* stlyes movie pictures for review section */
 .review-pictures {
   width: 80%;
@@ -157,6 +163,11 @@ input:checked ~ label {
   transform: scaleX(-1);
 }
 
+/* keeps stars inline */
+div.col.s6.star-review{
+    padding: 0px;
+}
+
 /* style review box */
 .review-box {
   border: solid black 3px;
@@ -164,15 +175,15 @@ input:checked ~ label {
   margin-top: 10px;
 }
 
-/* keeps review pics and reviews in two columns */
-figure.col.s6{
-    margin: 0px;
-    padding: 0px;
+/* spaces out content in modals */
+.modal-title,.flip-stars{
+    margin-bottom: 20px;
 }
 
-/* keeps stars inline */
-div.col.s6.star-review{
-    padding: 0px;
+/* increases text box modal size and displays text cursor */
+#userReviews{
+    height: 100px;
+    padding: 5px;
 }
 
 /************************************************************************* responsive breakpoints *************************************************************************/
