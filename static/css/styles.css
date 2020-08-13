@@ -175,6 +175,18 @@ div.col.s6.star-review{
   margin-top: 10px;
 }
 
+/************************************************************************* modal */
+/* styles close button */
+.fas.fa-times{
+  font-size: 2rem;
+  padding: 10px 10px 0px 0px;
+}
+
+/* lifts modal content upwards */
+.modal-content.center{
+    padding-top: 0px;
+}
+
 /* spaces out content in modals */
 .modal-title,.flip-stars{
     margin-bottom: 20px;
