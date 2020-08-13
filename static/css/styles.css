@@ -120,17 +120,18 @@ body {
   background-color: yellow;
 }
 
-/* styles book now button */
-.book-now {
-  margin-top: 20px;
-}
-
 /* styles review and book now button */
 .reviews-btn,
-.book-now {
+.booking-btn {
   font-weight: 800;
   margin-top: 20px;
 }
+
+/* styles book now button */
+.booking-btn {
+  margin-top: 20px;
+}
+
 /************************************************************************* reviews */
 /* stlyes movie pictures for review section */
 .review-pictures {

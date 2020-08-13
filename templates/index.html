@@ -4,12 +4,18 @@
         <h2>Movies</h2>
     </div>
 
-    <!-- carousel from materialize -->
+<!-- carousel from materialize -->
     <div class="carousel carousel-slider center">
         <!-- fixed review button -->
         <div class="carousel-fixed-item center">
             <a class="btn waves-effect yellow black-text darken-text-4 reviews-btn">Reviews</a>
         </div>
+        <!-- drowning movie -->
+        <figure>
+            <a class="carousel-item" href="#seven!">
+                <img src="static/images/drowning.PNG" alt="A picture of a movie poster showing someone drowning.">
+            </a>
+        </figure>
         <!-- dog movie -->
         <figure> 
             <a class="carousel-item" href="#one!">        
@@ -40,22 +46,22 @@
                 <img src="static/images/moon.PNG" alt="A picture of a movie poster showing a person and the moon.">
             </a>
         </figure>
-        <!-- skull movie -->
-        <figure>
-            <a class="carousel-item" href="#seven!">
-                <img src="static/images/skull.PNG" alt="A picture of a movie poster showing a skull.">
-            </a>
-        </figure>
         <!-- woman movie -->
         <figure>
             <a class="carousel-item" href="#three!">
                 <img src="static/images/woman.PNG" alt="A picture of a movie poster showing a woman.">
             </a> 
         </figure>
-        <!-- drowning movie -->
+        <!-- skull movie -->
         <figure>
             <a class="carousel-item" href="#seven!">
-                <img src="static/images/drowning.PNG" alt="A picture of a movie poster showing someone drowning.">
+                <img src="static/images/skull.PNG" alt="A picture of a movie poster showing a skull.">
+            </a>
+        </figure>
+        <!-- seaport movie -->
+        <figure>
+            <a class="carousel-item" href="#six!">
+                <img src="static/images/seaport.PNG" alt="A picture of a movie poster showing a a person at sea.">
             </a>
         </figure>
         <!-- man movie -->
@@ -64,19 +70,13 @@
                 <img src="static/images/man.PNG" alt="A picture of a movie poster showing a man.">
             </a>   
         </figure>
-        <!-- seaport movie -->
-        <figure>
-            <a class="carousel-item" href="#six!">
-                <img src="static/images/seaport.PNG" alt="A picture of a movie poster showing a a person at sea.">
-            </a>
-        </figure>
     </div>
 
-    <!-- modal from materialize -->
     <div class="center">
-        <a class="book-now col s12 btn waves-effect yellow black-text darken-text-4  waves-light btn modal-trigger" href="#modal1">BOOK NOW</a>
+        <a class="booking-btn col s12 btn waves-effect yellow black-text darken-text-4">BOOK NOW</a>
     </div>
-    <!-- Modal Structure -->
+
+<!-- modal from materialize -->
     <div id="modal1" class="modal">
         <div class="modal-content">
             <h4>Rate It</h4>
@@ -93,28 +93,44 @@
                 <label for="starRating-5" class="fas fa-star"></label>
             </form>  
             <h4>My Review</h4>
-            <textarea name="userReviews" id="userReviews" cols="30" rows="10"></textarea>
             <label for="userReviews"></label>
+            <textarea name="userReviews" id="userReviews" cols="30" rows="10"></textarea>     
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-close btn btn-flat waves-effect waves-black yellow black-text darken-text-4 book-now">SUBMIT</a>
+            <a href="#!" class="modal-close btn btn-flat waves-effect waves-black yellow black-text darken-text-4 booking-btn">SUBMIT</a>
         </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- reviews -->
     <div class="center">
         <h3>REVIEWS</h3>
+    </div>
+
+    <!-- drowning review -->
+    <h4>Submerged</h4>
+    <div class="container movie-review"> 
+        <div class="row">
+            <figure class="col s6">       
+                <img class="review-pictures" src="static/images/drowning.PNG" alt="A picture of a movie poster showing someone drowning.">
+            </figure>
+            <div class="col s6 star-review">
+                <div class="flip-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>                       
+                <div class="review-box"></div>
+                <div class="center">
+                    <a class="btn waves-effect yellow black-text darken-text-4 booking-btn">BOOK NOW</a>
+                </div>
+                <div class="center">
+                    <a class="reviews-btn col s12 btn waves-effect yellow black-text darken-text-4 waves-light btn modal-trigger" href="#modal1">LEAVE A REVIEW</a>
+                </div>
+            </div>          
+        </div>
+        <hr>      
     </div>
 
     <!-- dog review -->
@@ -122,34 +138,243 @@
     <div class="container movie-review"> 
         <div class="row">
             <figure class="col s6">       
-                <img  class="review-pictures" src="static/images/dog.PNG" alt="A picture of a movie poster showing a dog.">
+                <img class="review-pictures" src="static/images/dog.PNG" alt="A picture of a movie poster showing a dog.">
             </figure>
             <div class="col s6 star-review">
-                <form class="flip-stars">
-                    <input type="radio" name="starRating" id="starRating-1">
-                    <label for="starRating-1" class="fas fa-star"></label>
-                    <input type="radio" name="starRating" id="starRating-2">
-                    <label for="starRating-2" class="fas fa-star"></label>
-                    <input type="radio" name="starRating" id="starRating-3">
-                    <label for="starRating-3" class="fas fa-star"></label>
-                    <input type="radio" name="starRating" id="starRating-4">
-                    <label for="starRating-4" class="fas fa-star"></label>
-                    <input type="radio" name="starRating" id="starRating-5">
-                    <label for="starRating-5" class="fas fa-star"></label>
-                </form>                       
+                <div class="flip-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>                       
                 <div class="review-box"></div>
                 <div class="center">
-                    <a class="btn waves-effect yellow black-text darken-text-4 book-now">BOOK NOW</a>
+                    <a class="btn waves-effect yellow black-text darken-text-4 booking-btn">BOOK NOW</a>
                 </div>
                 <div class="center">
-                    <a class="btn waves-effect yellow black-text darken-text-4 book-now">LEAVE A REVIEW</a>
+                    <a class="reviews-btn col s12 btn waves-effect yellow black-text darken-text-4 waves-light btn modal-trigger" href="#modal1">LEAVE A REVIEW</a>
                 </div>
             </div>          
         </div>
         <hr>      
     </div>
 
+    <!-- handholding review -->
+    <h4>Bitter Sweet</h4>
+    <div class="container movie-review"> 
+        <div class="row">
+            <figure class="col s6">       
+                <img class="review-pictures" src="static/images/handholding.PNG" alt="A picture of a movie poster showing holding hands.">
+            </figure>
+            <div class="col s6 star-review">
+                <div class="flip-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>                       
+                <div class="review-box"></div>
+                <div class="center">
+                    <a class="btn waves-effect yellow black-text darken-text-4 booking-btn">BOOK NOW</a>
+                </div>
+                <div class="center">
+                    <a class="reviews-btn col s12 btn waves-effect yellow black-text darken-text-4 waves-light btn modal-trigger" href="#modal1">LEAVE A REVIEW</a>
+                </div>
+            </div> 
+        </div>
+        <hr>      
+    </div>
 
+    <!-- survival review -->
+    <h4>Survivalist Returns</h4>
+    <div class="container movie-review"> 
+        <div class="row">
+            <figure class="col s6">       
+                <img class="review-pictures" src="static/images/survival.PNG" alt="A picture of a movie poster showing a pair of hands grabbing onto land.">
+            </figure>
+            <div class="col s6 star-review">
+                <div class="flip-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>                       
+                <div class="review-box"></div>
+                <div class="center">
+                    <a class="btn waves-effect yellow black-text darken-text-4 booking-btn">BOOK NOW</a>
+                </div>
+                <div class="center">
+                    <a class="reviews-btn col s12 btn waves-effect yellow black-text darken-text-4 waves-light btn modal-trigger" href="#modal1">LEAVE A REVIEW</a>
+                </div>
+            </div>          
+        </div>
+        <hr>      
+    </div>
 
+    <!-- rose review -->
+    <h4>Death by Rose</h4>
+    <div class="container movie-review"> 
+        <div class="row">
+            <figure class="col s6">       
+                <img class="review-pictures" src="static/images/rose.PNG" alt="A picture of a movie poster showing a blood covered rose.">
+            </figure>
+            <div class="col s6 star-review">
+                <div class="flip-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>                       
+                <div class="review-box"></div>
+                <div class="center">
+                    <a class="btn waves-effect yellow black-text darken-text-4 booking-btn">BOOK NOW</a>
+                </div>
+                <div class="center">
+                    <a class="reviews-btn col s12 btn waves-effect yellow black-text darken-text-4 waves-light btn modal-trigger" href="#modal1">LEAVE A REVIEW</a>
+                </div>
+            </div>          
+        </div>
+        <hr>      
+    </div>
 
+    <!-- moon review -->
+    <h4>The Lost Galaxy</h4>
+    <div class="container movie-review"> 
+        <div class="row">
+            <figure class="col s6">       
+                <img class="review-pictures" src="static/images/moon.PNG" alt="A picture of a movie poster showing a person and the moon.">
+            </figure>
+            <div class="col s6 star-review">
+                <div class="flip-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>                       
+                <div class="review-box"></div>
+                <div class="center">
+                    <a class="btn waves-effect yellow black-text darken-text-4 booking-btn">BOOK NOW</a>
+                </div>
+                <div class="center">
+                    <a class="reviews-btn col s12 btn waves-effect yellow black-text darken-text-4 waves-light btn modal-trigger" href="#modal1">LEAVE A REVIEW</a>
+                </div>
+            </div>          
+        </div>
+        <hr>      
+    </div>
+
+    <!-- woman review -->
+    <h4>Serayah</h4>
+    <div class="container movie-review"> 
+        <div class="row">
+            <figure class="col s6">       
+                <img class="review-pictures" src="static/images/woman.PNG" alt="A picture of a movie poster showing a woman.">
+            </figure>
+            <div class="col s6 star-review">
+                <div class="flip-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>                       
+                <div class="review-box"></div>
+                <div class="center">
+                    <a class="btn waves-effect yellow black-text darken-text-4 booking-btn">BOOK NOW</a>
+                </div>
+                <div class="center">
+                    <a class="reviews-btn col s12 btn waves-effect yellow black-text darken-text-4 waves-light btn modal-trigger" href="#modal1">LEAVE A REVIEW</a>
+                </div>
+            </div>          
+        </div>
+        <hr>      
+    </div>
+
+    <!-- skull review -->
+    <h4>Broken</h4>
+    <div class="container movie-review"> 
+        <div class="row">
+            <figure class="col s6">       
+                <img class="review-pictures" src="static/images/skull.PNG" alt="A picture of a movie poster showing a skull.">
+            </figure>
+            <div class="col s6 star-review">
+                <div class="flip-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>                       
+                <div class="review-box"></div>
+                <div class="center">
+                    <a class="btn waves-effect yellow black-text darken-text-4 booking-btn">BOOK NOW</a>
+                </div>
+                <div class="center">
+                    <a class="reviews-btn col s12 btn waves-effect yellow black-text darken-text-4 waves-light btn modal-trigger" href="#modal1">LEAVE A REVIEW</a>
+                </div>
+            </div>          
+        </div>
+        <hr>      
+    </div>
+
+    <!-- seaport review -->
+    <h4>Hallow Winds</h4>
+    <div class="container movie-review"> 
+        <div class="row">
+            <figure class="col s6">       
+                <img class="review-pictures" src="static/images/seaport.PNG" alt="A picture of a movie poster showing a a person at sea.">
+            </figure>
+            <div class="col s6 star-review">
+                <div class="flip-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>                       
+                <div class="review-box"></div>
+                <div class="center">
+                    <a class="btn waves-effect yellow black-text darken-text-4 booking-btn">BOOK NOW</a>
+                </div>
+                <div class="center">
+                    <a class="reviews-btn col s12 btn waves-effect yellow black-text darken-text-4 waves-light btn modal-trigger" href="#modal1">LEAVE A REVIEW</a>
+                </div>
+            </div>          
+        </div>
+        <hr>      
+    </div>
+
+    <!-- man review -->
+    <h4>S'Yan</h4>
+    <div class="container movie-review"> 
+        <div class="row">
+            <figure class="col s6">       
+                <img class="review-pictures" src="static/images/man.PNG" alt="A picture of a movie poster showing a man.">
+            </figure>
+            <div class="col s6 star-review">
+                <div class="flip-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>                       
+                <div class="review-box"></div>
+                <div class="center">
+                    <a class="btn waves-effect yellow black-text darken-text-4 booking-btn">BOOK NOW</a>
+                </div>
+                <div class="center">
+                    <a class="reviews-btn col s12 btn waves-effect yellow black-text darken-text-4 waves-light btn modal-trigger" href="#modal1">LEAVE A REVIEW</a>
+                </div>
+            </div>          
+        </div>
+        <hr>      
+    </div>
+
+    
 {% endblock %}
