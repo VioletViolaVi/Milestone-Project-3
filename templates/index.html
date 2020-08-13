@@ -1,15 +1,14 @@
 {% extends "base.html" %} {% block home %}
 
     <div class="center">
-        <h2 id="homeTitle">Movies</h2>
+        <h2>Movies</h2>
     </div>
-
 
     <!-- carousel from materialize -->
     <div class="carousel carousel-slider center">
         <!-- fixed review button -->
         <div class="carousel-fixed-item center">
-            <a class="btn waves-effect yellow black-text darken-text-4 reviews">Reviews</a>
+            <a class="btn waves-effect yellow black-text darken-text-4 reviews-btn">Reviews</a>
         </div>
         <!-- dog movie -->
         <figure> 
@@ -73,15 +72,84 @@
         </figure>
     </div>
 
-
+    <!-- modal from materialize -->
     <div class="center">
-        <a class="col s12 btn waves-effect yellow black-text darken-text-4 book-now">BOOK NOW</a>
+        <a class="book-now col s12 btn waves-effect yellow black-text darken-text-4  waves-light btn modal-trigger" href="#modal1">BOOK NOW</a>
+    </div>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Rate It</h4>
+            <form class="flip-stars">
+                <input type="radio" name="starRating" id="starRating-1">
+                <label for="starRating-1" class="fas fa-star"></label>
+                <input type="radio" name="starRating" id="starRating-2">
+                <label for="starRating-2" class="fas fa-star"></label>
+                <input type="radio" name="starRating" id="starRating-3">
+                <label for="starRating-3" class="fas fa-star"></label>
+                <input type="radio" name="starRating" id="starRating-4">
+                <label for="starRating-4" class="fas fa-star"></label>
+                <input type="radio" name="starRating" id="starRating-5">
+                <label for="starRating-5" class="fas fa-star"></label>
+            </form>  
+            <h4>My Review</h4>
+            <textarea name="userReviews" id="userReviews" cols="30" rows="10"></textarea>
+            <label for="userReviews"></label>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close btn btn-flat waves-effect waves-black yellow black-text darken-text-4 book-now">SUBMIT</a>
+        </div>
     </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="center">
-        <h3 id="reviewsTitle">REVIEWS</h3>
+        <h3>REVIEWS</h3>
     </div>
 
-    
+    <!-- dog review -->
+    <h4>Roldo</h4>
+    <div class="container movie-review"> 
+        <div class="row">
+            <figure class="col s6">       
+                <img  class="review-pictures" src="static/images/dog.PNG" alt="A picture of a movie poster showing a dog.">
+            </figure>
+            <div class="col s6 star-review">
+                <form class="flip-stars">
+                    <input type="radio" name="starRating" id="starRating-1">
+                    <label for="starRating-1" class="fas fa-star"></label>
+                    <input type="radio" name="starRating" id="starRating-2">
+                    <label for="starRating-2" class="fas fa-star"></label>
+                    <input type="radio" name="starRating" id="starRating-3">
+                    <label for="starRating-3" class="fas fa-star"></label>
+                    <input type="radio" name="starRating" id="starRating-4">
+                    <label for="starRating-4" class="fas fa-star"></label>
+                    <input type="radio" name="starRating" id="starRating-5">
+                    <label for="starRating-5" class="fas fa-star"></label>
+                </form>                       
+                <div class="review-box"></div>
+                <div class="center">
+                    <a class="btn waves-effect yellow black-text darken-text-4 book-now">BOOK NOW</a>
+                </div>
+                <div class="center">
+                    <a class="btn waves-effect yellow black-text darken-text-4 book-now">LEAVE A REVIEW</a>
+                </div>
+            </div>          
+        </div>
+        <hr>      
+    </div>
+
+
+
 
 {% endblock %}

@@ -95,10 +95,6 @@ body {
 }
 
 /************************************************************************* homepage *************************************************************************/
-/* styles home title */
-#homeTitle {
-  margin: 5px 0px;
-}
 
 /************************************************************************* carousel */
 /* styles basis of carousel */
@@ -130,9 +126,52 @@ body {
 }
 
 /* styles review and book now button */
-.reviews,.book-now {
+.reviews-btn,
+.book-now {
   font-weight: 800;
   margin-top: 20px;
+}
+/************************************************************************* reviews */
+/* stlyes movie pictures for review section */
+.review-pictures {
+  width: 80%;
+  height: 18rem;
+}
+
+/* increases star size */
+.fas.fa-star {
+  font-size: 1.5rem;
+}
+
+/* changes hovered star(s) colour */
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label,
+input:checked ~ label {
+  color: yellow;
+}
+
+/* colours correct number of hovered stars */
+.flip-stars {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+/* style review box */
+.review-box {
+  border: solid black 3px;
+  height: 100px;
+  margin-top: 10px;
+}
+
+/* keeps review pics and reviews in two columns */
+figure.col.s6{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* keeps stars inline */
+div.col.s6.star-review{
+    padding: 0px;
 }
 
 /************************************************************************* responsive breakpoints *************************************************************************/

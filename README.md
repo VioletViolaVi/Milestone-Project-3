@@ -13,3 +13,5 @@ https://unsplash.com/photos/mSoetyVbW_Y - seaport, Photo by Alessio Lin
 https://unsplash.com/photos/Jigc7F9q7Ik - skull, Photo by Max Kleinen
 https://unsplash.com/photos/NMk1Vggt2hg - survival, Photo by Daniel Jensen
 https://unsplash.com/photos/hYr1wGeDSU0 - woman, Photo by Dollar Gill
+
+https://www.youtube.com/watch?v=rw3eZ6XodN8 - star system

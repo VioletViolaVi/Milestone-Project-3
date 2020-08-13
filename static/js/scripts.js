@@ -7,4 +7,6 @@ $(document).ready(function () {
     indicators: true,
     duration: 250,
   });
+// materialize modal   
+  $('.modal').modal();
 });
