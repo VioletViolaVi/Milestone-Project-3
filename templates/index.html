@@ -81,7 +81,24 @@
         <i class="fas fa-times modal-close"></i>
         <div class="modal-content center">       
             <form action="#">
-                <h4 class="modal-title">Rate It</h4>
+                <h4 class="modal-title">My Rating</h4>
+<!-- select dropdown from materialize -->
+                <div class="select-box input-field col s12">
+                    <select id="selectedMovie" name="selectedMovie">
+                        <option value="" disabled selected>Select Movie</option>
+                        <option value="1">Submerged</option>
+                        <option value="2">Roldo</option>
+                        <option value="3">Bitter Sweet</option>
+                        <option value="4">Survivalist Returns</option>
+                        <option value="5">Death by Rose</option>
+                        <option value="6">The Lost Galaxy</option>
+                        <option value="7">Serayah</option>
+                        <option value="8">Broken</option>
+                        <option value="9">Hallow Winds</option>
+                        <option value="10">S'Yan</option>
+                    </select>
+                    <label for="selectedMovie"></label>
+                </div>
                 <div class="flip-stars">
                     <input class="radio-btn five-stars" id="star-5" type="radio" name="starRating"/>
                     <label class="star five-stars fas fa-star" for="star-5"></label>
@@ -98,6 +115,7 @@
                     <input class="radio-btn" id="star-1" type="radio" name="starRating"/>
                     <label class="star one-star fas fa-star" for="star-1"></label>
                 </div>
+
                 <h4 class="modal-title">My Review</h4>
                 <label for="commentBox"></label>
                 <textarea name="commentBox" id="commentBox"></textarea>   
@@ -120,11 +138,11 @@
             </figure>
             <div class="col s6 star-review">
                 <div class="flip-stars center">
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
                 </div>                       
                 <div class="review-box"></div>
                 <div class="center">
@@ -147,11 +165,11 @@
             </figure>
             <div class="col s6 star-review">
                 <div class="flip-stars center">
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
                 </div>                       
                 <div class="review-box"></div>
                 <div class="center">
@@ -174,11 +192,11 @@
             </figure>
             <div class="col s6 star-review">
                 <div class="flip-stars center">
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
                 </div>                       
                 <div class="review-box"></div>
                 <div class="center">
@@ -201,11 +219,11 @@
             </figure>
             <div class="col s6 star-review">
                 <div class="flip-stars center">
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
                 </div>                       
                 <div class="review-box"></div>
                 <div class="center">
@@ -228,11 +246,11 @@
             </figure>
             <div class="col s6 star-review">
                 <div class="flip-stars center">
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
                 </div>                       
                 <div class="review-box"></div>
                 <div class="center">
@@ -255,11 +273,11 @@
             </figure>
             <div class="col s6 star-review">
                 <div class="flip-stars center">
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
                 </div>                       
                 <div class="review-box"></div>
                 <div class="center">
@@ -282,11 +300,11 @@
             </figure>
             <div class="col s6 star-review">
                 <div class="flip-stars center">
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
                 </div>                       
                 <div class="review-box"></div>
                 <div class="center">
@@ -309,11 +327,11 @@
             </figure>
             <div class="col s6 star-review">
                 <div class="flip-stars center">
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
                 </div>                       
                 <div class="review-box"></div>
                 <div class="center">
@@ -336,11 +354,11 @@
             </figure>
             <div class="col s6 star-review">
                 <div class="flip-stars center">
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
                 </div>                       
                 <div class="review-box"></div>
                 <div class="center">
@@ -363,11 +381,11 @@
             </figure>
             <div class="col s6 star-review">
                 <div class="flip-stars center">
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
                 </div>                       
                 <div class="review-box"></div>
                 <div class="center">

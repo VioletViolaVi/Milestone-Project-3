@@ -165,15 +165,24 @@ figure.col.s6 {
   padding: 1px 5px 0px 0px;
 }
 
-/* lifts modal content upwards */
-.modal-content.center {
-  padding-top: 0px;
+/* spaces out all modal contents */
+.modal-title,
+.select-box,
+.flip-stars {
+  margin-bottom: 20px;
 }
 
-/* spaces out content in modals */
+/* styles modal titles */
 .modal-title {
-  margin-bottom: 20px;
   color: black;
+}
+
+/* makes modal's dropdown text colour match website */
+.dropdown-content li > a,
+.dropdown-content li > span {
+  color: black;
+  font-size: 1.24rem;
+  padding: 0px 16px;
 }
 
 /* removes radio buttons */
@@ -185,13 +194,20 @@ figure.col.s6 {
 .flip-stars {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
-  margin-bottom: 20px;
 }
 
 /* styles all stars */
 .star {
   font-size: 2rem;
   color: black;
+  cursor: pointer;
+}
+
+/* styles stars when hovered */
+.star:hover{
+    color: yellow;
+    transform: rotate(-80deg);
+    transition: all .50s;
 }
 
 /* styles stars as they're clicked */

@@ -9,4 +9,6 @@ $(document).ready(function () {
   });
   // materialize modal
   $(".modal").modal();
+  //   materialize select dropdown
+  $("select").formSelect();
 });
