@@ -122,7 +122,8 @@ body {
 
 /* styles review and book now button */
 .reviews-btn,
-.booking-btn {
+.booking-btn,
+.comments-btn {
   font-weight: 800;
   margin-top: 20px;
 }
@@ -134,38 +135,15 @@ body {
 
 /************************************************************************* reviews */
 /* keeps review pics and reviews in two columns */
-figure.col.s6{
-    margin: 0px;
-    padding: 0px;
+figure.col.s6 {
+  margin: 0px;
+  padding: 0px;
 }
 
 /* stlyes movie pictures for review section */
 .review-pictures {
   width: 80%;
   height: 18rem;
-}
-
-/* increases star size */
-.fas.fa-star {
-  font-size: 1.5rem;
-}
-
-/* changes hovered star(s) colour */
-input:not(:checked) ~ label:hover,
-input:not(:checked) ~ label:hover ~ label,
-input:checked ~ label {
-  color: yellow;
-}
-
-/* colours correct number of hovered stars */
-.flip-stars {
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-}
-
-/* keeps stars inline */
-div.col.s6.star-review{
-    padding: 0px;
 }
 
 /* style review box */
@@ -175,27 +153,63 @@ div.col.s6.star-review{
   margin-top: 10px;
 }
 
+/* leave a review button */
+.comments-btn {
+  font-size: 0.9rem;
+}
+
 /************************************************************************* modal */
 /* styles close button */
-.fas.fa-times{
+.fas.fa-times {
   font-size: 2rem;
-  padding: 10px 10px 0px 0px;
+  padding: 1px 5px 0px 0px;
 }
 
 /* lifts modal content upwards */
-.modal-content.center{
-    padding-top: 0px;
+.modal-content.center {
+  padding-top: 0px;
 }
 
 /* spaces out content in modals */
-.modal-title,.flip-stars{
-    margin-bottom: 20px;
+.modal-title {
+  margin-bottom: 20px;
+  color: black;
 }
 
-/* increases text box modal size and displays text cursor */
-#userReviews{
-    height: 100px;
-    padding: 5px;
+/* removes radio buttons */
+.radio-btn {
+  display: none;
+}
+
+/* shows correct number of hovered stars */
+.flip-stars {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  margin-bottom: 20px;
+}
+
+/* styles all stars */
+.star {
+  font-size: 2rem;
+  color: black;
+}
+
+/* styles stars as they're clicked */
+.radio-btn:checked ~ .star:before {
+  color: yellow;
+  transition: all 0.1s;
+}
+
+/* styles stars when five is selected */
+input.five-stars:checked ~ .star:before {
+  color: yellow;
+  text-shadow: 1px 1px 30px black;
+}
+
+/* increases comment box modal size and displays text cursor */
+#commentBox {
+  height: 100px;
+  padding: 5px;
 }
 
 /************************************************************************* responsive breakpoints *************************************************************************/
