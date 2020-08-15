@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block bookings %}
+<!-- leave a review: modal -->
+    <!-- modal from materialize -->
+    <div id="modal2" class="modal right-align">
+        <i class="fas fa-times modal-close"></i>
+        <div class="modal-content center">       
+            <form action="#">  
+                <!-- select dropdown from materialize -->
+                <div class="select-box input-field col s12">
+                    <select id="selectedMovie" name="selectedMovie">
+                        <option value="" disabled selected>Select Movie</option>
+                        <option value="submerged_review">Submerged</option>
+                        <option value="roldo_review">Roldo</option>
+                        <option value="bitter_sweet_review">Bitter Sweet</option>
+                        <option value="survivalist_returns_review">Survivalist Returns</option>
+                        <option value="death_by_rose_review">Death by Rose</option>
+                        <option value="the_lost_galaxy_review">The Lost Galaxy</option>
+                        <option value="serayah_review">Serayah</option>
+                        <option value="broken_review">Broken</option>
+                        <option value="hallow_winds_review">Hallow Winds</option>
+                        <option value="s'yan_review">S'Yan</option>
+                    </select>
+                    <label for="selectedMovie"></label>
+                </div>
+                <h4 class="modal-title">My Rating</h4> 
+                <div class="flip-stars">
+                    <input class="radio-btn five-stars" id="star-5" type="radio" name="starRating"/>
+                    <label class="star five-stars fas fa-star" for="star-5"></label>
+
+                    <input class="radio-btn" id="star-4" type="radio" name="starRating"/>
+                    <label class="star fas fa-star" for="star-4"></label>
+
+                    <input class="radio-btn" id="star-3" type="radio" name="starRating"/>
+                    <label class="star fas fa-star" for="star-3"></label>
+
+                    <input class="radio-btn" id="star-2" type="radio" name="starRating"/>
+                    <label class="star fas fa-star" for="star-2"></label>
+
+                    <input class="radio-btn" id="star-1" type="radio" name="starRating"/>
+                    <label class="star one-star fas fa-star" for="star-1"></label>
+                </div>
+
+                <h4 class="modal-title">My Review</h4>
+                <label for="commentBox"></label>
+                <textarea name="commentBox" id="commentBox"></textarea>   
+                <a type="submit" href="#!" class="modal-close btn btn-flat waves-effect waves-black yellow black-text darken-text-4 booking-btn">SUBMIT</a>
+            </form>
+        </div>
+    </div>
+
+    <h2 class="center">My Bookings</h2>
+    <h4>Submerged</h4>
+
+    <div class="container">
+        <div class="full-my-booking row">
+
+            <figure class="col s6">       
+                <img class="my-booking-pictures" src="static/images/drowning.PNG" alt="A picture of a movie poster showing someone drowning.">
+            </figure>   
+
+            <div class="container">
+                <div class="full-my-booking row">
+                    <div class="col s6">  
+                        <div class="container">
+
+                            <div class="row">
+                                <div class="center col 12">
+                                    <a class="my-bookings-btn btn waves-effect yellow black-text darken-text-4 btn">CHANGE</a>
+                                </div>
+                            </div>
+
+                            <div class="row">                            
+                                <div class="center col 12">
+                                    <a class="my-bookings-btn btn waves-effect yellow black-text darken-text-4 btn">CANCEL</a>
+                                </div>
+                            </div> 
+
+                            <div class="row">
+                                <div class="center col 12">
+                                    <a class="my-bookings-btn comments-btn waves-effect yellow black-text darken-text-4 btn modal-trigger" href="#modal2">LEAVE A REVIEW</a>
+                                </div>
+                            </div> 
+
+                        </div>       
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <hr>
+
+{% endblock %}

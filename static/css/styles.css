@@ -307,6 +307,25 @@ input#password {
   border-bottom: 1px solid black;
 }
 
+/************************************************************************* my bookings *************************************************************************/
+/* styles buttons on bookings page */
+.my-bookings-btn {
+  font-weight: 800;
+  margin-top: 0px;
+  width: 130px;
+}
+
+/* styles images on bookings page */
+.my-booking-pictures {
+  width: 80%;
+  height: 12rem;
+}
+
+/* # */
+.full-my-booking {
+  margin-bottom: 0px;
+}
+
 /************************************************************************* responsive breakpoints *************************************************************************/
 /* Bootstrap: Small devices */
 @media (min-width: 576px) {

@@ -34,10 +34,9 @@ def login():
     return render_template("login.html")
 
 
-# this should be a modal so maybe this won't be needed?
-@app.route("/book_tickets")
-def book_tickets():
-    return render_template("book_tickets.html")
+@app.route("/bookings")
+def bookings():
+    return render_template("bookings.html")
 
 
 if __name__ == "__main__":
