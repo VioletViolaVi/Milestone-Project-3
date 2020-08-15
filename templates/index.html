@@ -76,7 +76,100 @@
         <a class="booking-btn col s12 btn waves-effect yellow black-text darken-text-4">BOOK NOW</a>
     </div>
 
-<!-- modal from materialize -->
+
+
+
+
+
+
+
+
+
+
+<!-- book tickets: modal -->
+    <!-- modal and select dropdowns from materialize -->
+    <div id="modal1" class="modal">
+        <div class="right-align">
+           <i class="fas fa-times modal-close"></i> 
+        </div>
+        <div class="modal-content">       
+            <form action="#">
+                <h4 class="modal-title center">Book Tickets</h4>
+
+                <div class="select-box input-field col s12">
+                    <label for="bookedMovie"></label>
+                    <select id="bookedMovie" name="bookedMovie"> 
+                        <option value="" disabled selected>Select Movie</option>                    
+                        <option value="submerged_movie_booked">Submerged</option>
+                        <option value="roldo_movie_booked">Roldo</option>
+                        <option value="bitter_sweet_movie_booked">Bitter Sweet</option>
+                        <option value="survivalist_returns_movie_booked">Survivalist Returns</option>
+                        <option value="death_by_rose_movie_booked">Death by Rose</option>
+                        <option value="the_lost_galaxy_movie_booked">The Lost Galaxy</option>
+                        <option value="serayah_movie_booked">Serayah</option>
+                        <option value="broken_movie_booked">Broken</option>
+                        <option value="hallow_winds_movie_booked">Hallow Winds</option>
+                        <option value="s'yan_movie_booked">S'Yan</option>
+                    </select>  
+                </div>
+
+                <div class="select-box input-field col s12">
+                    <label for="ticketQuantity"></label>
+                    <select id="ticketQuantity" name="ticketQuantity">          
+                        <option value="" disabled selected>Ticket Quantity</option>                                       
+                        <option value="1_ticket_booked">1</option>
+                        <option value="2_tickets_booked">2</option>
+                        <option value="3_tickets_booked">3</option>
+                        <option value="4_tickets_booked">4</option>
+                        <option value="5_tickets_booked">5</option>
+                        <option value="6_tickets_booked">6</option>
+                        <option value="7_tickets_booked">7</option>
+                        <option value="8_tickets_booked">8</option>
+                        <option value="9_tickets_booked">9</option>
+                        <option value="10_tickets_booked">10</option>
+                    </select>         
+                </div>
+
+                <div class="select-box input-field col s12">
+                    <h6 class="left">Date</h6>
+                    <label for="date"></label>
+                    <input id="date" name="date" type="text" class="datepicker">                    
+                </div>   
+
+                <div class="select-box input-field col s12">
+                    <label for="location"></label>
+                    <select id="location" name="location">  
+                        <option value="" disabled selected>Location</option>                                     
+                        <option value="emerald_city">Emerald City</option>
+                        <option value="simsville">Simsville</option>
+                        <option value="yesterfield">Yesterfield</option>
+                        <option value="hopestone_valley">Hopestone Valley</option>
+                    </select>         
+                </div>
+
+                <div class="center">
+                    <a type="submit" href="#!" class="modal-close btn btn-flat waves-effect waves-black yellow black-text darken-text-4 booking-btn">SUBMIT</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- leave a review: modal -->
+    <!-- modal from materialize -->
     <div id="modal2" class="modal right-align">
         <i class="fas fa-times modal-close"></i>
         <div class="modal-content center">       
@@ -136,8 +229,8 @@
             <figure class="col s6">       
                 <img class="review-pictures" src="static/images/drowning.PNG" alt="A picture of a movie poster showing someone drowning.">
             </figure>
-            <div class="col s6 star-review">
-                <div class="flip-stars center">
+            <div class="col s6">
+                <div class="flip-stars center star-average">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -163,8 +256,8 @@
             <figure class="col s6">       
                 <img class="review-pictures" src="static/images/dog.PNG" alt="A picture of a movie poster showing a dog.">
             </figure>
-            <div class="col s6 star-review">
-                <div class="flip-stars center">
+            <div class="col s6">
+                <div class="flip-stars center star-average">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -190,8 +283,8 @@
             <figure class="col s6">       
                 <img class="review-pictures" src="static/images/handholding.PNG" alt="A picture of a movie poster showing holding hands.">
             </figure>
-            <div class="col s6 star-review">
-                <div class="flip-stars center">
+            <div class="col s6">
+                <div class="flip-stars center star-average">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -217,8 +310,8 @@
             <figure class="col s6">       
                 <img class="review-pictures" src="static/images/survival.PNG" alt="A picture of a movie poster showing a pair of hands grabbing onto land.">
             </figure>
-            <div class="col s6 star-review">
-                <div class="flip-stars center">
+            <div class="col s6">
+                <div class="flip-stars center star-average">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -244,8 +337,8 @@
             <figure class="col s6">       
                 <img class="review-pictures" src="static/images/rose.PNG" alt="A picture of a movie poster showing a blood covered rose.">
             </figure>
-            <div class="col s6 star-review">
-                <div class="flip-stars center">
+            <div class="col s6">
+                <div class="flip-stars center star-average">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -271,8 +364,8 @@
             <figure class="col s6">       
                 <img class="review-pictures" src="static/images/moon.PNG" alt="A picture of a movie poster showing a person and the moon.">
             </figure>
-            <div class="col s6 star-review">
-                <div class="flip-stars center">
+            <div class="col s6">
+                <div class="flip-stars center star-average">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -298,8 +391,8 @@
             <figure class="col s6">       
                 <img class="review-pictures" src="static/images/woman.PNG" alt="A picture of a movie poster showing a woman.">
             </figure>
-            <div class="col s6 star-review">
-                <div class="flip-stars center">
+            <div class="col s6">
+                <div class="flip-stars center star-average">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -325,8 +418,8 @@
             <figure class="col s6">       
                 <img class="review-pictures" src="static/images/skull.PNG" alt="A picture of a movie poster showing a skull.">
             </figure>
-            <div class="col s6 star-review">
-                <div class="flip-stars center">
+            <div class="col s6">
+                <div class="flip-stars center star-average">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -352,8 +445,8 @@
             <figure class="col s6">       
                 <img class="review-pictures" src="static/images/seaport.PNG" alt="A picture of a movie poster showing a a person at sea.">
             </figure>
-            <div class="col s6 star-review">
-                <div class="flip-stars center">
+            <div class="col s6">
+                <div class="flip-stars center star-average">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -379,8 +472,8 @@
             <figure class="col s6">       
                 <img class="review-pictures" src="static/images/man.PNG" alt="A picture of a movie poster showing a man.">
             </figure>
-            <div class="col s6 star-review">
-                <div class="flip-stars center">
+            <div class="col s6">
+                <div class="flip-stars center star-average">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>

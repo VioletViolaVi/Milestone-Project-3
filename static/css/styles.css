@@ -201,7 +201,12 @@ input.select-dropdown.dropdown-trigger {
   transform: scaleX(-1);
 }
 
-/* styles all stars */
+/* styles average score stars */
+.star-average .fas.fa-star{
+  font-size: 1rem;
+}
+
+/* styles modal stars */
 .star {
   font-size: 2rem;
   color: black;
