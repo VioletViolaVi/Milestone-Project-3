@@ -49,6 +49,19 @@
         </div>
     </div>
 
+<!-- are you sure: modal -->
+    <!-- modal from materialize -->
+    <div id="modal3" class="modal right-align">
+        <i class="fas fa-times modal-close"></i>
+        <div class="modal-content center">       
+            <form action="#">  
+                <h4 class="modal-title">Are You Sure?</h4>
+                <a type="submit" href="#!" class="modal-close btn btn-flat waves-effect waves-black yellow black-text darken-text-4 booking-btn">YES</a>
+                <a type="submit" href="#!" class="modal-close btn btn-flat waves-effect waves-black yellow black-text darken-text-4 booking-btn">NO</a>   
+            </form>
+        </div>
+    </div>
+
     <h2 class="center">My Bookings</h2>
     <h4>Submerged</h4>
 
@@ -72,7 +85,7 @@
 
                             <div class="row">                            
                                 <div class="center col 12">
-                                    <a class="my-bookings-btn btn waves-effect yellow black-text darken-text-4 btn">CANCEL</a>
+                                    <a class="my-bookings-btn btn waves-effect yellow black-text darken-text-4 btn modal-trigger" href="#modal3">CANCEL</a>
                                 </div>
                             </div> 
 
