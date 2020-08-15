@@ -203,17 +203,16 @@ figure.col.s6 {
   cursor: pointer;
 }
 
-/* styles stars when hovered */
-.star:hover{
-    color: yellow;
-    transform: rotate(-80deg);
-    transition: all .50s;
+/* styles correct number of stars when hovered */
+.star:hover,
+.star:hover ~ label {
+  color: yellow;
+  transition: all 0.1s;
 }
 
 /* styles stars as they're clicked */
 .radio-btn:checked ~ .star:before {
   color: yellow;
-  transition: all 0.1s;
 }
 
 /* styles stars when five is selected */

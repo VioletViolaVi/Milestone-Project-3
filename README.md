@@ -14,5 +14,5 @@ https://unsplash.com/photos/Jigc7F9q7Ik - skull, Photo by Max Kleinen
 https://unsplash.com/photos/NMk1Vggt2hg - survival, Photo by Daniel Jensen
 https://unsplash.com/photos/hYr1wGeDSU0 - woman, Photo by Dollar Gill
 
-
+https://www.youtube.com/watch?v=18-wCoAi9bQ - tar system
 https://www.cssscript.com/simple-5-star-rating-system-with-css-and-html-radios/ - star system
