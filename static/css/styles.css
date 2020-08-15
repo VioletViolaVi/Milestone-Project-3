@@ -1,4 +1,4 @@
-/************************************************************************* universal properties *************************************************************************/
+/* universal properties */
 * {
   padding: 0px;
   margin: 0px;
@@ -95,7 +95,6 @@ body {
 }
 
 /************************************************************************* homepage *************************************************************************/
-
 /************************************************************************* carousel */
 /* styles basis of carousel */
 .carousel.carousel-slider.center {
@@ -159,15 +158,11 @@ figure.col.s6 {
 }
 
 /************************************************************************* modals *************************************************************************/
+
 /* styles close button */
 .fas.fa-times {
   font-size: 2rem;
   padding: 1px 5px 0px 0px;
-}
-
-/* keeps font type of select input titles same as the website */
-input.select-dropdown.dropdown-trigger {
-  font-family: "Scada", sans-serif;
 }
 
 /* spaces out all modal contents */
@@ -182,6 +177,17 @@ input.select-dropdown.dropdown-trigger {
   color: black;
 }
 
+/* reduces space under date heading */
+h6.left {
+  margin-bottom: 0px;
+}
+
+/************************************************************************* dropdowns */
+/* keeps font type of select input titles same as the website */
+input.select-dropdown.dropdown-trigger {
+  font-family: "Scada", sans-serif;
+}
+
 /* makes modal's dropdown text colour match website */
 .dropdown-content li > a,
 .dropdown-content li > span {
@@ -190,6 +196,13 @@ input.select-dropdown.dropdown-trigger {
   padding: 0px 16px;
 }
 
+/* increases comment box modal size and displays text cursor */
+#commentBox {
+  height: 100px;
+  padding: 5px;
+}
+
+/************************************************************************* stars */
 /* removes radio buttons */
 .radio-btn {
   display: none;
@@ -202,7 +215,7 @@ input.select-dropdown.dropdown-trigger {
 }
 
 /* styles average score stars */
-.star-average .fas.fa-star{
+.star-average .fas.fa-star {
   font-size: 1rem;
 }
 
@@ -231,17 +244,52 @@ input.five-stars:checked ~ .star:before {
   text-shadow: 1px 1px 30px black;
 }
 
-/* increases comment box modal size and displays text cursor */
-#commentBox {
-  height: 100px;
-  padding: 5px;
+/************************************************************************* datepicker */
+/* styles datepicker banner */
+.datepicker-date-display {
+  background-color: yellow;
 }
-/* styles datepicker */
 
+/* styles year date, days, full-er date on datepicker banner */
+.datepicker-date-display .year-text,
+.datepicker-table abbr,
+.datepicker-date-display .date-text {
+  color: black;
+}
 
+/* changes colour of number dates under the day letters */
+.datepicker-calendar-container {
+  color: darkgray;
+  font-weight: bolder;
+}
 
+/* styles circle backgrounds on datepicker */
+.datepicker-table td.is-selected {
+  background-color: yellow;
+  color: black;
+}
 
-/************************************************************************* sign up and login *************************************************************************/
+/* changes font colour of current date */
+.is-today {
+  color: goldenrod !important;
+}
+
+/* styles cancel and select buttons on datepicker */
+.datepicker-cancel,
+.datepicker-today,
+.datepicker-done {
+  color: black;
+}
+
+/* increases font weight of buttons on datepicker */
+.datepicker-clear,
+.datepicker-cancel,
+.datepicker-today,
+.datepicker-done {
+  font-weight: 900px;
+}
+
+/************************************************************************* signup and login *************************************************************************/
 /* styles content under its card */
 div.center {
   font-size: 2rem;
@@ -260,7 +308,6 @@ input#password {
 }
 
 /************************************************************************* responsive breakpoints *************************************************************************/
-
 /* Bootstrap: Small devices */
 @media (min-width: 576px) {
 }
