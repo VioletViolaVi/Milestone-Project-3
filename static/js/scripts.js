@@ -12,5 +12,15 @@ $(document).ready(function () {
   // materialize select dropdown
   $("select").formSelect();
   // materialize datepicker
-  $(".datepicker").datepicker();
+  $('.datepicker').datepicker()
+
+  $('.datepicker').datepicker({
+      format: "dd mmmm, yyyy",
+      yearRange: 5,
+      showClearBtn: true,
+      firstDay: 1,
+      i18n:{
+          done: "Select"
+      }
+  });
 });

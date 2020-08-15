@@ -236,6 +236,10 @@ input.five-stars:checked ~ .star:before {
   height: 100px;
   padding: 5px;
 }
+/* styles datepicker */
+
+
+
 
 /************************************************************************* sign up and login *************************************************************************/
 /* styles content under its card */
