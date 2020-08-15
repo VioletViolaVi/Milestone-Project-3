@@ -9,6 +9,8 @@ $(document).ready(function () {
   });
   // materialize modal
   $(".modal").modal();
-  //   materialize select dropdown
+  // materialize select dropdown
   $("select").formSelect();
+  // materialize datepicker
+  $(".datepicker").datepicker();
 });

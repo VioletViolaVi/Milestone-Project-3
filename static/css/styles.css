@@ -125,12 +125,12 @@ body {
 .booking-btn,
 .comments-btn {
   font-weight: 800;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 /* styles book now button */
 .booking-btn {
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
 /************************************************************************* reviews */
@@ -158,18 +158,23 @@ figure.col.s6 {
   font-size: 0.9rem;
 }
 
-/************************************************************************* modal */
+/************************************************************************* modals *************************************************************************/
 /* styles close button */
 .fas.fa-times {
   font-size: 2rem;
   padding: 1px 5px 0px 0px;
 }
 
+/* keeps font type of select input titles same as the website */
+input.select-dropdown.dropdown-trigger {
+  font-family: "Scada", sans-serif;
+}
+
 /* spaces out all modal contents */
 .modal-title,
 .select-box,
 .flip-stars {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 /* styles modal titles */
@@ -229,18 +234,20 @@ input.five-stars:checked ~ .star:before {
 
 /************************************************************************* sign up and login *************************************************************************/
 /* styles content under its card */
-div.center{
-    font-size: 2rem;
+div.center {
+  font-size: 2rem;
 }
 
 /* styles labels */
-label.black-text{
-    font-size: 1.5rem;
+label.black-text {
+  font-size: 1.5rem;
 }
 
 /* styles input boxes */
-input#email,input#username,input#password{
-    border-bottom: 1px solid black;
+input#email,
+input#username,
+input#password {
+  border-bottom: 1px solid black;
 }
 
 /************************************************************************* responsive breakpoints *************************************************************************/

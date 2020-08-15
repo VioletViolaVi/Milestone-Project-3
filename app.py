@@ -34,6 +34,12 @@ def login():
     return render_template("login.html")
 
 
+# this should be a modal so maybe this won't be needed?
+@app.route("/book_tickets")
+def book_tickets():
+    return render_template("book_tickets.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"), port=int(
         os.environ.get("PORT")), debug=True)
