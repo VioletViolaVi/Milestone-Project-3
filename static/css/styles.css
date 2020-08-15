@@ -227,6 +227,22 @@ input.five-stars:checked ~ .star:before {
   padding: 5px;
 }
 
+/************************************************************************* sign up and login *************************************************************************/
+/* styles content under its card */
+div.center{
+    font-size: 2rem;
+}
+
+/* styles labels */
+label.black-text{
+    font-size: 1.5rem;
+}
+
+/* styles input boxes */
+input#email,input#username,input#password{
+    border-bottom: 1px solid black;
+}
+
 /************************************************************************* responsive breakpoints *************************************************************************/
 
 /* Bootstrap: Small devices */

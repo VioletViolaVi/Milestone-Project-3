@@ -22,8 +22,16 @@ mongo = PyMongo(app)
 @app.route("/index")
 def home():
     return render_template("index.html")
-    # bookings = mongo.db.all_booked_details.find()
-    # return render_template("home.html", bookings=bookings)
+
+
+@app.route("/signup")
+def signup():
+    return render_template("signup.html")
+
+
+@app.route("/login")
+def login():
+    return render_template("login.html")
 
 
 if __name__ == "__main__":

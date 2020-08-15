@@ -1,0 +1,35 @@
+{% extends "base.html" %} {% block signup %} 
+
+    <div class="center black-text">
+        <h2>Sign Up</h2>
+    </div>
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card yellow accent-1">
+                <div class="card-content white-text">
+                    <form action="#">
+                    
+	                    <label for="email" class="black-text">email</label>
+	                    <input type="email" id="email" name="email" size="30" required> 
+                
+	                    <label for="username" class="black-text">username</label>
+	                    <input type="text" id="username" name="username" size="30" required>
+
+                        <label for="password" class="black-text">password</label>
+                        <input type="password" id="password" name="password" minlength="7" required>
+
+                        <div class="center">
+                            <a type="submit" href="#!" class="modal-close btn btn-flat waves-effect waves-black yellow accent-4 black-text darken-text-4 booking-btn">SIGN UP</a>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="center">
+        <p>Already signed up?</p>
+        <a href="#">Log In</a>
+    </div>
+
+{% endblock %}
