@@ -4,69 +4,69 @@
         <h2>Movies</h2>
     </div>
 
-<!-- carousel from materialize -->
+    <!-- carousel from materialize -->
     <div class="carousel carousel-slider center">
         <!-- fixed review button -->
         <div class="carousel-fixed-item center">
-            <a class="btn waves-effect yellow black-text darken-text-4 reviews-btn">Reviews</a>
+            <a class="btn waves-effect yellow black-text darken-text-4 fixed-review-btn" href="#movieReviews">Reviews</a>
         </div>
         <!-- drowning movie -->
         <figure>
-            <a class="carousel-item" href="#seven!">
+            <a class="carousel-item" href="#submerged">
                 <img src="static/images/drowning.PNG" alt="A picture of a movie poster showing someone drowning.">
             </a>
         </figure>
         <!-- dog movie -->
         <figure> 
-            <a class="carousel-item" href="#one!">        
+            <a class="carousel-item" href="#roldo">        
                 <img src="static/images/dog.PNG" alt="A picture of a movie poster showing a dog.">
             </a>
         </figure>
         <!-- moon movie -->
         <figure>
-            <a class="carousel-item" href="#four!">
+            <a class="carousel-item" href="#theLostGalaxy">
                 <img src="static/images/moon.PNG" alt="A picture of a movie poster showing a person and the moon.">
             </a>
         </figure>
         <!-- survival movie -->
         <figure>
-            <a class="carousel-item" href="#three!">
+            <a class="carousel-item" href="#survivalistReturns">
                 <img src="static/images/survival.PNG" alt="A picture of a movie poster showing a pair of hands grabbing onto land.">
             </a>     
         </figure>
         <!-- rose movie -->
         <figure>
-            <a class="carousel-item" href="#five!">
+            <a class="carousel-item" href="#deathByRose">
                 <img src="static/images/rose.PNG" alt="A picture of a movie poster showing a blood covered rose.">
             </a>
         </figure>
         <!-- handholding movie -->
         <figure>
-            <a class="carousel-item" href="#two!">
+            <a class="carousel-item" href="#bitterSweet">
                 <img src="static/images/handholding.PNG" alt="A picture of a movie poster showing holding hands.">
             </a>
         </figure>
         <!-- woman movie -->
         <figure>
-            <a class="carousel-item" href="#three!">
+            <a class="carousel-item" href="#serayah">
                 <img src="static/images/woman.PNG" alt="A picture of a movie poster showing a woman.">
             </a> 
         </figure>
         <!-- skull movie -->
         <figure>
-            <a class="carousel-item" href="#seven!">
+            <a class="carousel-item" href="#broken">
                 <img src="static/images/skull.PNG" alt="A picture of a movie poster showing a skull.">
             </a>
         </figure>
         <!-- seaport movie -->
         <figure>
-            <a class="carousel-item" href="#six!">
+            <a class="carousel-item" href="#hallowWinds">
                 <img src="static/images/seaport.PNG" alt="A picture of a movie poster showing a a person at sea.">
             </a>
         </figure>
         <!-- man movie -->
         <figure>
-            <a class="carousel-item" href="#three!">
+            <a class="carousel-item" href="#s'yan">
                 <img src="static/images/man.PNG" alt="A picture of a movie poster showing a man.">
             </a>   
         </figure>
@@ -76,7 +76,7 @@
         <a class="booking-btn col s12 btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#modal1">BOOK NOW</a>
     </div>
 
-<!-- book tickets: modal -->
+    <!-- book tickets: modal -->
     <!-- modal from materialize -->
     <div id="modal1" class="modal">
         <div class="right-align">
@@ -145,7 +145,7 @@
         </div>
     </div>
 
-<!-- leave a review: modal -->
+    <!-- leave a review: modal -->
     <!-- modal from materialize -->
     <div id="modal2" class="modal right-align">
         <i class="fas fa-times modal-close"></i>
@@ -194,14 +194,14 @@
         </div>
     </div>
 
-<!-- reviews -->
-    <div class="center">
+    <div id="movieReviews">
+        <!-- reviews -->
+        <div class="center">
         <h3>REVIEWS</h3>
-    </div>
-
-    <!-- drowning review -->
-    <h4>Submerged</h4>
-    <div class="container movie-review"> 
+        </div>
+        <!-- drowning review -->
+        <h4 id="submerged">Submerged</h4>
+        <div class="container movie-review"> 
         <div class="row">
             <figure class="col s6">       
                 <img class="review-pictures" src="static/images/drowning.PNG" alt="A picture of a movie poster showing someone drowning.">
@@ -224,11 +224,10 @@
             </div>          
         </div>
         <hr>      
-    </div>
-
-    <!-- dog review -->
-    <h4>Roldo</h4>
-    <div class="container movie-review"> 
+        </div>
+        <!-- dog review -->
+        <h4 id="roldo">Roldo</h4>
+        <div class="container movie-review"> 
         <div class="row">
             <figure class="col s6">       
                 <img class="review-pictures" src="static/images/dog.PNG" alt="A picture of a movie poster showing a dog.">
@@ -251,10 +250,10 @@
             </div>          
         </div>
         <hr>      
-    </div>
-    <!-- moon review -->
-    <h4>The Lost Galaxy</h4>
-    <div class="container movie-review"> 
+        </div>
+        <!-- moon review -->
+        <h4 id="theLostGalaxy">The Lost Galaxy</h4>
+        <div class="container movie-review"> 
         <div class="row">
             <figure class="col s6">       
                 <img class="review-pictures" src="static/images/moon.PNG" alt="A picture of a movie poster showing a person and the moon.">
@@ -277,11 +276,10 @@
             </div>          
         </div>
         <hr>      
-    </div>
-    
-    <!-- survival review -->
-    <h4>Survivalist Returns</h4>
-    <div class="container movie-review"> 
+        </div>
+        <!-- survival review -->
+        <h4 id="survivalistReturns">Survivalist Returns</h4>
+        <div class="container movie-review"> 
         <div class="row">
             <figure class="col s6">       
                 <img class="review-pictures" src="static/images/survival.PNG" alt="A picture of a movie poster showing a pair of hands grabbing onto land.">
@@ -304,11 +302,10 @@
             </div>          
         </div>
         <hr>      
-    </div>
-
-    <!-- rose review -->
-    <h4>Death by Rose</h4>
-    <div class="container movie-review"> 
+        </div>
+        <!-- rose review -->
+        <h4 id="deathByRose">Death by Rose</h4>
+        <div class="container movie-review"> 
         <div class="row">
             <figure class="col s6">       
                 <img class="review-pictures" src="static/images/rose.PNG" alt="A picture of a movie poster showing a blood covered rose.">
@@ -331,11 +328,10 @@
             </div>          
         </div>
         <hr>      
-    </div>
-
-    <!-- handholding review -->
-    <h4>Bitter Sweet</h4>
-    <div class="container movie-review"> 
+        </div>
+        <!-- handholding review -->
+        <h4 id="bitterSweet">Bitter Sweet</h4>
+        <div class="container movie-review"> 
         <div class="row">
             <figure class="col s6">       
                 <img class="review-pictures" src="static/images/handholding.PNG" alt="A picture of a movie poster showing holding hands.">
@@ -358,11 +354,10 @@
             </div> 
         </div>
         <hr>      
-    </div>
-
-    <!-- woman review -->
-    <h4>Serayah</h4>
-    <div class="container movie-review"> 
+        </div>
+        <!-- woman review -->
+        <h4 id="serayah">Serayah</h4>
+        <div class="container movie-review"> 
         <div class="row">
             <figure class="col s6">       
                 <img class="review-pictures" src="static/images/woman.PNG" alt="A picture of a movie poster showing a woman.">
@@ -385,11 +380,10 @@
             </div>          
         </div>
         <hr>      
-    </div>
-
-    <!-- skull review -->
-    <h4>Broken</h4>
-    <div class="container movie-review"> 
+        </div>
+        <!-- skull review -->
+        <h4 id="broken">Broken</h4>
+        <div class="container movie-review"> 
         <div class="row">
             <figure class="col s6">       
                 <img class="review-pictures" src="static/images/skull.PNG" alt="A picture of a movie poster showing a skull.">
@@ -412,11 +406,10 @@
             </div>          
         </div>
         <hr>      
-    </div>
-
-    <!-- seaport review -->
-    <h4>Hallow Winds</h4>
-    <div class="container movie-review"> 
+        </div>
+        <!-- seaport review -->
+        <h4 id="hallowWinds">Hallow Winds</h4>
+        <div class="container movie-review"> 
         <div class="row">
             <figure class="col s6">       
                 <img class="review-pictures" src="static/images/seaport.PNG" alt="A picture of a movie poster showing a a person at sea.">
@@ -439,11 +432,10 @@
             </div>          
         </div>
         <hr>      
-    </div>
-
-    <!-- man review -->
-    <h4>S'Yan</h4>
-    <div class="container movie-review"> 
+        </div>
+        <!-- man review -->
+        <h4 id="s'yan">S'Yan</h4>
+        <div class="container movie-review"> 
         <div class="row">
             <figure class="col s6">       
                 <img class="review-pictures" src="static/images/man.PNG" alt="A picture of a movie poster showing a man.">
@@ -466,6 +458,7 @@
             </div>          
         </div>
         <hr>      
+        </div>
     </div>
 
 {% endblock %}

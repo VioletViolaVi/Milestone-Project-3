@@ -119,11 +119,16 @@ body {
   background-color: yellow;
 }
 
-/* styles review and book now button */
-.reviews-btn,
+/* styles fixed review, comments and book now button */
+.fixed-review-btn,
 .booking-btn,
 .comments-btn {
   font-weight: 800;
+}
+
+/* styles review and comments button */
+.reviews-btn,
+.comments-btn {
   margin-top: 15px;
 }
 

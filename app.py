@@ -34,9 +34,9 @@ def login():
     return render_template("login.html")
 
 
-@app.route("/bookings")
+@app.route("/my_bookings")
 def bookings():
-    return render_template("bookings.html")
+    return render_template("my_bookings.html")
 
 
 if __name__ == "__main__":
