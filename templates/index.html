@@ -461,4 +461,15 @@
         </div>
     </div>
 
+
+    {% for review in reviews %}
+        {{ review.movie_name }} <br>
+        {{ review.rating }} <br>
+        {{ review.review }} <br>
+        {{ review.user }} <br>
+    {% endfor %}
+
+
+
+
 {% endblock %}
