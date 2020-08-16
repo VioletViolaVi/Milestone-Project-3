@@ -189,11 +189,6 @@ h6.left {
   }
 }
 
-/* .modal.datepicker-modal.open{
-    top: 0%;
-} */
-
-
 /************************************************************************* dropdowns */
 /* keeps font type of select input titles same as the website */
 input.select-dropdown.dropdown-trigger {
@@ -260,6 +255,7 @@ input.five-stars:checked ~ .star:before {
 /* styles datepicker banner */
 .datepicker-date-display {
   background-color: yellow;
+  padding: 5px 22px 15px 22px;
 }
 
 /* styles year date, days, full-er date on datepicker banner */
@@ -293,12 +289,15 @@ input.five-stars:checked ~ .star:before {
   color: black;
 }
 
-/* increases font weight of buttons on datepicker */
+/* styles buttons on datepicker */
 .datepicker-clear,
 .datepicker-cancel,
 .datepicker-today,
 .datepicker-done {
-  font-weight: 900px;
+  font-family: "Scada", sans-serif;
+  background-color: yellow;
+  margin: 2px;
+  font-weight: 900;
 }
 
 /************************************************************************* signup and login *************************************************************************/

@@ -14,7 +14,7 @@ $(document).ready(function () {
   // materialize datepicker
   $(".datepicker").datepicker({
     format: "dd mmmm, yyyy",
-    yearRange: 5,
+    yearRange: 3,
     showClearBtn: true,
     firstDay: 1,
     i18n: {
