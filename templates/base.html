@@ -9,43 +9,45 @@
     <script src="https://kit.fontawesome.com/bfcbb8f6a3.js" crossorigin="anonymous"></script>
     <!-- materialize css link -->
     <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
-    <!--inherited custom css link -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" type="text/css">
+    <!-- custom css link -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <!-- specific custom css link -->
     {% block styles %} {% endblock styles %}
     <title>Cinemagic</title>
   </head>
 
   <body>
-    <!-- content in top nav -->
-    <nav class="yellow accent-2">
-        <i data-target="slide-out" class="sidenav-trigger fas fa-bars black-text"></i>
-        <h1 id="mainTitle" class="black-text">Cinemagic</h1>
-        <ul class="top-nav">
-            <div id="topNavLinksContainer">
-                <li><a class="top-nav-links black-text" href="#">Home</a></li>
-                <li><a class="top-nav-links black-text" href="#">Sign Up</a></li>
-                <li><a class="top-nav-links black-text" href="#">Log In</a></li>
-                <li><a class="top-nav-links black-text" href="#">My Bookings</a></li>
-                <li><a class="top-nav-links black-text" href="#">Log Out</a></li>
+    <header>
+        <!-- content in top nav -->
+        <nav class="yellow accent-2">
+            <i data-target="slide-out" class="sidenav-trigger fas fa-bars black-text"></i>
+            <a href="{{ url_for('home') }}"><h1 id="mainTitle" class="black-text">Cinemagic</h1></a>
+            <ul class="top-nav">
+                <div id="topNavLinksContainer">
+                    <li><a class="top-nav-links black-text" href="{{ url_for('home') }}">Home</a></li>
+                    <li><a class="top-nav-links black-text" href="{{ url_for('signup') }}">Sign Up</a></li>
+                    <li><a class="top-nav-links black-text" href="{{ url_for('login') }}">Log In</a></li>
+                    <li><a class="top-nav-links black-text" href="{{ url_for('my_bookings') }}">My Bookings</a></li>
+                    <li><a class="top-nav-links black-text" href="#">Log Out</a></li>
+                </div>
+            </ul>
+        </nav>
+    
+        <!-- slides sidenav -->
+        <ul id="slide-out" class="sidenav yellow accent-2">
+            <!-- content in side nav -->
+            <div id="sideNavLinksContainer">
+                <li><a class="side-nav-links black-text waves-effect" href="{{ url_for('home') }}"><i class="fas fa-home black-text"></i>Home</a></li>
+                <li><a class="side-nav-links black-text waves-effect" href="{{ url_for('signup') }}"><i class="fas fa-user black-text"></i>Sign Up</a></li>
+                <li><a class="side-nav-links black-text waves-effect" href="{{ url_for('login') }}"><i class="fas fa-sign-in-alt black-text"></i>Log In</a></li>
+                <li><a class="side-nav-links black-text waves-effect" href="{{ url_for('my_bookings') }}"><i class="fas fa-book black-text"></i>My Bookings</a></li>
+                <li><a class="side-nav-links black-text waves-effect" href="#"><i class="fas fa-sign-out-alt black-text"></i>Log Out</a></li>
             </div>
         </ul>
-    </nav>
-
-    <!-- slides sidenav -->
-    <ul id="slide-out" class="sidenav yellow accent-2">
-      <!-- content in side nav -->
-        <div id="sideNavLinksContainer">
-            <li><a class="side-nav-links black-text waves-effect" href="#"><i class="fas fa-home black-text"></i>Home</a></li>
-            <li><a class="side-nav-links black-text waves-effect" href="#"><i class="fas fa-user black-text"></i>Sign Up</a></li>
-            <li><a class="side-nav-links black-text waves-effect" href="#"><i class="fas fa-sign-in-alt black-text"></i>Log In</a></li>
-            <li><a class="side-nav-links black-text waves-effect" href="#"><i class="fas fa-book black-text"></i>My Bookings</a></li>
-            <li><a class="side-nav-links black-text waves-effect" href="#"><i class="fas fa-sign-out-alt black-text"></i>Log Out</a></li>
-        </div>
-    </ul>
-
-    <section>
-        <!-- inherited templates -->
+    </header>
+    
+    <!-- inherited templates -->
+    <section>    
         {% block home %}
         {% endblock %}
 
@@ -55,7 +57,7 @@
         {% block login %}
         {% endblock %}
 
-        {% block my_bookings %}
+        {% block my_bookings %}    
         {% endblock %}
     </section>
 
@@ -98,7 +100,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <!-- materialize js link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- inherited custom js link -->
+    <!-- custom js link -->
     <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
     <!-- specific custom js link -->
     {% block scripts %} {% endblock scripts %}

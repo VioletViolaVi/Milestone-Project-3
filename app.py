@@ -19,7 +19,7 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/index")
+@app.route("/home")
 def home():
     reviews = mongo.db.reviews.find()
     return render_template("index.html", reviews=reviews)
@@ -36,7 +36,7 @@ def login():
 
 
 @app.route("/my_bookings")
-def bookings():
+def my_bookings():
     return render_template("my_bookings.html")
 
 
