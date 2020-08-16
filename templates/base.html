@@ -46,13 +46,28 @@
         </ul>
     </header>
     
+    <!-- to display flash messages -->
+    <section>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row">
+                        <h4 class="center-align flash_messages">{{ message }}</h4> 
+                    </div>             
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
+
     <!-- inherited templates -->
     <section>    
         {% block home %}
         {% endblock %}
 
-        {% block signup %}
-        {% endblock %}
+        <main class="container">
+            {% block signup %}
+            {% endblock %}
+        </main>
 
         {% block login %}
         {% endblock %}

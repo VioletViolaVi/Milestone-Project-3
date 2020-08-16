@@ -3,6 +3,7 @@ from flask import (
     Flask, flash, render_template, redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
@@ -25,8 +26,30 @@ def home():
     return render_template("index.html", reviews=reviews)
 
 
-@app.route("/signup")
+@app.route("/signup", methods=["GET", "POST"])
 def signup():
+    if request.method == "POST":
+        # comparing username from db with username from html form
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        # produced if username from html form matches username from db
+        if existing_user:
+            flash("Username already exists!")
+            # takes users back to signup page to try signing up again
+            return redirect(url_for("signup"))
+
+        # (else) saves signup form input when usernames are not matched
+        signup = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(signup)
+
+        # puts new user in session cookie
+        session["user"] = request.form.get("username").lower()
+        flash("Sign Up Successful!")
+
     return render_template("signup.html")
 
 
