@@ -29,13 +29,12 @@ def home():
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     if request.method == "POST":
-        # comparing username from db with username from html form
+        # compares username from db w/ username from html form
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-
-        # produced if username from html form matches username from db
+        # occurs if username from html form matches username from db
         if existing_user:
-            flash("Username already exists!")
+            flash("Username Already Exists!")
             # takes users back to signup page to try signing up again
             return redirect(url_for("signup"))
 
@@ -49,12 +48,32 @@ def signup():
         # puts new user in session cookie
         session["user"] = request.form.get("username").lower()
         flash("Sign Up Successful!")
-
     return render_template("signup.html")
 
 
-@app.route("/login")
+@app.route("/login", methods=["GET", "POST"])
 def login():
+    if request.method == "POST":
+        # checks if username exists in db
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            # checks if hashed password matches input
+            if check_password_hash(
+                    existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash(f"Welcome back {request.form.get('username')}!")
+                return redirect(url_for("home"))
+            else:
+                # occurs when password is wrong
+                flash("Incorrect Username and/or Password")
+                return redirect(url_for("login"))
+        else:
+            # occurs when not an existing user
+            flash("Incorrect Username and/or Password")
+            return redirect(url_for("login"))
+
     return render_template("login.html")
 
 
