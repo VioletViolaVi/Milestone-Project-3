@@ -467,19 +467,17 @@
                     </div>
                 </div>          
             </div>
-            <div class="review-box"></div>    
+            <div class="review-box">
+                {% for review in reviews %}
+                    <p>{{ review.user_review }}</p>
+                    <p><b><i>~{{ review.user }}</i></b></p>
+                {% endfor %}
+            </div>    
         </div>
         <hr>
-        
+
     </div>
 
-
-    {% for review in reviews %}
-        {{ review.movie_name }} <br>
-        {{ review.rating }} <br>
-        {{ review.review }} <br>
-        {{ review.user }} <br>
-    {% endfor %}
 
 
 {% endblock %}

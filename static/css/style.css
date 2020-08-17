@@ -165,6 +165,7 @@ figure.col.s6 {
   border: solid black 3px;
   height: 100px;
   margin: 10px 0px;
+  padding: 3px;
 }
 
 /* leave a review button */
