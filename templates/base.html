@@ -25,10 +25,13 @@
             <ul class="top-nav">
                 <div id="topNavLinksContainer">
                     <li><a class="top-nav-links black-text" href="{{ url_for('home') }}">Home</a></li>
-                    <li><a class="top-nav-links black-text" href="{{ url_for('signup') }}">Sign Up</a></li>
-                    <li><a class="top-nav-links black-text" href="{{ url_for('login') }}">Log In</a></li>
-                    <li><a class="top-nav-links black-text" href="{{ url_for('my_bookings') }}">My Bookings</a></li>
-                    <li><a class="top-nav-links black-text" href="{{ url_for('logout') }}">Log Out</a></li>
+                    {% if not session.user %}
+                        <li><a class="top-nav-links black-text" href="{{ url_for('signup') }}">Sign Up</a></li>
+                        <li><a class="top-nav-links black-text" href="{{ url_for('login') }}">Log In</a></li>
+                    {% else %}
+                        <li><a class="top-nav-links black-text" href="{{ url_for('my_bookings') }}">My Bookings</a></li>
+                        <li><a class="top-nav-links black-text" href="{{ url_for('logout') }}">Log Out</a></li>
+                    {% endif %}
                 </div>
             </ul>
         </nav>
@@ -38,10 +41,13 @@
             <!-- content in side nav -->
             <div id="sideNavLinksContainer">
                 <li><a class="side-nav-links black-text waves-effect" href="{{ url_for('home') }}"><i class="fas fa-home black-text"></i>Home</a></li>
-                <li><a class="side-nav-links black-text waves-effect" href="{{ url_for('signup') }}"><i class="fas fa-user black-text"></i>Sign Up</a></li>
-                <li><a class="side-nav-links black-text waves-effect" href="{{ url_for('login') }}"><i class="fas fa-sign-in-alt black-text"></i>Log In</a></li>
-                <li><a class="side-nav-links black-text waves-effect" href="{{ url_for('my_bookings') }}"><i class="fas fa-book black-text"></i>My Bookings</a></li>
-                <li><a class="side-nav-links black-text waves-effect" href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt black-text"></i>Log Out</a></li>
+                {% if not session.user %}              
+                    <li><a class="side-nav-links black-text waves-effect" href="{{ url_for('signup') }}"><i class="fas fa-user black-text"></i>Sign Up</a></li>
+                    <li><a class="side-nav-links black-text waves-effect" href="{{ url_for('login') }}"><i class="fas fa-sign-in-alt black-text"></i>Log In</a></li>
+                {% else %}
+                    <li><a class="side-nav-links black-text waves-effect" href="{{ url_for('my_bookings') }}"><i class="fas fa-book black-text"></i>My Bookings</a></li>
+                    <li><a class="side-nav-links black-text waves-effect" href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt black-text"></i>Log Out</a></li>
+                {% endif %}
             </div>
         </ul>
     </header>
