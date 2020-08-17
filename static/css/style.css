@@ -325,7 +325,7 @@ div.center {
 
 /* styles labels */
 label.black-text {
-  font-size: 1.5rem;
+  font-size: 1.15rem;
 }
 
 /* styles input boxes */
@@ -333,6 +333,11 @@ input#email,
 input#username,
 input#password {
   border-bottom: 1px solid black;
+}
+
+/* moves ticket quantity title to the left */
+.input-field.col label {
+    left: 0rem;
 }
 
 /************************************************************************* my bookings *************************************************************************/

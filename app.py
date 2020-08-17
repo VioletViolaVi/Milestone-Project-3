@@ -22,8 +22,10 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
+    movie_names = list(mongo.db.movies.find())
     reviews = mongo.db.reviews.find()
-    return render_template("index.html", reviews=reviews, )
+    return render_template(
+        "index.html", movie_names=movie_names, reviews=reviews)
 
 
 @app.route("/signup", methods=["GET", "POST"])
@@ -81,7 +83,8 @@ def login():
 
 @app.route("/my_bookings")
 def my_bookings():
-    return render_template("my_bookings.html")
+    movie_names = list(mongo.db.movies.find())
+    return render_template("my_bookings.html", movie_names=movie_names)
 
 
 @app.route("/logout")

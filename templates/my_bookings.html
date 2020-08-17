@@ -1,29 +1,24 @@
 {% extends "base.html" %}
 {% block my_bookings %}
 
-<!-- leave a review: modal -->
+    <!-- leave a review: modal -->
     <!-- modal from materialize -->
     <div id="modal2" class="modal right-align">
         <i class="fas fa-times modal-close"></i>
         <div class="modal-content center">       
             <form action="#">  
+
                 <!-- select dropdown from materialize -->
                 <div class="select-box input-field col s12">
                     <select id="selectedMovie" name="selectedMovie">
                         <option value="" disabled selected>Select Movie</option>
-                        <option value="submerged_review">Submerged</option>
-                        <option value="roldo_review">Roldo</option>
-                        <option value="the_lost_galaxy_review">The Lost Galaxy</option>
-                        <option value="survivalist_returns_review">Survivalist Returns</option>
-                        <option value="death_by_rose_review">Death by Rose</option>
-                        <option value="bitter_sweet_review">Bitter Sweet</option>
-                        <option value="serayah_review">Serayah</option>
-                        <option value="broken_review">Broken</option>
-                        <option value="hallow_winds_review">Hallow Winds</option>
-                        <option value="s'yan_review">S'Yan</option>
+                        {% for movie_name in movie_names %}
+                            <option value="{{ movie_name.movie_name }}">{{ movie_name.movie_name }}</option>
+                        {% endfor %}
                     </select>
                     <label for="selectedMovie"></label>
                 </div>
+
                 <h4 class="modal-title">My Rating</h4> 
                 <div class="flip-stars">
                     <input class="radio-btn five-stars" id="star-5" type="radio" name="starRating"/>
@@ -50,7 +45,7 @@
         </div>
     </div>
 
-<!-- book tickets: modal -->
+    <!-- book tickets: modal -->
     <!-- modal from materialize -->
     <div id="modal1" class="modal">
         <div class="right-align">
@@ -59,39 +54,21 @@
         <div class="modal-content">       
             <form action="#">
                 <h4 class="modal-title center">Book Tickets</h4>
+
                 <!-- select dropdown from materialize -->
                 <div class="select-box input-field col s12">
                     <label for="bookedMovie"></label>
                     <select id="bookedMovie" name="bookedMovie"> 
                         <option value="" disabled selected>Select Movie</option>                    
-                        <option value="submerged_movie_booked">Submerged</option>
-                        <option value="roldo_movie_booked">Roldo</option>
-                        <option value="the_lost_galaxy_movie_booked">The Lost Galaxy</option>
-                        <option value="survivalist_returns_movie_booked">Survivalist Returns</option>
-                        <option value="death_by_rose_movie_booked">Death by Rose</option>
-                        <option value="bitter_sweet_movie_booked">Bitter Sweet</option>
-                        <option value="serayah_movie_booked">Serayah</option>
-                        <option value="broken_movie_booked">Broken</option>
-                        <option value="hallow_winds_movie_booked">Hallow Winds</option>
-                        <option value="s'yan_movie_booked">S'Yan</option>
+                        {% for movie_name in movie_names %}
+                            <option value="{{ movie_name.movie_name }}">{{ movie_name.movie_name }}</option>
+                        {% endfor %}
                     </select>  
                 </div>
 
                 <div class="select-box input-field col s12">
-                    <label for="ticketQuantity"></label>
-                    <select id="ticketQuantity" name="ticketQuantity">          
-                        <option value="" disabled selected>Ticket Quantity</option>                                       
-                        <option value="1_ticket_booked">1</option>
-                        <option value="2_tickets_booked">2</option>
-                        <option value="3_tickets_booked">3</option>
-                        <option value="4_tickets_booked">4</option>
-                        <option value="5_tickets_booked">5</option>
-                        <option value="6_tickets_booked">6</option>
-                        <option value="7_tickets_booked">7</option>
-                        <option value="8_tickets_booked">8</option>
-                        <option value="9_tickets_booked">9</option>
-                        <option value="10_tickets_booked">10</option>
-                    </select>         
+                    <label for="ticketQuantity" class="black-text">Ticket Quantity</label>
+                    <input type="number" id="ticketQuantity" name="ticketQuantity" min="1" required>      
                 </div>
 
                 <div class="select-box input-field col s12">
@@ -119,7 +96,7 @@
         </div>
     </div>
 
-<!-- are you sure: modal -->
+    <!-- are you sure: modal -->
     <!-- modal from materialize -->
     <div id="modal3" class="modal right-align">
         <i class="fas fa-times modal-close"></i>
