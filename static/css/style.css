@@ -156,15 +156,15 @@ figure.col.s6 {
 
 /* stlyes movie pictures for review section */
 .review-pictures {
-  width: 80%;
-  height: 18rem;
+  width: 100%;
+  height: 11rem;
 }
 
 /* style review box */
 .review-box {
   border: solid black 3px;
   height: 100px;
-  margin-top: 10px;
+  margin: 10px 0px;
 }
 
 /* leave a review button */
