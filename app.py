@@ -23,16 +23,17 @@ mongo = PyMongo(app)
 @app.route("/home")
 def home():
     reviews = mongo.db.reviews.find()
-    return render_template("index.html", reviews=reviews)
+    return render_template("index.html", reviews=reviews, )
 
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     if request.method == "POST":
-        # compares username from db w/ username from html form
+        # searches for same username in mongo db for comprison
         existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
-        # occurs if username from html form matches username from db
+            {"user": request.form.get("username").lower()})
+
+        # occurs when username typed is same as username found by above code
         if existing_user:
             flash("Username Already Exists!")
             # takes users back to signup page to try signing up again
@@ -40,8 +41,9 @@ def signup():
 
         # (else) saves signup form input when usernames are not matched
         signup = {
-            "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
+            "user": request.form.get("username").lower(),
+            "email":  request.form.get("email").lower(),
+            "pwd": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(signup)
 
@@ -56,12 +58,12 @@ def login():
     if request.method == "POST":
         # checks if username exists in db
         existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
+            {"user": request.form.get("username").lower()})
 
         if existing_user:
             # checks if hashed password matches input
             if check_password_hash(
-                    existing_user["password"], request.form.get("password")):
+                    existing_user["pwd"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash(f"Welcome back {request.form.get('username')}!")
                 return redirect(url_for("home"))
@@ -80,6 +82,23 @@ def login():
 @app.route("/my_bookings")
 def my_bookings():
     return render_template("my_bookings.html")
+
+
+@app.route("/logout")
+def logout():
+    flash("You have been logged out!")
+    # removes session cookies to logout
+    session.pop("user")
+    return redirect(url_for("home"))
+
+
+# if request.method == "POST":
+#     provided_review = {
+#         "user": request.form.get("username").lower(),
+#         "movie_name": request.form.get("selectedMovie").lower(),
+#         "star_rating": request.form.get("starRating").lower(),
+#         "user_review": request.form.get("commentBox").lower()
+#     }
 
 
 if __name__ == "__main__":

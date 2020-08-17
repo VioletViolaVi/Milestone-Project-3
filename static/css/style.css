@@ -94,6 +94,7 @@ body {
   margin-bottom: 0px;
 }
 
+/************************************************************************* flash messages */
 /* styles flash messages */
 .flash_messages {
   background-color: rgba(255, 255, 0, 0.575);
@@ -221,6 +222,7 @@ input.select-dropdown.dropdown-trigger {
 #commentBox {
   height: 100px;
   padding: 5px;
+  font-size: 1rem;
 }
 
 /************************************************************************* stars */

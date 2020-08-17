@@ -138,7 +138,7 @@
                 </div>
 
                 <div class="center">
-                    <a type="submit" href="#!" class="modal-close btn btn-flat waves-effect waves-black yellow black-text darken-text-4 booking-btn">SUBMIT</a>
+                    <button type="submit" class="modal-close btn btn-flat waves-effect waves-black yellow black-text darken-text-4 booking-btn">SUBMIT</button>
                 </div>
 
             </form>
@@ -150,7 +150,7 @@
     <div id="modal2" class="modal right-align">
         <i class="fas fa-times modal-close"></i>
         <div class="modal-content center">       
-            <form action="#">  
+            <form method="POST" action="{{ url_for('home') }}">  
                 <!-- select dropdown from materialize -->
                 <div class="select-box input-field col s12">
                     <select id="selectedMovie" name="selectedMovie">
@@ -189,7 +189,7 @@
                 <h4 class="modal-title">My Review</h4>
                 <label for="commentBox"></label>
                 <textarea name="commentBox" id="commentBox"></textarea>   
-                <a type="submit" href="#!" class="modal-close btn btn-flat waves-effect waves-black yellow black-text darken-text-4 booking-btn">SUBMIT</a>
+                <button type="submit" class="modal-close btn btn-flat waves-effect waves-black yellow black-text darken-text-4 booking-btn">SUBMIT</button>
             </form>
         </div>
     </div>
@@ -213,8 +213,10 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
-                </div>                       
+                </div>  
+
                 <div class="review-box"></div>
+        
                 <div class="center">
                     <a class="btn waves-effect yellow black-text darken-text-4 booking-btn modal-trigger" href="#modal1">BOOK NOW</a>
                 </div>
