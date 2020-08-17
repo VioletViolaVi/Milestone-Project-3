@@ -111,11 +111,10 @@
                 <div class="select-box input-field col s12">
                     <label for="location"></label>
                     <select id="location" name="location">  
-                        <option value="" disabled selected>Location</option>                                     
-                        <option value="emerald_city">Emerald City</option>
-                        <option value="simsville">Simsville</option>
-                        <option value="yesterfield">Yesterfield</option>
-                        <option value="hopestone_valley">Hopestone Valley</option>
+                        <option value="" disabled selected>Location</option> 
+                        {% for location_name in location_names %}
+                            <option value="{{ location_name.location_name }}">{{ location_name.location_name }}</option>
+                        {% endfor %}
                     </select>         
                 </div>
 
