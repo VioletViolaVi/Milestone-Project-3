@@ -83,13 +83,13 @@
            <i class="fas fa-times modal-close"></i> 
         </div>
         <div class="modal-content">       
-            <form action="#">
+            <form method="POST" action="{{ url_for('home') }}">
                 <h4 class="modal-title center">Book Tickets</h4>
 
                 <!-- select dropdown from materialize -->
                 <div class="select-box input-field col s12">
                     <label for="bookedMovie"></label>
-                    <select id="bookedMovie" name="bookedMovie"> 
+                    <select id="bookedMovie" name="bookedMovie" required> 
                         <option value="" disabled selected>Select Movie</option>                    
                         {% for movie_name in movie_names %}
                             <option value="{{ movie_name.movie_name }}">{{ movie_name.movie_name }}</option>
@@ -105,12 +105,12 @@
                 <div class="select-box input-field col s12">
                     <h6 class="left">Date</h6>
                     <label for="date"></label>
-                    <input id="date" name="date" type="text" class="datepicker">                    
+                    <input id="date" name="date" type="text" class="datepicker" required>                    
                 </div>   
 
                 <div class="select-box input-field col s12">
                     <label for="location"></label>
-                    <select id="location" name="location">  
+                    <select id="location" name="location" required>  
                         <option value="" disabled selected>Location</option> 
                         {% for location_name in location_names %}
                             <option value="{{ location_name.location_name }}">{{ location_name.location_name }}</option>
@@ -119,7 +119,7 @@
                 </div>
 
                 <div class="center">
-                    <button type="submit" class="modal-close btn btn-flat waves-effect waves-black yellow black-text darken-text-4 booking-btn">SUBMIT</button>
+                    <button type="submit" class="btn btn-flat waves-effect waves-black yellow black-text darken-text-4 booking-btn">SUBMIT</button>
                 </div>
 
             </form>
@@ -135,7 +135,7 @@
 
                 <!-- select dropdown from materialize -->
                 <div class="select-box input-field col s12">
-                    <select id="selectedMovie" name="selectedMovie">
+                    <select id="selectedMovie" name="selectedMovie" required>
                         <option value="" disabled selected>Select Movie</option>
                         {% for movie_name in movie_names %}
                             <option value="{{ movie_name.movie_name }}">{{ movie_name.movie_name }}</option>
@@ -146,7 +146,7 @@
 
                 <h4 class="modal-title">My Rating</h4> 
                 <div class="flip-stars">
-                    <input class="radio-btn five-stars" id="star-5" type="radio" name="starRating"/>
+                    <input class="radio-btn five-stars" id="star-5" type="radio" name="starRating" required/>
                     <label class="star five-stars fas fa-star" for="star-5"></label>
 
                     <input class="radio-btn" id="star-4" type="radio" name="starRating"/>
@@ -164,8 +164,8 @@
 
                 <h4 class="modal-title">My Review</h4>
                 <label for="commentBox"></label>
-                <textarea name="commentBox" id="commentBox"></textarea>   
-                <button type="submit" class="modal-close btn btn-flat waves-effect waves-black yellow black-text darken-text-4 booking-btn">SUBMIT</button>
+                <textarea name="commentBox" id="commentBox" required></textarea>   
+                <button type="submit" class="btn btn-flat waves-effect waves-black yellow black-text darken-text-4 booking-btn">SUBMIT</button>
             </form>
         </div>
     </div>
@@ -447,11 +447,11 @@
                 {% for review in reviews %}
                     <p>{{ review.user_review }}</p>
                     <p><b><i>~{{ review.user }}</i></b></p>
+                    <p><em>by: {{ review.booked_by }}</em></p>
                 {% endfor %}
             </div>    
         </div>
         <hr>
-
     </div>
 
 

@@ -21,7 +21,11 @@
         <!-- content in top nav -->
         <nav class="yellow accent-2">
             <i data-target="slide-out" class="sidenav-trigger fas fa-bars black-text"></i>
-            <a href="{{ url_for('home') }}"><h1 id="mainTitle" class="black-text">Cinemagic</h1></a>
+            <a href="{{ url_for('home') }}">
+                <div class="center-align">
+                    <h1 id="mainTitle" class="black-text">Cinemagic</h1>
+                </div>
+            </a>
             <ul class="top-nav">
                 <div id="topNavLinksContainer">
                     <li><a class="top-nav-links black-text" href="{{ url_for('home') }}">Home</a></li>

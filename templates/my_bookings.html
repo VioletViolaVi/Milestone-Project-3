@@ -6,11 +6,11 @@
     <div id="modal2" class="modal right-align">
         <i class="fas fa-times modal-close"></i>
         <div class="modal-content center">       
-            <form action="#">  
+            <form method="POST" action="{{ url_for('my_bookings') }}">  
 
                 <!-- select dropdown from materialize -->
                 <div class="select-box input-field col s12">
-                    <select id="selectedMovie" name="selectedMovie">
+                    <select id="selectedMovie" name="selectedMovie" required>
                         <option value="" disabled selected>Select Movie</option>
                         {% for movie_name in movie_names %}
                             <option value="{{ movie_name.movie_name }}">{{ movie_name.movie_name }}</option>
@@ -21,7 +21,7 @@
 
                 <h4 class="modal-title">My Rating</h4> 
                 <div class="flip-stars">
-                    <input class="radio-btn five-stars" id="star-5" type="radio" name="starRating"/>
+                    <input class="radio-btn five-stars" id="star-5" type="radio" name="starRating" required/>
                     <label class="star five-stars fas fa-star" for="star-5"></label>
 
                     <input class="radio-btn" id="star-4" type="radio" name="starRating"/>
@@ -39,8 +39,8 @@
 
                 <h4 class="modal-title">My Review</h4>
                 <label for="commentBox"></label>
-                <textarea name="commentBox" id="commentBox"></textarea>   
-                <button type="submit" class="modal-close btn btn-flat waves-effect waves-black yellow black-text darken-text-4 booking-btn">SUBMIT</button>
+                <textarea name="commentBox" id="commentBox" required></textarea>   
+                <button type="submit" class="btn btn-flat waves-effect waves-black yellow black-text darken-text-4 booking-btn">SUBMIT</button>
             </form>
         </div>
     </div>
@@ -52,13 +52,13 @@
            <i class="fas fa-times modal-close"></i> 
         </div>
         <div class="modal-content">       
-            <form action="#">
+            <form method="POST" action="{{ url_for('my_bookings') }}">
                 <h4 class="modal-title center">Book Tickets</h4>
 
                 <!-- select dropdown from materialize -->
                 <div class="select-box input-field col s12">
                     <label for="bookedMovie"></label>
-                    <select id="bookedMovie" name="bookedMovie"> 
+                    <select id="bookedMovie" name="bookedMovie" required> 
                         <option value="" disabled selected>Select Movie</option>                    
                         {% for movie_name in movie_names %}
                             <option value="{{ movie_name.movie_name }}">{{ movie_name.movie_name }}</option>
@@ -74,12 +74,12 @@
                 <div class="select-box input-field col s12">
                     <h6 class="left">Date</h6>
                     <label for="date"></label>
-                    <input id="date" name="date" type="text" class="datepicker">                    
+                    <input id="date" name="date" type="text" class="datepicker" required>                    
                 </div>   
 
                 <div class="select-box input-field col s12">
                     <label for="location"></label>
-                    <select id="location" name="location">  
+                    <select id="location" name="location" required>  
                         <option value="" disabled selected>Location</option> 
                         {% for location_name in location_names %}
                             <option value="{{ location_name.location_name }}">{{ location_name.location_name }}</option>
@@ -88,70 +88,82 @@
                 </div>
 
                 <div class="center">
-                    <button type="submit" class="modal-close btn btn-flat waves-effect waves-black yellow black-text darken-text-4 booking-btn">SUBMIT</button>
+                    <button type="submit" class="btn btn-flat waves-effect waves-black yellow black-text darken-text-4 booking-btn">SUBMIT</button>
                 </div>
 
-            </form>
-        </div>
-    </div>
-
-    <!-- are you sure: modal -->
-    <!-- modal from materialize -->
-    <div id="modal3" class="modal right-align">
-        <i class="fas fa-times modal-close"></i>
-        <div class="modal-content center">       
-            <form action="#">  
-                <h4 class="modal-title">Delete <br>(Insert movie name here) ?</h4>
-                <button type="submit" class="modal-close btn btn-flat waves-effect waves-black red black-text darken-text-4 booking-btn">NO</button>
-                <button type="submit" class="modal-close btn btn-flat waves-effect waves-black green black-text darken-text-4 booking-btn">YES</button>         
             </form>
         </div>
     </div>
 
     <h2 class="center">My Bookings</h2>
 
-    <h4>Submerged</h4>
-    <div class="container">
-        <div class="full-my-booking row">
+    {% for booking in booking_info %}
+        <!-- are you sure: modal -->
+        <!-- modal from materialize -->
+        <div id="modal3" class="modal right-align">
+            <i class="fas fa-times modal-close"></i>
+            <div class="modal-content center">       
+                <form method="POST" action="{{ url_for('my_bookings') }}">  
+                    <h4 class="modal-title">Delete Movie:<br>{{ booking.booked_movie }}?</h4>
+                    <button type="submit" class="modal-close btn btn-flat waves-effect waves-black red black-text darken-text-4 booking-btn">NO</button>
+                    <button type="submit" class="modal-close btn btn-flat waves-effect waves-black green black-text darken-text-4 booking-btn">YES</button>         
+                </form>
+            </div>
+        </div>
 
-            <figure class="col s6">       
-                <img class="my-booking-pictures" src="static/images/drowning.PNG" alt="A picture of a movie poster showing someone drowning.">
-            </figure>   
+        <div> 
+            <h4>{{ booking.booked_movie }}</h4>
+        </div>
 
-            <div class="container">
-                <div class="full-my-booking row">
-                    <div class="col s6">  
-                        <div class="container">
+        <!-- full booked movie details  -->   
+        <div class="container">
+            <div class="row">
+                <div class="col s12">       
+                    <div class="row">
+                            <!-- booked movie image  -->
+                            <figure class="col s6">       
+                                <img class="my-booking-page-pictures" src="static/images/dog.PNG" alt="A picture of a movie poster showing someone drowning.">
+                            </figure>                           
+                            <!-- booked movie text  -->
+                            <div class="col s6 booked-details">
+                                <ul>
+                                    <li><b>Booked Tickets: </b><br>{{ booking.booked_ticket_quantity }}</li>
+                                    <li><b>Booked Date: </b><br>{{ booking.booked_date }}</li>
+                                    <li><b>Booked Location: </b><br>{{ booking.booked_location }}</li>
+                                    <li><b>Booked By: </b><br>{{ booking.booked_by }}</li>
+                                </ul>
+                            </div>
+                    </div>
+                    
+                    <!-- change/delete/leave a reivew/book again buttons -->
+                    <div class="my-booking-page-buttons center">
+                        <div class="row">
 
-                            <div class="row">
-                                <div class="center col 12">
-                                    <a class="my-bookings-btn btn waves-effect yellow black-text darken-text-4 btn">CHANGE</a>
-                                </div>
+                            <div class="col s6">
+                                <a class="btn waves-effect yellow black-text darken-text-4">CHANGE</a>
                             </div>
 
-                            <div class="row">                            
-                                <div class="center col 12">
-                                    <a class="my-bookings-btn btn waves-effect yellow black-text darken-text-4 btn modal-trigger" href="#modal3">DELETE</a>
-                                </div>
-                            </div> 
+                            <div class="col s6">
+                                <a class="btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#modal3">DELETE</a>
+                            </div>
 
-                            <div class="row">
-                                <div class="center col 12">
-                                    <a class="my-bookings-btn comments-btn waves-effect yellow black-text darken-text-4 btn modal-trigger" href="#modal2">LEAVE A REVIEW</a>
-                                </div>
-                            </div> 
+                            <div class="col s12">
+                                <a class="btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#modal1">BOOK AGAIN</a>
+                            </div>
 
-                        </div>       
+                            <div class="col s12">
+                                <a class="btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#modal2">LEAVE A REVIEW</a>
+                            </div>
+
+
+                        </div>
                     </div>
+
                 </div>
             </div>
+        </div><hr>
+    {% endfor %}
+    
 
-        </div>
-    </div>
-    <hr>
-
-    <div class="center">
-        <a class="booking-btn col s12 btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#modal1">BOOK NOW</a>
-    </div>
 
 {% endblock %}

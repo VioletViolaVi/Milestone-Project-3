@@ -20,13 +20,33 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/home")
+@app.route("/home", methods=["GET", "POST"])
 def home():
+    # books tickets
+    if request.method == "POST":
+        bookings = {
+            "booked_movie": request.form.get("bookedMovie"),
+            "booked_ticket_quantity": request.form.get("ticketQuantity"),
+            "booked_date": request.form.get("date"),
+            "booked_location": request.form.get("location"),
+            "booked_by": session["user"]
+        }
+        mongo.db.booked_details.insert_one(bookings)
+        flash("Booking Successfully Added!")
+        return redirect(url_for("my_bookings"))
+
+    # movie info taken from mongo db for dropdown
     movie_names = list(mongo.db.movies.find())
+    # location info taken from mongo db for dropdown
     location_names = list(mongo.db.locations.find())
+    # booking info taken from mongo db
+    booking_info = mongo.db.booked_details.find()
+    # review info taken from mongo db
     reviews = mongo.db.reviews.find()
+
     return render_template("index.html", movie_names=movie_names,
-                           location_names=location_names, reviews=reviews)
+                           location_names=location_names,
+                           booking_info=booking_info, reviews=reviews)
 
 
 @app.route("/signup", methods=["GET", "POST"])
@@ -84,10 +104,28 @@ def login():
 
 @app.route("/my_bookings")
 def my_bookings():
+    # books tickets and saves in mongo db
+    if request.method == "POST":
+        bookings = {
+            "booked_movie": request.form.get("bookedMovie"),
+            "booked_ticket_quantity": request.form.get("ticketQuantity"),
+            "booked_date": request.form.get("date"),
+            "booked_location": request.form.get("location"),
+            "booked_by": session["user"]
+        }
+        mongo.db.booked_details.insert_one(bookings)
+        flash("Booking Successfully Added!")
+        return redirect(url_for("my_bookings"))
+
+    # booking info taken from mongo db
+    booking_info = mongo.db.booked_details.find()
+
     movie_names = list(mongo.db.movies.find())
     location_names = list(mongo.db.locations.find())
+
     return render_template("my_bookings.html", movie_names=movie_names,
-                           location_names=location_names)
+                           location_names=location_names,
+                           booking_info=booking_info)
 
 
 @app.route("/logout")
