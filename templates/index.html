@@ -1,4 +1,5 @@
-{% extends "base.html" %} {% block home %}
+{% extends "base.html" %} 
+{% block home %}
 
     <div class="center">
         <h2>{{ page_title }}</h2>
@@ -74,40 +75,70 @@
         <h3>{{ page_subtitle }}</h3>
     </div>
 
-{% for movie in movie_names %}
+    {% for movie in movie_names %}
+        <!-- all movies and reviews -->
+        <div id="movieReviews">
 
-    <!-- all movies and reviews -->
-    <div id="movieReviews">
-
-        <h4 id="{{ movie.movie_poster }}">{{movie.movie_name}}</h4>
-        <div class="container movie-review"> 
-            <div class="row">
-                <figure class="col s6">       
-                    <img class="review-pictures" src="{{ movie.movie_poster }}" alt="A picture of a movie poster showing at Cinemagic.">
-                </figure>
-                <div class="col s6">
-                    <div class="flip-stars center star-average">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>  
-                    <div class="center">
-                        <a class="btn waves-effect yellow black-text darken-text-4 booking-btn modal-trigger" href="#modal1">BOOK NOW</a>
+            {% if loop.index % 2 != 0 %}
+                <h4 id="{{ movie.movie_poster }}" class="movie-titles">{{movie.movie_name}}</h4>
+                <div class="container movie-review"> 
+                    <div class="row">
+                        <figure class="col s6">       
+                            <img class="review-pictures" src="{{ movie.movie_poster }}" alt="A picture of a movie poster showing at Cinemagic.">
+                        </figure>
+                        <div class="col s6">
+                            <div class="flip-stars center star-average">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>  
+                            <div class="center">
+                                <a class="btn waves-effect yellow black-text darken-text-4 booking-btn modal-trigger" href="#modal1">BOOK NOW</a>
+                            </div>
+                        </div>          
                     </div>
-                </div>          
-            </div>
-            <div class="review-box">
-                {% for review in reviews %}
-                    <p>{{ review.user_review }}</p>
-                    <p><b><i>~{{ review.user }}</i></b></p>
-                {% endfor %}
-            </div>
+                    <div class="review-box">
+                        {% for review in reviews %}
+                            <p>{{ review.user_review }}</p>
+                            <p><b><i>~{{ review.user }}</i></b></p>
+                        {% endfor %}
+                    </div>
+                </div>
+                <hr class="hr-line">
+            {% else %}
+                <h4 id="{{ movie.movie_poster }}" class="movie-titles">{{movie.movie_name}}</h4>
+                <div class="container movie-review"> 
+                    <div class="row">
+                        <div class="col s6">
+                            <div class="flip-stars center star-average">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>  
+                            <div class="center">
+                                <a class="btn waves-effect yellow black-text darken-text-4 booking-btn modal-trigger" href="#modal1">BOOK NOW</a>
+                            </div>
+                        </div>  
+                        <figure class="col s6">       
+                            <img class="review-pictures" src="{{ movie.movie_poster }}" alt="A picture of a movie poster showing at Cinemagic.">
+                        </figure>
+                    </div>
+                    <div class="review-box">
+                        {% for review in reviews %}
+                            <p>{{ review.user_review }}</p>
+                            <p><b><i>~{{ review.user }}</i></b></p>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% if loop.index != 10 %}
+                    <hr class="hr-line">
+                {% endif %}
+            {% endif %}      
         </div>
-        <hr>      
-    </div>
-
-{% endfor %}
+    {% endfor %}
 
 {% endblock %}

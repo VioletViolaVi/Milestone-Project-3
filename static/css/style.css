@@ -7,9 +7,9 @@
   font-family: "Scada", sans-serif;
 }
 
-/************************************************************************* main title */
-/* styles main title */
-#mainTitle {
+/************************************************************************* navbar title */
+/* styles nav title */
+#navTitle {
   font-size: 3rem;
   display: inline;
   text-align: center;
@@ -106,6 +106,12 @@ body {
   margin-top: 40px;
 }
 
+/************************************************************************* hr border line */
+/* styles hr line for bookings and home page */
+.hr-line {
+  border-color: black;
+}
+
 /************************************************************************* homepage *************************************************************************/
 /************************************************************************* carousel */
 /* styles basis of carousel */
@@ -132,12 +138,12 @@ body {
 }
 
 /* styles book now button */
-.booking-btn{
+.booking-btn {
   font-weight: 800;
 }
 
 /* styles review button */
-.reviews-btn{
+.reviews-btn {
   margin-top: 15px;
 }
 
@@ -147,6 +153,11 @@ body {
 }
 
 /************************************************************************* reviews */
+/* styles movie titles */
+.movie-titles {
+  margin-left: 5px;
+}
+
 /* keeps review pics and reviews in two columns */
 figure.col.s6 {
   margin: 0px;
