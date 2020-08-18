@@ -131,16 +131,13 @@ body {
   background-color: yellow;
 }
 
-/* styles fixed review, comments and book now button */
-.fixed-review-btn,
-.booking-btn,
-.comments-btn {
+/* styles book now button */
+.booking-btn{
   font-weight: 800;
 }
 
-/* styles review and comments button */
-.reviews-btn,
-.comments-btn {
+/* styles review button */
+.reviews-btn{
   margin-top: 15px;
 }
 
@@ -168,11 +165,6 @@ figure.col.s6 {
   height: 100px;
   margin: 10px 0px;
   padding: 3px;
-}
-
-/* enables leave a review to be read on button */
-.comments-btn {
-  font-size: 0.9rem;
 }
 
 /************************************************************************* modals *************************************************************************/

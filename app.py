@@ -1,4 +1,5 @@
 import os
+import json
 from flask import (
     Flask, flash, render_template, redirect, request, session, url_for)
 from flask_pymongo import PyMongo
@@ -39,14 +40,12 @@ def home():
     movie_names = list(mongo.db.movies.find())
     # location info taken from mongo db for dropdown
     location_names = list(mongo.db.locations.find())
-    # booking info taken from mongo db
-    booking_info = mongo.db.booked_details.find()
-    # review info taken from mongo db
+    # reviews brought out from mongo db for homepage
     reviews = mongo.db.reviews.find()
 
-    return render_template("index.html", movie_names=movie_names,
-                           location_names=location_names,
-                           booking_info=booking_info, reviews=reviews)
+    return render_template("index.html", page_title="Movies",
+                           page_subtitle="Reviews", movie_names=movie_names,
+                           location_names=location_names, reviews=reviews)
 
 
 @app.route("/signup", methods=["GET", "POST"])
@@ -73,7 +72,7 @@ def signup():
         # puts new user in session cookie
         session["user"] = request.form.get("username").lower()
         flash("Sign Up Successful!")
-    return render_template("signup.html")
+    return render_template("signup.html", page_title="Sign Up")
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -99,31 +98,30 @@ def login():
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
-    return render_template("login.html")
+    return render_template("login.html", page_title="Log In")
 
 
-@app.route("/my_bookings")
+@app.route("/my_bookings", methods=["GET", "POST"])
 def my_bookings():
-    # books tickets and saves in mongo db
+    # reviews left by users
     if request.method == "POST":
-        bookings = {
-            "booked_movie": request.form.get("bookedMovie"),
-            "booked_ticket_quantity": request.form.get("ticketQuantity"),
-            "booked_date": request.form.get("date"),
-            "booked_location": request.form.get("location"),
-            "booked_by": session["user"]
+        reviews = {
+            "user_review": request.form.get("commentBox"),
+            "user": session["user"]
         }
-        mongo.db.booked_details.insert_one(bookings)
-        flash("Booking Successfully Added!")
-        return redirect(url_for("my_bookings"))
+        mongo.db.reviews.insert_one(reviews)
+        flash("Review Successfully Added!")
+        return redirect(url_for("home"))
 
-    # booking info taken from mongo db
+    # movie info taken from mongo db for dropdown
+    movie_names = list(mongo.db.movies.find())
+    # location info taken from mongo db for dropdown
+    location_names = list(mongo.db.locations.find())
+    # booking info brought out from mongo db
     booking_info = mongo.db.booked_details.find()
 
-    movie_names = list(mongo.db.movies.find())
-    location_names = list(mongo.db.locations.find())
-
-    return render_template("my_bookings.html", movie_names=movie_names,
+    return render_template("my_bookings.html", page_title="My Bookings",
+                           movie_names=movie_names,
                            location_names=location_names,
                            booking_info=booking_info)
 
@@ -134,15 +132,6 @@ def logout():
     # removes session cookies to logout
     session.pop("user")
     return redirect(url_for("home"))
-
-
-# if request.method == "POST":
-#     provided_review = {
-#         "user": request.form.get("username").lower(),
-#         "movie_name": request.form.get("selectedMovie").lower(),
-#         "star_rating": request.form.get("starRating").lower(),
-#         "user_review": request.form.get("commentBox").lower()
-#     }
 
 
 if __name__ == "__main__":
