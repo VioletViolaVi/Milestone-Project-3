@@ -1,5 +1,4 @@
 import os
-import json
 from flask import (
     Flask, flash, render_template, redirect, request, session, url_for)
 from flask_pymongo import PyMongo
@@ -30,7 +29,7 @@ def home():
             "booked_ticket_quantity": request.form.get("ticketQuantity"),
             "booked_date": request.form.get("date"),
             "booked_location": request.form.get("location"),
-            "booked_by": session["user"]
+            "booked_by": session["user"].title()
         }
         mongo.db.booked_details.insert_one(bookings)
         flash("Booking Successfully Added!")
