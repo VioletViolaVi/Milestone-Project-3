@@ -338,7 +338,6 @@ input.five-stars:checked ~ .star:before {
 
 /* style review box */
 #review-box {
-  border: solid black 3px;
   padding: 0px 0px 0px 4px;
   overflow: auto;
 }
