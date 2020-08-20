@@ -9,7 +9,7 @@
             <form method="POST" action="{{ url_for('my_bookings') }}">  
 
                 <!-- select dropdown from materialize -->
-                <div class="select-box input-field col s12">
+                <div class="form-item input-field">
                     <select id="selectedMovie" name="selectedMovie" required>
                         <option value="" disabled selected>Select Movie</option>
                         {% for movie_name in movie_names %}
@@ -19,7 +19,7 @@
                     <label for="selectedMovie"></label>
                 </div>
 
-                <h4 class="modal-title">My Rating</h4> 
+                <h4 class="modal-titles">My Rating</h4> 
                 <div class="flip-stars">
                     <input class="radio-btn five-stars" id="star-5" type="radio" name="starRating" required/>
                     <label class="star five-stars fas fa-star" for="star-5"></label>
@@ -37,7 +37,7 @@
                     <label class="star one-star fas fa-star" for="star-1"></label>
                 </div>
 
-                <h4 class="modal-title">My Review</h4>
+                <h4 class="modal-titles">My Review</h4>
                 <label for="commentBox"></label>
                 <textarea name="commentBox" id="commentBox" required></textarea>   
                 <button type="submit" class="btn btn-flat waves-effect waves-black yellow black-text darken-text-4 booking-btn">SUBMIT</button>
@@ -49,6 +49,20 @@
     <br>
 
     {% for booking in booking_info %}
+
+        <!-- are you sure: modal -->
+        <!-- modal from materialize -->
+        <div id="modal3" class="modal right-align">
+        <i class="fas fa-times modal-close"></i>
+        <div class="modal-content center">       
+            <form method="POST" action="{{ url_for('my_bookings') }}">  
+                <h4 class="modal-titles">Delete Movie:<br>{{ booking.booked_movie }}?</h4>
+                <button type="submit" class="modal-close btn btn-flat waves-effect waves-black red black-text darken-text-4 booking-btn">NO</button>
+                <button type="submit" class="modal-close btn btn-flat waves-effect waves-black green black-text darken-text-4 booking-btn">YES</button>         
+            </form>
+        </div>
+        </div>
+
         <!-- full booked movie details  --> 
         <div> 
             <h4 class="movie-titles">{{ booking.booked_movie }}</h4>
@@ -68,37 +82,25 @@
                 </div>
                 <!-- change and delete buttons -->
                 <div class="col s6 center">
-                    <div class="col s12 change-btn">
-                        <a class="btn waves-effect yellow black-text darken-text-4">CHANGE</a>
+                    <div class="col s12">
+                        <a class="change-btn btn waves-effect yellow black-text darken-text-4" href="{{ url_for('change_booking', booked_details_id=booking._id) }}">CHANGE</a>
                     </div>
-                    <div class="col s12 delete-btn">
-                        <a class="btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#modal3">DELETE</a>
+                    <div class="col s12">
+                        <button class="delete-btn btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#modal3">DELETE</button>
                     </div>             
                 </div> 
 
             </div>
             <!-- leave a reivew button -->
             <div class="row center">
-                <div class="leave-a-review-btn col s12">
-                    <a class="btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#modal2">LEAVE A REVIEW</a>  
+                <div class="col s12">
+                    <button class="leave-a-review-btn btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#modal2">LEAVE A REVIEW</button>  
                 </div>
             </div>
         </div>
-        
+
         <hr class="hr-line">
 
-        <!-- are you sure: modal -->
-        <!-- modal from materialize -->
-        <div id="modal3" class="modal right-align">
-            <i class="fas fa-times modal-close"></i>
-            <div class="modal-content center">       
-                <form method="POST" action="{{ url_for('my_bookings') }}">  
-                    <h4 class="modal-title">Delete Movie:<br>{{ booking.booked_movie }}?</h4>
-                    <button type="submit" class="modal-close btn btn-flat waves-effect waves-black red black-text darken-text-4 booking-btn">NO</button>
-                    <button type="submit" class="modal-close btn btn-flat waves-effect waves-black green black-text darken-text-4 booking-btn">YES</button>         
-                </form>
-            </div>
-        </div>
     {% endfor %}
 
 {% endblock %}

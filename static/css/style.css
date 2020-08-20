@@ -110,6 +110,7 @@ body {
 /* styles hr line for bookings and home page */
 .hr-line {
   border-color: black;
+  margin: 0px 10px;
 }
 
 /************************************************************************* homepage *************************************************************************/
@@ -187,22 +188,19 @@ figure.col.s6 {
 }
 
 /* spaces out all modal contents */
-.modal-title,
-.select-box,
+.modal-titles,  
 .flip-stars {
   margin-bottom: 15px;
 }
 
 /* styles modal titles */
-.modal-title {
+.modal-titles {
   color: black;
 }
-
-/* reduces space under date heading */
-h6.left {
-  margin-bottom: 0px;
+.form-item label {
+    font-size: 1.2rem;
+    color: black;
 }
-
 /* spaces out yes and no buttons */
 .red {
   margin: 25px 35px 0px 0px;
@@ -349,7 +347,7 @@ input#password {
 }
 
 /* moves ticket quantity title to the left */
-.input-field.col label {
+.input-field.col label {          
   left: 0rem;
 }
 

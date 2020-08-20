@@ -106,7 +106,7 @@ def my_bookings():
     if request.method == "POST":
         reviews = {
             "user_review": request.form.get("commentBox"),
-            "user": session["user"]
+            "user": session["user"].title()
         }
         mongo.db.reviews.insert_one(reviews)
         flash("Review Successfully Added!")
@@ -120,6 +120,27 @@ def my_bookings():
     booking_info = mongo.db.booked_details.find()
 
     return render_template("my_bookings.html", page_title="My Bookings",
+                           movie_names=movie_names,
+                           location_names=location_names,
+                           booking_info=booking_info)
+
+
+@app.route("/change_booking/<booked_details_id>", methods=["GET", "POST"])
+def change_booking(booked_details_id):
+
+    # movie info taken from mongo db for dropdown
+    movie_names = list(mongo.db.movies.find())
+    # location info taken from mongo db for dropdown
+    location_names = list(mongo.db.locations.find())
+    # booking info brought out from mongo db
+    booking_info = mongo.db.booked_details.find()
+
+    # gets objectId for changing specific bookings
+    bookings = mongo.db.booked_details.find_one(
+        {"_id": ObjectId(booked_details_id)})
+
+    return render_template("change_booking.html",
+                           bookings=bookings,
                            movie_names=movie_names,
                            location_names=location_names,
                            booking_info=booking_info)
