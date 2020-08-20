@@ -20,12 +20,7 @@
     <header>
         <!-- content in top nav -->
         <nav class="yellow accent-2">
-            <i data-target="slide-out" class="sidenav-trigger fas fa-bars black-text"></i>
-            <a href="#">
-                <div class="center-align">
-                    <h1 id="navTitle" class="black-text">Cinemagic</h1>
-                </div>
-            </a>
+            <i data-target="slide-out" class="sidenav-trigger fas fa-bars black-text"></i>           
             <ul class="top-nav">
                 <div id="topNavLinksContainer">
                     <li><a class="top-nav-links black-text" href="{{ url_for('home') }}">Home</a></li>
@@ -38,6 +33,9 @@
                     {% endif %}
                 </div>
             </ul>
+            <div class="center-align">
+                <h1 id="navTitle" class="black-text">Cinemagic</h1>
+            </div>            
         </nav>
     
         <!-- slides sidenav -->
@@ -61,9 +59,11 @@
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
-                    <div class="row">
-                        <h4 class="center-align flash_messages">{{ message }}</h4> 
-                    </div>             
+                    <div class="container">
+                        <div class="row center">
+                            <h4 class="center-align flash_messages">{{ message }}</h4> 
+                        </div>      
+                    </div>       
                 {% endfor %}
             {% endif %}
         {% endwith %}

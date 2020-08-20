@@ -12,8 +12,8 @@
 #navTitle {
   font-size: 3rem;
   display: inline;
-  text-align: center;
   margin: 0px;
+  font-weight: bold;
 }
 
 /* designs link pages in top nav */
@@ -46,7 +46,7 @@ nav {
 
 /* centers side nav links */
 #sideNavLinksContainer {
-  padding-top: 100px;
+  padding-top: 170px;
 }
 
 /* changes hover colour of sidenav */
@@ -98,26 +98,28 @@ body {
 /************************************************************************* flash messages */
 /* styles flash messages */
 .flash_messages {
-  background-color: rgba(255, 255, 0, 0.575);
-  color: black;
-  padding-bottom: 2px;
-  border-radius: 5px;
-  margin-top: 40px;
+  color: red;
+  margin: 85px 0px 0px 0px;
 }
 
 /************************************************************************* hr border line */
 /* styles hr line for bookings and home page */
 .hr-line {
-  border-color: black;
-  margin: 0px 10px;
+  border-color: grey;
+  margin: 0px 50px;
 }
 
 /************************************************************************* modals *************************************************************************/
 
+/* moves ticket quantity title to the left */
+.input-field.col label {
+  left: 0rem;
+}
+
 /* styles close button */
 .fas.fa-times {
   font-size: 2rem;
-  padding: 1px 5px 0px 0px;
+  padding: 5px 5px 0px 0px;
 }
 
 /* spaces out all modal contents */
@@ -138,7 +140,14 @@ body {
 /* improves size of modals */
 @media only screen and (max-width: 992px) {
   .modal {
-    width: 100%;
+    width: 95%;
+  }
+}
+
+/* improves size of 'are you sure' modal */
+@media only screen and (max-width: 992px) {
+  #modal3 {
+    width: 90%;
   }
 }
 
@@ -288,7 +297,7 @@ input.five-stars:checked ~ .star:before {
   background-color: yellow;
 }
 
-/* styles book now button */
+/* styles book now and submit buttons */
 .booking-btn {
   font-weight: 800;
   margin-top: 0px;
@@ -305,11 +314,20 @@ input.five-stars:checked ~ .star:before {
   font-weight: bold;
 }
 
+/* styles user review titles */
+.user-review-title {
+  font-weight: bold;
+}
+
+/* stlyes movie pictures and review box for review section */
+.review-pictures,
+#review-box {
+  height: 20rem;
+}
+
 /* stlyes movie pictures for review section */
 .review-pictures {
   width: 100%;
-  height: 20rem;
-  margin-left: 10px;
 }
 
 /* positions review images */
@@ -321,10 +339,8 @@ input.five-stars:checked ~ .star:before {
 /* style review box */
 #review-box {
   border: solid black 3px;
-  height: 20rem;
   padding: 0px 0px 0px 4px;
   overflow: auto;
-  margin-left: 20px;
 }
 
 /************************************************************************* signup and login *************************************************************************/
@@ -344,11 +360,6 @@ input#email,
 input#username,
 input#password {
   border-bottom: 1px solid black;
-}
-
-/* moves ticket quantity title to the left */
-.input-field.col label {
-  left: 0rem;
 }
 
 /************************************************************************* my bookings *************************************************************************/
@@ -372,7 +383,13 @@ input#password {
   margin: 15px 0px;
 }
 
-/************************************************************************* responsive breakpoints *************************************************************************/
+/************************************************************************* changing booking */
+/* narrows form */
+#changeForm {
+  margin: 0px 1rem;
+}
+
+/************************************************************************* BREAKPOINTS *************************************************************************/
 /* Bootstrap: Small devices */
 @media (min-width: 576px) {
   /************************************************************************* top nav */
@@ -395,12 +412,7 @@ input#password {
   /************************************************************************* carousel */
   /* styles outline of carousel */
   .carousel.carousel-slider.center {
-    height: 500px;
-  }
-
-  /* styles book now button */
-  .booking-btn {
-    font-size: 2rem;
+    height: 550px;
   }
 
   /************************************************************************* stars */
@@ -420,11 +432,61 @@ input#password {
     margin: 0px 350px 0px 10px;
   }
 
-  /* style review box */
-  /* .review-box {
+  /* redeuces size of modals */
+  @media only screen and (max-width: 992px) {
+    .modal {
+      width: 60%;
+    }
+  }
 
+  /* provides space around form contents */
+  .modal .modal-content {
+    padding: 0px 20px 20px 20px;
+  }
 
-} */
+  /* submit button */
+  .booking-btn {
+    font-weight: 645;
+    margin-top: 20px;
+  }
+
+  /* improves size of 'are you sure' modal */
+  @media only screen and (max-width: 992px) {
+    #modal3 {
+      width: 60%;
+    }
+  }
+
+  /************************************************************************* my bookings */
+
+  /* styles booking text */
+  .booked-details {
+    font-size: 2rem;
+  }
+
+  /* styles movie titles */
+  .movie-titles {
+    font-size: 4rem;
+  }
+
+  /* spaces out chang and delete buttons from each other */
+  .change-btn,
+  .delete-btn {
+    margin: 35px 0px;
+  }
+  /************************************************************************* datepicker */
+  /* styles buttons on datepicker */
+  .datepicker-clear,
+  .datepicker-cancel,
+  .datepicker-today,
+  .datepicker-done {
+    margin: 5px;
+  }
+
+  /* fills datepicker better in modal */
+  .modal-content.datepicker-container {
+    padding: 0px;
+  }
 }
 
 /* accommodate materialize */
@@ -450,54 +512,94 @@ input#password {
 
 /* Bootstrap: Medium devices  */
 @media (min-width: 768px) {
+  /************************************************************************* carousel */
+  /* stlyes movie pictures and review box for review section */
+  .review-pictures,
+  #review-box {
+    height: 30rem;
+  }
+
+  /************************************************************************* reviews */
+  /* booking button */
+  .booking-btn {
+    font-size: 2rem;
+  }
+
+  /************************************************************************* my bookings */
+  /* spaces out chang and delete buttons from each other */
+  .change-btn,
+  .delete-btn {
+    margin: 30px 0px;
+  }
+
+  /************************************************************************* changing booking */
+  /* narrows form */
+  #changeForm {
+    margin: 0px 5rem;
+  }
+
+  /************************************************************************* modals */
+  /* improves size of 'are you sure' modal */
+  @media only screen and (max-width: 992px) {
+    #modal3 {
+      width: 50%;
+    }
+  }
 }
 
 /* Bootstrap: Large devices */
 @media (min-width: 992px) {
-  /************************************************************************* title */
-  /* styles main title */
-  #mainTitle {
-    text-align: left;
-    display: inline;
+  /************************************************************************* top nav */
+
+  /* styles nav title */
+  #navTitle {
+    font-weight: bold;
   }
 
-  /************************************************************************* top nav */
   /* bars button */
   .fas.fa-bars {
     display: none;
   }
 
-  /* top nav size */
-  nav {
-    height: 10%;
-  }
-
-  /* designs links in top nav */
-  .top-nav-links {
-    font-size: 2rem;
-    display: inline;
-  }
-
-  /* moves top nav links to the right */
+  /* displays top nav links */
   #topNavLinksContainer {
     float: right;
-    list-style: inline;
+    margin-top: 10px;
   }
 
-  /* puts top nav links on nav bar */
-  ul {
-    display: inline;
+  /* designs link pages in top nav */
+  .top-nav-links {
+    display: flex;
+    margin-right: 1rem;
+    font-size: 2.5rem;
+  }
+  .top-nav-links:hover {
+    background-color: rgba(180, 180, 3, 0.466);
   }
 
-  /* changes hover colour of sidenav */
-  .top-nav li > a:hover {
-    background-color: rgb(180, 180, 3);
+  /* increases size of user reviews */
+  #review-box p {
+    font-size: 1.5rem;
+  }
+  /************************************************************************* reviews */
+  /* styles user review titles */
+
+  .user-review-title {
+    font-size: 1.5rem;
   }
 
-  /************************************************************************* side nav */
-  /* increases size of side nav */
-  .sidenav {
-    width: 250px;
+  /************************************************************************* modals */
+  /* improves size of 'are you sure' modal */
+  @media only screen and (max-width: 992px) {
+    #modal3 {
+      width: 40%;
+    }
+  }
+
+  /* spaces out yes and no buttons */
+  .red,
+  .green {
+    margin-bottom: 40px;
   }
 
   /************************************************************************* footer */
@@ -522,8 +624,22 @@ input#password {
 /* Bootstrap: Extra large devices */
 @media (min-width: 1200px) {
   /************************************************************************* top nav */
-  /* bars button */
-  .fas.fa-bars {
-    margin: 10px;
+
+  /* stlyes movie pictures and review box for review section */
+  .review-pictures,
+  #review-box {
+    height: 40rem;
+  }
+  /************************************************************************* my bookings */
+  /* spaces out chang and delete buttons from each other */
+  .change-btn,
+  .delete-btn {
+    margin: 25px 0px;
+  }
+
+  /************************************************************************* changing booking */
+  /* narrows form */
+  #changeForm {
+    margin: 0px 7rem;
   }
 }

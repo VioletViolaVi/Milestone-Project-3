@@ -55,7 +55,7 @@
             <i class="fas fa-times modal-close"></i>
             <div class="modal-content center">       
                 <form method="POST" action="{{ url_for('my_bookings') }}">  
-                    <h4 class="modal-titles">Delete Movie:<br>{{ booking.booked_movie }}?</h4>
+                    <h4 class="modal-titles">Delete Movie:<br><br>{{ booking.booked_movie }}?<br><br></h4>
                     <button type="submit" class="booking-btn modal-close btn btn-flat waves-effect waves-black red black-text darken-text-4">NO</button>
                     <button type="submit" class="booking-btn modal-close btn btn-flat waves-effect waves-black green black-text darken-text-4">YES</button>         
                 </form>
@@ -64,7 +64,7 @@
 
         <!-- full booked movie details  --> 
         <div> 
-            <h4 class="movie-titles">{{ booking.booked_movie }}</h4>
+            <h4 class="movie-titles center">{{ booking.booked_movie }}</h4>
         </div>
 
         <div class="container">

@@ -73,8 +73,8 @@
 
     {% for movie in movie_names %}
         <!-- all movies and reviews -->
-        <div id="movieReviews">
-            <div class="row">
+        <div id="movieReviews">          
+            <div class="row">            
                 <h4 id="{{ movie.movie_poster }}" class="movie-titles center col s12">{{movie.movie_name}}</h4>                    
                 <div class="flip-stars star-average center col s12">
                     <i class="fas fa-star"></i>
@@ -82,27 +82,35 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
-                </div>  
-
-                <div class="img-and-review">
-                <figure id="reviews-img-position" class="col s5">       
-                    <img class="review-pictures" src="{{ movie.movie_poster }}" alt="A picture of a movie poster called {{movie.movie_name}} showing at Cinemagic.">
-                </figure> 
-                <div id="review-box" class="col s6">
-                    {% for review in reviews %}
-                        <p>{{ review.user_review }}</p>
-                        <p><b><i>~{{ review.user }}</i></b></p>
-                    {% endfor %}            
                 </div>
-                </div>
-
-
+                {% if loop.index % 2 !=0 %}  
+                    <figure id="reviews-img-position" class="col s5">       
+                        <img class="review-pictures" src="{{ movie.movie_poster }}" alt="A picture of a movie poster called '{{movie.movie_name}}' showing at Cinemagic.">
+                    </figure> 
+                    <div id="review-box" class="col s7">
+                        <h6 class="user-review-title center">Reveiws</h6>
+                        {% for review in reviews %}
+                            <p>{{ review.user_review }}</p>
+                            <p><b><i>~{{ review.user }}</i></b></p>
+                        {% endfor %}            
+                    </div>
+                {% else %}  
+                    <div id="review-box" class="col s7">
+                        <h6 class="user-review-title center">Reveiws</h6>
+                        {% for review in reviews %}
+                            <p>{{ review.user_review }}</p>
+                            <p><b><i>~{{ review.user }}</i></b></p>
+                        {% endfor %}            
+                    </div>                
+                    <figure id="reviews-img-position" class="col s5">       
+                        <img class="review-pictures" src="{{ movie.movie_poster }}" alt="A picture of a movie poster called '{{movie.movie_name}}' showing at Cinemagic.">
+                    </figure> 
+                {% endif %}
             </div>
 
             {% if loop.index != 10 %}
                 <hr class="hr-line">
-            {% endif %}    
-              
+            {% endif %}            
         </div>
     {% endfor %}
 

@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block change_booking %}
 
-    <form method="POST" action="{{ url_for('change_booking', booked_details_id=bookings._id) }}" class="black-text">
+    <form id="changeForm" method="POST" action="{{ url_for('change_booking', booked_details_id=bookings._id) }}" class="black-text">
         <h4 class="modal-titles center">Change Tickets</h4>
+        <br>
         <div class="form-item">
             <label for="bookedMovie"></label>              
             <select id="bookedMovie" name="bookedMovie" class="input-field" required>
@@ -29,6 +30,7 @@
                 {% endfor %}
             </select>                      
         </div>
+        <br>
         <div class="center">
             <button type="submit" class="btn btn-flat waves-effect waves-black yellow black-text darken-text-4 booking-btn">CHANGE BOOKING</button>
         </div>
