@@ -132,8 +132,6 @@ def change_booking(booked_details_id):
     movie_names = list(mongo.db.movies.find())
     # location info taken from mongo db for dropdown
     location_names = list(mongo.db.locations.find())
-    # booking info brought out from mongo db
-    booking_info = mongo.db.booked_details.find()
 
     # gets objectId for changing specific bookings
     bookings = mongo.db.booked_details.find_one(
@@ -142,8 +140,7 @@ def change_booking(booked_details_id):
     return render_template("change_booking.html",
                            bookings=bookings,
                            movie_names=movie_names,
-                           location_names=location_names,
-                           booking_info=booking_info)
+                           location_names=location_names)
 
 
 @app.route("/logout")

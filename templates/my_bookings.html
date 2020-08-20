@@ -49,18 +49,17 @@
     <br>
 
     {% for booking in booking_info %}
-
         <!-- are you sure: modal -->
         <!-- modal from materialize -->
         <div id="modal3" class="modal right-align">
-        <i class="fas fa-times modal-close"></i>
-        <div class="modal-content center">       
-            <form method="POST" action="{{ url_for('my_bookings') }}">  
-                <h4 class="modal-titles">Delete Movie:<br>{{ booking.booked_movie }}?</h4>
-                <button type="submit" class="modal-close btn btn-flat waves-effect waves-black red black-text darken-text-4 booking-btn">NO</button>
-                <button type="submit" class="modal-close btn btn-flat waves-effect waves-black green black-text darken-text-4 booking-btn">YES</button>         
-            </form>
-        </div>
+            <i class="fas fa-times modal-close"></i>
+            <div class="modal-content center">       
+                <form method="POST" action="{{ url_for('my_bookings') }}">  
+                    <h4 class="modal-titles">Delete Movie:<br>{{ booking.booked_movie }}?</h4>
+                    <button type="submit" class="booking-btn modal-close btn btn-flat waves-effect waves-black red black-text darken-text-4">NO</button>
+                    <button type="submit" class="booking-btn modal-close btn btn-flat waves-effect waves-black green black-text darken-text-4">YES</button>         
+                </form>
+            </div>
         </div>
 
         <!-- full booked movie details  --> 
@@ -70,7 +69,6 @@
 
         <div class="container">
             <div class="row">
-
                 <!-- booked movie text  -->
                 <div class="col s6 booked-details"> 
                     <ul>
@@ -89,7 +87,6 @@
                         <button class="delete-btn btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#modal3">DELETE</button>
                     </div>             
                 </div> 
-
             </div>
             <!-- leave a reivew button -->
             <div class="row center">
@@ -98,9 +95,7 @@
                 </div>
             </div>
         </div>
-
         <hr class="hr-line">
-
     {% endfor %}
 
 {% endblock %}

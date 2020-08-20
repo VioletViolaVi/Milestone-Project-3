@@ -7,7 +7,7 @@
   font-family: "Scada", sans-serif;
 }
 
-/************************************************************************* navbar title */
+/************************************************************************* top nav */
 /* styles nav title */
 #navTitle {
   font-size: 3rem;
@@ -16,7 +16,6 @@
   margin: 0px;
 }
 
-/************************************************************************* top nav */
 /* designs link pages in top nav */
 .top-nav-links {
   display: none;
@@ -113,72 +112,6 @@ body {
   margin: 0px 10px;
 }
 
-/************************************************************************* homepage *************************************************************************/
-/************************************************************************* carousel */
-/* styles basis of carousel */
-.carousel.carousel-slider.center {
-  height: 450px;
-  border: solid black 2px;
-}
-
-/* styles carousel photos */
-.carousel .carousel-item > img {
-  height: 100%;
-}
-
-/* styles indicators */
-.carousel .indicators .indicator-item {
-  background-color: rgba(180, 180, 3, 0.466);
-  width: 5%;
-  height: 12px;
-}
-
-/* styles active indicators */
-.carousel .indicators .indicator-item.active {
-  background-color: yellow;
-}
-
-/* styles book now button */
-.booking-btn {
-  font-weight: 800;
-}
-
-/* styles review button */
-.reviews-btn {
-  margin-top: 15px;
-}
-
-/* styles book now button */
-.booking-btn {
-  margin-top: 0px;
-}
-
-/************************************************************************* reviews */
-/* styles movie titles */
-.movie-titles {
-  margin-left: 5px;
-}
-
-/* keeps review pics and reviews in two columns */
-figure.col.s6 {
-  margin: 0px;
-  padding: 0px;
-}
-
-/* stlyes movie pictures for review section */
-.review-pictures {
-  width: 100%;
-  height: 11rem;
-}
-
-/* style review box */
-.review-box {
-  border: solid black 3px;
-  height: 100px;
-  margin: 10px 0px;
-  padding: 3px;
-}
-
 /************************************************************************* modals *************************************************************************/
 
 /* styles close button */
@@ -188,25 +121,18 @@ figure.col.s6 {
 }
 
 /* spaces out all modal contents */
-.modal-titles,  
+.modal-titles,
 .flip-stars {
   margin-bottom: 15px;
 }
 
 /* styles modal titles */
-.modal-titles {
+.modal-titles,
+.form-item label {
   color: black;
 }
 .form-item label {
-    font-size: 1.2rem;
-    color: black;
-}
-/* spaces out yes and no buttons */
-.red {
-  margin: 25px 35px 0px 0px;
-}
-.green {
-  margin: 25px 0px 0px 35px;
+  font-size: 1.2rem;
 }
 
 /* improves size of modals */
@@ -214,6 +140,14 @@ figure.col.s6 {
   .modal {
     width: 100%;
   }
+}
+
+/* spaces out yes and no buttons */
+.red {
+  margin: 25px 35px 0px 0px;
+}
+.green {
+  margin: 25px 0px 0px 35px;
 }
 
 /************************************************************************* dropdowns */
@@ -251,7 +185,7 @@ input.select-dropdown.dropdown-trigger {
 
 /* styles average score stars */
 .star-average .fas.fa-star {
-  font-size: 1rem;
+  font-size: 3rem;
 }
 
 /* styles modal stars */
@@ -305,7 +239,7 @@ input.five-stars:checked ~ .star:before {
   color: black;
 }
 
-/* changes font colour of current date */
+/* changes font colour of current day */
 .is-today {
   color: goldenrod !important;
 }
@@ -328,7 +262,73 @@ input.five-stars:checked ~ .star:before {
   font-weight: 900;
 }
 
+/************************************************************************* homepage *************************************************************************/
+
+/************************************************************************* carousel */
+/* styles outline of carousel */
+.carousel.carousel-slider.center {
+  height: 450px;
+  border: solid black 2px;
+}
+
+/* styles carousel photos */
+.carousel .carousel-item > img {
+  height: 100%;
+}
+
+/* styles indicators */
+.carousel .indicators .indicator-item {
+  background-color: rgba(180, 180, 3, 0.466);
+  width: 5%;
+  height: 1.5rem;
+}
+
+/* styles active indicators */
+.carousel .indicators .indicator-item.active {
+  background-color: yellow;
+}
+
+/* styles book now button */
+.booking-btn {
+  font-weight: 800;
+  margin-top: 0px;
+}
+
+/* styles review button */
+.reviews-btn {
+  margin-top: 15px;
+}
+
+/************************************************************************* reviews */
+/* styles movie titles */
+.movie-titles {
+  font-weight: bold;
+}
+
+/* stlyes movie pictures for review section */
+.review-pictures {
+  width: 100%;
+  height: 20rem;
+  margin-left: 10px;
+}
+
+/* positions review images */
+#reviews-img-position {
+  margin: 0px;
+  padding: 0px 1px;
+}
+
+/* style review box */
+#review-box {
+  border: solid black 3px;
+  height: 20rem;
+  padding: 0px 0px 0px 4px;
+  overflow: auto;
+  margin-left: 20px;
+}
+
 /************************************************************************* signup and login *************************************************************************/
+
 /* styles content under its card */
 div.center {
   font-size: 2rem;
@@ -347,11 +347,12 @@ input#password {
 }
 
 /* moves ticket quantity title to the left */
-.input-field.col label {          
+.input-field.col label {
   left: 0rem;
 }
 
 /************************************************************************* my bookings *************************************************************************/
+
 /* styles booking text */
 .booked-details {
   font-size: 1.1rem;
@@ -366,9 +367,7 @@ input#password {
 }
 
 /* spaces out chang and delete buttons from each other */
-.change-btn {
-  margin: 15px 0px;
-}
+.change-btn,
 .delete-btn {
   margin: 15px 0px;
 }
@@ -376,6 +375,56 @@ input#password {
 /************************************************************************* responsive breakpoints *************************************************************************/
 /* Bootstrap: Small devices */
 @media (min-width: 576px) {
+  /************************************************************************* top nav */
+  /* styles nav title */
+  #navTitle {
+    font-size: 5rem;
+  }
+
+  /* top nav size */
+  nav {
+    height: 6rem;
+  }
+
+  /* bars button */
+  .fas.fa-bars {
+    font-size: 5rem;
+    margin-top: 5px;
+  }
+
+  /************************************************************************* carousel */
+  /* styles outline of carousel */
+  .carousel.carousel-slider.center {
+    height: 500px;
+  }
+
+  /* styles book now button */
+  .booking-btn {
+    font-size: 2rem;
+  }
+
+  /************************************************************************* stars */
+  /* styles modal stars */
+  .star-average .fas.fa-star {
+    font-size: 3rem;
+  }
+
+  /************************************************************************* reviews */
+  /* stlyes movie pictures for review section */
+  .review-pictures {
+    height: 20rem;
+  }
+
+  /* positions review images */
+  .reviews-img-position {
+    margin: 0px 350px 0px 10px;
+  }
+
+  /* style review box */
+  /* .review-box {
+
+
+} */
 }
 
 /* accommodate materialize */

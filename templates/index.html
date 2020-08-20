@@ -4,24 +4,26 @@
     <div class="center">
         <h2>{{ page_title }}</h2>
     </div>
-
-    <!-- carousel from materialize -->
-    <div class="carousel carousel-slider center">
-<!-- all movie posters -->
-{% for movie in movie_names %}
-        <figure>
-            <a class="carousel-item" href="#{{ movie.movie_poster }}">
-                <img src="{{ movie.movie_poster }}" alt="A picture of a movie poster showing at Cinemagic.">
-            </a>
-        </figure>
-{% endfor %}
+    <div class="container">
+        <div class="row">
+        <!-- carousel from materialize -->          
+            <div class="col s12 carousel carousel-slider center">
+                <div class="center carousel-fixed-item">
+                    <a class="booking-btn btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#modal1">BOOK NOW</a>
+                </div>            
+                <!-- all movie posters -->
+                {% for movie in movie_names %}
+                    <figure>
+                        <a class="carousel-item" href="#{{ movie.movie_poster }}">
+                            <img src="{{ movie.movie_poster }}" alt="A picture of a movie poster showing at Cinemagic.">
+                        </a>
+                    </figure>
+                {% endfor %}
+            </div>
+        </div>
     </div>
 
-    <div class="center">
-        <a class="booking-btn col s12 btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#modal1">BOOK NOW</a>
-    </div>
-
-    <!-- book tickets: modal -->
+   <!-- book tickets: modal -->
     <!-- modal from materialize -->
     <div id="modal1" class="modal">
         <div class="right-align">
@@ -30,7 +32,6 @@
         <div class="modal-content">       
             <form method="POST" action="{{ url_for('home') }}" class="black-text">
                 <h4 class="modal-titles center">Book Tickets</h4>
-
                 <div class="form-item">
                     <label for="bookedMovie"></label>              
                     <select id="bookedMovie" name="bookedMovie" class="input-field" required>
@@ -40,17 +41,14 @@
                         {% endfor %}
                     </select>
                 </div>
-
                 <div class="form-item">
                     <label for="ticketQuantity">Ticket Quantity</label>
                     <input type="number" id="ticketQuantity" name="ticketQuantity" min="1" required>      
                 </div>
-
                 <div class="form-item">
                     <label for="date">Date</label>
                     <input id="date" name="date" type="text" class="datepicker" required>                    
                 </div>                                
-
                 <div class="form-item">
                     <label for="location">Location</label>                   
                     <select id="location" name="location" class="input-field select-boxes" required>
@@ -60,83 +58,56 @@
                         {% endfor %}
                     </select>                      
                 </div>
-
                 <div class="center">
                     <button type="submit" class="btn btn-flat waves-effect waves-black yellow black-text darken-text-4 booking-btn">SUBMIT</button>
                 </div>
-
             </form>
         </div>
     </div>
 
+    <br>
     <div class="center">
         <h3>{{ page_subtitle }}</h3>
     </div>
+    <br>
 
     {% for movie in movie_names %}
         <!-- all movies and reviews -->
         <div id="movieReviews">
+            <div class="row">
+                <h4 id="{{ movie.movie_poster }}" class="movie-titles center col s12">{{movie.movie_name}}</h4>                    
+                <div class="flip-stars star-average center col s12">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>  
 
-            {% if loop.index % 2 != 0 %}
-                <h4 id="{{ movie.movie_poster }}" class="movie-titles">{{movie.movie_name}}</h4>
-                <div class="container movie-review"> 
-                    <div class="row">
-                        <figure class="col s6">       
-                            <img class="review-pictures" src="{{ movie.movie_poster }}" alt="A picture of a movie poster showing at Cinemagic.">
-                        </figure>
-                        <div class="col s6">
-                            <div class="flip-stars center star-average">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>  
-                            <div class="center">
-                                <a class="btn waves-effect yellow black-text darken-text-4 booking-btn modal-trigger" href="#modal1">BOOK NOW</a>
-                            </div>
-                        </div>          
-                    </div>
-                    <div class="review-box">
-                        {% for review in reviews %}
-                            <p>{{ review.user_review }}</p>
-                            <p><b><i>~{{ review.user }}</i></b></p>
-                        {% endfor %}
-                    </div>
+                <div class="img-and-review">
+                <figure id="reviews-img-position" class="col s5">       
+                    <img class="review-pictures" src="{{ movie.movie_poster }}" alt="A picture of a movie poster called {{movie.movie_name}} showing at Cinemagic.">
+                </figure> 
+                <div id="review-box" class="col s6">
+                    {% for review in reviews %}
+                        <p>{{ review.user_review }}</p>
+                        <p><b><i>~{{ review.user }}</i></b></p>
+                    {% endfor %}            
                 </div>
+                </div>
+
+
+            </div>
+
+            {% if loop.index != 10 %}
                 <hr class="hr-line">
-            {% else %}
-                <h4 id="{{ movie.movie_poster }}" class="movie-titles">{{movie.movie_name}}</h4>
-                <div class="container movie-review"> 
-                    <div class="row">
-                        <div class="col s6">
-                            <div class="flip-stars center star-average">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>  
-                            <div class="center">
-                                <a class="btn waves-effect yellow black-text darken-text-4 booking-btn modal-trigger" href="#modal1">BOOK NOW</a>
-                            </div>
-                        </div>  
-                        <figure class="col s6">       
-                            <img class="review-pictures" src="{{ movie.movie_poster }}" alt="A picture of a movie poster showing at Cinemagic.">
-                        </figure>
-                    </div>
-                    <div class="review-box">
-                        {% for review in reviews %}
-                            <p>{{ review.user_review }}</p>
-                            <p><b><i>~{{ review.user }}</i></b></p>
-                        {% endfor %}
-                    </div>
-                </div>
-                {% if loop.index != 10 %}
-                    <hr class="hr-line">
-                {% endif %}
-            {% endif %}      
+            {% endif %}    
+              
         </div>
     {% endfor %}
+
+    <div class="center">
+        <a class="btn waves-effect yellow black-text darken-text-4 booking-btn modal-trigger" href="#modal1">BOOK NOW</a>
+    </div>
 
 {% endblock %}
