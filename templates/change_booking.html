@@ -2,36 +2,45 @@
 {% block change_booking %}
 
     <form id="changeForm" method="POST" action="{{ url_for('change_booking', booked_details_id=bookings._id) }}" class="black-text">
-        <h4 class="modal-titles center">Change Tickets</h4>
+        <h4 class="modal-titles center">{{ page_title }}</h4>
         <br>
         <div class="form-item">
             <label for="bookedMovie"></label>              
             <select id="bookedMovie" name="bookedMovie" class="input-field" required>
-                <option value="" disabled selected>Select Movie</option>
+                <option value="" disabled>Select Movie</option>
                 {% for movie_name in movie_names %}
-                    <option value="{{ movie_name.movie_name }}">{{ movie_name.movie_name }}</option>
+                    {% if movie_name.movie_name == bookings.booked_movie %}
+                        <option value="{{ movie_name.movie_name }}" selected>{{ movie_name.movie_name }}</option>
+                    {% else %}
+                        <option value="{{ movie_name.movie_name }}">{{ movie_name.movie_name }}</option>
+                    {% endif %}
                 {% endfor %}
             </select>
         </div>
         <div class="form-item">
             <label for="ticketQuantity">Ticket Quantity</label>
-            <input type="number" id="ticketQuantity" name="ticketQuantity" min="1" required>      
+            <input value="{{ bookings.booked_ticket_quantity }}" type="number" id="ticketQuantity" name="ticketQuantity" min="1" required>      
         </div>
         <div class="form-item">
             <label for="date">Date</label>
-            <input id="date" name="date" type="text" class="datepicker" required>                    
+            <input value="{{ bookings.booked_date }}" id="date" name="date" type="text" class="datepicker" required>                    
         </div>                                
         <div class="form-item">
             <label for="location">Location</label>                   
             <select id="location" name="location" class="input-field select-boxes" required>
                 <option value="" disabled selected></option>
                 {% for location_name in location_names %}
-                    <option value="{{ location_name.location_name }}">{{ location_name.location_name }}</option>
+                    {% if location_name.location_name == bookings.booked_location %}
+                        <option value="{{ location_name.location_name }}" selected>{{ location_name.location_name }}</option>
+                    {% else %}
+                        <option value="{{ location_name.location_name }}">{{ location_name.location_name }}</option>
+                    {% endif %}                  
                 {% endfor %}
             </select>                      
         </div>
         <br>
         <div class="center">
+            <a href="{{ url_for('my_bookings') }}" class="btn btn-flat waves-effect waves-black yellow black-text darken-text-4 booking-btn">CANCEL</a>
             <button type="submit" class="btn btn-flat waves-effect waves-black yellow black-text darken-text-4 booking-btn">CHANGE BOOKING</button>
         </div>
     </form>   

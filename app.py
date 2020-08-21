@@ -105,9 +105,12 @@ def my_bookings():
     # reviews left by users
     if request.method == "POST":
         reviews = {
+            "reviewed_movie_name": request.form.get("selectedMovie"),
+            "star_rating_review": request.form.get("starRating"),
             "user_review": request.form.get("commentBox"),
             "user": session["user"].title()
         }
+
         mongo.db.reviews.insert_one(reviews)
         flash("Review Successfully Added!")
         return redirect(url_for("home"))
@@ -132,7 +135,6 @@ def change_booking(booked_details_id):
     movie_names = list(mongo.db.movies.find())
     # location info taken from mongo db for dropdown
     location_names = list(mongo.db.locations.find())
-
     # gets objectId for changing specific bookings
     bookings = mongo.db.booked_details.find_one(
         {"_id": ObjectId(booked_details_id)})

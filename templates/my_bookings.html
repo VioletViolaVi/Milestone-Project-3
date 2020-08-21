@@ -7,7 +7,6 @@
         <i class="fas fa-times modal-close"></i>
         <div class="modal-content center">       
             <form method="POST" action="{{ url_for('my_bookings') }}">  
-
                 <!-- select dropdown from materialize -->
                 <div class="form-item input-field">
                     <select id="selectedMovie" name="selectedMovie" required>
@@ -21,19 +20,19 @@
 
                 <h4 class="modal-titles">My Rating</h4> 
                 <div class="flip-stars">
-                    <input class="radio-btn five-stars" id="star-5" type="radio" name="starRating" required/>
+                    <input value="5" class="radio-btn five-stars" id="star-5" type="radio" name="starRating" required/>
                     <label class="star five-stars fas fa-star" for="star-5"></label>
 
-                    <input class="radio-btn" id="star-4" type="radio" name="starRating"/>
+                    <input value="4" class="radio-btn" id="star-4" type="radio" name="starRating"/>
                     <label class="star fas fa-star" for="star-4"></label>
 
-                    <input class="radio-btn" id="star-3" type="radio" name="starRating"/>
+                    <input value="3" class="radio-btn" id="star-3" type="radio" name="starRating"/>
                     <label class="star fas fa-star" for="star-3"></label>
 
-                    <input class="radio-btn" id="star-2" type="radio" name="starRating"/>
+                    <input value="2" class="radio-btn" id="star-2" type="radio" name="starRating"/>
                     <label class="star fas fa-star" for="star-2"></label>
 
-                    <input class="radio-btn" id="star-1" type="radio" name="starRating"/>
+                    <input value="1" class="radio-btn" id="star-1" type="radio" name="starRating"/>
                     <label class="star one-star fas fa-star" for="star-1"></label>
                 </div>
 
