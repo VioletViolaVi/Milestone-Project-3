@@ -22,6 +22,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home", methods=["GET", "POST"])
 def home():
+
     # books tickets
     if request.method == "POST":
         bookings = {
@@ -37,8 +38,10 @@ def home():
 
     # movie info taken from mongo db for dropdown
     movie_names = list(mongo.db.movies.find())
+
     # location info taken from mongo db for dropdown
     location_names = list(mongo.db.locations.find())
+
     # reviews brought out from mongo db for homepage
     reviews = mongo.db.reviews.find()
 
@@ -49,14 +52,20 @@ def home():
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
+
     if request.method == "POST":
+
         # searches for same username in mongo db for comprison
-        existing_user = mongo.db.users.find_one(
+        existing_username = mongo.db.users.find_one(
             {"user": request.form.get("username").lower()})
 
-        # occurs when username typed is same as username found by above code
-        if existing_user:
-            flash("Username Already Exists!")
+        # searches for same email in mongo db for comprison
+        existing_user_email = mongo.db.users.find_one(
+            {"email": request.form.get("email").lower()})
+
+        # occurs when username or email typed is same as that in db
+        if existing_username or existing_user_email:
+            flash("Username And/Or Email Already Registered!")
             # takes users back to signup page to try signing up again
             return redirect(url_for("signup"))
 
@@ -71,17 +80,22 @@ def signup():
         # puts new user in session cookie
         session["user"] = request.form.get("username").lower()
         flash("Sign Up Successful!")
+        return redirect(url_for("home"))
+
     return render_template("signup.html", page_title="Sign Up")
 
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+
     if request.method == "POST":
+
         # checks if username exists in db
         existing_user = mongo.db.users.find_one(
             {"user": request.form.get("username").lower()})
 
         if existing_user:
+
             # checks if hashed password matches input
             if check_password_hash(
                     existing_user["pwd"], request.form.get("password")):
@@ -90,11 +104,11 @@ def login():
                 return redirect(url_for("home"))
             else:
                 # occurs when password is wrong
-                flash("Incorrect Username and/or Password")
+                flash("Incorrect Username And/Or Password")
                 return redirect(url_for("login"))
         else:
             # occurs when not an existing user
-            flash("Incorrect Username and/or Password")
+            flash("Incorrect Username And/Or Password")
             return redirect(url_for("login"))
 
     return render_template("login.html", page_title="Log In")
@@ -102,8 +116,10 @@ def login():
 
 @app.route("/my_bookings", methods=["GET", "POST"])
 def my_bookings():
+
     # reviews left by users
     if request.method == "POST":
+
         reviews = {
             "reviewed_movie_name": request.form.get("selectedMovie"),
             "star_rating_review": request.form.get("starRating"),
@@ -117,8 +133,10 @@ def my_bookings():
 
     # movie info taken from mongo db for dropdown
     movie_names = list(mongo.db.movies.find())
+
     # location info taken from mongo db for dropdown
     location_names = list(mongo.db.locations.find())
+
     # booking info brought out from mongo db
     booking_info = mongo.db.booked_details.find()
 
@@ -131,10 +149,28 @@ def my_bookings():
 @app.route("/change_booking/<booked_details_id>", methods=["GET", "POST"])
 def change_booking(booked_details_id):
 
+    # books tickets
+    if request.method == "POST":
+
+        submit = {
+            "booked_movie": request.form.get("bookedMovie"),
+            "booked_ticket_quantity": request.form.get("ticketQuantity"),
+            "booked_date": request.form.get("date"),
+            "booked_location": request.form.get("location"),
+            "booked_by": session["user"].title()
+        }
+        mongo.db.booked_details.update(
+            {"_id": ObjectId(booked_details_id)}, submit)
+
+        flash("Booking Successfully Updated!")
+        return redirect(url_for("my_bookings"))
+
     # movie info taken from mongo db for dropdown
     movie_names = list(mongo.db.movies.find())
+
     # location info taken from mongo db for dropdown
     location_names = list(mongo.db.locations.find())
+
     # gets objectId for changing specific bookings
     bookings = mongo.db.booked_details.find_one(
         {"_id": ObjectId(booked_details_id)})
@@ -147,9 +183,12 @@ def change_booking(booked_details_id):
 
 @app.route("/logout")
 def logout():
+
     flash("You have been logged out!")
+
     # removes session cookies to logout
     session.pop("user")
+
     return redirect(url_for("home"))
 
 

@@ -99,7 +99,6 @@ body {
 /* styles flash messages */
 .flash_messages {
   color: red;
-  margin: 85px 0px 0px 0px;
 }
 
 /************************************************************************* hr border line */
@@ -386,6 +385,11 @@ input#password {
 /* narrows form */
 #changeForm {
   margin: 0px 1rem;
+}
+
+/* makes confirm button font consistent */
+.confirm{
+    font-family: "Scada", sans-serif;
 }
 
 /************************************************************************* BREAKPOINTS *************************************************************************/

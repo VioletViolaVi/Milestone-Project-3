@@ -61,40 +61,43 @@
             </div>
         </div>
 
-        <!-- full booked movie details  --> 
-        <div> 
+       {% if session.user|lower == booking.booked_by|lower %}
+            <!-- full booked movie details  --> 
+            <div> 
             <h4 class="movie-titles center">{{ booking.booked_movie }}</h4>
-        </div>
+            </div>
 
-        <div class="container">
-            <div class="row">
-                <!-- booked movie text  -->
-                <div class="col s6 booked-details"> 
-                    <ul>
-                        <li><b>Ticket Quantity: </b>{{ booking.booked_ticket_quantity }}</li>
-                        <li><b>Date: </b>{{ booking.booked_date }}</li>
-                        <li><b>Location: </b>{{ booking.booked_location }}</li>
-                        <li><b>Owner: </b>{{ booking.booked_by }}</li>
-                    </ul>
-                </div>
-                <!-- change and delete buttons -->
-                <div class="col s6 center">
-                    <div class="col s12">
-                        <a class="change-btn btn waves-effect yellow black-text darken-text-4" href="{{ url_for('change_booking', booked_details_id=booking._id) }}">CHANGE</a>
+            <div class="container">
+                <div class="row">
+                    <!-- booked movie text  -->
+                    <div class="col s6 booked-details"> 
+                        <ul>
+                            <li><b>Ticket Quantity: </b>{{ booking.booked_ticket_quantity }}</li>
+                            <li><b>Date: </b>{{ booking.booked_date }}</li>
+                            <li><b>Location: </b>{{ booking.booked_location }}</li>
+                            <li><b>Owner: </b>{{ booking.booked_by }}</li>
+                        </ul>
                     </div>
+                    <!-- change and delete buttons -->
+                    <div class="col s6 center">
+                        <div class="col s12">
+                            <a class="change-btn btn waves-effect yellow black-text darken-text-4" href="{{ url_for('change_booking', booked_details_id=booking._id) }}">CHANGE</a>
+                        </div>
+                        <div class="col s12">
+                            <button class="delete-btn btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#modal3">DELETE</button>
+                        </div>             
+                    </div> 
+                </div>
+                <!-- leave a reivew button -->
+                <div class="row center">
                     <div class="col s12">
-                        <button class="delete-btn btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#modal3">DELETE</button>
-                    </div>             
-                </div> 
-            </div>
-            <!-- leave a reivew button -->
-            <div class="row center">
-                <div class="col s12">
-                    <button class="leave-a-review-btn btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#modal2">LEAVE A REVIEW</button>  
+                        <button class="leave-a-review-btn btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#modal2">LEAVE A REVIEW</button>  
+                    </div>
                 </div>
             </div>
-        </div>
-        <hr class="hr-line">
+            <hr class="hr-line">
+        {% endif %}
+
     {% endfor %}
 
 {% endblock %}
