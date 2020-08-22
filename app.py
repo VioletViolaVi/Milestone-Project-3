@@ -181,6 +181,15 @@ def change_booking(booked_details_id):
                            location_names=location_names)
 
 
+@app.route("/delete_booking/<booked_details_id>")
+def delete_booking(booked_details_id):
+
+    # targets bookings in db by their _id
+    mongo.db.booked_details.remove({"_id": ObjectId(booked_details_id)})
+    flash("Booking Successfully Deleted!")
+    return redirect(url_for("my_bookings"))
+
+
 @app.route("/logout")
 def logout():
 

@@ -48,20 +48,17 @@
     <br>
 
     {% for booking in booking_info %}
-        <!-- are you sure: modal -->
-        <!-- modal from materialize -->
-        <div id="modal3" class="modal right-align">
-            <i class="fas fa-times modal-close"></i>
-            <div class="modal-content center">       
-                <form method="POST" action="{{ url_for('my_bookings') }}">  
+        {% if session.user|lower == booking.booked_by|lower %}
+            <!-- are you sure: modal -->
+            <!-- modal from materialize -->
+            <div id="{{booking._id}}" class="modal right-align">
+                <i class="fas fa-times modal-close"></i>
+                <div class="modal-content center">                         
                     <h4 class="modal-titles">Delete Movie:<br><br>{{ booking.booked_movie }}?<br><br></h4>
-                    <button type="submit" class="booking-btn modal-close btn btn-flat waves-effect waves-black red black-text darken-text-4">NO</button>
-                    <button type="submit" class="booking-btn modal-close btn btn-flat waves-effect waves-black green black-text darken-text-4">YES</button>         
-                </form>
-            </div>
-        </div>
-
-       {% if session.user|lower == booking.booked_by|lower %}
+                    <a class="booking-btn modal-close btn btn-flat waves-effect waves-black red black-text darken-text-4 modal-close">NO</a>
+                    <a href="{{ url_for('delete_booking', booked_details_id=booking._id) }}" class="booking-btn modal-close btn btn-flat waves-effect waves-black green black-text darken-text-4">YES</a>                          
+                </div>
+            </div>      
             <!-- full booked movie details  --> 
             <div> 
             <h4 class="movie-titles center">{{ booking.booked_movie }}</h4>
@@ -84,7 +81,7 @@
                             <a class="change-btn btn waves-effect yellow black-text darken-text-4" href="{{ url_for('change_booking', booked_details_id=booking._id) }}">CHANGE</a>
                         </div>
                         <div class="col s12">
-                            <button class="delete-btn btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#modal3">DELETE</button>
+                            <button class="delete-btn btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#{{booking._id}}">DELETE</button>
                         </div>             
                     </div> 
                 </div>

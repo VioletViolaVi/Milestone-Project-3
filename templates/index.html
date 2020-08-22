@@ -83,6 +83,7 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                 </div>
+
                 {% if loop.index % 2 !=0 %}  
                     <figure id="reviews-img-position" class="col s5">       
                         <img class="review-pictures" src="{{ movie.movie_poster }}" alt="A picture of a movie poster called '{{movie.movie_name}}' showing at Cinemagic.">
@@ -110,6 +111,7 @@
                         <img class="review-pictures" src="{{ movie.movie_poster }}" alt="A picture of a movie poster called '{{movie.movie_name}}' showing at Cinemagic.">
                     </figure> 
                 {% endif %}
+
             </div>
 
             {% if loop.index != 10 %}
