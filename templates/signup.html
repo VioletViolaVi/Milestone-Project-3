@@ -5,22 +5,22 @@
     </div>
 
     <div class="row">
-        <div class="col s12 m4 offset-m4">
+        <div class="col s12">
             <div class="card yellow accent-1">
-                <div class="card-content white-text">
+                <div class="card-content">
                     <form method="POST" action="{{ url_for('signup') }}">
                    
 	                    <label for="email" class="black-text">email</label>
-	                    <input id="email" name="email" type="email" size="30" required> 
+	                    <input id="email" name="email" type="email" required> 
                 
 	                    <label for="username" class="black-text">username</label>
-	                    <input id="username" name="username" type="text" size="30" minlength="4" maxlength="14" required>
+	                    <input id="username" name="username" type="text" minlength="4" maxlength="14" required>
 
                         <label for="password" class="black-text">password</label>
                         <input id="password" name="password" type="password" minlength="4" maxlength="14" required>                      
 
                         <div class="center">
-                            <button type="submit" class="booking-btn modal-close btn btn-flat waves-effect waves-black yellow black-text darken-text-4">SIGN UP</button>
+                            <button type="submit" class="custom-btn modal-close btn btn-flat waves-effect waves-black yellow black-text darken-text-4">SIGN UP</button>
                         </div>
  
                     </form>

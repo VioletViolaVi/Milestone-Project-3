@@ -80,6 +80,7 @@ def signup():
         # puts new user in session cookie
         session["user"] = request.form.get("username").lower()
         flash("Sign Up Successful!")
+        flash(f"Welcome {request.form.get('username')}!")
         return redirect(url_for("home"))
 
     return render_template("signup.html", page_title="Sign Up")

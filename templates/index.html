@@ -4,7 +4,7 @@
     <h2 class="center">{{ page_title }}</h2>
 
     {% for movie in movie_names %}
-        <div id="container" class="container">
+        <div id="container">
             <div class="row">        
                 <img id="image" class="col s6" src="{{ movie.movie_poster }}" alt="A picture of a movie poster showing at Cinemagic.">   
                 <div id="movieDetails" class="col s6">
@@ -27,9 +27,16 @@
                     </div>
                 </div>   
             </div> 
-            <div class="center">
-                <a class="custom-btn btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#{{ movie.movie_name }}">BOOK NOW</a>
-            </div>  
+            {% if session.user %}
+                <div class="center">
+                    <a class="custom-btn btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#{{ movie.movie_name }}">BOOK NOW</a>
+                </div>             
+            {% else %}
+                <div class="center">
+                    <a class="custom-btn btn waves-effect yellow black-text darken-text-4 modal-trigger" href="{{ (url_for('signup')) }}">BOOK NOW</a>
+                </div>  
+            {% endif %}
+ 
             {% if loop.index != loop.length %}
                 <hr id="hrMovieDetails">
             {% endif %}
@@ -74,11 +81,7 @@
                     </form>
                 </div>
             </div>
-
         </div>  
     {% endfor %}
-
-
-
 
 {% endblock %}

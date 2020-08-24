@@ -1,4 +1,4 @@
-/* universal properties */
+/******************************************* universal */
 * {
   padding: 0px;
   margin: 0px;
@@ -7,7 +7,8 @@
   font-family: "Scada", sans-serif;
 }
 
-/************************************************************************* top nav */
+/******************************************* top nav */
+
 /* styles nav title */
 #navTitle {
   font-size: 3rem;
@@ -33,7 +34,8 @@ nav {
   cursor: pointer;
 }
 
-/************************************************************************* side nav */
+/******************************************* side nav */
+
 /* increases size of side nav */
 .sidenav {
   width: 230px;
@@ -60,7 +62,7 @@ nav {
   margin-top: 30px;
 }
 
-/************************************************************************* footer */
+/******************************************* footer */
 /* helps keeps footer down */
 body {
   position: relative;
@@ -95,20 +97,22 @@ body {
   margin-bottom: 0px;
 }
 
-/************************************************************************* flash messages */
+/******************************************* flash messages */
+
 /* styles flash messages */
 .flash_messages {
   color: red;
+  margin: 15px 0px 5px 0px;
 }
 
-/************************************************************************* homepage *************************************************************************/
+/******************************************* homepage */
 /* styles movies title */
 h2.center {
   margin-top: 5px;
   margin-bottom: 5px;
 }
 
-/************************************************************************* modals *************************************************************************/
+/******************************************* modals */
 
 /* moves ticket quantity title to the left */
 .input-field.col label {
@@ -151,7 +155,8 @@ h2.center {
   margin: 25px 0px 0px 35px;
 }
 
-/************************************************************************* dropdowns */
+/******************************************* dropdowns */
+
 /* keeps font type of select input titles same as the website */
 input.select-dropdown.dropdown-trigger {
   font-family: "Scada", sans-serif;
@@ -172,7 +177,8 @@ input.select-dropdown.dropdown-trigger {
   font-size: 1rem;
 }
 
-/************************************************************************* stars */
+/******************************************* stars */
+
 /* removes radio buttons */
 .radio-btn {
   display: none;
@@ -214,7 +220,8 @@ input.five-stars:checked ~ .star:before {
   text-shadow: 1px 1px 30px black;
 }
 
-/************************************************************************* datepicker */
+/******************************************* datepicker */
+
 /* styles datepicker banner */
 .datepicker-date-display {
   background-color: yellow;
@@ -263,7 +270,7 @@ input.five-stars:checked ~ .star:before {
   font-weight: 900;
 }
 
-/************************************************************************* signup and login *************************************************************************/
+/******************************************* signup and login */
 
 /* styles content under its card */
 div.center {
@@ -282,7 +289,7 @@ input#password {
   border-bottom: 1px solid black;
 }
 
-/************************************************************************* my bookings *************************************************************************/
+/******************************************* my bookings */
 
 /* styles booking text */
 .booked-details {
@@ -290,8 +297,8 @@ input#password {
   padding: 0px;
 }
 
+/******************************************* changing booking */
 
-/************************************************************************* changing booking */
 /* narrows form */
 #changeForm {
   margin: 0px 1rem;
@@ -302,9 +309,7 @@ input#password {
   font-family: "Scada", sans-serif;
 }
 
-/******************************************* ******************************************* BREAKPOINTS */
-/* bootstrap: small */
-
+/****************************************************************************************************** BREAKPOINTS from bootstrap */
 @media (min-width: 576px) {
   /******************************************* top nav */
 
@@ -344,6 +349,20 @@ input#password {
     font-size: 1.2em;
   }
 
+  /******************************************* signup/login */
+  .card {
+    margin: 10px 50px;
+  }
+
+.card label{
+    font-size: 1.6em;
+}
+
+.card .card-content {
+    padding: 24px 24px 10px 24px;
+
+}
+
   /******************************************* homepage */
 
   #movieDetails h5,
@@ -367,7 +386,7 @@ input#password {
     overflow: auto;
     height: 200px;
     padding: 0px 0px 0px 5px;
-    width: 250px;
+    width: 275px;
   }
 
   #cast {
@@ -400,30 +419,6 @@ input#password {
     font-weight: 700;
   }
 
-  /******************************************* homepage modal */
-
-.fas.fa-times{
-    padding: 5px 10px 0px 0px;
-}
-
-.datepicker-modal{
-    max-height: 29em;
-}
-
-/* movie dropdown size */
-.select-wrapper input.select-dropdown{
-    font-size: 1.2em;
-}
-
-/* date font */
-button, input, optgroup, select, textarea {
-    font-family: "Scada", sans-serif;
-}
-
-/* size of picker month */
-.select-wrapper.select-month{
-    font-size: 0.9em;
-}
   /******************************************* mybookings */
 
   .booked-details p {
@@ -431,43 +426,67 @@ button, input, optgroup, select, textarea {
     margin-bottom: 5px;
   }
 
-.margin-removal{
+  .margin-removal {
     margin-bottom: 0px;
-}
-
-.margin-removal h4{
-    margin-top: 0px;
-}
-
-  /******************************************* mybookings modal */
-.red {
-    margin: 0px 50px 0px 0px;
-}
-
-.green {
-    margin: 0px 0px 0px 50px;
-}
-
-.modal .modal-content {
-    padding: 0px 0px 30px;
-}
-
-.confirm-delete {
-    width: 60%;
-}
-
-  /************************************************************************* datepicker */
-  /* styles buttons on datepicker */
-  .datepicker-clear,
-  .datepicker-cancel,
-  .datepicker-today,
-  .datepicker-done {
-    margin: 5px;
   }
 
-  /* fills datepicker better in modal */
-  .modal-content.datepicker-container {
-    padding: 0px;
+  .margin-removal h4 {
+    margin-top: 0px;
+  }
+
+  /******************************************* all modals */
+
+  .modal {
+    width: 60%;
+  }
+
+  /******************************************* homepage modal */
+
+  .fas.fa-times {
+    padding: 5px 10px 0px 0px;
+  }
+
+  .datepicker-modal {
+    max-height: 29em;
+  }
+
+  .select-wrapper input.select-dropdown {
+    font-size: 1.2em;
+  }
+
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    font-family: "Scada", sans-serif;
+  }
+
+  .select-wrapper.select-month {
+    font-size: 0.9em;
+  }
+
+  /******************************************* leave a review modal */
+
+  .my-booking-custom .select-wrapper input.select-dropdown {
+    font-size: 0.8em;
+  }
+
+  #commentBox {
+    height: 8em;
+  }
+
+  /******************************************* confirmation modal */
+  .red {
+    margin: 0px 50px 0px 0px;
+  }
+
+  .green {
+    margin: 0px 0px 0px 50px;
+  }
+
+  .confirm-delete {
+    width: 60%;
   }
 }
 
