@@ -108,6 +108,13 @@ body {
   margin: 0px 50px;
 }
 
+/************************************************************************* homepage *************************************************************************/
+/* styles movies title */
+h2.center {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 /************************************************************************* modals *************************************************************************/
 
 /* moves ticket quantity title to the left */
@@ -270,77 +277,6 @@ input.five-stars:checked ~ .star:before {
   font-weight: 900;
 }
 
-/************************************************************************* homepage *************************************************************************/
-
-/************************************************************************* carousel */
-/* styles outline of carousel */
-.carousel.carousel-slider.center {
-  height: 450px;
-  border: solid black 2px;
-}
-
-/* styles carousel photos */
-.carousel .carousel-item > img {
-  height: 100%;
-}
-
-/* styles indicators */
-.carousel .indicators .indicator-item {
-  background-color: rgba(180, 180, 3, 0.466);
-  width: 5%;
-  height: 1.5rem;
-}
-
-/* styles active indicators */
-.carousel .indicators .indicator-item.active {
-  background-color: yellow;
-}
-
-/* styles book now and submit buttons */
-.booking-btn {
-  font-weight: 800;
-  margin-top: 0px;
-}
-
-/* styles review button */
-.reviews-btn {
-  margin-top: 15px;
-}
-
-/************************************************************************* reviews */
-/* styles movie titles */
-.movie-titles {
-  font-weight: bold;
-}
-
-/* styles user review titles */
-.user-review-title {
-  font-weight: bold;
-}
-
-/* stlyes movie pictures and review box for review section */
-.review-pictures,
-#review-box {
-  height: 20rem;
-}
-
-/* stlyes movie pictures for review section */
-.review-pictures {
-  width: 100%;
-}
-
-/* positions review images */
-#reviews-img-position {
-  margin: 0px;
-  padding: 0px 1px;
-}
-
-/* style review box */
-#review-box {
-  padding: 0px 0px 0px 4px;
-  overflow: auto;
-}
-
 /************************************************************************* signup and login *************************************************************************/
 
 /* styles content under its card */
@@ -388,14 +324,67 @@ input#password {
 }
 
 /* makes confirm button font consistent */
-.confirm{
-    font-family: "Scada", sans-serif;
+.confirm {
+  font-family: "Scada", sans-serif;
 }
 
 /************************************************************************* BREAKPOINTS *************************************************************************/
+
 /* Bootstrap: Small devices */
 @media (min-width: 576px) {
-  /************************************************************************* top nav */
+  /* homepage */
+
+  #movieDetails h5,
+  #reviews h5,
+  #cast h5 {
+    margin: 5px 0px 10px;
+  }
+
+  #image {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 40%;
+    margin: 10px 0px 15px 15px;
+    height: 305px;
+  }
+
+  #movieDetails {
+    border: 2px solid orange;
+    border-radius: 4px;
+    margin: 10px 15px 0px;
+    overflow: auto;
+    height: 200px;
+    padding: 0px 0px 0px 5px;
+    width: 250px;
+  }
+
+  #cast {
+    border: 2px solid yellow;
+    border-radius: 10px;
+    margin: 15px;
+    padding: 0px 0px 0px 5px;
+  }
+
+  #reviews {
+    border: 2px solid purple;
+    border-radius: 5px;
+    height: 150px;
+    overflow: auto;
+    padding: 0px 0px 0px 5px;
+  }
+
+  #movieDetails p,
+  #cast p,
+  #reviews p {
+    font-size: 15px;
+  }
+
+  #hrMovieDetails {
+    margin: 0px 20px 30px;
+    border-color: black;
+  }
+
+  /* top nav */
   /* styles nav title */
   #navTitle {
     font-size: 5rem;
@@ -412,45 +401,10 @@ input#password {
     margin-top: 5px;
   }
 
-  /************************************************************************* carousel */
-  /* styles outline of carousel */
-  .carousel.carousel-slider.center {
-    height: 550px;
-  }
-
-  /************************************************************************* stars */
-  /* styles modal stars */
-  .star-average .fas.fa-star {
-    font-size: 3rem;
-  }
-
-  /************************************************************************* reviews */
-  /* stlyes movie pictures for review section */
-  .review-pictures {
-    height: 20rem;
-  }
-
-  /* positions review images */
-  .reviews-img-position {
-    margin: 0px 350px 0px 10px;
-  }
-
-  /* redeuces size of modals */
-  @media only screen and (max-width: 992px) {
-    .modal {
-      width: 60%;
-    }
-  }
-
+  /************************************************************************* modals */
   /* provides space around form contents */
   .modal .modal-content {
     padding: 0px 20px 20px 20px;
-  }
-
-  /* submit button */
-  .booking-btn {
-    font-weight: 645;
-    margin-top: 20px;
   }
 
   /* improves size of 'are you sure' modal */
@@ -458,6 +412,12 @@ input#password {
     #modal3 {
       width: 60%;
     }
+  }
+
+  /* submit button */
+  .booking-btn {
+    font-weight: 645;
+    margin-top: 20px;
   }
 
   /************************************************************************* my bookings */

@@ -15,7 +15,6 @@ https://unsplash.com/photos/Jigc7F9q7Ik - skull, Photo by Max Kleinen
 https://unsplash.com/photos/mSoetyVbW_Y - seaport, Photo by Alessio Lin 
 https://unsplash.com/photos/aoEwuEH7YAs - man, Photo by Lucas Gouvêa
 
-
 https://www.youtube.com/watch?v=18-wCoAi9bQ - star system
 https://www.cssscript.com/simple-5-star-rating-system-with-css-and-html-radios/ - star system
 https://stackoverflow.com/questions/38196104/how-to-change-background-color-of-datepicker-form-in-materialize-design - datepicker css custom
