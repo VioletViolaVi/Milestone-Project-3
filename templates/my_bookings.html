@@ -1,100 +1,106 @@
 {% extends "base.html" %}
 {% block my_bookings %}
 
-    <!-- leave a review: modal -->
-    <!-- modal from materialize -->
-    <div id="modal2" class="modal right-align">
-        <i class="fas fa-times modal-close"></i>
-        <div class="modal-content center">       
-            <form method="POST" action="{{ url_for('my_bookings') }}">  
-                <!-- select dropdown from materialize -->
-                <div class="form-item input-field">
-                    <select id="selectedMovie" name="selectedMovie" required>
-                        <option value="" disabled selected>Select Movie</option>
-                        {% for movie_name in movie_names %}
-                            <option value="{{ movie_name.movie_name }}">{{ movie_name.movie_name }}</option>
-                        {% endfor %}
-                    </select>
-                    <label for="selectedMovie"></label>
-                </div>
-
-                <h4 class="modal-titles">My Rating</h4> 
-                <div class="flip-stars">
-                    <input value="5" class="radio-btn five-stars" id="star-5" type="radio" name="starRating" required/>
-                    <label class="star five-stars fas fa-star" for="star-5"></label>
-
-                    <input value="4" class="radio-btn" id="star-4" type="radio" name="starRating"/>
-                    <label class="star fas fa-star" for="star-4"></label>
-
-                    <input value="3" class="radio-btn" id="star-3" type="radio" name="starRating"/>
-                    <label class="star fas fa-star" for="star-3"></label>
-
-                    <input value="2" class="radio-btn" id="star-2" type="radio" name="starRating"/>
-                    <label class="star fas fa-star" for="star-2"></label>
-
-                    <input value="1" class="radio-btn" id="star-1" type="radio" name="starRating"/>
-                    <label class="star one-star fas fa-star" for="star-1"></label>
-                </div>
-
-                <h4 class="modal-titles">My Review</h4>
-                <label for="commentBox"></label>
-                <textarea name="commentBox" id="commentBox" required></textarea>   
-                <button type="submit" class="btn btn-flat waves-effect waves-black yellow black-text darken-text-4 booking-btn">SUBMIT</button>
-            </form>
-        </div>
-    </div>
-
     <h2 class="center">{{ page_title }}</h2>
     <br>
-
-    {% for booking in booking_info %}
-        {% if session.user|lower == booking.booked_by|lower %}
-            <!-- are you sure: modal -->
+        {% for booking in booking_info %}
+            <!-- leave a review: modal -->
             <!-- modal from materialize -->
-            <div id="{{booking._id}}" class="modal right-align">
-                <i class="fas fa-times modal-close"></i>
-                <div class="modal-content center">                         
-                    <h4 class="modal-titles">Delete Movie:<br><br>{{ booking.booked_movie }}?<br><br></h4>
-                    <a class="booking-btn modal-close btn btn-flat waves-effect waves-black red black-text darken-text-4 modal-close">NO</a>
-                    <a href="{{ url_for('delete_booking', booked_details_id=booking._id) }}" class="booking-btn modal-close btn btn-flat waves-effect waves-black green black-text darken-text-4">YES</a>                          
+            <div id="{{ booking.booked_movie }}" class="modal">
+                <div class="right-align">
+                    <i class="fas fa-times modal-close"></i> 
                 </div>
-            </div>      
-            <!-- full booked movie details  --> 
-            <div> 
-            <h4 class="movie-titles center">{{ booking.booked_movie }}</h4>
-            </div>
+                <div class="modal-content center"> 
 
-            <div class="container">
-                <div class="row">
-                    <!-- booked movie text  -->
-                    <div class="col s6 booked-details"> 
-                        <ul>
-                            <li><b>Ticket Quantity: </b>{{ booking.booked_ticket_quantity }}</li>
-                            <li><b>Date: </b>{{ booking.booked_date }}</li>
-                            <li><b>Location: </b>{{ booking.booked_location }}</li>
-                            <li><b>Owner: </b>{{ booking.booked_by }}</li>
-                        </ul>
-                    </div>
-                    <!-- change and delete buttons -->
-                    <div class="col s6 center">
-                        <div class="col s12">
-                            <a class="change-btn btn waves-effect yellow black-text darken-text-4" href="{{ url_for('change_booking', booked_details_id=booking._id) }}">CHANGE</a>
+                    <form method="POST" action="{{ url_for('my_bookings') }}">  
+                        <div class="form-item input-field">
+                            <select id="selectedMovie" name="selectedMovie" required>
+                                <option value="{{ booking.booked_movie }}" selected>{{ booking.booked_movie }}</option>
+                            </select>
+                            <label for="selectedMovie"></label>
                         </div>
-                        <div class="col s12">
-                            <button class="delete-btn btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#{{booking._id}}">DELETE</button>
-                        </div>             
-                    </div> 
-                </div>
-                <!-- leave a reivew button -->
-                <div class="row center">
-                    <div class="col s12">
-                        <button class="leave-a-review-btn btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#modal2">LEAVE A REVIEW</button>  
-                    </div>
+
+                        <h4 class="modal-titles">My Rating</h4> 
+                        <div class="flip-stars">
+                            <input value="5" class="radio-btn five-stars" id="star-5" type="radio" name="starRating" required/>
+                            <label class="star five-stars fas fa-star" for="star-5"></label>
+
+                            <input value="4" class="radio-btn" id="star-4" type="radio" name="starRating"/>
+                            <label class="star fas fa-star" for="star-4"></label>
+
+                            <input value="3" class="radio-btn" id="star-3" type="radio" name="starRating"/>
+                            <label class="star fas fa-star" for="star-3"></label>
+
+                            <input value="2" class="radio-btn" id="star-2" type="radio" name="starRating"/>
+                            <label class="star fas fa-star" for="star-2"></label>
+
+                            <input value="1" class="radio-btn" id="star-1" type="radio" name="starRating"/>
+                            <label class="star one-star fas fa-star" for="star-1"></label>
+                        </div>
+
+                        <h4>My Review</h4>
+
+                        <label for="commentBox"></label>
+                        <textarea name="commentBox" id="commentBox" required></textarea>   
+
+                        <button type="submit" class="custom-btn btn btn-flat waves-effect waves-black yellow black-text darken-text-4">SUBMIT</button>
+                    </form>
+
                 </div>
             </div>
-            <hr class="hr-line">
-        {% endif %}
 
-    {% endfor %}
+            {% if session.user|lower == booking.booked_by|lower %}
+                <!-- are you sure: modal -->
+                <!-- modal from materialize -->
+                <div id="{{booking._id}}" class="modal confirm-delete">
+                    <div class="right-align">
+                        <i class="fas fa-times modal-close"></i> 
+                    </div>
+                    <div class="modal-content center">                         
+                        <h4>Delete Movie:<br>{{ booking.booked_movie }}?<br></h4>
+                        <a class="custom-btn modal-close btn btn-flat waves-effect waves-black red black-text darken-text-4 modal-close">NO</a>
+                        <a href="{{ url_for('delete_booking', booked_details_id=booking._id) }}" class="custom-btn modal-close btn btn-flat waves-effect waves-black green black-text darken-text-4">YES</a>                          
+                    </div>
+                </div>    
+
+                <div class="container">
+                    <div class="row margin-removal">
+                        <div class="col s12 center">
+                            <h4>{{ booking.booked_movie }}</h4>                          
+                        </div>
+                        <div class="booked-details col s12 center"> 
+                            <ul>
+                                <li>
+                                    <p><b>Ticket Quantity: </b>{{ booking.booked_ticket_quantity }}</p>
+                                </li>
+                                <li>
+                                    <p><b>Date: </b>{{ booking.booked_date }}</p>
+                                </li>
+                                <li>
+                                    <p><b>Location: </b>{{ booking.booked_location }}</p>
+                                </li>
+                                <li>
+                                    <p><b>Owner: </b>{{ booking.booked_by }}</p>
+                                </li>
+                            </ul>
+                        </div>  
+                        <div class="col s3 center">
+                            <a class="custom-btn btn waves-effect yellow black-text darken-text-4" href="{{ url_for('change_booking', booked_details_id=booking._id) }}">CHANGE</a>
+                        </div>  
+                        <div class="col s6 center">
+                            <button class="custom-btn btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#{{ booking.booked_movie }}">LEAVE A REVIEW</button>  
+                        </div>
+                        <div class="col s3 center">
+                            <button class="custom-btn btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#{{booking._id}}">DELETE</button>
+                        </div>   
+                    </div>
+                </div>
+
+                {% if loop.index != loop.length %}
+                    <hr id="hrMovieDetails">
+                {% endif %}
+
+            {% endif %}
+        {% endfor %}
 
 {% endblock %}

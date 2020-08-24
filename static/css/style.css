@@ -101,13 +101,6 @@ body {
   color: red;
 }
 
-/************************************************************************* hr border line */
-/* styles hr line for bookings and home page */
-.hr-line {
-  border-color: grey;
-  margin: 0px 50px;
-}
-
 /************************************************************************* homepage *************************************************************************/
 /* styles movies title */
 h2.center {
@@ -128,14 +121,7 @@ h2.center {
   padding: 5px 5px 0px 0px;
 }
 
-/* spaces out all modal contents */
-.modal-titles,
-.flip-stars {
-  margin-bottom: 15px;
-}
-
 /* styles modal titles */
-.modal-titles,
 .form-item label {
   color: black;
 }
@@ -304,18 +290,6 @@ input#password {
   padding: 0px;
 }
 
-/* styles all 3 my_booking buttons */
-.change-btn,
-.delete-btn,
-.leave-a-review-btn {
-  font-weight: bolder;
-}
-
-/* spaces out chang and delete buttons from each other */
-.change-btn,
-.delete-btn {
-  margin: 15px 0px;
-}
 
 /************************************************************************* changing booking */
 /* narrows form */
@@ -328,11 +302,49 @@ input#password {
   font-family: "Scada", sans-serif;
 }
 
-/************************************************************************* BREAKPOINTS *************************************************************************/
+/******************************************* ******************************************* BREAKPOINTS */
+/* bootstrap: small */
 
-/* Bootstrap: Small devices */
 @media (min-width: 576px) {
-  /* homepage */
+  /******************************************* top nav */
+
+  .fas.fa-bars {
+    font-size: 3em;
+    margin: 0.3em 0em 0em 0.5em;
+  }
+
+  #navTitle {
+    font-size: 4em;
+  }
+
+  nav {
+    height: 5em;
+  }
+
+  /******************************************* footer */
+
+  footer#socials {
+    height: 80px;
+  }
+
+  #icons {
+    margin-top: 0.2em;
+  }
+
+  #icons i {
+    margin-right: 0.7em;
+    font-size: 1.6em;
+  }
+
+  #contacts {
+    margin-top: 0.2em;
+  }
+
+  #contacts p {
+    font-size: 1.2em;
+  }
+
+  /******************************************* homepage */
 
   #movieDetails h5,
   #reviews h5,
@@ -380,63 +392,70 @@ input#password {
   }
 
   #hrMovieDetails {
-    margin: 0px 20px 30px;
+    margin: 20px 20px 30px;
     border-color: black;
   }
 
-  /* top nav */
-  /* styles nav title */
-  #navTitle {
-    font-size: 5rem;
+  .custom-btn {
+    font-weight: 700;
   }
 
-  /* top nav size */
-  nav {
-    height: 6rem;
+  /******************************************* homepage modal */
+
+.fas.fa-times{
+    padding: 5px 10px 0px 0px;
+}
+
+.datepicker-modal{
+    max-height: 29em;
+}
+
+/* movie dropdown size */
+.select-wrapper input.select-dropdown{
+    font-size: 1.2em;
+}
+
+/* date font */
+button, input, optgroup, select, textarea {
+    font-family: "Scada", sans-serif;
+}
+
+/* size of picker month */
+.select-wrapper.select-month{
+    font-size: 0.9em;
+}
+  /******************************************* mybookings */
+
+  .booked-details p {
+    font-size: 0.7em;
+    margin-bottom: 5px;
   }
 
-  /* bars button */
-  .fas.fa-bars {
-    font-size: 5rem;
-    margin-top: 5px;
-  }
+.margin-removal{
+    margin-bottom: 0px;
+}
 
-  /************************************************************************* modals */
-  /* provides space around form contents */
-  .modal .modal-content {
-    padding: 0px 20px 20px 20px;
-  }
+.margin-removal h4{
+    margin-top: 0px;
+}
 
-  /* improves size of 'are you sure' modal */
-  @media only screen and (max-width: 992px) {
-    #modal3 {
-      width: 60%;
-    }
-  }
+  /******************************************* mybookings modal */
+.red {
+    margin: 0px 50px 0px 0px;
+}
 
-  /* submit button */
-  .booking-btn {
-    font-weight: 645;
-    margin-top: 20px;
-  }
+.green {
+    margin: 0px 0px 0px 50px;
+}
 
-  /************************************************************************* my bookings */
+.modal .modal-content {
+    padding: 0px 0px 30px;
+}
 
-  /* styles booking text */
-  .booked-details {
-    font-size: 2rem;
-  }
+.confirm-delete {
+    width: 60%;
+}
 
-  /* styles movie titles */
-  .movie-titles {
-    font-size: 4rem;
-  }
-
-  /* spaces out chang and delete buttons from each other */
-  .change-btn,
-  .delete-btn {
-    margin: 35px 0px;
-  }
   /************************************************************************* datepicker */
   /* styles buttons on datepicker */
   .datepicker-clear,
@@ -473,7 +492,7 @@ input#password {
   }
 }
 
-/* Bootstrap: Medium devices  */
+/* bootstrap: medium */
 @media (min-width: 768px) {
   /************************************************************************* carousel */
   /* stlyes movie pictures and review box for review section */
@@ -484,15 +503,8 @@ input#password {
 
   /************************************************************************* reviews */
   /* booking button */
-  .booking-btn {
+  .custom-btn {
     font-size: 2rem;
-  }
-
-  /************************************************************************* my bookings */
-  /* spaces out chang and delete buttons from each other */
-  .change-btn,
-  .delete-btn {
-    margin: 30px 0px;
   }
 
   /************************************************************************* changing booking */
@@ -510,7 +522,7 @@ input#password {
   }
 }
 
-/* Bootstrap: Large devices */
+/* bootstrap: large */
 @media (min-width: 992px) {
   /************************************************************************* top nav */
 
@@ -584,7 +596,7 @@ input#password {
   }
 }
 
-/* Bootstrap: Extra large devices */
+/* bootstrap: extra large */
 @media (min-width: 1200px) {
   /************************************************************************* top nav */
 
@@ -594,11 +606,6 @@ input#password {
     height: 40rem;
   }
   /************************************************************************* my bookings */
-  /* spaces out chang and delete buttons from each other */
-  .change-btn,
-  .delete-btn {
-    margin: 25px 0px;
-  }
 
   /************************************************************************* changing booking */
   /* narrows form */

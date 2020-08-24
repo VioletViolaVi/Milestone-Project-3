@@ -23,51 +23,53 @@ $(document).ready(function () {
   });
 
   // from code institute 
-  validateMaterializeSelect();
-  function validateMaterializeSelect() {
-    if ($("select").prop("required")) {
-      $("select").css({
-        display: "block",
-        height: "0",
-        padding: "0",
-        width: "0",
-        position: "absolute",
-      });
-    }
-  }
-  $(".select-wrapper input.select-dropdown")
-    .on("focusin", function () {
-      $(this)
-        .parent(".select-wrapper")
-        .on("change", function () {
-          if (
-            $(this)
-              .children("ul")
-              .children("li.selected:not(.disabled)")
-              .on("click", function () {})
-          ) {
-            $(this).children("input");
-          }
-        });
-    })
-    .on("click", function () {
-      if (
-        $(this)
-          .parent(".select-wrapper")
-          .children("ul")
-          .children("li.selected:not(.disabled)")
-      ) {
-        $(this).parent(".select-wrapper").children("input");
-      } else {
-        $(".select-wrapper input.select-dropdown").on("focusout", function () {
-          if (
-            $(this)
-              .parent(".select-wrapper")
-              .children("select")
-              .prop("required")
-          ) {
-          }
-        });
-      }
-    });
+//   validateMaterializeSelect();
+//   function validateMaterializeSelect() {
+//     if ($("select").prop("required")) {
+//       $("select").css({
+//         display: "block",
+//         height: "0",
+//         padding: "0",
+//         width: "0",
+//         position: "absolute",
+//       });
+//     }
+//   }
+//   $(".select-wrapper input.select-dropdown")
+//     .on("focusin", function () {
+//       $(this)
+//         .parent(".select-wrapper")
+//         .on("change", function () {
+//           if (
+//             $(this)
+//               .children("ul")
+//               .children("li.selected:not(.disabled)")
+//               .on("click", function () {})
+//           ) {
+//             $(this).children("input");
+//           }
+//         });
+//     })
+//     .on("click", function () {
+//       if (
+//         $(this)
+//           .parent(".select-wrapper")
+//           .children("ul")
+//           .children("li.selected:not(.disabled)")
+//       ) {
+//         $(this).parent(".select-wrapper").children("input");
+//       } else {
+//         $(".select-wrapper input.select-dropdown").on("focusout", function () {
+//           if (
+//             $(this)
+//               .parent(".select-wrapper")
+//               .children("select")
+//               .prop("required")
+//           ) {
+//           }
+//         });
+//       }
+//     });
+
+
 });

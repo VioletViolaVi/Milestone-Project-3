@@ -5,7 +5,7 @@
 
     {% for movie in movie_names %}
         <div id="container" class="container">
-            <div id="whole-2nd" class="row">        
+            <div class="row">        
                 <img id="image" class="col s6" src="{{ movie.movie_poster }}" alt="A picture of a movie poster showing at Cinemagic.">   
                 <div id="movieDetails" class="col s6">
                     <h5><b>Movie Details</b></h5>
@@ -27,58 +27,58 @@
                     </div>
                 </div>   
             </div> 
+            <div class="center">
+                <a class="custom-btn btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#{{ movie.movie_name }}">BOOK NOW</a>
+            </div>  
+            {% if loop.index != loop.length %}
+                <hr id="hrMovieDetails">
+            {% endif %}
+
+            <!-- book tickets: modal -->
+            <!-- modal from materialize -->
+            <div id="{{ movie.movie_name }}" class="modal">
+                <div class="right-align">
+                    <i class="fas fa-times modal-close"></i> 
+                </div>
+                <div class="modal-content">       
+                    <form method="POST" action="{{ url_for('home') }}" class="black-text">
+                        <div class="center">
+                            <h4>Book Tickets</h4>
+                        </div>
+                        <div class="form-item">
+                            <label for="bookedMovie"></label>              
+                            <select id="bookedMovie" name="bookedMovie" class="input-field" required>
+                                <option value="{{ movie.movie_name }}" selected>{{ movie.movie_name }}</option>
+                            </select>
+                        </div>
+                        <div class="form-item">
+                            <label for="ticketQuantity">Ticket Quantity</label>
+                            <input type="number" id="ticketQuantity" name="ticketQuantity" min="1" required>      
+                        </div>
+                        <div class="form-item">
+                            <label for="date">Date</label>
+                            <input id="date" name="date" type="text" class="datepicker" required>                    
+                        </div>                                
+                        <div class="form-item">
+                            <label for="location">Location</label>                   
+                            <select id="location" name="location" class="input-field select-boxes" required>
+                                <option value="" disabled selected></option>
+                                {% for location_name in location_names %}
+                                    <option value="{{ location_name.location_name }}">{{ location_name.location_name }}</option>
+                                {% endfor %}
+                            </select>                      
+                        </div>
+                        <div class="center">
+                            <button type="submit" class="custom-btn btn btn-flat waves-effect waves-black yellow black-text darken-text-4">SUBMIT</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
         </div>  
-        {% if loop.index != loop.length %}
-            <hr id="hrMovieDetails">
-        {% endif %} 
     {% endfor %}
 
-    <div class="center">
-        <a class="booking-btn btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#modal1">BOOK NOW</a>
-    </div>  
 
-   <!-- book tickets: modal -->
-    <!-- modal from materialize -->
-    <div id="modal1" class="modal">
-        <div class="right-align">
-           <i class="fas fa-times modal-close"></i> 
-        </div>
-        <div class="modal-content">       
-            <form method="POST" action="{{ url_for('home') }}" class="black-text">
-                <div class="center">
-                    <h4 class="modal-titles">Book Tickets</h4>
-                </div>
-                <div class="form-item">
-                    <label for="bookedMovie"></label>              
-                    <select id="bookedMovie" name="bookedMovie" class="input-field" required>
-                        <option value="" disabled selected>Select Movie</option>
-                        {% for movie_name in movie_names %}
-                            <option value="{{ movie_name.movie_name }}">{{ movie_name.movie_name }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <div class="form-item">
-                    <label for="ticketQuantity">Ticket Quantity</label>
-                    <input type="number" id="ticketQuantity" name="ticketQuantity" min="1" required>      
-                </div>
-                <div class="form-item">
-                    <label for="date">Date</label>
-                    <input id="date" name="date" type="text" class="datepicker" required>                    
-                </div>                                
-                <div class="form-item">
-                    <label for="location">Location</label>                   
-                    <select id="location" name="location" class="input-field select-boxes" required>
-                        <option value="" disabled selected></option>
-                        {% for location_name in location_names %}
-                            <option value="{{ location_name.location_name }}">{{ location_name.location_name }}</option>
-                        {% endfor %}
-                    </select>                      
-                </div>
-                <div class="center">
-                    <button type="submit" class="booking-btn btn btn-flat waves-effect waves-black yellow black-text darken-text-4">SUBMIT</button>
-                </div>
-            </form>
-        </div>
-    </div>
+
 
 {% endblock %}
