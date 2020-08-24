@@ -90,7 +90,7 @@
                         </ul>
                     </div>  
                     <div class="col s3 center">
-                        <a class="custom-btn btn waves-effect yellow black-text darken-text-4" href="{{ url_for('change_booking', booked_details_id=booking._id) }}">CHANGE</a>
+                        <a class="custom-btn btn waves-effect yellow black-text darken-text-4" href="#{{booking.booked_movie}}">CHANGE</a>
                     </div>  
                     <div class="col s6 center">
                         <button class="custom-btn btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#{{ booking.booked_movie }}">LEAVE A REVIEW</button>  
@@ -106,42 +106,6 @@
             {% endif %}           
         
         {% endif %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     {% endfor %}
 {% endblock %}

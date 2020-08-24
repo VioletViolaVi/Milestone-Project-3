@@ -7,99 +7,94 @@
   font-family: "Scada", sans-serif;
 }
 
+.custom-btn {
+  font-weight: 700;
+}
+
+#hrMovieDetails {
+  margin: 20px 20px 30px;
+  border-color: black;
+}
+
 /******************************************* top nav */
 
-/* styles nav title */
 #navTitle {
-  font-size: 3rem;
-  display: inline;
+  font-size: 3em;
   margin: 0px;
   font-weight: bold;
 }
 
-/* designs link pages in top nav */
 .top-nav-links {
   display: none;
 }
 
-/* top nav size */
 nav {
-  height: 55px;
+  height: 3.5em;
 }
 
-/* bars button */
 .fas.fa-bars {
-  font-size: 2rem;
-  margin: 11px 0px 0px 5px;
+  font-size: 2em;
+  margin: 10px 0px 0px 10px;
   cursor: pointer;
 }
 
 /******************************************* side nav */
 
-/* increases size of side nav */
 .sidenav {
-  width: 230px;
+  width: 235px;
 }
 
-/* pushes side nav links to the left */
 .side-nav-links.black-text.waves-effect {
   padding: 0px 0px 0px 10px;
 }
 
-/* centers side nav links */
 #sideNavLinksContainer {
-  padding-top: 170px;
+  margin-top: 200px;
 }
 
-/* changes hover colour of sidenav */
 .sidenav li > a:hover {
-  background-color: rgb(180, 180, 3);
+  background-color: gold;
 }
 
-/* designs link pages in side nav*/
 .side-nav-links.black-text.waves-effect {
   font-size: 2rem;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 /******************************************* footer */
-/* helps keeps footer down */
+
 body {
   position: relative;
   padding-bottom: 150px;
   min-height: 100vh;
 }
 
-/* stlyes footer background */
 #socials {
-  width: 100%;
   position: absolute;
   bottom: 0;
-  height: 100px;
+  height: 85px;
 }
 
-/* styles icons */
 #icons {
-  font-size: 1.5rem;
   padding: 0px;
   text-align: center;
 }
 
-/* styles contact details */
-#contacts {
-  padding: 0px;
-  text-align: center;
-  font-size: 1rem;
+#icons i {
+  margin-right: 0.3em;
+  font-size: 0.8em;
 }
 
-/* removes bottom gap */
+#contacts p {
+  font-size: 1em;
+}
+
 #socials .row {
   margin-bottom: 0px;
 }
 
 /******************************************* flash messages */
 
-/* styles flash messages */
 .flash_messages {
   color: red;
   margin: 15px 0px 5px 0px;
@@ -112,7 +107,44 @@ h2.center {
   margin-bottom: 5px;
 }
 
+#image {
+  height: 20em;
+  width: 10em;
+}
+
+#movieDetails {
+  border: 2px solid orange;
+  border-radius: 4px;
+  overflow: auto;
+}
+
+#cast {
+  border: 2px solid yellow;
+  border-radius: 10px;
+  margin: 15px;
+  padding: 0px 0px 0px 5px;
+  width: 20em;
+}
+
+#reviews {
+  border: 2px solid purple;
+  border-radius: 5px;
+  height: 150px;
+  overflow: auto;
+  padding: 0px 0px 0px 5px;
+}
+
+#movieDetails h5,
+#reviews h5,
+#cast h5 {
+  margin: 5px 0px 10px;
+}
+
 /******************************************* modals */
+
+.modal .modal-content {
+  padding: 10px;
+}
 
 /* moves ticket quantity title to the left */
 .input-field.col label {
@@ -354,22 +386,15 @@ input#password {
     margin: 10px 50px;
   }
 
-.card label{
+  .card label {
     font-size: 1.6em;
-}
+  }
 
-.card .card-content {
+  .card .card-content {
     padding: 24px 24px 10px 24px;
-
-}
+  }
 
   /******************************************* homepage */
-
-  #movieDetails h5,
-  #reviews h5,
-  #cast h5 {
-    margin: 5px 0px 10px;
-  }
 
   #image {
     padding-left: 0px;
@@ -380,43 +405,16 @@ input#password {
   }
 
   #movieDetails {
-    border: 2px solid orange;
-    border-radius: 4px;
     margin: 10px 15px 0px;
-    overflow: auto;
     height: 200px;
     padding: 0px 0px 0px 5px;
     width: 275px;
-  }
-
-  #cast {
-    border: 2px solid yellow;
-    border-radius: 10px;
-    margin: 15px;
-    padding: 0px 0px 0px 5px;
-  }
-
-  #reviews {
-    border: 2px solid purple;
-    border-radius: 5px;
-    height: 150px;
-    overflow: auto;
-    padding: 0px 0px 0px 5px;
   }
 
   #movieDetails p,
   #cast p,
   #reviews p {
     font-size: 15px;
-  }
-
-  #hrMovieDetails {
-    margin: 20px 20px 30px;
-    border-color: black;
-  }
-
-  .custom-btn {
-    font-weight: 700;
   }
 
   /******************************************* mybookings */
