@@ -101,7 +101,7 @@ def login():
             if check_password_hash(
                     existing_user["pwd"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash(f"Welcome back {request.form.get('username')}!")
+                flash(f"Welcome Back {request.form.get('username')}!")
                 return redirect(url_for("home"))
             else:
                 # occurs when password is wrong

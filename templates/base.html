@@ -19,11 +19,11 @@
   <body>
     <header>
         <!-- content in top nav -->
-        <nav class="yellow accent-2">
+        <nav class="yellow accent-2">        
             <i data-target="slide-out" class="sidenav-trigger fas fa-bars black-text"></i>           
             <ul class="top-nav">
                 <div id="topNavLinksContainer">
-                    <li><a class="top-nav-links black-text" href="{{ url_for('home') }}">Home</a></li>
+                    <li><a class="top-nav-links black-text" id="home" href="{{ url_for('home') }}">Home</a></li>
                     {% if not session.user %}
                         <li><a class="top-nav-links black-text" href="{{ url_for('signup') }}">Sign Up</a></li>
                         <li><a class="top-nav-links black-text" href="{{ url_for('login') }}">Log In</a></li>
@@ -33,7 +33,7 @@
                     {% endif %}
                 </div>
             </ul>
-            <div class="center-align">
+            <div class="center">
                 <h1 id="navTitle" class="black-text">Cinemagic</h1>
             </div>            
         </nav>

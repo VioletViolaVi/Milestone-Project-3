@@ -1,7 +1,9 @@
 {% extends "base.html" %} 
 {% block home %}
 
-    <h2 class="center">{{ page_title }}</h2>
+    <div class="center"> 
+        <h2>{{ page_title }}</h2>
+    </div>
 
     {% for movie in movie_names %}
         <div id="container">

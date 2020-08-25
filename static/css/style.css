@@ -7,6 +7,11 @@
   font-family: "Scada", sans-serif;
 }
 
+.center h2 {
+  margin: 5px 0px;
+  font-size: 1.7em;
+}
+
 .custom-btn {
   font-weight: 700;
 }
@@ -16,10 +21,27 @@
   border-color: black;
 }
 
+.modal {
+  width: 95%;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: "Scada", sans-serif;
+}
+
+.flash_messages {
+  color: red;
+  margin: 15px 0px 5px 0px;
+}
+
 /******************************************* top nav */
 
 #navTitle {
-  font-size: 3em;
+  font-size: 1.5em;
   margin: 0px;
   font-weight: bold;
 }
@@ -36,6 +58,15 @@ nav {
   font-size: 2em;
   margin: 10px 0px 0px 10px;
   cursor: pointer;
+}
+
+.fas.fa-times {
+  padding: 5px 10px 0px 0px;
+}
+
+.fas.fa-times {
+  font-size: 2rem;
+  padding: 5px 5px 0px 0px;
 }
 
 /******************************************* side nav */
@@ -73,6 +104,7 @@ body {
   position: absolute;
   bottom: 0;
   height: 85px;
+  width: 100%;
 }
 
 #icons {
@@ -82,7 +114,11 @@ body {
 
 #icons i {
   margin-right: 0.3em;
-  font-size: 0.8em;
+  font-size: 0.7em;
+}
+
+#contacts {
+  padding: 0;
 }
 
 #contacts p {
@@ -93,27 +129,18 @@ body {
   margin-bottom: 0px;
 }
 
-/******************************************* flash messages */
-
-.flash_messages {
-  color: red;
-  margin: 15px 0px 5px 0px;
-}
-
 /******************************************* homepage */
-/* styles movies title */
-h2.center {
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
 
 #image {
+  border: 2px solid yellow;
+  border-radius: 3px;
   height: 20em;
   width: 10em;
+  padding: 0px;
 }
 
 #movieDetails {
-  border: 2px solid orange;
+  border: 2px solid yellow;
   border-radius: 4px;
   overflow: auto;
 }
@@ -127,7 +154,7 @@ h2.center {
 }
 
 #reviews {
-  border: 2px solid purple;
+  border: 2px solid yellow;
   border-radius: 5px;
   height: 150px;
   overflow: auto;
@@ -140,46 +167,122 @@ h2.center {
   margin: 5px 0px 10px;
 }
 
-/******************************************* modals */
+/******************************************* signup/login */
 
-.modal .modal-content {
-  padding: 10px;
+.signup h2,
+.login h2 {
+  margin-top: 15px;
 }
 
-/* moves ticket quantity title to the left */
-.input-field.col label {
-  left: 0rem;
+.card {
+  margin: 1em 0em 0em;
 }
 
-/* styles close button */
-.fas.fa-times {
+div.center {
   font-size: 2rem;
-  padding: 5px 5px 0px 0px;
 }
 
-/* styles modal titles */
+label.black-text {
+  font-size: 1.15rem;
+}
+
+input#email,
+input#username,
+input#password {
+  border-bottom: 1px solid black;
+}
+
+/******************************************* my bookings */
+
+.booked-details p {
+  font-size: 0.7em;
+  margin-bottom: 5px;
+}
+
+.margin-removal h4 {
+  margin-top: 0px;
+}
+
+.margin-removal {
+  margin-bottom: 0px;
+}
+
+/******************************************* homepage modal */
+
 .form-item label {
   color: black;
-}
-.form-item label {
   font-size: 1.2rem;
 }
 
-/* improves size of modals */
-@media only screen and (max-width: 992px) {
-  .modal {
-    width: 95%;
-  }
+.dropdown-content li > a,
+.dropdown-content li > span {
+  color: black;
+  padding: 0px 0px 0px 16px;
+  font-size: 1.24rem;
 }
 
-/* improves size of 'are you sure' modal */
-@media only screen and (max-width: 992px) {
-  #modal3 {
-    width: 90%;
-  }
+.datepicker-modal {
+  max-height: 29em;
 }
 
-/* spaces out yes and no buttons */
+.datepicker-date-display {
+  background-color: yellow;
+  padding: 5px 20px 10px;
+}
+
+.datepicker-date-display .year-text,
+.datepicker-table abbr,
+.datepicker-date-display .date-text {
+  color: black;
+}
+
+.datepicker-calendar-container {
+  color: darkgray;
+}
+
+.datepicker-table td.is-selected {
+  background-color: yellow;
+  color: black;
+}
+
+.is-today {
+  color: goldenrod !important;
+}
+
+.datepicker-cancel,
+.datepicker-done {
+  color: black;
+}
+
+.datepicker-clear,
+.datepicker-cancel,
+.datepicker-done {
+  background-color: yellow;
+  margin: 2px;
+  font-weight: 900;
+}
+
+.select-wrapper input.select-dropdown {
+  font-size: 1.2em;
+}
+
+.select-wrapper.select-month {
+  font-size: 0.9em;
+}
+
+/******************************************* leave a review modal */
+
+.my-booking-custom .select-wrapper input.select-dropdown {
+  font-size: 0.8em;
+}
+
+#commentBox {
+  height: 8em;
+  padding: 5px;
+  font-size: 1rem;
+}
+
+/******************************************* confirmation modal */
 .red {
   margin: 25px 35px 0px 0px;
 }
@@ -187,30 +290,19 @@ h2.center {
   margin: 25px 0px 0px 35px;
 }
 
-/******************************************* dropdowns */
+/******************************************* changing booking - to edit */
 
-/* keeps font type of select input titles same as the website */
-input.select-dropdown.dropdown-trigger {
+/* narrows form */
+#changeForm {
+  margin: 0px 1rem;
+}
+
+/* makes confirm button font consistent */
+.confirm {
   font-family: "Scada", sans-serif;
 }
 
-/* makes modal's dropdown text colour match website */
-.dropdown-content li > a,
-.dropdown-content li > span {
-  color: black;
-  font-size: 1.24rem;
-  padding: 0px 16px;
-}
-
-/* increases comment box modal size and displays text cursor */
-#commentBox {
-  height: 100px;
-  padding: 5px;
-  font-size: 1rem;
-}
-
-/******************************************* stars */
-
+/******************************************* stars - to edit */
 /* removes radio buttons */
 .radio-btn {
   display: none;
@@ -252,95 +344,6 @@ input.five-stars:checked ~ .star:before {
   text-shadow: 1px 1px 30px black;
 }
 
-/******************************************* datepicker */
-
-/* styles datepicker banner */
-.datepicker-date-display {
-  background-color: yellow;
-  padding: 5px 22px 15px 22px;
-}
-
-/* styles year date, days, full-er date on datepicker banner */
-.datepicker-date-display .year-text,
-.datepicker-table abbr,
-.datepicker-date-display .date-text {
-  color: black;
-}
-
-/* changes colour of number dates under the day letters */
-.datepicker-calendar-container {
-  color: darkgray;
-  font-weight: bolder;
-}
-
-/* styles circle backgrounds on datepicker */
-.datepicker-table td.is-selected {
-  background-color: yellow;
-  color: black;
-}
-
-/* changes font colour of current day */
-.is-today {
-  color: goldenrod !important;
-}
-
-/* styles cancel and select buttons on datepicker */
-.datepicker-cancel,
-.datepicker-today,
-.datepicker-done {
-  color: black;
-}
-
-/* styles buttons on datepicker */
-.datepicker-clear,
-.datepicker-cancel,
-.datepicker-today,
-.datepicker-done {
-  font-family: "Scada", sans-serif;
-  background-color: yellow;
-  margin: 2px;
-  font-weight: 900;
-}
-
-/******************************************* signup and login */
-
-/* styles content under its card */
-div.center {
-  font-size: 2rem;
-}
-
-/* styles labels */
-label.black-text {
-  font-size: 1.15rem;
-}
-
-/* styles input boxes */
-input#email,
-input#username,
-input#password {
-  border-bottom: 1px solid black;
-}
-
-/******************************************* my bookings */
-
-/* styles booking text */
-.booked-details {
-  font-size: 1.1rem;
-  padding: 0px;
-}
-
-/******************************************* changing booking */
-
-/* narrows form */
-#changeForm {
-  margin: 0px 1rem;
-}
-
-/* makes confirm button font consistent */
-.confirm {
-  font-family: "Scada", sans-serif;
-}
-
 /****************************************************************************************************** BREAKPOINTS from bootstrap */
 @media (min-width: 576px) {
   /******************************************* top nav */
@@ -351,7 +354,7 @@ input#password {
   }
 
   #navTitle {
-    font-size: 4em;
+    font-size: 2.2em;
   }
 
   nav {
@@ -361,7 +364,8 @@ input#password {
   /******************************************* footer */
 
   footer#socials {
-    height: 80px;
+    height: 95px;
+    padding-top: 5px;
   }
 
   #icons {
@@ -370,7 +374,7 @@ input#password {
 
   #icons i {
     margin-right: 0.7em;
-    font-size: 1.6em;
+    font-size: 1.1em;
   }
 
   #contacts {
@@ -417,61 +421,10 @@ input#password {
     font-size: 15px;
   }
 
-  /******************************************* mybookings */
-
-  .booked-details p {
-    font-size: 0.7em;
-    margin-bottom: 5px;
-  }
-
-  .margin-removal {
-    margin-bottom: 0px;
-  }
-
-  .margin-removal h4 {
-    margin-top: 0px;
-  }
-
-  /******************************************* all modals */
-
-  .modal {
-    width: 60%;
-  }
-
   /******************************************* homepage modal */
 
   .fas.fa-times {
     padding: 5px 10px 0px 0px;
-  }
-
-  .datepicker-modal {
-    max-height: 29em;
-  }
-
-  .select-wrapper input.select-dropdown {
-    font-size: 1.2em;
-  }
-
-  button,
-  input,
-  optgroup,
-  select,
-  textarea {
-    font-family: "Scada", sans-serif;
-  }
-
-  .select-wrapper.select-month {
-    font-size: 0.9em;
-  }
-
-  /******************************************* leave a review modal */
-
-  .my-booking-custom .select-wrapper input.select-dropdown {
-    font-size: 0.8em;
-  }
-
-  #commentBox {
-    height: 8em;
   }
 
   /******************************************* confirmation modal */
@@ -488,145 +441,205 @@ input#password {
   }
 }
 
-/* accommodate materialize */
-@media (min-width: 601px) {
-  /************************************************************************* footer */
-  /* stlyes footer background */
-  #socials {
-    height: 120px;
-  }
-
-  /* styles icons */
-  #icons {
-    font-size: 2rem;
-    margin-top: 35px;
-  }
-
-  /* styles contacts */
-  #contacts {
-    margin-top: 10px;
-    font-size: 1.3rem;
-  }
-}
-
-/* bootstrap: medium */
 @media (min-width: 768px) {
-  /************************************************************************* carousel */
-  /* stlyes movie pictures and review box for review section */
-  .review-pictures,
-  #review-box {
-    height: 30rem;
+  /******************************************* footer */
+
+  #icons i {
+    font-size: 1.2em;
+    margin-right: 25px;
   }
 
-  /************************************************************************* reviews */
-  /* booking button */
+  #contacts p {
+    font-size: 1.4em;
+  }
+
+  /******************************************* signup/login */
+  .signup h2,
+  .login h2 {
+    margin: 35px 0px;
+  }
+
+  /******************************************* homepage */
+
+  #image {
+    width: 30%;
+    height: 350px;
+    margin-left: 3em;
+  }
+
+  #movieDetails,
+  #cast {
+    width: 30em;
+  }
+
+  #cast {
+    padding-bottom: 2em;
+  }
+
+  #reviews {
+    margin: 0px 2.5em;
+  }
+
+  #movieDetails p,
+  #cast p,
+  #reviews p {
+    font-size: 20px;
+  }
+
   .custom-btn {
-    font-size: 2rem;
-  }
-
-  /************************************************************************* changing booking */
-  /* narrows form */
-  #changeForm {
-    margin: 0px 5rem;
-  }
-
-  /************************************************************************* modals */
-  /* improves size of 'are you sure' modal */
-  @media only screen and (max-width: 992px) {
-    #modal3 {
-      width: 50%;
-    }
+    font-weight: 600;
+    font-size: 1em;
   }
 }
 
-/* bootstrap: large */
 @media (min-width: 992px) {
-  /************************************************************************* top nav */
-
-  /* styles nav title */
-  #navTitle {
-    font-weight: bold;
-  }
-
-  /* bars button */
+  /******************************************* top nav */
   .fas.fa-bars {
     display: none;
   }
 
-  /* displays top nav links */
   #topNavLinksContainer {
     float: right;
-    margin-top: 10px;
+    margin-top: 5px;
   }
 
-  /* designs link pages in top nav */
   .top-nav-links {
     display: flex;
     margin-right: 1rem;
     font-size: 2.5rem;
   }
+
   .top-nav-links:hover {
-    background-color: rgba(180, 180, 3, 0.466);
+    background-color: gold;
   }
 
-  /* increases size of user reviews */
-  #review-box p {
-    font-size: 1.5rem;
-  }
-  /************************************************************************* reviews */
-  /* styles user review titles */
-
-  .user-review-title {
-    font-size: 1.5rem;
+  #home {
+    margin-left: 3em;
   }
 
-  /************************************************************************* modals */
-  /* improves size of 'are you sure' modal */
-  @media only screen and (max-width: 992px) {
-    #modal3 {
-      width: 40%;
-    }
+  /******************************************* footer */
+
+  footer#socials {
+    height: 100px;
+    padding-top: 0px;
   }
 
-  /* spaces out yes and no buttons */
-  .red,
+  #icons i {
+    font-size: 1.5em;
+    margin: 30px 0px 0px;
+  }
+
+  #contacts p {
+    font-size: 1.5em;
+  }
+
+  /******************************************* signup/login */
+  .card {
+    margin: 10px 190px;
+    height: 20em;
+  }
+
+  .signup.card {
+    height: 26em;
+  }
+
+  .custom-btn {
+    margin-top: 0.8em;
+  }
+
+  /******************************************* homepage */
+
+  #image {
+    width: 25%;
+    height: 25em;
+    margin-left: 10em;
+  }
+
+  #reviews {
+    margin: 0px 7em;
+    height: 15em;
+  }
+
+  /******************************************* homepage modal */
+  .modal .modal-content {
+    padding: 24px 24px 11px 24px;
+  }
+
+  .modal {
+    width: 60%;
+  }
+
+  .custom-btn {
+    margin: 0em;
+  }
+
+  div.modal-content.datepicker-container {
+    padding: 0px;
+  }
+
+  .datepicker-modal {
+    height: 25em;
+    width: 35em;
+  }
+
+  .datepicker-date-display {
+    height: 26.7em;
+  }
+
+  /******************************************* my bookings */
+
+  .booked-details p {
+    font-size: 1em;
+  }
+
+  /******************************************* confirmation modal */
+  .red {
+    margin: 0px 50px 0px 0px;
+  }
+
   .green {
-    margin-bottom: 40px;
+    margin: 0px 0px 0px 50px;
   }
 
-  /************************************************************************* footer */
-  /* stlyes footer background */
-  #socials {
-    height: 130px;
+  .confirm-delete.modal {
+    width: 50%;
   }
 
-  /* styles icons */
-  #icons {
-    font-size: 2.4rem;
-    margin-top: 40px;
-  }
-
-  /* styles contacts */
-  #contacts {
-    margin-top: 15px;
-    font-size: 1.6rem;
+  .confirm-delete .custom-btn {
+    margin: 25px 40px 10px 40px;
   }
 }
 
-/* bootstrap: extra large */
 @media (min-width: 1200px) {
-  /************************************************************************* top nav */
+  /******************************************* top nav */
 
-  /* stlyes movie pictures and review box for review section */
-  .review-pictures,
-  #review-box {
-    height: 40rem;
+  #home {
+    margin-left: 12em;
   }
-  /************************************************************************* my bookings */
 
-  /************************************************************************* changing booking */
-  /* narrows form */
-  #changeForm {
-    margin: 0px 7rem;
+  /******************************************* footer */
+
+  footer#socials {
+    height: 105px;
+  }
+
+  /******************************************* signup/login */
+  .card {
+    margin: 10px 290px;
+  }
+
+  .custom-btn {
+    margin-top: 1em;
+  }
+
+  /******************************************* homepage */
+
+  #image {
+    width: 20%;
+    margin-left: 20em;
+  }
+
+  #reviews {
+    margin: 0px 17em;
   }
 }
