@@ -116,7 +116,7 @@ def login():
 
 
 @app.route("/my_bookings", methods=["GET", "POST"])
-def my_bookings():
+def my_bookings(booked_details_id):
 
     # reviews left by users
     if request.method == "POST":
@@ -150,7 +150,7 @@ def my_bookings():
 @app.route("/change_booking/<booked_details_id>", methods=["GET", "POST"])
 def change_booking(booked_details_id):
 
-    # books tickets
+    # updates tickets
     if request.method == "POST":
 
         submit = {
@@ -176,7 +176,7 @@ def change_booking(booked_details_id):
     bookings = mongo.db.booked_details.find_one(
         {"_id": ObjectId(booked_details_id)})
 
-    return render_template("change_booking.html",
+    return render_template("my_bookings.html",
                            bookings=bookings,
                            movie_names=movie_names,
                            location_names=location_names)

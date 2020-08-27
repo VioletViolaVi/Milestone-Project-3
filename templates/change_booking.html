@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block change_booking %}
 
-    <form id="changeForm" method="POST" action="{{ url_for('change_booking', booked_details_id=bookings._id) }}" class="black-text">
+    <!-- <form id="changeForm" method="POST" action="{{ url_for('change_booking', booked_details_id=bookings._id) }}" class="black-text">
         <h4 class="modal-titles center">{{ page_title }}</h4>
         <br>
         <div class="form-item">
@@ -40,9 +40,9 @@
         </div>
         <br>
         <div class="center">
-            <a href="{{ url_for('my_bookings') }}" class="btn btn-flat waves-effect waves-black yellow black-text darken-text-4 booking-btn">CANCEL</a>
-            <button type="submit" class="btn btn-flat waves-effect waves-black yellow black-text darken-text-4 booking-btn confirm">CONFIRM</button>
+            <a modal-close class="btn btn-flat waves-effect waves-black yellow black-text darken-text-4 booking-btn">CANCEL</a>
+            <a href="{{ url_for('change_booking', booked_details_id=bookings._id) }}" type="submit" class="btn btn-flat waves-effect waves-black yellow black-text darken-text-4 booking-btn confirm">CONFIRM</a>
         </div>
-    </form>   
+    </form>    -->
 
 {% endblock %}

@@ -1,34 +1,48 @@
 {% extends "base.html" %} 
 {% block home %}
 
-    <div class="center"> 
-        <h2>{{ page_title }}</h2>
-    </div>
+    <h2 class="center">{{ page_title }}</h2>
 
     {% for movie in movie_names %}
-        <div id="container">
-            <div class="row">        
-                <img id="image" class="col s6" src="{{ movie.movie_poster }}" alt="A picture of a movie poster showing at Cinemagic.">   
-                <div id="movieDetails" class="col s6">
-                    <h5><b>Movie Details</b></h5>
-                    <p><b>Rated: </b>{{ movie.rating }}</p>
-                    <p><b>Duration: </b>{{ movie.duration }}</p>
-                    <p><b>Genres: </b>{{ movie.genres }}</p>
-                    <p><b>Directed By: </b>{{ movie.director }}</p>
-                    <p><b>Written By: </b>{{ movie.writer }}</p>            
-                    <p><b>Produced By: </b>{{ movie.producer }}</p>                        
+        <div class="image-and-details" id="container">
+            <div class="row">
+                <h5><b>{{ movie.movie_name }}</b></h5>                
+                <div class="col s6">
+                    <img id="image" src="{{ movie.movie_poster }}" alt="A picture of a movie poster showing at Cinemagic.">
+                </div>   
+
+                <div class="col s6">
+                    <div id="movieDetails">
+                        <p><b>Rated: </b>{{ movie.rating }}</p>
+                        <p><b>Duration: </b>{{ movie.duration }}</p>
+                        <p><b>Genres: </b>{{ movie.genres }}</p>
+                        <p><b>Cast: </b>{{ movie.cast }}</p>
+                        <p><b>Directed By: </b>{{ movie.director }}</p>
+                        <p><b>Written By: </b>{{ movie.writer }}</p>            
+                        <p><b>Produced By: </b>{{ movie.producer }}</p>                        
+                    </div>
                 </div>
-                <div id="cast" class="col s12">
-                    <h5><b>Cast</b></h5>
-                    <p>{{ movie.cast }}</p>
-                </div>
+            </div> 
+              
+
+            <div class="row">
                 <div class="col s12">
                     <div id="reviews">
-                        <h5><b>Movie Reviews</b></h5>
-                        <p>#</p>
+                        <h5 class="center"><b>Reviews</b></h5>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In minus, ipsum molestias inventore omnis libero et ea debitis doloremque iste facere voluptate aliquam voluptates repudiandae quia aspernatur animi assumenda dolor. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis magni, deserunt ipsa ipsam atque autem vitae! Corporis voluptatem cumque debitis quibusdam exercitationem quae sequi inventore magni tempore! Accusamus, pariatur dolorum.</p>
+                        {% for review in reviews %}
+                            {% if review.reviewed_movie_name == movie.movie_name %}
+                                <p>{{ review.reviewed_movie_name }}</p>
+                                <p>{{ review.star_rating_review }}</p>
+                                <p>lo{{ review.user_review }}</p>
+                                <p>{{ review.user }}</p>
+                            {% endif %}
+                        {% endfor %}
                     </div>
-                </div>   
-            </div> 
+                </div>
+            </div>                    
+            
+
             {% if session.user %}
                 <div class="center">
                     <a class="custom-btn btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#{{ movie.movie_name }}">BOOK NOW</a>

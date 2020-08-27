@@ -21,18 +21,6 @@
   border-color: black;
 }
 
-.modal {
-  width: 95%;
-}
-
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: "Scada", sans-serif;
-}
-
 .flash_messages {
   color: red;
   margin: 15px 0px 5px 0px;
@@ -98,6 +86,7 @@ body {
   position: relative;
   padding-bottom: 150px;
   min-height: 100vh;
+  background-color: darkred;
 }
 
 #socials {
@@ -131,40 +120,42 @@ body {
 
 /******************************************* homepage */
 
-#image {
-  border: 2px solid yellow;
-  border-radius: 3px;
-  height: 20em;
-  width: 10em;
-  padding: 0px;
+#image,
+#movieDetails {
+  height: 20rem;
 }
 
-#movieDetails {
-  border: 2px solid yellow;
-  border-radius: 4px;
+#movieDetails,
+#reviews {
+  padding: 0px 0px 5px 5px;
   overflow: auto;
 }
 
-#cast {
-  border: 2px solid yellow;
-  border-radius: 10px;
-  margin: 15px;
-  padding: 0px 0px 0px 5px;
-  width: 20em;
+#image {
+  width: 95%;
 }
 
 #reviews {
-  border: 2px solid yellow;
-  border-radius: 5px;
-  height: 150px;
-  overflow: auto;
-  padding: 0px 0px 0px 5px;
+  height: 10rem;
 }
 
-#movieDetails h5,
-#reviews h5,
-#cast h5 {
+#movieDetails p,
+#reviews p {
+  font-size: 1rem;
+  padding-left: 1%;
+}
+
+#reviews h5 {
   margin: 5px 0px 10px;
+  font-size: 2rem;
+}
+
+.image-and-details .col {
+  padding: 0px;
+}
+
+.image-and-details .row {
+  margin: 0% 1% 3%;
 }
 
 /******************************************* signup/login */
@@ -208,11 +199,6 @@ input#password {
 }
 
 /******************************************* homepage modal */
-
-.form-item label {
-  color: black;
-  font-size: 1.2rem;
-}
 
 .dropdown-content li > a,
 .dropdown-content li > span {
@@ -290,58 +276,22 @@ input#password {
   margin: 25px 0px 0px 35px;
 }
 
-/******************************************* changing booking - to edit */
-
-/* narrows form */
-#changeForm {
-  margin: 0px 1rem;
+/******************************************* all modals*/
+.modal {
+  width: 95%;
 }
 
-/* makes confirm button font consistent */
-.confirm {
-  font-family: "Scada", sans-serif;
-}
-
-/******************************************* stars - to edit */
-/* removes radio buttons */
-.radio-btn {
-  display: none;
-}
-
-/* shows correct number of hovered stars */
-.flip-stars {
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-}
-
-/* styles average score stars */
-.star-average .fas.fa-star {
-  font-size: 3rem;
-}
-
-/* styles modal stars */
-.star {
-  font-size: 2rem;
+.form-item label {
   color: black;
-  cursor: pointer;
+  font-size: 1.2rem;
 }
 
-/* styles correct number of stars when hovered */
-.star:hover,
-.star:hover ~ label {
-  color: yellow;
-  transition: all 0.1s;
-}
-
-/* styles stars as they're clicked */
-.radio-btn:checked ~ .star:before {
-  color: yellow;
-}
-
-/* styles stars when five is selected */
-input.five-stars:checked ~ .star:before {
-  color: yellow;
-  text-shadow: 1px 1px 30px black;
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: "Scada", sans-serif;
 }
 
 /****************************************************************************************************** BREAKPOINTS from bootstrap */
@@ -400,31 +350,45 @@ input.five-stars:checked ~ .star:before {
 
   /******************************************* homepage */
 
-  #image {
-    padding-left: 0px;
-    padding-right: 0px;
-    width: 40%;
-    margin: 10px 0px 15px 15px;
-    height: 305px;
-  }
-
+  #image,
   #movieDetails {
-    margin: 10px 15px 0px;
-    height: 200px;
-    padding: 0px 0px 0px 5px;
-    width: 275px;
+    height: 30rem;
+    width: 100%;
   }
 
   #movieDetails p,
-  #cast p,
   #reviews p {
-    font-size: 15px;
+    font-size: 1.6rem;
   }
 
-  /******************************************* homepage modal */
+  #reviews {
+    height: 20rem;
+  }
+
+  .image-and-details .row {
+    margin: 0% 5% 3%;
+  }
+
+  /******************************************* all modals */
 
   .fas.fa-times {
     padding: 5px 10px 0px 0px;
+  }
+
+  .modal {
+    width: 75%;
+  }
+
+  /******************************************* change booking modal */
+
+  .change-booking-custom .select-wrapper input.select-dropdown,
+  .form-item label {
+    font-size: 1.4em;
+  }
+
+  input[type="number"]:not(.browser-default),
+  input[type="text"]:not(.browser-default) {
+    font-size: 1.4em;
   }
 
   /******************************************* confirmation modal */
@@ -461,34 +425,34 @@ input.five-stars:checked ~ .star:before {
 
   /******************************************* homepage */
 
-  #image {
-    width: 30%;
-    height: 350px;
-    margin-left: 3em;
-  }
-
-  #movieDetails,
-  #cast {
-    width: 30em;
-  }
-
-  #cast {
-    padding-bottom: 2em;
-  }
-
-  #reviews {
-    margin: 0px 2.5em;
+  #image,
+  #movieDetails {
+    height: 35rem;
   }
 
   #movieDetails p,
-  #cast p,
   #reviews p {
-    font-size: 20px;
+    font-size: 2rem;
+  }
+
+  .image-and-details h5,
+  #reviews h5 {
+    font-size: 2.5rem;
   }
 
   .custom-btn {
     font-weight: 600;
     font-size: 1em;
+  }
+
+  .image-and-details .row {
+    margin: 0% 10% 3%;
+  }
+
+  /******************************************* leave a review modal */
+
+  #commentBox {
+    font-size: 1.2rem;
   }
 }
 
@@ -533,6 +497,16 @@ input.five-stars:checked ~ .star:before {
     font-size: 1.5em;
   }
 
+  /******************************************* homepage */
+
+  #reviews {
+    height: 25rem;
+  }
+
+  .image-and-details .row {
+    margin: 0% 12% 3%;
+  }
+
   /******************************************* signup/login */
   .card {
     margin: 10px 190px;
@@ -545,19 +519,6 @@ input.five-stars:checked ~ .star:before {
 
   .custom-btn {
     margin-top: 0.8em;
-  }
-
-  /******************************************* homepage */
-
-  #image {
-    width: 25%;
-    height: 25em;
-    margin-left: 10em;
-  }
-
-  #reviews {
-    margin: 0px 7em;
-    height: 15em;
   }
 
   /******************************************* homepage modal */
@@ -634,12 +595,51 @@ input.five-stars:checked ~ .star:before {
 
   /******************************************* homepage */
 
-  #image {
-    width: 20%;
-    margin-left: 20em;
+  #image,
+  #movieDetails {
+    height: 45rem;
   }
 
   #reviews {
-    margin: 0px 17em;
+    height: 25rem;
+  }
+
+  .image-and-details h5,
+  #reviews h5 {
+    font-size: 3.5rem;
+  }
+
+  #movieDetails p,
+  #reviews p {
+    font-size: 3rem;
+  }
+
+  .image-and-details .row {
+    margin: 0% 15% 3%;
+  }
+
+  /******************************************* my bookings modals */
+
+  .change-booking-custom.modal,
+  .my-booking-custom.modal {
+    width: 55%;
+  }
+
+  .change-booking-custom .modal-content {
+    padding: 0px 24px;
+  }
+
+  .change-booking-custom h4,
+  .my-booking-custom h4 {
+    margin-bottom: 0px;
+  }
+
+  .change-booking-custom .custom-btn {
+    margin: 0px 25px 15px;
+  }
+
+  #commentBox {
+    margin-top: 0.8em;
+    height: 8.3em;
   }
 }
