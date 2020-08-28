@@ -28,13 +28,11 @@
             <div class="row">
                 <div class="col s12">
                     <div id="reviews">
-                        <h5 class="center"><b>Reviews</b></h5>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In minus, ipsum molestias inventore omnis libero et ea debitis doloremque iste facere voluptate aliquam voluptates repudiandae quia aspernatur animi assumenda dolor. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis magni, deserunt ipsa ipsam atque autem vitae! Corporis voluptatem cumque debitis quibusdam exercitationem quae sequi inventore magni tempore! Accusamus, pariatur dolorum.</p>
+                        <h5 class="center"><b>Reviews</b></h5>              
                         {% for review in reviews %}
                             {% if review.reviewed_movie_name == movie.movie_name %}
                                 <p>{{ review.reviewed_movie_name }}</p>
-                                <p>{{ review.star_rating_review }}</p>
-                                <p>lo{{ review.user_review }}</p>
+                                <p>{{ review.user_review }}</p>
                                 <p>{{ review.user }}</p>
                             {% endif %}
                         {% endfor %}

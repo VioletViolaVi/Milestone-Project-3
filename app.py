@@ -116,20 +116,19 @@ def login():
 
 
 @app.route("/my_bookings", methods=["GET", "POST"])
-def my_bookings(booked_details_id):
+def my_bookings():
 
     # reviews left by users
     if request.method == "POST":
 
         reviews = {
             "reviewed_movie_name": request.form.get("selectedMovie"),
-            "star_rating_review": request.form.get("starRating"),
             "user_review": request.form.get("commentBox"),
             "user": session["user"].title()
         }
 
         mongo.db.reviews.insert_one(reviews)
-        flash("Review Successfully Added!")
+        flash("Review Successfully Posted!")
         return redirect(url_for("my_bookings"))
 
     # movie info taken from mongo db for dropdown
@@ -150,36 +149,20 @@ def my_bookings(booked_details_id):
 @app.route("/change_booking/<booked_details_id>", methods=["GET", "POST"])
 def change_booking(booked_details_id):
 
-    # updates tickets
-    if request.method == "POST":
+    booked_details = mongo.db.booked_details
 
-        submit = {
-            "booked_movie": request.form.get("bookedMovie"),
-            "booked_ticket_quantity": request.form.get("ticketQuantity"),
-            "booked_date": request.form.get("date"),
-            "booked_location": request.form.get("location"),
-            "booked_by": session["user"].title()
-        }
-        mongo.db.booked_details.update(
-            {"_id": ObjectId(booked_details_id)}, submit)
+    booked_details.update(
+        {"_id": ObjectId(booked_details_id)},
+        {
+         "booked_movie": request.form.get("bookedMovie"),
+         "booked_ticket_quantity": request.form.get("ticketQuantity"),
+         "booked_date": request.form.get("date"),
+         "booked_location": request.form.get("location"),
+         "booked_by": session["user"].title()
+         })
 
-        flash("Booking Successfully Updated!")
-        return redirect(url_for("my_bookings"))
-
-    # movie info taken from mongo db for dropdown
-    movie_names = list(mongo.db.movies.find())
-
-    # location info taken from mongo db for dropdown
-    location_names = list(mongo.db.locations.find())
-
-    # gets objectId for changing specific bookings
-    bookings = mongo.db.booked_details.find_one(
-        {"_id": ObjectId(booked_details_id)})
-
-    return render_template("my_bookings.html",
-                           bookings=bookings,
-                           movie_names=movie_names,
-                           location_names=location_names)
+    flash("Booking Successfully Updated!")
+    return redirect(url_for("my_bookings"))
 
 
 @app.route("/delete_booking/<booked_details_id>")
