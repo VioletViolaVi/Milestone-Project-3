@@ -149,12 +149,12 @@ def change_booking(booked_details_id):
     mongo.db.booked_details.update(
         {"_id": ObjectId(booked_details_id)},
         {
-         "booked_movie": request.form.get("bookedMovie"),
-         "booked_ticket_quantity": request.form.get("ticketQuantity"),
-         "booked_date": request.form.get("date"),
-         "booked_location": request.form.get("location"),
-         "booked_by": session["user"].title()
-         })
+            "booked_movie": request.form.get("bookedMovie"),
+            "booked_ticket_quantity": request.form.get("ticketQuantity"),
+            "booked_date": request.form.get("date"),
+            "booked_location": request.form.get("location"),
+            "booked_by": session["user"].title()
+        })
 
     flash("Booking Successfully Updated!")
     return redirect(url_for("my_bookings"))

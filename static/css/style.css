@@ -119,6 +119,31 @@ body {
 
 /******************************************* homepage */
 
+div.carousel {
+  margin-bottom: 5em;
+  height: 450px;
+}
+
+.carousel .carousel-item > img {
+  width: 145%;
+}
+
+.carousel .indicators .indicator-item {
+  width: 1em;
+  height: 1em;
+  background-color: pink;
+}
+
+.carousel .indicators .indicator-item:hover {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.carousel .indicators .indicator-item.active {
+  background-color: palevioletred;
+}
+
+div.carousel,
 #image,
 #movieDetails,
 #reviews {
@@ -130,11 +155,16 @@ body {
   height: 20rem;
 }
 
+div.carousel,
+#movieDetails,
+#reviews {
+  background-color: lavenderblush;
+}
+
 #movieDetails,
 #reviews {
   padding: 0px 0px 5px 5px;
   overflow: auto;
-  background-color: lavenderblush;
 }
 
 #image {
@@ -211,9 +241,28 @@ input#password {
 
 /******************************************* homepage modal */
 
+.datepicker-cancel,
+.datepicker-done,
+.datepicker-table td.is-selected,
+.dropdown-content li > a,
+.dropdown-content li > span,
+.datepicker-clear,
+.datepicker-date-display .year-text,
+.datepicker-table abbr,
+.datepicker-date-display .date-text {
+  color: black;
+}
+
+.datepicker-clear,
+.datepicker-cancel,
+.datepicker-done,
+.datepicker-date-display,
+.datepicker-table td.is-selected {
+  background-color: pink;
+}
+
 .dropdown-content li > a,
 .dropdown-content li > span {
-  color: black;
   padding: 0px 0px 0px 16px;
   font-size: 1.24rem;
 }
@@ -223,23 +272,11 @@ input#password {
 }
 
 .datepicker-date-display {
-  background-color: yellow;
   padding: 5px 20px 10px;
 }
 
-.datepicker-date-display .year-text,
-.datepicker-table abbr,
-.datepicker-date-display .date-text {
-  color: black;
-}
-
 .datepicker-calendar-container {
-  color: darkgray;
-}
-
-.datepicker-table td.is-selected {
-  background-color: yellow;
-  color: black;
+  color: purple;
 }
 
 .datepicker-footer {
@@ -247,18 +284,12 @@ input#password {
 }
 
 .is-today {
-  color: goldenrod !important;
-}
-
-.datepicker-cancel,
-.datepicker-done {
-  color: black;
+  color: palevioletred !important;
 }
 
 .datepicker-clear,
 .datepicker-cancel,
 .datepicker-done {
-  background-color: yellow;
   margin: 2px 2px 0px 10px;
   font-weight: 900;
 }

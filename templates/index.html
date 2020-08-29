@@ -3,10 +3,20 @@
 
     <h2 class="center">{{ page_title }}</h2>
 
+    <div class="carousel">
+          {% for movie in movie_names %}
+              <figure>
+                  <a class="carousel-item" href="#{{ movie.movie_poster }}">
+                      <img src="{{ movie.movie_poster }}" alt="A picture of a movie poster showing at Cinemagic."> 
+                  </a>
+              </figure>
+          {% endfor %}
+    </div>
+
     {% for movie in movie_names %}
         <div class="image-and-details" id="container">
             <div class="row">
-                <h5><b>{{ movie.movie_name }}</b></h5>                
+                <h5 id="{{ movie.movie_poster }}"><b>{{ movie.movie_name }}</b></h5>                
                 <div class="col s6">
                     <img id="image" src="{{ movie.movie_poster }}" alt="A picture of a movie poster showing at Cinemagic.">
                 </div>   
