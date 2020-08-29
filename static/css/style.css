@@ -150,6 +150,10 @@ body {
   font-size: 2rem;
 }
 
+.comments-break {
+  margin-bottom: 3%;
+}
+
 .image-and-details .col {
   padding: 0px;
 }

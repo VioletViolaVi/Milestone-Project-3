@@ -31,9 +31,8 @@
                         <h5 class="center"><b>Reviews</b></h5>              
                         {% for review in reviews %}
                             {% if review.reviewed_movie_name == movie.movie_name %}
-                                <p>{{ review.reviewed_movie_name }}</p>
                                 <p>{{ review.user_review }}</p>
-                                <p>{{ review.user }}</p>
+                                <p class="comments-break"><b>~</b>{{ review.user }}</p>
                             {% endif %}
                         {% endfor %}
                     </div>

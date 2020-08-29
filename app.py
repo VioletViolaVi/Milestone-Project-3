@@ -38,12 +38,10 @@ def home():
 
     # movie info taken from mongo db for dropdown
     movie_names = list(mongo.db.movies.find())
-
     # location info taken from mongo db for dropdown
     location_names = list(mongo.db.locations.find())
-
     # reviews brought out from mongo db for homepage
-    reviews = mongo.db.reviews.find()
+    reviews = list(mongo.db.reviews.find())
 
     return render_template("index.html", page_title="Movies",
                            page_subtitle="Reviews", movie_names=movie_names,
@@ -133,10 +131,8 @@ def my_bookings():
 
     # movie info taken from mongo db for dropdown
     movie_names = list(mongo.db.movies.find())
-
     # location info taken from mongo db for dropdown
     location_names = list(mongo.db.locations.find())
-
     # booking info brought out from mongo db
     booking_info = mongo.db.booked_details.find()
 
@@ -146,12 +142,11 @@ def my_bookings():
                            booking_info=booking_info)
 
 
-@app.route("/change_booking/<booked_details_id>", methods=["GET", "POST"])
+@app.route("/change_booking/<booked_details_id>", methods=["POST"])
 def change_booking(booked_details_id):
 
-    booked_details = mongo.db.booked_details
-
-    booked_details.update(
+    # changing booked details from db
+    mongo.db.booked_details.update(
         {"_id": ObjectId(booked_details_id)},
         {
          "booked_movie": request.form.get("bookedMovie"),
@@ -178,10 +173,8 @@ def delete_booking(booked_details_id):
 def logout():
 
     flash("You have been logged out!")
-
     # removes session cookies to logout
     session.pop("user")
-
     return redirect(url_for("home"))
 
 
