@@ -22,6 +22,24 @@ $(document).ready(function () {
     },
   });
 
+
+$(function () {
+ 
+  $("#rateYo").rateYo({
+    rating: 2,
+    fullStar: true
+  });
+});
+
+// Getter
+var normalFill = $("#rateYo").rateYo("option", "fullStar"); //returns true
+ 
+// Setter
+$("#rateYo").rateYo("option", "fullStar", true); //returns a jQuery Element
+
+
+
+
   // from code institute 
 //   validateMaterializeSelect();
 //   function validateMaterializeSelect() {

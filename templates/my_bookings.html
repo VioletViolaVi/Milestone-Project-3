@@ -1,13 +1,12 @@
 {% extends "base.html" %}
-{% block my_bookings %}
 
+{% block my_bookings %}
     <div class="center">
         <h2>{{ page_title }}</h2>
     </div>
     <br>
 
     {% for booking in booking_info %}
-      
         <!-- change: modal -->
         <!-- modal from materialize -->
         <div id="change/{{ booking._id }}" class="change-booking-custom modal">
@@ -53,8 +52,8 @@
                     </div>
                     <br>
                     <div class="center">
-                        <button type="submit" class="custom-btn btn btn-flat waves-effect waves-black yellow black-text darken-text-4">CONFIRM</button>
-                        <a class="custom-btn btn btn-flat waves-effect waves-black yellow black-text darken-text-4 modal-close">CANCEL</a>                       
+                        <button type="submit" class="confirm-btn custom-btn btn btn-flat waves-effect waves-black deep-orange lighten-2 black-text">CONFIRM</button>
+                        <a class="cancel-btn custom-btn btn btn-flat waves-effect waves-black deep-orange lighten-2 black-text modal-close">CANCEL</a>                       
                     </div>
                 </form>  
             </div>
@@ -81,7 +80,7 @@
                     <label for="commentBox"></label>
                     <textarea name="commentBox" id="commentBox" required></textarea> 
                     <br>  
-                    <button type="submit" class="custom-btn btn btn-flat waves-effect waves-black yellow black-text darken-text-4">SUBMIT</button>
+                    <button type="submit" class="custom-btn btn btn-flat waves-effect waves-black deep-orange lighten-2 black-text">SUBMIT</button>
                 </form>
             </div>
         </div>
@@ -123,13 +122,13 @@
                         </ul>
                     </div>  
                     <div class="col s12 m3 center">
-                        <button class="custom-btn btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#change/{{ booking._id }}">CHANGE</button>
+                        <button class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#change/{{ booking._id }}">CHANGE</button>
                     </div>  
                     <div class="col s12 m6 center">
-                        <button class="custom-btn btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#{{ booking.booked_movie }}">LEAVE A REVIEW</button>  
+                        <button class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#{{ booking.booked_movie }}">LEAVE A REVIEW</button>  
                     </div>
                     <div class="col s12 m3 center">
-                        <button class="custom-btn btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#{{ booking._id }}">DELETE</button>
+                        <button class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#{{ booking._id }}">DELETE</button>
                     </div>   
                 </div>
             </div>
@@ -139,5 +138,4 @@
         {% endif %}
 
     {% endfor %}
-
 {% endblock %}

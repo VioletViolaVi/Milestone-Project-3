@@ -42,11 +42,11 @@
 
             {% if session.user %}
                 <div class="center">
-                    <a class="custom-btn btn waves-effect yellow black-text darken-text-4 modal-trigger" href="#{{ movie.movie_name }}">BOOK NOW</a>
+                    <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#{{ movie.movie_name }}">BOOK NOW</a>
                 </div>             
             {% else %}
                 <div class="center">
-                    <a class="custom-btn btn waves-effect yellow black-text darken-text-4 modal-trigger" href="{{ (url_for('signup')) }}">BOOK NOW</a>
+                    <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="{{ (url_for('signup')) }}">BOOK NOW</a>
                 </div>  
             {% endif %}
  
@@ -89,7 +89,7 @@
                             </select>                      
                         </div>
                         <div class="center">
-                            <button type="submit" class="custom-btn btn btn-flat waves-effect waves-black yellow black-text darken-text-4">SUBMIT</button>
+                            <button type="submit" class="custom-btn btn btn-flat waves-effect waves-black deep-orange lighten-2 black-text">SUBMIT</button>
                         </div>
                     </form>
                 </div>

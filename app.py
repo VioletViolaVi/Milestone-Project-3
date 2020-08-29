@@ -127,7 +127,7 @@ def my_bookings():
 
         mongo.db.reviews.insert_one(reviews)
         flash("Review Successfully Posted!")
-        return redirect(url_for("my_bookings"))
+        return redirect(url_for("home"))
 
     # movie info taken from mongo db for dropdown
     movie_names = list(mongo.db.movies.find())

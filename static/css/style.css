@@ -72,7 +72,7 @@ nav {
 }
 
 .sidenav li > a:hover {
-  background-color: gold;
+  background-color: pink;
 }
 
 .side-nav-links.black-text.waves-effect {
@@ -86,13 +86,12 @@ body {
   position: relative;
   padding-bottom: 150px;
   min-height: 100vh;
-  background-color: lightgoldenrodyellow;
 }
 
 #socials {
   position: absolute;
   bottom: 0;
-  height: 85px;
+  height: 9rem;
   width: 100%;
 }
 
@@ -102,8 +101,8 @@ body {
 }
 
 #icons i {
-  margin-right: 0.3em;
-  font-size: 0.7em;
+  margin-right: 0.6em;
+  font-size: 1em;
 }
 
 #contacts {
@@ -111,7 +110,7 @@ body {
 }
 
 #contacts p {
-  font-size: 1em;
+  font-size: 1.1em;
 }
 
 #socials .row {
@@ -119,6 +118,12 @@ body {
 }
 
 /******************************************* homepage */
+
+#image,
+#movieDetails,
+#reviews {
+  border: 0.5rem solid pink;
+}
 
 #image,
 #movieDetails {
@@ -129,10 +134,12 @@ body {
 #reviews {
   padding: 0px 0px 5px 5px;
   overflow: auto;
+  background-color: lavenderblush;
 }
 
 #image {
   width: 95%;
+  border-right: none;
 }
 
 #reviews {
@@ -235,6 +242,10 @@ input#password {
   color: black;
 }
 
+.datepicker-footer {
+  padding-bottom: 0px;
+}
+
 .is-today {
   color: goldenrod !important;
 }
@@ -248,16 +259,20 @@ input#password {
 .datepicker-cancel,
 .datepicker-done {
   background-color: yellow;
-  margin: 2px;
+  margin: 2px 2px 0px 10px;
   font-weight: 900;
 }
 
 .select-wrapper input.select-dropdown {
-  font-size: 1.2em;
+  font-size: 1.3em;
 }
 
 .select-wrapper.select-month {
   font-size: 0.9em;
+}
+
+input.select-dropdown.dropdown-trigger {
+  width: 100%;
 }
 
 /******************************************* leave a review modal */
@@ -270,6 +285,14 @@ input#password {
   height: 8em;
   padding: 5px;
   font-size: 1rem;
+}
+
+.confirm-btn {
+  margin-right: 2rem;
+}
+
+.cancel-btn {
+  margin-left: 2rem;
 }
 
 /******************************************* confirmation modal */
@@ -327,7 +350,7 @@ textarea {
   }
 
   #icons i {
-    margin-right: 0.7em;
+    margin-right: 0.9em;
     font-size: 1.1em;
   }
 
@@ -373,7 +396,7 @@ textarea {
     margin: 0% 5% 3%;
   }
 
-  /******************************************* all modals */
+  /******************************************* modals */
 
   .fas.fa-times {
     padding: 5px 10px 0px 0px;
@@ -382,8 +405,6 @@ textarea {
   .modal {
     width: 75%;
   }
-
-  /******************************************* change booking modal */
 
   .change-booking-custom .select-wrapper input.select-dropdown,
   .form-item label {
@@ -395,7 +416,14 @@ textarea {
     font-size: 1.4em;
   }
 
-  /******************************************* confirmation modal */
+  .confirm-btn {
+    margin-right: 4rem;
+  }
+
+  .cancel-btn {
+    margin-left: 4rem;
+  }
+
   .red {
     margin: 0px 50px 0px 0px;
   }
@@ -411,10 +439,13 @@ textarea {
 
 @media (min-width: 768px) {
   /******************************************* footer */
+  footer#socials {
+    height: 100px;
+  }
 
   #icons i {
-    font-size: 1.2em;
-    margin-right: 25px;
+    font-size: 1.3em;
+    margin-right: 45px;
   }
 
   #contacts p {
@@ -453,7 +484,7 @@ textarea {
     margin: 0% 10% 3%;
   }
 
-  /******************************************* leave a review modal */
+  /******************************************* modals */
 
   #commentBox {
     font-size: 1.2rem;
@@ -478,7 +509,7 @@ textarea {
   }
 
   .top-nav-links:hover {
-    background-color: gold;
+    background-color: pink;
   }
 
   #home {
@@ -488,13 +519,12 @@ textarea {
   /******************************************* footer */
 
   footer#socials {
-    height: 100px;
+    height: 106px;
     padding-top: 0px;
   }
 
   #icons i {
     font-size: 1.5em;
-    margin: 30px 0px 0px;
   }
 
   #contacts p {
@@ -525,7 +555,7 @@ textarea {
     margin-top: 0.8em;
   }
 
-  /******************************************* homepage modal */
+  /******************************************* modals */
   .modal .modal-content {
     padding: 24px 24px 11px 24px;
   }
@@ -543,21 +573,17 @@ textarea {
   }
 
   .datepicker-modal {
-    height: 25em;
     width: 35em;
   }
 
-  .datepicker-date-display {
-    height: 26.7em;
+  .confirm-btn {
+    margin-right: 6rem;
   }
 
-  /******************************************* my bookings */
-
-  .booked-details p {
-    font-size: 1em;
+  .cancel-btn {
+    margin-left: 6rem;
   }
 
-  /******************************************* confirmation modal */
   .red {
     margin: 0px 50px 0px 0px;
   }
@@ -573,6 +599,12 @@ textarea {
   .confirm-delete .custom-btn {
     margin: 25px 40px 10px 40px;
   }
+
+  /******************************************* my bookings */
+
+  .booked-details p {
+    font-size: 1em;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -584,8 +616,12 @@ textarea {
 
   /******************************************* footer */
 
+  #socials .row {
+    margin-top: 2px;
+  }
+
   footer#socials {
-    height: 105px;
+    height: 115px;
   }
 
   /******************************************* signup/login */
@@ -622,8 +658,10 @@ textarea {
     margin: 0% 15% 3%;
   }
 
-  /******************************************* my bookings modals */
-
+  /******************************************* modals */
+  .modal-overlay {
+    height: 135%;
+  }
   .change-booking-custom.modal,
   .my-booking-custom.modal {
     width: 55%;
@@ -638,8 +676,14 @@ textarea {
     margin-bottom: 0px;
   }
 
-  .change-booking-custom .custom-btn {
-    margin: 0px 25px 15px;
+  .confirm-btn {
+    margin-right: 8rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .cancel-btn {
+    margin-left: 8rem;
+    margin-bottom: 0.2rem;
   }
 
   #commentBox {
