@@ -16,7 +16,8 @@
   font-weight: 700;
 }
 
-#hrMovieDetails {
+#hrMovieDetails,
+.hr-admin {
   margin: 20px 20px 30px;
   border-color: black;
 }
@@ -72,7 +73,7 @@ nav {
 }
 
 .sidenav li > a:hover {
-  background-color: pink;
+  background-color: rgba(255, 192, 203, 0.473);
 }
 
 .side-nav-links.black-text.waves-effect {
@@ -396,11 +397,19 @@ input.select-dropdown.dropdown-trigger {
   color: green;
 }
 
-  /******************************************* admin */
+/******************************************* admin */
 
-  .admin-images{
-      width: 10em;
-  }
+#admin-title {
+  font-size: 1.6em;
+}
+
+#ratings-header-padding {
+  padding-top: 15em;
+}
+
+.admin-images {
+  width: 10em;
+}
 
 /****************************************************************************************************** BREAKPOINTS from bootstrap */
 @media (min-width: 576px) {
@@ -590,7 +599,7 @@ input.select-dropdown.dropdown-trigger {
   }
 
   .top-nav-links:hover {
-    background-color: pink;
+    background-color: rgba(255, 192, 203, 0.473);
   }
 
   #home {
@@ -685,6 +694,15 @@ input.select-dropdown.dropdown-trigger {
 
   .booked-details p {
     font-size: 1em;
+  }
+}
+
+@media (min-width: 993px) {
+  /******************************************* admin */
+
+  #ratings-header-padding {
+    padding-top: 15px;
+    padding-right: 1em;
   }
 }
 
