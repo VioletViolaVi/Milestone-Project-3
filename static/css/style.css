@@ -239,6 +239,24 @@ input#password {
   margin-bottom: 0px;
 }
 
+/******************************************* each modals */
+.modal {
+  width: 95%;
+}
+
+.form-item label {
+  color: black;
+  font-size: 1.2rem;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: "Scada", sans-serif;
+}
+
 /******************************************* homepage modal */
 
 .datepicker-cancel,
@@ -334,23 +352,55 @@ input.select-dropdown.dropdown-trigger {
   margin: 25px 0px 0px 35px;
 }
 
-/******************************************* all modals*/
-.modal {
-  width: 95%;
+/******************************************* face rating */
+
+[type="radio"]:not(:checked),
+[type="radio"]:checked {
+  opacity: 1;
 }
 
-.form-item label {
-  color: black;
-  font-size: 1.2rem;
+.fas.fa-angry,
+.fas.fa-frown,
+.fas.fa-meh,
+.fas.fa-smile,
+.fas.fa-grin-alt {
+  font-size: 3rem;
+  cursor: pointer;
 }
 
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: "Scada", sans-serif;
+.fas.fa-angry:hover,
+.fas.fa-frown:hover,
+.fas.fa-meh:hover,
+.fas.fa-smile:hover,
+.fas.fa-grin-alt:hover {
+  font-size: 3.1rem;
 }
+
+.fas.fa-angry {
+  color: red;
+}
+
+.fas.fa-frown {
+  color: orange;
+}
+
+.fas.fa-meh {
+  color: yellow;
+}
+
+.fas.fa-smile {
+  color: lightgreen;
+}
+
+.fas.fa-grin-alt {
+  color: green;
+}
+
+  /******************************************* admin */
+
+  .admin-images{
+      width: 10em;
+  }
 
 /****************************************************************************************************** BREAKPOINTS from bootstrap */
 @media (min-width: 576px) {

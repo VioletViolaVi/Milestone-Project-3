@@ -1,0 +1,67 @@
+{% extends "base.html" %} {% block admin %} 
+
+    <div class="center">
+        <h2>{{ page_title }}</h2>
+    </div>
+    <br>
+
+    <h5>{{ bookings_title }}</h5>
+        {% for booking in booking_info %}
+            <div class="container">
+                <div class="row margin-removal">
+                    <div class="booked-details col s6"> 
+                        <ul>
+                            <li>
+                                <h5>{{ booking.booked_movie }}</h5> 
+                            </li>
+                            <li>
+                                <p><b>Ticket Quantity: </b>{{ booking.booked_ticket_quantity }}</p>
+                            </li>
+                            <li>
+                                <p><b>Date: </b>{{ booking.booked_date }}</p>
+                            </li>
+                            <li>
+                                <p><b>Location: </b>{{ booking.booked_location }}</p>
+                            </li>
+                            <li>
+                                <p><b>Owner: </b>{{ booking.booked_by }}</p>
+                            </li>
+                        </ul>
+                    </div>     
+                </div>
+            </div>
+        {% endfor %}
+
+    <h5>{{ locations_title }}</h5>
+        {% for location_name in location_names %}
+            <p>{{ location_name.location_name }}</p>
+        {% endfor %}
+
+    <h5>{{ movies_title }}</h5>
+        {% for movie in movie_names %}
+            <ul>                
+                <li><b>Movie Name: </b>{{ movie.movie_name }}</li>
+                <li><b>Moive image: </b><img class="admin-images" src="{{ movie.movie_poster }}" alt="A picture of a movie poster showing at Cinemagic."> </li>
+                <li><b>Rating: </b>{{ movie.rating }}</li>
+                <li><b>Duration: </b>{{ movie.duration }}</li>
+                <li><b>Genres: </b>{{ movie.genres }}</li>
+                <li><b>Cast: </b>{{ movie.cast }}</li>
+                <li><b>Director: </b>{{ movie.director }}</li>
+                <li><b>Writer: </b>{{ movie.writer }}</li>
+                <li><b>Producer: </b>{{ movie.producer }}</li>
+            </ul>
+        {% endfor %}
+
+    <h5>{{ users_reviews_title }}</h5>
+        {% for review in reviews %}
+            <p>{{ review.user_review }}</p>
+            <p><b>~</b>{{ review.user }}</p>
+        {% endfor %}
+
+    <h5>{{ users_title}}</h5>
+        {% for user in users %}
+            <p>{{ user.user }}</p>
+            <p>{{ user.email }}</p>
+        {% endfor %}
+
+{% endblock %}

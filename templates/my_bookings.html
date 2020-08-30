@@ -75,7 +75,32 @@
                             <option value="{{ booking.booked_movie }}" selected>{{ booking.booked_movie }}</option>
                         </select>
                         <label for="selectedMovie"></label>
-                    </div>
+                    </div>                    
+
+                  
+                    <h4 class="modal-titles">My Rating</h4>
+                    
+                    <input id="score-1" type="radio" value="1" name="rating" required/>
+                    <i class="fas fa-angry"></i>
+                    <label for="score-1"></label> 
+                    
+                    <input id="score-2" type="radio" value="2" name="rating"/>
+                    <i class="fas fa-frown"></i>
+                    <label for="score-2"></label>
+                    
+                    <input id="score-3" type="radio" value="3" name="rating"/>
+                    <i class="fas fa-meh"></i>
+                    <label for="score-3"></label>
+                    
+                    <input id="score-4" type="radio" value="4" name="rating"/> 
+                    <i class="fas fa-smile"></i> 
+                    <label for="score-4"></label>
+                    
+                    <input id="score-5" type="radio" value="5" name="rating"/> 
+                    <i class="fas fa-grin-alt"></i>                      
+                    <label for="score-5"></label>
+                                    
+
                     <h4 id="myReviewTitle">My Review</h4>
                     <label for="commentBox"></label>
                     <textarea name="commentBox" id="commentBox" required></textarea> 

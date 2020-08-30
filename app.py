@@ -78,7 +78,7 @@ def signup():
         # puts new user in session cookie
         session["user"] = request.form.get("username").lower()
         flash("Sign Up Successful!")
-        flash(f"Welcome {request.form.get('username')}!")
+        flash(f"Welcome {request.form.get('username').capitalize()}!")
         return redirect(url_for("home"))
 
     return render_template("signup.html", page_title="Sign Up")
@@ -121,6 +121,7 @@ def my_bookings():
 
         reviews = {
             "reviewed_movie_name": request.form.get("selectedMovie"),
+            "user_rating": request.form.get("rating"),
             "user_review": request.form.get("commentBox"),
             "user": session["user"].title()
         }
@@ -172,10 +173,37 @@ def delete_booking(booked_details_id):
 @app.route("/logout")
 def logout():
 
-    flash("You have been logged out!")
+    flash("You Have Been Logged Out!")
     # removes session cookies to logout
     session.pop("user")
     return redirect(url_for("home"))
+
+
+@app.route("/admin")
+def admin():
+
+    # booking info brought out from mongo db
+    booking_info = mongo.db.booked_details.find()
+    # location info taken from mongo db for dropdown
+    location_names = list(mongo.db.locations.find())
+    # movie info taken from mongo db for dropdown
+    movie_names = list(mongo.db.movies.find())
+    # reviews brought out from mongo db for admin
+    reviews = list(mongo.db.reviews.find())
+    # users brought out from mongo db for admin
+    users = list(mongo.db.users.find())
+
+    return render_template("admin.html", page_title="Administration",
+                           bookings_title="User Bookings",
+                           locations_title="Cinemagic Locations",
+                           movies_title="Cinemagic Movies",
+                           users_reviews_title="User Reviews",
+                           users_title="Cinemgaic Users",
+                           booking_info=booking_info,
+                           location_names=location_names,
+                           movie_names=movie_names,
+                           reviews=reviews,
+                           users=users)
 
 
 if __name__ == "__main__":
