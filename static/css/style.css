@@ -27,7 +27,19 @@
   margin: 15px 0px 5px 0px;
 }
 
-/******************************************* top nav */
+.smallest.fas.fa-star {
+  font-size: 0.2em;
+}
+
+.smaller.fas.fa-star {
+  font-size: 0.3em;
+}
+
+.small.fas.fa-star {
+  font-size: 0.4em;
+}
+
+/******************************************* top nav (mobile) */
 
 #navTitle {
   font-size: 1.5em;
@@ -47,15 +59,6 @@ nav {
   font-size: 2em;
   margin: 10px 0px 0px 10px;
   cursor: pointer;
-}
-
-.fas.fa-times {
-  padding: 5px 10px 0px 0px;
-}
-
-.fas.fa-times {
-  font-size: 2rem;
-  padding: 5px 5px 0px 0px;
 }
 
 /******************************************* side nav */
@@ -94,6 +97,7 @@ body {
   bottom: 0;
   height: 9rem;
   width: 100%;
+  margin: 0px;
 }
 
 #icons {
@@ -240,9 +244,14 @@ input#password {
   margin-bottom: 0px;
 }
 
-/******************************************* each modals */
+/******************************************* each modal */
 .modal {
   width: 95%;
+}
+
+.fas.fa-times {
+  font-size: 2rem;
+  padding: 5px 10px 0px 0px;
 }
 
 .form-item label {
@@ -345,56 +354,66 @@ input.select-dropdown.dropdown-trigger {
   margin-left: 2rem;
 }
 
+
+
+
+
+/************************************************************************* stars */
+/* styles reviewed stars */
+.five-stars {
+  color: yellow;
+}
+
+/* removes radio buttons */
+.radio-btn {
+  display: none;
+}
+
+/* shows correct number of hovered stars */
+.flip-stars {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+/* styles average score stars */
+.star-average .fas.fa-star {
+  font-size: 3rem;
+}
+
+/* styles modal stars */
+.star {
+  font-size: 2rem;
+  color: black;
+  cursor: pointer;
+}
+
+/* styles correct number of stars when hovered */
+.star:hover,
+.star:hover ~ label {
+  color: yellow;
+  transition: all 0.1s;
+}
+
+/* styles stars as they're clicked */
+.radio-btn:checked ~ .star:before {
+  color: yellow;
+}
+
+/* styles stars when five is selected */
+input.five-stars:checked ~ .star:before {
+  color: yellow;
+  text-shadow: 1px 1px 30px black;
+}
+
+
+
+
 /******************************************* confirmation modal */
 .red {
   margin: 25px 35px 0px 0px;
 }
 .green {
   margin: 25px 0px 0px 35px;
-}
-
-/******************************************* face rating */
-
-[type="radio"]:not(:checked),
-[type="radio"]:checked {
-  opacity: 1;
-}
-
-.fas.fa-angry,
-.fas.fa-frown,
-.fas.fa-meh,
-.fas.fa-smile,
-.fas.fa-grin-alt {
-  font-size: 3rem;
-  cursor: pointer;
-}
-
-.fas.fa-angry:hover,
-.fas.fa-frown:hover,
-.fas.fa-meh:hover,
-.fas.fa-smile:hover,
-.fas.fa-grin-alt:hover {
-  font-size: 3.1rem;
-}
-
-.fas.fa-angry {
-  color: red;
-}
-
-.fas.fa-frown {
-  color: orange;
-}
-
-.fas.fa-meh {
-  color: yellow;
-}
-
-.fas.fa-smile {
-  color: lightgreen;
-}
-
-.fas.fa-grin-alt {
-  color: green;
 }
 
 /******************************************* admin */
@@ -595,7 +614,7 @@ input.select-dropdown.dropdown-trigger {
   .top-nav-links {
     display: flex;
     margin-right: 1rem;
-    font-size: 2.5rem;
+    font-size: 2.4rem;
   }
 
   .top-nav-links:hover {
