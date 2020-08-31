@@ -99,7 +99,7 @@ def login():
             if check_password_hash(
                     existing_user["pwd"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash(f"Welcome Back {request.form.get('username')}!")
+                flash(f"Welcome Back {request.form.get('username').capitalize()}!")
                 return redirect(url_for("home"))
             else:
                 # occurs when password is wrong
@@ -143,7 +143,7 @@ def my_bookings():
                            booking_info=booking_info)
 
 
-@app.route("/change_booking/<booked_details_id>", methods=["POST"])
+@app.route("/change_booking/<booked_details_id>", methods=["GET", "POST"])
 def change_booking(booked_details_id):
 
     # changing booked details from db
@@ -237,7 +237,7 @@ def admin_add_movie():
         return redirect(url_for("admin"))
 
 
-@app.route("/admin_change_movie/<movie_id>", methods=["POST"])
+@app.route("/admin_change_movie/<movie_id>", methods=["GET", "POST"])
 def admin_change_movie(movie_id):
 
     # changing movies from db
@@ -283,7 +283,8 @@ def admin_add_location():
         return redirect(url_for("admin"))
 
 
-@app.route("/admin_change_location/<location_name_id>", methods=["POST"])
+@app.route("/admin_change_location/<location_name_id>",
+           methods=["GET", "POST"])
 def admin_change_location(location_name_id):
 
     # changing movies from db

@@ -297,7 +297,7 @@ textarea {
 }
 
 .datepicker-modal {
-  max-height: 29em;
+  max-height: 27em;
 }
 
 .datepicker-date-display {
@@ -319,7 +319,7 @@ textarea {
 .datepicker-clear,
 .datepicker-cancel,
 .datepicker-done {
-  margin: 2px 2px 0px 10px;
+  margin: 2px 2px 5px 10px;
   font-weight: 900;
 }
 
@@ -708,6 +708,7 @@ input.five-stars:checked ~ .star:before {
 
   .datepicker-modal {
     width: 35em;
+    max-height: 25em;
   }
 
   .confirm-btn {
@@ -749,16 +750,14 @@ input.five-stars:checked ~ .star:before {
     padding-right: 1em;
   }
 
-.admin-btn-change{
+  .admin-btn-change {
     margin-bottom: 1.5em;
-}
+  }
 
-.admin-btn-delete{
+  .admin-btn-delete {
     margin-top: 1.5em;
     padding-right: 1.5em;
-}                       
-
-
+  }
 }
 
 /* bootstrap */
