@@ -90,9 +90,9 @@
                             <input id="date" name="date" type="text" class="datepicker" required>                    
                         </div>                                
                         <div class="form-item">
-                            <label for="location">Location</label>                   
+                            <label for="location"></label>                   
                             <select id="location" name="location" class="input-field select-boxes" required>
-                                <option value="" disabled selected></option>
+                                <option value="" disabled selected>Select Location</option>
                                 {% for location_name in location_names %}
                                     <option value="{{ location_name.location_name }}">{{ location_name.location_name }}</option>
                                 {% endfor %}

@@ -39,7 +39,7 @@ def home():
     # movie info taken from mongo db for dropdown
     movie_names = list(mongo.db.movies.find())
     # location info taken from mongo db for dropdown
-    location_names = list(mongo.db.locations.find())
+    location_names = list(mongo.db.locations.find().sort("location_name", 1))
     # reviews brought out from mongo db for homepage
     reviews = list(mongo.db.reviews.find())
 
@@ -131,9 +131,9 @@ def my_bookings():
         return redirect(url_for("home"))
 
     # movie info taken from mongo db for dropdown
-    movie_names = list(mongo.db.movies.find())
+    movie_names = list(mongo.db.movies.find().sort("movie_name", 1))
     # location info taken from mongo db for dropdown
-    location_names = list(mongo.db.locations.find())
+    location_names = list(mongo.db.locations.find().sort("location_name", 1))
     # booking info brought out from mongo db
     booking_info = mongo.db.booked_details.find()
 
@@ -183,15 +183,15 @@ def logout():
 def admin():
 
     # booking info brought out from mongo db
-    booking_info = mongo.db.booked_details.find()
+    booking_info = mongo.db.booked_details.find().sort("booked_by", 1)
     # location info taken from mongo db for dropdown
-    location_names = list(mongo.db.locations.find())
+    location_names = list(mongo.db.locations.find().sort("location_name", 1))
     # movie info taken from mongo db for dropdown
-    movie_names = list(mongo.db.movies.find())
+    movie_names = list(mongo.db.movies.find().sort("movie_name", 1))
     # reviews brought out from mongo db for admin
-    reviews = list(mongo.db.reviews.find())
+    reviews = list(mongo.db.reviews.find().sort("user", 1))
     # users brought out from mongo db for admin
-    users = list(mongo.db.users.find())
+    users = list(mongo.db.users.find().sort("user", 1))
 
     return render_template("admin.html", page_title="Administration",
                            bookings_title="User Bookings",

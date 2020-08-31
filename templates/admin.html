@@ -5,7 +5,7 @@
     </div>
 
     <!-- cinemagic movies -->
-    <h4 class="center">{{ movies_title }}</h4>
+    <h4 class="admin-subtitles">{{ movies_title }}</h4>
     <table class="responsive-table highlight">
         <thead>
             <tr>
@@ -40,7 +40,7 @@
     <hr class="hr-admin">
 
     <!-- cinemagic locations -->
-    <h4 class="center">{{ locations_title }}</h4>
+    <h4 class="admin-subtitles">{{ locations_title }}</h4>
     <table class="responsive-table highlight">
         <thead>
             <tr>
@@ -59,7 +59,7 @@
     <hr class="hr-admin">
 
     <!-- user signup info -->
-    <h4 class="center">{{ users_title}}</h4>
+    <h4 class="admin-subtitles">{{ users_title}}</h4>
     <table class="responsive-table highlight">
         <thead>
             <tr>
@@ -82,25 +82,25 @@
     <hr class="hr-admin">
     
     <!-- user bookings -->
-    <h4 class="center">{{ bookings_title }}</h4>
+    <h4 class="admin-subtitles">{{ bookings_title }}</h4>
     <table class="responsive-table highlight">
         <thead>
             <tr>
+                <th>User</th>
                 <th>Movie Name</th>
                 <th>Ticket Quantity</th>
                 <th>Date</th>
-                <th>Location</th>
-                <th>User</th>
+                <th>Location</th>               
             </tr>
         </thead>
         <tbody>
             {% for booking in booking_info %}
                 <tr>
+                    <td>{{ booking.booked_by }}</td>
                     <td>{{ booking.booked_movie }}</td>
                     <td>{{ booking.booked_ticket_quantity }}</td>
                     <td>{{ booking.booked_date }}</td>
                     <td>{{ booking.booked_location }}</td>
-                    <td>{{ booking.booked_by }}</td>
                 </tr>
             {% endfor %}        
         </tbody>         
@@ -109,21 +109,21 @@
     <hr class="hr-admin">
     
     <!-- user movie reviews -->
-    <h4 class="center">{{ users_reviews_title }}</h4>
+    <h4 class="admin-subtitles">{{ users_reviews_title }}</h4>
     <table class="responsive-table highlight">
         <thead>
             <tr>
+                <th>User Name</th>
                 <th>Moive Name</th>
                 <th>User Review</th>
-                <th>User Name</th>
             </tr>
         </thead>
         <tbody>
             {% for review in reviews %}
                 <tr>
+                    <td>{{ review.user }}</td>              
                     <td>{{ review.reviewed_movie_name }}</td>
                     <td>{{ review.user_review }}</td>
-                    <td>{{ review.user }}</td>
                 </tr>
             {% endfor %}        
         </tbody>         
