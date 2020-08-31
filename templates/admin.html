@@ -7,9 +7,9 @@
             <i class="fas fa-times modal-close"></i> 
         </div>
         <div class="modal-content"> 
-            <form method="POST" action="{{ url_for('admin_add_movies') }}" class="black-text">
+            <form method="POST" action="{{ url_for('admin_add_movie') }}" class="black-text">
                 <div class="center">
-                    <h4>Add Movies</h4>
+                    <h4>Add Movie</h4>
                 </div>
                 <div class="form-item">
                     <label for="addMmovieName">Movie Name</label>
@@ -110,8 +110,8 @@
                     <td>{{ movie.writer }}</td>
                     <td>{{ movie.producer }}</td>
                     <td>
-                        <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminChangeMovie/{{ movie._id }}">CHANGE</a>
-                        <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminDeleteMovie/{{ movie._id }}">DELETE</a>
+                        <a class="admin-btn-change custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminChangeMovie/{{ movie._id }}">CHANGE</a>
+                        <a class="admin-btn-delete custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminDeleteMovie/{{ movie._id }}">DELETE</a>
                     </td>
                 </tr>
                 <!-- admin-change movies: modal -->
@@ -127,39 +127,39 @@
                         <form method="POST" action="{{ (url_for('admin_change_movie', movie_id=movie._id)) }}" class="black-text">
                             <div class="form-item">
                                 <label for="changeMovieName">Movie Name</label>
-                                <input placeholder="{{ movie.movie_name }}" id="changeMovieName" name="changeMovieName" class="input-field" required>
+                                <input value="{{ movie.movie_name }}" placeholder="{{ movie.movie_name }}" id="changeMovieName" name="changeMovieName" class="input-field" required>
                             </div>
                             <div class="form-item">
                                 <label for="changeMoviePoster">Movie Image</label>
-                                <input placeholder="{{ movie.movie_poster }}" id="changeMoviePoster" name="changeMoviePoster" class="input-field" required>
+                                <input value="{{ movie.movie_poster }}" placeholder="{{ movie.movie_poster }}" id="changeMoviePoster" name="changeMoviePoster" class="input-field" required>
                             </div>                      
                             <div class="form-item">
                                 <label for="changeMovieRating">Movie Rating</label>
-                                <input placeholder="{{ movie.rating }}" id="changeMovieRating" name="changeMovieRating" class="input-field" required>
+                                <input value="{{ movie.rating }}" placeholder="{{ movie.rating }}" id="changeMovieRating" name="changeMovieRating" class="input-field" required>
                             </div>
                             <div class="form-item">
                                 <label for="changeMovieDuration">Movie Duration</label>
-                                <input placeholder="{{ movie.duration }}" id="changeMovieDuration" name="changeMovieDuration" class="input-field" required>
+                                <input value="{{ movie.duration }}" placeholder="{{ movie.duration }}" id="changeMovieDuration" name="changeMovieDuration" class="input-field" required>
                             </div>
                             <div class="form-item">
                                 <label for="changeMovieGenre">Movie Genre</label>
-                                <input placeholder="{{ movie.genres }}" id="changeMovieGenre" name="changeMovieGenre" class="input-field" required>
+                                <input value="{{ movie.genres }}" placeholder="{{ movie.genres }}" id="changeMovieGenre" name="changeMovieGenre" class="input-field" required>
                             </div>
                             <div class="form-item">
                                 <label for="changeMovieDirector">Movie Director</label>
-                                <input placeholder="{{ movie.director }}" id="changeMovieDirector" name="changeMovieDirector" class="input-field" required>
+                                <input value="{{ movie.director }}" placeholder="{{ movie.director }}" id="changeMovieDirector" name="changeMovieDirector" class="input-field" required>
                             </div>
                             <div class="form-item">
                                 <label for="changeMovieWriter">Movie Writer</label>
-                                <input placeholder="{{ movie.writer }}" id="changeMovieWriter" name="changeMovieWriter" class="input-field" required>
+                                <input value="{{ movie.writer }}" placeholder="{{ movie.writer }}" id="changeMovieWriter" name="changeMovieWriter" class="input-field" required>
                             </div>
                             <div class="form-item">
                                 <label for="changeMovieProducer">Movie Producer</label>
-                                <input placeholder="{{ movie.producer }}" id="changeMovieProducer" name="changeMovieProducer" class="input-field" required>
+                                <input value="{{ movie.producer }}" placeholder="{{ movie.producer }}" id="changeMovieProducer" name="changeMovieProducer" class="input-field" required>
                             </div>
                             <div class="form-item">
                                 <label for="changeMovieCast">Movie Cast</label>
-                                <input placeholder="{{ movie.cast }}" id="changeMovieCast" name="changeMovieCast" class="input-field" required>
+                                <input value="{{ movie.cast }}" placeholder="{{ movie.cast }}" id="changeMovieCast" name="changeMovieCast" class="input-field" required>
                             </div>
                             <br>
                             <div class="center">
@@ -187,18 +187,13 @@
     </table>
     <br>
     <div class="center">
-        <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#addMoives">Add Movies</a>
+        <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#addMoives">Add Movie</a>
     </div>
     <hr class="hr-admin">
 
     <!-- cinemagic locations -->
     <h4 class="admin-subtitles">{{ locations_title }}</h4>
     <table class="responsive-table highlight">
-        <thead>
-            <tr>
-                <th>Locations</th>
-            </tr>
-        </thead>
         <tbody>
             {% for location_name in location_names %}
                 <tr>
@@ -223,7 +218,7 @@
                         <form method="POST" action="{{ (url_for('admin_change_location', location_name_id=location_name._id)) }}" class="black-text">
                             <div class="form-item">
                                 <label for="changeLocation">Location Name</label>
-                                <input placeholder="{{ location_name.location_name }}" id="changeLocation" name="changeLocation" class="input-field" required>
+                                <input value="{{ location_name.location_name }}" placeholder="{{ location_name.location_name }}" id="changeLocation" name="changeLocation" class="input-field" required>
                             </div>
                             <br>
                             <div class="center">

@@ -748,6 +748,17 @@ input.five-stars:checked ~ .star:before {
     padding-top: 15px;
     padding-right: 1em;
   }
+
+.admin-btn-change{
+    margin-bottom: 1.5em;
+}
+
+.admin-btn-delete{
+    margin-top: 1.5em;
+    padding-right: 1.5em;
+}                       
+
+
 }
 
 /* bootstrap */

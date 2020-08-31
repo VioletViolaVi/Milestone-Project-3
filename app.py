@@ -170,15 +170,6 @@ def delete_booking(booked_details_id):
     return redirect(url_for("my_bookings"))
 
 
-@app.route("/logout")
-def logout():
-
-    flash("You Have Been Logged Out!")
-    # removes session cookies to logout
-    session.pop("user")
-    return redirect(url_for("home"))
-
-
 @app.route("/admin")
 def admin():
 
@@ -224,8 +215,8 @@ def admin():
                            users=users)
 
 
-@app.route("/admin_add_movies", methods=["GET", "POST"])
-def admin_add_movies():
+@app.route("/admin_add_movie", methods=["GET", "POST"])
+def admin_add_movie():
 
     # add movies
     if request.method == "POST":
@@ -313,6 +304,15 @@ def admin_delete_location(location_name_id):
     mongo.db.locations.remove({"_id": ObjectId(location_name_id)})
     flash("Location Successfully Deleted!")
     return redirect(url_for("admin"))
+
+
+@app.route("/logout")
+def logout():
+
+    flash("You Have Been Logged Out!")
+    # removes session cookies to logout
+    session.pop("user")
+    return redirect(url_for("home"))
 
 
 if __name__ == "__main__":
