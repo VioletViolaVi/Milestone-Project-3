@@ -1,5 +1,81 @@
 {% extends "base.html" %} {% block admin %} 
 
+    <!-- admin-add movies: modal -->
+    <!-- modal from materialize -->
+    <div id="addMoives" class="modal">
+        <div class="right-align">
+            <i class="fas fa-times modal-close"></i> 
+        </div>
+        <div class="modal-content"> 
+            <form method="POST" action="{{ url_for('admin_add_movies') }}" class="black-text">
+                <div class="center">
+                    <h4>Add Movies</h4>
+                </div>
+                <div class="form-item">
+                    <label for="addMmovieName">Movie Name</label>
+                    <input type="text" id="addMmovieName" name="addMmovieName" required>      
+                </div>
+                <div class="form-item">
+                    <label for="addMoviePoster">Movie Image</label>
+                    <input type="text" id="addMoviePoster" name="addMoviePoster" required>      
+                </div>
+                <div class="form-item">
+                    <label for="addMovieRating">Movie Rating</label>
+                    <input type="text" id="addMovieRating" name="addMovieRating" required>      
+                </div>
+                <div class="form-item">
+                    <label for="addMovieDuration">Movie Duration</label>
+                    <input type="text" id="addMovieDuration" name="addMovieDuration" required>      
+                </div>    
+                <div class="form-item">
+                    <label for="addMovieGenre">Movie Genre</label>
+                    <input type="text" id="addMovieGenre" name="addMovieGenre" required>      
+                </div>
+                <div class="form-item">
+                    <label for="addMovieCast">Movie Cast</label>
+                    <input type="text" id="addMovieCast" name="addMovieCast" required>      
+                </div>
+                <div class="form-item">
+                    <label for="addMovieDirector">Movie Director</label>
+                    <input type="text" id="addMovieDirector" name="addMovieDirector" required>      
+                </div>
+                <div class="form-item">
+                    <label for="addMovieWriter">Movie Writer</label>
+                    <input type="text" id="addMovieWriter" name="addMovieWriter" required>      
+                </div>
+                <div class="form-item">
+                    <label for="addMovieProducer">Movie Producer</label>
+                    <input type="text" id="addMovieProducer" name="addMovieProducer" required>      
+                </div>
+                <div class="center">
+                    <button type="submit" class="custom-btn btn btn-flat waves-effect waves-black deep-orange lighten-2 black-text">SUBMIT</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- admin-add locations: modal -->
+    <!-- modal from materialize -->
+    <div id="addLocation" class="modal">
+        <div class="right-align">
+            <i class="fas fa-times modal-close"></i> 
+        </div>
+        <div class="modal-content"> 
+            <form method="POST" action="{{ url_for('admin_add_location') }}" class="black-text">
+                <div class="center">
+                    <h4>Add Locations</h4>
+                </div>
+                <div class="form-item">
+                    <label for="addingLocations">Location Name</label>
+                    <input type="text" id="addingLocations" name="addingLocations" required>      
+                </div>
+                <div class="center">
+                    <button type="submit" class="custom-btn btn btn-flat waves-effect waves-black deep-orange lighten-2 black-text">SUBMIT</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <div class="center">
         <h2 id="admin-title">{{ page_title }}</h2>
     </div>
@@ -18,6 +94,7 @@
                 <th>Director</th>
                 <th>Writer</th>
                 <th>Producer</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -32,11 +109,86 @@
                     <td>{{ movie.director }}</td>
                     <td>{{ movie.writer }}</td>
                     <td>{{ movie.producer }}</td>
+                    <td>
+                        <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminChangeMovie/{{ movie._id }}">CHANGE</a>
+                        <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminDeleteMovie/{{ movie._id }}">DELETE</a>
+                    </td>
                 </tr>
+                <!-- admin-change movies: modal -->
+                <!-- modal from materialize -->
+                <div id="adminChangeMovie/{{ movie._id }}" class="modal">
+                    <div class="right-align">
+                        <i class="fas fa-times modal-close"></i> 
+                    </div>
+                    <div class="modal-content">   
+                        <div class="center">
+                            <h4>Change Movie Details</h4>
+                        </div>
+                        <form method="POST" action="{{ (url_for('admin_change_movie', movie_id=movie._id)) }}" class="black-text">
+                            <div class="form-item">
+                                <label for="changeMovieName">Movie Name</label>
+                                <input placeholder="{{ movie.movie_name }}" id="changeMovieName" name="changeMovieName" class="input-field" required>
+                            </div>
+                            <div class="form-item">
+                                <label for="changeMoviePoster">Movie Image</label>
+                                <input placeholder="{{ movie.movie_poster }}" id="changeMoviePoster" name="changeMoviePoster" class="input-field" required>
+                            </div>                      
+                            <div class="form-item">
+                                <label for="changeMovieRating">Movie Rating</label>
+                                <input placeholder="{{ movie.rating }}" id="changeMovieRating" name="changeMovieRating" class="input-field" required>
+                            </div>
+                            <div class="form-item">
+                                <label for="changeMovieDuration">Movie Duration</label>
+                                <input placeholder="{{ movie.duration }}" id="changeMovieDuration" name="changeMovieDuration" class="input-field" required>
+                            </div>
+                            <div class="form-item">
+                                <label for="changeMovieGenre">Movie Genre</label>
+                                <input placeholder="{{ movie.genres }}" id="changeMovieGenre" name="changeMovieGenre" class="input-field" required>
+                            </div>
+                            <div class="form-item">
+                                <label for="changeMovieDirector">Movie Director</label>
+                                <input placeholder="{{ movie.director }}" id="changeMovieDirector" name="changeMovieDirector" class="input-field" required>
+                            </div>
+                            <div class="form-item">
+                                <label for="changeMovieWriter">Movie Writer</label>
+                                <input placeholder="{{ movie.writer }}" id="changeMovieWriter" name="changeMovieWriter" class="input-field" required>
+                            </div>
+                            <div class="form-item">
+                                <label for="changeMovieProducer">Movie Producer</label>
+                                <input placeholder="{{ movie.producer }}" id="changeMovieProducer" name="changeMovieProducer" class="input-field" required>
+                            </div>
+                            <div class="form-item">
+                                <label for="changeMovieCast">Movie Cast</label>
+                                <input placeholder="{{ movie.cast }}" id="changeMovieCast" name="changeMovieCast" class="input-field" required>
+                            </div>
+                            <br>
+                            <div class="center">
+                                <button type="submit" class="confirm-btn custom-btn btn btn-flat waves-effect waves-black deep-orange lighten-2 black-text">CONFIRM</button>
+                                <a class="cancel-btn custom-btn btn btn-flat waves-effect waves-black deep-orange lighten-2 black-text modal-close">CANCEL</a>                       
+                            </div>
+                        </form>  
+                    </div>
+                </div>
+                
+                <!-- admin-delete movies: modal -->
+                <!-- modal from materialize -->
+                <div id="adminDeleteMovie/{{ movie._id }}" class="confirm-delete modal ">
+                    <div class="right-align">
+                        <i class="fas fa-times modal-close"></i> 
+                    </div>
+                    <div class="modal-content center">                         
+                        <h4>Delete Movie:<br><em><b>{{ movie.movie_name }}?</b></em></h4>
+                        <a class="custom-btn modal-close btn btn-flat waves-effect waves-black red black-text darken-text-4 modal-close">NO</a>
+                        <a href="{{ url_for('admin_delete_movie', movie_id=movie._id) }}" class="custom-btn modal-close btn btn-flat waves-effect waves-black green black-text darken-text-4">YES</a>                          
+                    </div>
+                </div>  
             {% endfor %}        
         </tbody>         
     </table>
     <br>
+    <div class="center">
+        <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#addMoives">Add Movies</a>
+    </div>
     <hr class="hr-admin">
 
     <!-- cinemagic locations -->
@@ -51,11 +203,56 @@
             {% for location_name in location_names %}
                 <tr>
                     <td>{{ location_name.location_name }}</td>
+                    <td></td>
+                    <td>
+                        <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminChangeLocation/{{ location_name._id }}">CHANGE</a>
+                        <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminDeleteLocation/{{ location_name._id }}">DELETE</a>
+                    </td>
                 </tr>
+
+                <!-- admin-change location: modal -->
+                <!-- modal from materialize -->
+                <div id="adminChangeLocation/{{ location_name._id }}" class="modal">
+                    <div class="right-align">
+                        <i class="fas fa-times modal-close"></i> 
+                    </div>
+                    <div class="modal-content">   
+                        <div class="center">
+                            <h4>Change Movie Details</h4>
+                        </div>
+                        <form method="POST" action="{{ (url_for('admin_change_location', location_name_id=location_name._id)) }}" class="black-text">
+                            <div class="form-item">
+                                <label for="changeLocation">Location Name</label>
+                                <input placeholder="{{ location_name.location_name }}" id="changeLocation" name="changeLocation" class="input-field" required>
+                            </div>
+                            <br>
+                            <div class="center">
+                                <button type="submit" class="confirm-btn custom-btn btn btn-flat waves-effect waves-black deep-orange lighten-2 black-text">CONFIRM</button>
+                                <a class="cancel-btn custom-btn btn btn-flat waves-effect waves-black deep-orange lighten-2 black-text modal-close">CANCEL</a>                       
+                            </div>
+                        </form>  
+                    </div>
+                </div>
+
+                <!-- admin-delete locations: modal -->
+                <!-- modal from materialize -->
+                <div id="adminDeleteLocation/{{ location_name._id }}" class="confirm-delete modal ">
+                    <div class="right-align">
+                        <i class="fas fa-times modal-close"></i> 
+                    </div>
+                    <div class="modal-content center">                         
+                        <h4>Delete Location:<br><em><b>{{ location_name.location_name }}?</b></em></h4>
+                        <a class="custom-btn modal-close btn btn-flat waves-effect waves-black red black-text darken-text-4 modal-close">NO</a>
+                        <a href="{{ url_for('admin_delete_location', location_name_id=location_name._id) }}" class="custom-btn modal-close btn btn-flat waves-effect waves-black green black-text darken-text-4">YES</a>                          
+                    </div>
+                </div>  
             {% endfor %}        
         </tbody>         
     </table>
     <br>
+    <div class="center">
+        <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#addLocation">Add Location</a>
+    </div>
     <hr class="hr-admin">
 
     <!-- user signup info -->

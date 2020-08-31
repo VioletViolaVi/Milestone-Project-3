@@ -182,6 +182,24 @@ def logout():
 @app.route("/admin")
 def admin():
 
+    # add movies
+    if request.method == "POST":
+
+        added_movie = {
+            "movie_name": request.form.get("movieName"),
+            "rating": request.form.get("movieRating"),
+            "duration": request.form.get("movieDuration"),
+            "genres": request.form.get("movieGenre"),
+            "director": request.form.get("movieDirector"),
+            "writer": request.form.get("movieWriter"),
+            "producer": request.form.get("movieProducer"),
+            "cast": request.form.get("movieCast")
+        }
+
+        mongo.db.movies.insert_one(added_movie)
+        flash("New Movie Successfully Added!")
+        return redirect(url_for("admin"))
+
     # booking info brought out from mongo db
     booking_info = mongo.db.booked_details.find().sort("booked_by", 1)
     # location info taken from mongo db for dropdown
@@ -204,6 +222,97 @@ def admin():
                            movie_names=movie_names,
                            reviews=reviews,
                            users=users)
+
+
+@app.route("/admin_add_movies", methods=["GET", "POST"])
+def admin_add_movies():
+
+    # add movies
+    if request.method == "POST":
+
+        added_movie = {
+            "movie_name": request.form.get("addMovieName"),
+            "rating": request.form.get("addMovieRating"),
+            "duration": request.form.get("addMovieDuration"),
+            "genres": request.form.get("addMovieGenre"),
+            "director": request.form.get("addMovieDirector"),
+            "writer": request.form.get("addMovieWriter"),
+            "producer": request.form.get("addMovieProducer"),
+            "cast": request.form.get("addMovieCast")
+        }
+
+        mongo.db.movies.insert_one(added_movie)
+        flash("New Movie Successfully Added!")
+        return redirect(url_for("admin"))
+
+
+@app.route("/admin_change_movie/<movie_id>", methods=["POST"])
+def admin_change_movie(movie_id):
+
+    # changing movies from db
+    mongo.db.movies.update(
+        {"_id": ObjectId(movie_id)},
+        {
+            "movie_name": request.form.get("changeMovieName"),
+            "movie_poster": request.form.get("changeMoviePoster"),
+            "rating": request.form.get("changeMovieRating"),
+            "duration": request.form.get("changeMovieDuration"),
+            "genres": request.form.get("changeMovieGenre"),
+            "director": request.form.get("changeMovieDirector"),
+            "writer": request.form.get("changeMovieWriter"),
+            "producer": request.form.get("changeMovieProducer"),
+            "cast": request.form.get("changeMovieCast")
+        })
+
+    flash("Movie Successfully Updated!")
+    return redirect(url_for("admin"))
+
+
+@app.route("/admin_delete_movie/<movie_id>")
+def admin_delete_movie(movie_id):
+
+    # targets movies in db by their _id
+    mongo.db.movies.remove({"_id": ObjectId(movie_id)})
+    flash("Moive Successfully Deleted!")
+    return redirect(url_for("admin"))
+
+
+@app.route("/admin_add_location", methods=["GET", "POST"])
+def admin_add_location():
+
+    # add locations
+    if request.method == "POST":
+
+        added_location = {
+            "location_name": request.form.get("addingLocations")
+        }
+
+        mongo.db.locations.insert_one(added_location)
+        flash("New Location Successfully Added!")
+        return redirect(url_for("admin"))
+
+
+@app.route("/admin_change_location/<location_name_id>", methods=["POST"])
+def admin_change_location(location_name_id):
+
+    # changing movies from db
+    mongo.db.locations.update(
+        {"_id": ObjectId(location_name_id)},
+        {
+            "location_name": request.form.get("changeLocation")
+        })
+
+    flash("Location Successfully Updated!")
+    return redirect(url_for("admin"))
+
+
+@app.route("/admin_delete_location/<location_name_id>")
+def admin_delete_location(location_name_id):
+
+    # targets locations in db by their _id
+    mongo.db.locations.remove({"_id": ObjectId(location_name_id)})
+    flash("Location Successfully Deleted!")
+    return redirect(url_for("admin"))
 
 
 if __name__ == "__main__":

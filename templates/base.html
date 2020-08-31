@@ -20,9 +20,7 @@
             <i data-target="slide-out" class="sidenav-trigger fas fa-bars black-text"></i>           
             <ul class="top-nav">
                 <div id="topNavLinksContainer">
-                    {% if session.user|lower != "admin"|lower %}  
-                        <li><a class="top-nav-links black-text" id="home" href="{{ url_for('home') }}">Home</a></li>
-                    {% endif %}
+                    <li><a class="top-nav-links black-text" id="home" href="{{ url_for('home') }}">Home</a></li>
                     {% if not session.user %}
                         <li><a class="top-nav-links black-text" href="{{ url_for('signup') }}">Sign Up</a></li>
                         <li><a class="top-nav-links black-text" href="{{ url_for('login') }}">Log In</a></li>
@@ -47,9 +45,7 @@
         <ul id="slide-out" class="sidenav deep-orange lighten-2">
             <!-- content in side nav -->
             <div id="sideNavLinksContainer">
-                {% if session.user|lower != "admin"|lower %}  
-                    <li><a class="side-nav-links black-text waves-effect" href="{{ url_for('home') }}"><i class="fas fa-home black-text"></i>Home</a></li>
-                {% endif %}  
+                <li><a class="side-nav-links black-text waves-effect" href="{{ url_for('home') }}"><i class="fas fa-home black-text"></i>Home</a></li>
                 {% if not session.user %}              
                     <li><a class="side-nav-links black-text waves-effect" href="{{ url_for('signup') }}"><i class="fas fa-user black-text"></i>Sign Up</a></li>
                     <li><a class="side-nav-links black-text waves-effect" href="{{ url_for('login') }}"><i class="fas fa-sign-in-alt black-text"></i>Log In</a></li>
