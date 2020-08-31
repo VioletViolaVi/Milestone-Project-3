@@ -175,7 +175,6 @@ div.carousel,
 
 #image {
   width: 95%;
-  border-right: none;
 }
 
 #reviews {
@@ -508,6 +507,10 @@ input.five-stars:checked ~ .star:before {
   }
 
   /******************************************* homepage */
+
+  #image {
+    border-right: 0.25rem;
+  }
 
   #image,
   #movieDetails {
