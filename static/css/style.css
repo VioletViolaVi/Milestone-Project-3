@@ -334,6 +334,11 @@ input.select-dropdown.dropdown-trigger {
   width: 100%;
 }
 
+.select-wrapper .select-dropdown.dropdown-trigger{
+  margin-top: 1.3rem;
+  margin-bottom: 6px;
+}
+
 /******************************************* leave a review modal */
 
 .my-booking-custom .select-wrapper input.select-dropdown {
