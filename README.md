@@ -1,3 +1,22 @@
+# My Third Project: Cinemagic
+This project is based on creating an app/a website that is focussed on showing users different movies made available to watch at Cinemagic cinemas. The goal of this project is to encourage as many users as possible to sign up with Cinemagic to book movie tickets for watching the films advertised and then return to leave their opinions about the films they watched. In addition, this project makes use of the CRUD operations. Users are able to create accounts with Cinemagic, read details about movies and other user’s reviews, update their bookings to make changes to certain features such as the number of tickets they wish to book, the location they want to watch the movie etc and delete their bookings if they change their mind on their movie choice.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 https://www.mongodb.com/cloud
 
 https://randomkeygen.com/ - random password generator
