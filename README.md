@@ -22,9 +22,30 @@ Using this project is the best way to achieve this as it has taken precaution to
 * As the designer of Cinemagic, I want to provide a fully functioning “change” button tailor made for each different set of bookings, so the user can simply press that button to edit the prefilled form of their current booking if they wish to make changes.
 * As the designer of Cinemagic, I want to provide a fully functioning “delete” button tailor made for each different set of bookings, so the user can simply press that button to delete the respective movie booking they desire.
 
-
-
-
+## Wireframes
+![sidebar-mobile](wireframes/images/1.sidebar-mobile.PNG)
+![sidebar-tablet](wireframes/images/2.sidebar-tablet.PNG)
+![home-mobile](wireframes/images/3.home-mobile.PNG)
+![home-tablet](wireframes/images/4.home-tablet.PNG)
+![home-desktop](wireframes/images/5.home-desktop.PNG)
+![review-modal-mobile](wireframes/images/6.review-modal-mobile.PNG)
+![review-modal-tablet](wireframes/images/7.review-modal-tablet.PNG)
+![review-modal-desktop](wireframes/images/8.review-modal-desktop.PNG)
+![signup-mobile](wireframes/images/9.signup-mobile.PNG)
+![signup-tablet](wireframes/images/10.signup-tablet.PNG)
+![signup-desktop](wireframes/images/11.signup-desktop.PNG)
+![login-mobile](wireframes/images/12.login-mobile.PNG)
+![login-tablet](wireframes/images/13.login-tablet.PNG)
+![login-desktop](wireframes/images/14.login-desktop.PNG)
+![booking-modal-mobile](wireframes/images/15.booking-modal-mobile.PNG)
+![booking-modal-tablet](wireframes/images/16.booking-modal-tablet.PNG)
+![booking-modal-desktop](wireframes/images/17.booking-modal-desktop.PNG)
+![bookings-page-mobile](wireframes/images/18.bookings-page-mobile.PNG)
+![bookings-page-tablet](wireframes/images/19.bookings-page-tablet.PNG)
+![bookings-page-desktop](wireframes/images/20.bookings-page-desktop.PNG)
+![confirmation-modal-mobile](wireframes/images/21.confirmation-modal-mobile.PNG)
+![confirmation-modal-tablet](wireframes/images/22.confirmation-modal-tablet.PNG)
+![confirmation-modal-desktop](wireframes/images/23.confirmation-modal-desktop.PNG)
 
 
 
