@@ -82,25 +82,43 @@ This project was deployed to Heroku using the following steps:
 14. Clicked the __*Deploy Branch*__ button located in the __*Deploy*__ section of Heroku to finally deploy this project.
 15. Clicked the __*View*__ button to launch this project's app.
 
+# Credits
+## Content
+- Some of the responsive breakpoints used were taken from Bootstrap.
+- The fonts used in this project were taken from Font Awesome.
+- Code from Materialize was used to create the following:
+  - The movie carousel
+  - All the modals 
+  - All tables present on the administration page
+  - All the buttons
+  - Both the top and side navigation bars
+## Media
+- The images used for this app/website were taken from Unsplash.
+## Acknowledgements
+- I received inspiration for this project from the following websites:
+  - MOVIETICKETS.COM: https://www.movietickets.com/
+  - IMDb: https://www.imdb.com/
+  - ODEON: https://www.odeon.co.uk/ 
+  - SHOWCASE: https://www.showcasecinemas.co.uk/
+  - VUE: https://www.myvue.com/
+  - Stackoverflow: https://stackoverflow.com/questions/38196104/how-to-change-background-color-of-datepicker-form-in-materialize-design
+  - W3schools.com : https://www.w3schools.com/howto/howto_css_image_text.asp
+  - RandomKeygen: https://randomkeygen.com/
+  - Masterpiece Generator: https://www.name-generator.org.uk/quick/ 
+  - Fantasy Name Generators: https://www.fantasynamegenerators.com/film-studio-names.php 
 
 
 
 
 
+tec. used:
 https://www.mongodb.com/cloud
 
 https://randomkeygen.com/ - random password generator
-
 https://www.w3schools.com/howto/howto_css_image_text.asp - text on images
-
 https://www.name-generator.org.uk/quick/ - name generator
 https://www.fantasynamegenerators.com/film-studio-names.php - studio generator
-
-https://www.youtube.com/watch?v=18-wCoAi9bQ - star system
-https://www.cssscript.com/simple-5-star-rating-system-with-css-and-html-radios/ - star system
-
 https://stackoverflow.com/questions/38196104/how-to-change-background-color-of-datepicker-form-in-materialize-design - datepicker css custom
-
 https://unsplash.com/photos/rX12B5uX7QM - drowning, Photo by Ian Espinosa
 https://unsplash.com/photos/AbNO2iejoXA - dog, Photo by Ryan Walton
 https://unsplash.com/photos/oMpAz-DN-9I - moon, Photo by Greg Rakozy
