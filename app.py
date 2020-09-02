@@ -99,7 +99,8 @@ def login():
             if check_password_hash(
                     existing_user["pwd"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash(f"Welcome Back {request.form.get('username').capitalize()}!")
+                flash(
+                    f"Welcome Back{request.form.get('username').capitalize()}!")
                 return redirect(url_for("home"))
             else:
                 # occurs when password is wrong
@@ -173,28 +174,11 @@ def delete_booking(booked_details_id):
 @app.route("/admin")
 def admin():
 
-    # add movies
-    if request.method == "POST":
-
-        added_movie = {
-            "movie_name": request.form.get("movieName"),
-            "rating": request.form.get("movieRating"),
-            "duration": request.form.get("movieDuration"),
-            "genres": request.form.get("movieGenre"),
-            "director": request.form.get("movieDirector"),
-            "writer": request.form.get("movieWriter"),
-            "producer": request.form.get("movieProducer"),
-            "cast": request.form.get("movieCast")
-        }
-
-        mongo.db.movies.insert_one(added_movie)
-        flash("New Movie Successfully Added!")
-        return redirect(url_for("admin"))
-
     # booking info brought out from mongo db
     booking_info = mongo.db.booked_details.find().sort("booked_by", 1)
     # location info taken from mongo db for dropdown
-    location_names = list(mongo.db.locations.find().sort("location_name", 1))
+    location_names = list(
+        mongo.db.locations.find().sort("location_name", 1))
     # movie info taken from mongo db for dropdown
     movie_names = list(mongo.db.movies.find().sort("movie_name", 1))
     # reviews brought out from mongo db for admin
@@ -207,7 +191,7 @@ def admin():
                            locations_title="Cinemagic Locations",
                            movies_title="Cinemagic Movies",
                            users_reviews_title="User Reviews",
-                           users_title="Cinemgaic Users",
+                           users_title="Cinemagaic Users",
                            booking_info=booking_info,
                            location_names=location_names,
                            movie_names=movie_names,
@@ -226,6 +210,7 @@ def admin_add_movie():
             "rating": request.form.get("addMovieRating"),
             "duration": request.form.get("addMovieDuration"),
             "genres": request.form.get("addMovieGenre"),
+            "synopsis": request.form.get("addMovieSynopsis"),
             "director": request.form.get("addMovieDirector"),
             "writer": request.form.get("addMovieWriter"),
             "producer": request.form.get("addMovieProducer"),
@@ -249,6 +234,7 @@ def admin_change_movie(movie_id):
             "rating": request.form.get("changeMovieRating"),
             "duration": request.form.get("changeMovieDuration"),
             "genres": request.form.get("changeMovieGenre"),
+            "synopsis": request.form.get("changeMovieSynopsis"),
             "director": request.form.get("changeMovieDirector"),
             "writer": request.form.get("changeMovieWriter"),
             "producer": request.form.get("changeMovieProducer"),
@@ -314,6 +300,7 @@ def logout():
     # removes session cookies to logout
     session.pop("user")
     return redirect(url_for("home"))
+
 
 # DELETE LATER!!! SET DEBUG TO FALSE!!!!
 if __name__ == "__main__":

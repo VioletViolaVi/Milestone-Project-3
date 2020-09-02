@@ -88,7 +88,8 @@ This project was deployed to Heroku using the following steps:
 - The fonts used in this project were taken from Font Awesome.
 - Code from Materialize was used to create the following:
   - The movie carousel
-  - All the modals 
+  - All the modals
+  - All forms in the modals 
   - All tables present on the administration page
   - All the buttons
   - Both the top and side navigation bars

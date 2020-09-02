@@ -32,6 +32,10 @@
                     <input type="text" id="addMovieGenre" name="addMovieGenre" required>      
                 </div>
                 <div class="form-item">
+                    <label for="addMovieSynopsis">Movie Synopsis</label>
+                    <input type="text" id="addMovieSynopsis" name="addMovieSynopsis" required>      
+                </div>
+                <div class="form-item">
                     <label for="addMovieCast">Movie Cast</label>
                     <input type="text" id="addMovieCast" name="addMovieCast" required>      
                 </div>
@@ -90,6 +94,7 @@
                 <th id="ratings-header-padding">Rating</th>
                 <th>Duration</th>
                 <th>Genres</th>
+                <th>Synopsis</th>
                 <th>Cast</th>
                 <th>Director</th>
                 <th>Writer</th>
@@ -105,6 +110,7 @@
                     <td>{{ movie.rating }}</td>
                     <td>{{ movie.duration }}</td>
                     <td>{{ movie.genres }}</td>
+                    <td>{{ movie.synopsis }}</td>
                     <td>{{ movie.cast }}</td>
                     <td>{{ movie.director }}</td>
                     <td>{{ movie.writer }}</td>
@@ -145,6 +151,12 @@
                                 <label for="changeMovieGenre">Movie Genre</label>
                                 <input value="{{ movie.genres }}" placeholder="{{ movie.genres }}" id="changeMovieGenre" name="changeMovieGenre" class="input-field" required>
                             </div>
+
+                            <div class="form-item">
+                                <label for="changeMovieSynopsis">Movie Synopsis</label>
+                                <input value="{{ movie.synopsis }}" placeholder="{{ movie.synopsis }}" id="changeMovieSynopsis" name="changeMovieSynopsis" class="input-field" required>
+                            </div>                          
+
                             <div class="form-item">
                                 <label for="changeMovieDirector">Movie Director</label>
                                 <input value="{{ movie.director }}" placeholder="{{ movie.director }}" id="changeMovieDirector" name="changeMovieDirector" class="input-field" required>
@@ -257,7 +269,6 @@
             <tr>
                 <th>User Name</th>
                 <th>Email Address</th>
-                <th>Password</th>
             </tr>
         </thead>
         <tbody>
@@ -265,7 +276,6 @@
                 <tr>
                     <td>{{ user.user}}</td>
                     <td>{{ user.email }}</td>
-                    <td>{{ user.pwd }}</td>
                 </tr>
             {% endfor %}        
         </tbody>         

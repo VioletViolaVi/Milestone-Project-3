@@ -26,6 +26,7 @@
                         <p><b>Rated: </b>{{ movie.rating }}</p>
                         <p><b>Duration: </b>{{ movie.duration }}</p>
                         <p><b>Genres: </b>{{ movie.genres }}</p>
+                        <p><b>Synopsis: </b>{{ movie.synopsis }}</p>
                         <p><b>Cast: </b>{{ movie.cast }}</p>
                         <p><b>Directed By: </b>{{ movie.director }}</p>
                         <p><b>Written By: </b>{{ movie.writer }}</p>            
@@ -34,7 +35,6 @@
                 </div>
             </div> 
               
-
             <div class="row">
                 <div class="col s12">
                     <div id="reviews">
@@ -47,8 +47,7 @@
                         {% endfor %}
                     </div>
                 </div>
-            </div>                    
-            
+            </div>                             
 
             {% if session.user %}
                 <div class="center">
@@ -56,7 +55,7 @@
                 </div>             
             {% else %}
                 <div class="center">
-                    <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="{{ (url_for('signup')) }}">BOOK NOW</a>
+                    <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="{{ (url_for('login')) }}">BOOK NOW</a>
                 </div>  
             {% endif %}
  

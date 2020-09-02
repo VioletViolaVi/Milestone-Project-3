@@ -42,9 +42,10 @@
 /******************************************* top nav (mobile) */
 
 #navTitle {
-  font-size: 1.5em;
+  font-size: 3em;
   margin: 0px;
   font-weight: bold;
+  text-align: center;
 }
 
 .top-nav-links {
@@ -420,7 +421,7 @@ input.select-dropdown.dropdown-trigger {
   }
 
   #navTitle {
-    font-size: 2.2em;
+    font-size: 4.3em;
   }
 
   nav {
@@ -590,6 +591,15 @@ input.select-dropdown.dropdown-trigger {
   /******************************************* top nav (desktop) */
   .fas.fa-bars {
     display: none;
+  }
+
+nav {
+    height: 5.3em;
+}
+
+  #navTitle {
+    font-size: 4.5em;
+    text-align: left;
   }
 
   #topNavLinksContainer {

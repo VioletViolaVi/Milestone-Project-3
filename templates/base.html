@@ -19,7 +19,7 @@
         <nav class="deep-orange lighten-2">        
             <i data-target="slide-out" class="sidenav-trigger fas fa-bars black-text"></i>           
             <ul class="top-nav">
-                <div id="topNavLinksContainer">
+                <div id="topNavLinksContainer">  
                     <li><a class="top-nav-links black-text" id="home" href="{{ url_for('home') }}">Home</a></li>
                     {% if not session.user %}
                         <li><a class="top-nav-links black-text" href="{{ url_for('signup') }}">Sign Up</a></li>
@@ -36,9 +36,7 @@
                     {% endif %}
                 </div>
             </ul>
-            <div class="center">
-                <h1 id="navTitle" class="black-text">Cinemagic<i class="smallest fas fa-star"></i><i class="smaller fas fa-star"></i><i class="small fas fa-star"></i></h1>
-            </div>            
+            <h1 id="navTitle" class="black-text">Cinemagic<i class="smallest fas fa-star"></i><i class="smaller fas fa-star"></i><i class="small fas fa-star"></i></h1>        
         </nav>
     
         <!-- slides sidenav -->
