@@ -722,12 +722,11 @@ nav {
   }
 
   .admin-btn-change {
-    margin-bottom: 1.5em;
+    margin-right: 1.5em;
   }
 
   .admin-btn-delete {
-    margin-top: 1.5em;
-    padding-right: 1.5em;
+    margin-left: 1.5em;
   }
 }
 

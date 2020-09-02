@@ -67,7 +67,7 @@
         <div class="modal-content"> 
             <form method="POST" action="{{ url_for('admin_add_location') }}" class="black-text">
                 <div class="center">
-                    <h4>Add Locations</h4>
+                    <h4>Add Location</h4>
                 </div>
                 <div class="form-item">
                     <label for="addingLocations">Location Name</label>
@@ -99,7 +99,8 @@
                 <th>Director</th>
                 <th>Writer</th>
                 <th>Producer</th>
-                <th></th>
+                <th>Update</th>
+                <th>Remove</th>
             </tr>
         </thead>
         <tbody>
@@ -116,10 +117,13 @@
                     <td>{{ movie.writer }}</td>
                     <td>{{ movie.producer }}</td>
                     <td>
-                        <a class="admin-btn-change custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminChangeMovie/{{ movie._id }}">CHANGE</a>
+                        <a class="admin-btn-change custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminChangeMovie/{{ movie._id }}">CHANGE</a>                      
+                    </td>
+                    <td>
                         <a class="admin-btn-delete custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminDeleteMovie/{{ movie._id }}">DELETE</a>
                     </td>
                 </tr>
+
                 <!-- admin-change movies: modal -->
                 <!-- modal from materialize -->
                 <div id="adminChangeMovie/{{ movie._id }}" class="modal">
@@ -206,13 +210,21 @@
     <!-- cinemagic locations -->
     <h4 class="admin-subtitles">{{ locations_title }}</h4>
     <table class="responsive-table highlight">
+        <thead>
+            <tr>
+                <th>Location</th>
+                <th>Update</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
         <tbody>
             {% for location_name in location_names %}
                 <tr>
                     <td>{{ location_name.location_name }}</td>
-                    <td></td>
                     <td>
-                        <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminChangeLocation/{{ location_name._id }}">CHANGE</a>
+                        <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminChangeLocation/{{ location_name._id }}">CHANGE</a>          
+                    </td>
+                    <td>
                         <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminDeleteLocation/{{ location_name._id }}">DELETE</a>
                     </td>
                 </tr>
