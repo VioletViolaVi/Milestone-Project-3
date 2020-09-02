@@ -359,53 +359,6 @@ input.select-dropdown.dropdown-trigger {
   margin-left: 2rem;
 }
 
-/************************************************************************* stars */
-/* styles reviewed stars */
-.five-stars {
-  color: yellow;
-}
-
-/* removes radio buttons */
-.radio-btn {
-  display: none;
-}
-
-/* shows correct number of hovered stars */
-.flip-stars {
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-}
-
-/* styles average score stars */
-.star-average .fas.fa-star {
-  font-size: 3rem;
-}
-
-/* styles modal stars */
-.star {
-  font-size: 2rem;
-  color: black;
-  cursor: pointer;
-}
-
-/* styles correct number of stars when hovered */
-.star:hover,
-.star:hover ~ label {
-  color: yellow;
-  transition: all 0.1s;
-}
-
-/* styles stars as they're clicked */
-.radio-btn:checked ~ .star:before {
-  color: yellow;
-}
-
-/* styles stars when five is selected */
-input.five-stars:checked ~ .star:before {
-  color: yellow;
-  text-shadow: 1px 1px 30px black;
-}
-
 /******************************************* confirmation modal */
 .red {
   margin: 25px 35px 0px 0px;
