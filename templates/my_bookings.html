@@ -13,33 +13,50 @@
             <div class="container">
                 <div class="row margin-removal">
                     <div class="col s12 center">
-                        <h4>{{ booking.booked_movie }}</h4>                          
+                        <h4><b>{{ booking.booked_movie }}</b></h4>                          
                     </div>
-                    <div class="booked-details col s12 center"> 
-                        <ul>
-                            <li>
-                                <p><b>Ticket Quantity: </b>{{ booking.booked_ticket_quantity }}</p>
-                            </li>
-                            <li>
-                                <p><b>Date: </b>{{ booking.booked_date }}</p>
-                            </li>
-                            <li>
-                                <p><b>Location: </b>{{ booking.booked_location }}</p>
-                            </li>
-                            <li>
-                                <p><b>Owner: </b>{{ booking.booked_by }}</p>
-                            </li>
-                        </ul>
-                    </div>  
-                    <div class="col s12 m3 center">
-                        <button class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#change/{{ booking._id }}">CHANGE</button>
-                    </div>  
-                    <div class="col s12 m6 center">
-                        <button class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#{{ booking.booked_movie }}">LEAVE A REVIEW</button>  
+                             
+                    <div class="row">
+      
+                        <div class="col s12 m6">
+                            <div class="booked-details col s12 center"> 
+                                <ul>
+                                    <li>
+                                        <p><b>Ticket Quantity: </b>{{ booking.booked_ticket_quantity }}</p>
+                                    </li>
+                                    <li>
+                                        <p><b>Date: </b>{{ booking.booked_date }}</p>
+                                    </li>
+                                    <li>
+                                        <p><b>Location: </b>{{ booking.booked_location }}</p>
+                                    </li>
+                                    <li>
+                                        <p><b>Owner: </b>{{ booking.booked_by }}</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>  
+                                            
+                        <div class="col s12 m6">
+                            <div class="col s12 center">
+                                <button class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#change/{{ booking._id }}">CHANGE</button>
+                            </div>                          
+                        </div>
+
+                        <div class="col s12 m6"> 
+                            <div class="col s12 center">
+                                <button class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#{{ booking.booked_movie }}">LEAVE A REVIEW</button>  
+                            </div>                        
+                        </div>
+
+                        <div class="col s12 m6">
+                            <div class="col s12 center">
+                                <button class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#{{ booking._id }}">DELETE</button>
+                            </div>                          
+                        </div>
+
                     </div>
-                    <div class="col s12 m3 center">
-                        <button class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#{{ booking._id }}">DELETE</button>
-                    </div>   
+ 
                 </div>
             </div>
             {% if loop.index != loop.length %}

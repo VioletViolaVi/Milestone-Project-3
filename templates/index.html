@@ -14,14 +14,14 @@
     </div>
 
     {% for movie in movie_names %}
-        <div class="image-and-details" id="container">
+        <div class="image-and-details container" id="container">
             <div class="row">
-                <h5 id="{{ movie.movie_poster }}"><b>{{ movie.movie_name }}</b></h5>                
-                <div class="col s6">
+                <h5 id="{{ movie.movie_poster }}" class="center"><b>{{ movie.movie_name }}</b></h5>                
+                <div class="col s12 m4 center">
                     <img id="image" src="{{ movie.movie_poster }}" alt="A picture of a movie called '{{ movie.movie_poster }}' showing at Cinemagic.">
                 </div>   
 
-                <div class="col s6">
+                <div class="col s12 m8">
                     <div id="movieDetails">
                         <p><b>Rated: </b>{{ movie.rating }}</p>
                         <p><b>Duration: </b>{{ movie.duration }}</p>
@@ -42,7 +42,7 @@
                         {% for review in reviews %}
                             {% if review.reviewed_movie_name == movie.movie_name %}
                                 <p>{{ review.user_review }}</p>
-                                <p class="comments-break"><b>~</b>{{ review.user }}</p>
+                                <p><b>~</b>{{ review.user }}</p>
                             {% endif %}
                         {% endfor %}
                     </div>
@@ -62,10 +62,7 @@
                     <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="{{ (url_for('login')) }}">BOOK NOW</a>
                 </div>  
             {% endif %}
- 
-            {% if loop.index != loop.length %}
-                <hr id="hrMovieDetails">
-            {% endif %}
+            <hr id="hrMovieDetails">
 
             <!-- book tickets: modal -->
             <!-- modal from materialize -->
@@ -111,22 +108,26 @@
     {% endfor %}
 
     <br>
-    <div class="about-us center">
-        <h2>{{ page_title2 }}</h2>     
-        <p>
-            We are Cinemagic, a movie theater company that showcases the most 
-            popular and successful movies internationally known. We pride ourselves 
-            in providing our customers with a safe and fun environment for them to 
-            have the ability to enjoy watching quality movies they love as part of 
-            their entertaining days out; at all of our different locations. We focus 
-            on selecting the most popular and in demand movies across the nation to 
-            satisfy the needs of our customers. We concentrate on making the process 
-            of booking your desired movies as simple and easy as possible. We believe 
-            in bringing about magical experiences for our customers to ensure they have 
-            the time of their lives at our theaters. We are a new kind of magic... a 
-            special kind of magic... the best kind of magic... 
-            <b><em>We are Cinemagic<i class="smallest fas fa-star"></i><i class="smaller fas fa-star"></i><i class="small fas fa-star"></i></em></b>
-        </p>
+    <div class="container">
+        <div class="row">
+            <div class="about-us center col s12">
+                <h2>{{ page_title2 }}</h2>     
+                <p>
+                    We are Cinemagic, a movie theater company that showcases the most 
+                    popular and successful movies internationally known. We pride ourselves 
+                    in providing our customers with a safe and fun environment for them to 
+                    have the ability to enjoy watching quality movies they love as part of 
+                    their entertaining days out; at all of our different locations. We focus 
+                    on selecting the most popular and in demand movies across the nation to 
+                    satisfy the needs of our customers. We concentrate on making the process 
+                    of booking your desired movies as simple and easy as possible. We believe 
+                    in bringing about magical experiences for our customers to ensure they have 
+                    the time of their lives at our theaters. We are a new kind of magic... a 
+                    special kind of magic... the best kind of magic... 
+                    <b><em>We are Cinemagic<i class="smallest fas fa-star"></i><i class="smaller fas fa-star"></i><i class="small fas fa-star"></i></em></b>
+                </p>
+            </div>                
+        </div>
     </div>
 
 {% endblock %}

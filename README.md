@@ -162,7 +162,7 @@ This project was deployed to Heroku using the following steps:
   - The movie carousel
   - All the modals
   - All forms in the modals 
-  - All cards of the forms
+  - All cards of the forms, navigation bars and footer
   - All tables present on the administration page
   - All the buttons
   - Both the top and side navigation bars

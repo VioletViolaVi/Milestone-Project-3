@@ -85,7 +85,7 @@
     </div>
 
     <!-- cinemagic movies -->
-    <h4 class="admin-subtitles">{{ movies_title }}</h4>
+    <h4 class="admin-subtitles"><b>{{ movies_title }}</b></h4>
     <table class="responsive-table highlight">
         <thead>
             <tr>
@@ -99,8 +99,7 @@
                 <th>Director</th>
                 <th>Writer</th>
                 <th>Producer</th>
-                <th>Update</th>
-                <th>Remove</th>
+                <th>Update or Remove</th>
             </tr>
         </thead>
         <tbody>
@@ -117,10 +116,8 @@
                     <td>{{ movie.writer }}</td>
                     <td>{{ movie.producer }}</td>
                     <td>
-                        <a class="admin-btn-change custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminChangeMovie/{{ movie._id }}">CHANGE</a>                      
-                    </td>
-                    <td>
                         <a class="admin-btn-delete custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminDeleteMovie/{{ movie._id }}">DELETE</a>
+                        <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminChangeMovie/{{ movie._id }}">CHANGE</a>                                          
                     </td>
                 </tr>
 
@@ -208,7 +205,7 @@
     <hr class="hr-admin">
 
     <!-- cinemagic locations -->
-    <h4 class="admin-subtitles">{{ locations_title }}</h4>
+    <h4 class="admin-subtitles"><b>{{ locations_title }}</b></h4>
     <table class="responsive-table highlight">
         <thead>
             <tr>
@@ -275,7 +272,7 @@
     <hr class="hr-admin">
 
     <!-- user signup info -->
-    <h4 class="admin-subtitles">{{ users_title}}</h4>
+    <h4 class="admin-subtitles"><b>{{ users_title}}</b></h4>
     <table class="responsive-table highlight">
         <thead>
             <tr>
@@ -296,7 +293,7 @@
     <hr class="hr-admin">
     
     <!-- user bookings -->
-    <h4 class="admin-subtitles">{{ bookings_title }}</h4>
+    <h4 class="admin-subtitles"><b>{{ bookings_title }}</b></h4>
     <table class="responsive-table highlight">
         <thead>
             <tr>
@@ -323,7 +320,7 @@
     <hr class="hr-admin">
     
     <!-- user movie reviews -->
-    <h4 class="admin-subtitles">{{ users_reviews_title }}</h4>
+    <h4 class="admin-subtitles"><b>{{ users_reviews_title }}</b></h4>
     <table class="responsive-table highlight">
         <thead>
             <tr>
@@ -342,5 +339,6 @@
             {% endfor %}
         </tbody> 
     </table>
+    <hr class="hr-admin">
 
 {% endblock %}
