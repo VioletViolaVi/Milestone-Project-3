@@ -66,7 +66,7 @@ Using this project is the best way to achieve this as it has taken precaution to
 ### Top Navigation Bar
 - The top navigation bar allows users to access different parts of this project’s app/website by clicking on the links provided at the top of larger screen sized devices. It also displays the name/logo of the movie company for the users to read/see and develop name recognition for Cinemagic.
 ### Side Navigation Bar
-The side navigation bar allows users to access the company’s navigation links at the side of smaller screen sized devices by clicking/tapping them. This makes the navigation links more responsive on smaller screen sizes as the side navigation bar avoids using a lot of space at the top and is hidden at the side to make room for more of the app/website content to be seen by the user. 
+- The side navigation bar allows users to access the company’s navigation links at the side of smaller screen sized devices by clicking/tapping them. This makes the navigation links more responsive on smaller screen sizes as the side navigation bar avoids using a lot of space at the top and is hidden at the side to make room for more of the app/website content to be seen by the user. 
 ### Home Page
 - The home page allows users to view available movies to be booked, from the carousel and from scrolling down the rest of the page. It also allows users to click/tap on the carousel movie images to be automatically jumped down to the corresponding section of the page for more details about the movie. 
 - The homepage allows users to view reviews about the movies on offer, created by other users of the website, by scrolling down the page to the corresponding movie sections so the user can be assisted in making a decision on which movies to book.
@@ -96,9 +96,7 @@ The side navigation bar allows users to access the company’s navigation links 
 ## [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/):
 - This project used werkzeug.security to provide password authentication when checking for a matched password entered by the user on the Cinemagic app/website.
 ## [MongoDB](https://www.mongodb.com/): 
-- This project used MongoDB to create, store, read, update and delete data regarding the movie details, locations, user details, user reviews and user bookings of the Cinemagic app/website.
-## [MongoDB](https://www.mongodb.com/): 
-- This project used MongoDB to create, store, read, update and delete data regarding the movie details, locations, user details, user reviews and user bookings of the Cinemagic app/website.
+- This project used MongoDB to create, store, read, update and delete data regarding the movie details, locations, user details, user reviews and user bookings of the Cinemagic app/website. 
 ## [Heroku](https://www.heroku.com/): 
 - This project used Heroku to deploy and display the final finished version of the Cinemagic app/website.
 ## PyMongo
