@@ -190,10 +190,6 @@ div.carousel,
   margin-bottom: 10px;
 }
 
-.about-us {
-  margin-top: 30px;
-}
-
 .about-us p {
   font-size: 15px;
 }
@@ -451,6 +447,18 @@ input.select-dropdown.dropdown-trigger {
     font-size: 1.2em;
   }
 
+  /******************************************* homepage */
+
+  .image-and-details h5 {
+    font-size: 2em;
+  }
+
+  #movieDetails p,
+  #reviews p,
+  .about-us p {
+    font-size: 17px;
+  }
+
   /******************************************* signup/login */
   .card {
     margin: 10px 50px;
@@ -462,18 +470,6 @@ input.select-dropdown.dropdown-trigger {
 
   .card .card-content {
     padding: 24px 24px 10px 24px;
-  }
-
-  /******************************************* homepage */
-
-  .image-and-details h5 {
-    font-size: 2em;
-  }
-
-  #movieDetails p,
-  #reviews p,
-  .about-us p {
-    font-size: 17px;
   }
 
   /******************************************* modals */
@@ -521,7 +517,7 @@ input.select-dropdown.dropdown-trigger {
   /******************************************* homepage */
 
   #movieDetails p {
-    margin-left: 2em;
+    margin-left: 2.5em;
   }
 
   /******************************************* my bookings */
@@ -537,6 +533,7 @@ input.select-dropdown.dropdown-trigger {
 /* bootstrap */
 @media (min-width: 768px) {
   /******************************************* footer */
+
   footer#socials {
     height: 100px;
   }
@@ -550,34 +547,34 @@ input.select-dropdown.dropdown-trigger {
     font-size: 1.4em;
   }
 
-  /******************************************* signup/login */
-  .signup h2,
-  .login h2 {
-    margin: 35px 0px;
-  }
-
   /******************************************* homepage */
 
-  .image-and-details h5 {
-    font-size: 3em;
+  #image {
+    height: 20rem;
   }
 
-  #image {
-    height: 35rem;
+  #movieDetails {
+    padding: 0px;
   }
 
   #movieDetails p,
   #reviews p,
   .about-us p {
-    font-size: 20px;
+    font-size: 15px;
   }
 
   #movieDetails p {
-    margin-left: 6em;
+    margin-left: -1em;
   }
 
   .custom-btn {
     font-size: 1em;
+  }
+
+  /******************************************* signup/login */
+  .signup h2,
+  .login h2 {
+    margin: 35px 0px;
   }
 
   /******************************************* my bookings */
@@ -604,6 +601,7 @@ input.select-dropdown.dropdown-trigger {
 
 @media (min-width: 993px) {
   /******************************************* top nav (desktop) */
+
   .fas.fa-bars {
     display: none;
   }
@@ -651,6 +649,12 @@ input.select-dropdown.dropdown-trigger {
     font-size: 1.5em;
   }
 
+  /******************************************* homepage */
+
+  #movieDetails p {
+    margin-left: 6em;
+  }
+
   /******************************************* signup/login */
 
   .signup h2,
@@ -669,12 +673,6 @@ input.select-dropdown.dropdown-trigger {
 
   .custom-btn {
     margin-top: 0.8em;
-  }
-
-  /******************************************* homepage */
-
-  #movieDetails p {
-    margin-left: 6em;
   }
 
   /******************************************* my bookings */
@@ -769,6 +767,12 @@ input.select-dropdown.dropdown-trigger {
     height: 115px;
   }
 
+  /******************************************* homepage */
+
+  #movieDetails p {
+    margin-left: 3.5em;
+  }
+
   /******************************************* signup/login */
   .signup h2,
   .login h2 {
@@ -781,12 +785,6 @@ input.select-dropdown.dropdown-trigger {
 
   .custom-btn {
     margin-top: 1em;
-  }
-
-  /******************************************* homepage */
-
-  #movieDetails p {
-    margin-left: 2em;
   }
 
   /******************************************* my bookings */

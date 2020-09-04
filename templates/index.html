@@ -17,11 +17,11 @@
         <div class="image-and-details container" id="container">
             <div class="row">
                 <h5 id="{{ movie.movie_poster }}" class="center"><b>{{ movie.movie_name }}</b></h5>                
-                <div class="col s12 m4 center">
+                <div class="col s12 m4 l2 center">
                     <img id="image" src="{{ movie.movie_poster }}" alt="A picture of a movie called '{{ movie.movie_poster }}' showing at Cinemagic.">
                 </div>   
 
-                <div class="col s12 m8">
+                <div class="col s12 m8 l10">
                     <div id="movieDetails">
                         <p><b>Rated: </b>{{ movie.rating }}</p>
                         <p><b>Duration: </b>{{ movie.duration }}</p>
