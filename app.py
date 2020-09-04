@@ -43,7 +43,7 @@ def home():
     # reviews brought out from mongo db for homepage
     reviews = list(mongo.db.reviews.find())
 
-    return render_template("index.html", page_title="Movies",
+    return render_template("index.html", page_title="Our Movies",
                            page_subtitle="Reviews",
                            page_title2="About Us",
                            movie_names=movie_names,
@@ -188,25 +188,6 @@ def admin():
     # users brought out from mongo db for admin
     users = list(mongo.db.users.find().sort("user", 1))
 
-    # p_limit = int(request.args["limit"])
-    # p_offset = int(request.args["offset"])
-    # if p_offset < 0:
-    #     p_offset = 0
-    # num_results = reviews.find().count(),
-    # if p_offset > num_results:
-    #     p_offset = num_results
-    # reviews = reviews.find().limit(p_limit).skip(p_offset)
-    # args = {
-    #     "p_limit": p_limit,
-    #     "p_offset": p_offset,
-    #     "num_results": num_results,
-    #     "next_url":
-    #     f"/admin?limit={str(p_limit)}&offset={str(p_offset + p_limit)}",
-    #     "prev_url":
-    #     f"/admin?limit={str(p_limit)}&offset={str(p_offset - p_limit)}",
-    #     "reviews": reviews
-    # }
-
     return render_template("admin.html", page_title="Administration",
                            bookings_title="User Bookings",
                            locations_title="Cinemagic Locations",
@@ -217,9 +198,7 @@ def admin():
                            location_names=location_names,
                            movie_names=movie_names,
                            reviews=reviews,
-                           users=users,
-                           #    args=args
-                           )
+                           users=users)
 
 
 @app.route("/admin_add_movie", methods=["GET", "POST"])

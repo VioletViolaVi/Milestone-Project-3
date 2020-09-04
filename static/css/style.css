@@ -602,7 +602,7 @@ input.select-dropdown.dropdown-trigger {
   }
 
   #navTitle {
-    font-size: 4.5em;
+    font-size: 4.3em;
     text-align: left;
   }
 
@@ -737,6 +737,10 @@ input.select-dropdown.dropdown-trigger {
 /* bootstrap */
 @media (min-width: 1200px) {
   /******************************************* top nav */
+
+  #navTitle {
+    font-size: 4.5em;
+  }
 
   #home {
     margin-left: 12em;

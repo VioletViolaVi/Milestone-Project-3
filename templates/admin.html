@@ -342,19 +342,5 @@
             {% endfor %}
         </tbody> 
     </table>
-    {% if args.num_results &gt; args.p_limit %}
-        <ul class="pagination">
-            {% if args.p_offset &gt; 0 %}
-                <li class="waves-effect"><a href="{{ (url_for('admin')) }}"><i class="fas fa-angle-left"></i></a></li>
-            {% endif %}
-            <li class="waves-effect active"><a href="#!">1</a></li>
-            <li class="waves-effect"><a href="#!">2</a></li>
-            <li class="waves-effect"><a href="#!">3</a></li>
-            <li class="waves-effect"><a href="#!">4</a></li>
-            <li class="waves-effect"><a href="#!">5</a></li>
-            {% if args.p_offset + args.p_limit &it; args.num_results  %}
-                <li class="waves-effect"><a href="#!"><i class="fas fa-chevron-right"></i></a></li>
-            {% endif %}
-        </ul>    
-    {% endif %} 
+
 {% endblock %}

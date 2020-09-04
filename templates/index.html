@@ -49,7 +49,11 @@
                 </div>
             </div>                             
 
-            {% if session.user %}
+            {% if session.user|lower == "admin"|lower %}
+                <div class="center" style="display:none;">
+                    <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#{{ movie.movie_name }}">BOOK NOW</a>
+                </div>  
+            {% elif session.user  %}
                 <div class="center">
                     <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#{{ movie.movie_name }}">BOOK NOW</a>
                 </div>             
