@@ -146,7 +146,17 @@ This project was deployed to Heroku using the following steps:
   - All the buttons
   - Both the top and side navigation bars
 ## Media
-- The images used for this app/website were taken from Unsplash.
+- The following images used for this app/website were taken from Unsplash:
+  - Photo by Ian Espinosa: https://unsplash.com/photos/rX12B5uX7QM
+  - Photo by Ryan Walton: https://unsplash.com/photos/AbNO2iejoXA
+  - Photo by Greg Rakozy: https://unsplash.com/photos/oMpAz-DN-9I
+  - Photo by Daniel Jensen: https://unsplash.com/photos/NMk1Vggt2hg 
+  - Photo by Mathilda Khoo: https://unsplash.com/photos/xgsbOPIx75I
+  - Photo by Valentin Antonucci: https://unsplash.com/photos/9cRDDvhpBRw
+  - Photo by Dollar Gill: https://unsplash.com/photos/hYr1wGeDSU0
+  - Photo by Max Kleinen: https://unsplash.com/photos/Jigc7F9q7Ik
+  - Photo by Alessio Lin: https://unsplash.com/photos/mSoetyVbW_Y
+  - Photo by Lucas Gouvêa: https://unsplash.com/photos/aoEwuEH7YAs
 ## Acknowledgements
 - I received inspiration for this project from the following websites:
   - MOVIETICKETS.COM: https://www.movietickets.com/
@@ -159,14 +169,3 @@ This project was deployed to Heroku using the following steps:
   - RandomKeygen: https://randomkeygen.com/
   - Masterpiece Generator: https://www.name-generator.org.uk/quick/ 
   - Fantasy Name Generators: https://www.fantasynamegenerators.com/film-studio-names.php 
-  - Unsplash:
-    - Photo by Ian Espinosa: https://unsplash.com/photos/rX12B5uX7QM
-    - Photo by Ryan Walton: https://unsplash.com/photos/AbNO2iejoXA
-    - Photo by Greg Rakozy: https://unsplash.com/photos/oMpAz-DN-9I
-    - Photo by Daniel Jensen: https://unsplash.com/photos/NMk1Vggt2hg 
-    - Photo by Mathilda Khoo: https://unsplash.com/photos/xgsbOPIx75I
-    - Photo by Valentin Antonucci: https://unsplash.com/photos/9cRDDvhpBRw
-    - Photo by Dollar Gill: https://unsplash.com/photos/hYr1wGeDSU0
-    - Photo by Max Kleinen: https://unsplash.com/photos/Jigc7F9q7Ik
-    - Photo by Alessio Lin: https://unsplash.com/photos/mSoetyVbW_Y
-    - Photo by Lucas Gouvêa: https://unsplash.com/photos/aoEwuEH7YAs
