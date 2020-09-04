@@ -44,8 +44,11 @@ def home():
     reviews = list(mongo.db.reviews.find())
 
     return render_template("index.html", page_title="Movies",
-                           page_subtitle="Reviews", movie_names=movie_names,
-                           location_names=location_names, reviews=reviews)
+                           page_subtitle="Reviews",
+                           page_title2="About Us",
+                           movie_names=movie_names,
+                           location_names=location_names,
+                           reviews=reviews)
 
 
 @app.route("/signup", methods=["GET", "POST"])
@@ -215,8 +218,8 @@ def admin():
                            movie_names=movie_names,
                            reviews=reviews,
                            users=users,
-                        #    args=args
-                        )
+                           #    args=args
+                           )
 
 
 @app.route("/admin_add_movie", methods=["GET", "POST"])

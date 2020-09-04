@@ -205,6 +205,10 @@ div.carousel,
   margin: 0% 1% 0%;
 }
 
+.about-us {
+  background-color: lavenderblush;
+}
+
 /******************************************* signup/login */
 
 .signup h2,
@@ -335,7 +339,7 @@ input.select-dropdown.dropdown-trigger {
   width: 100%;
 }
 
-.select-wrapper .select-dropdown.dropdown-trigger{
+.select-wrapper .select-dropdown.dropdown-trigger {
   margin-top: 1.3rem;
   margin-bottom: 6px;
 }
@@ -593,9 +597,9 @@ input.select-dropdown.dropdown-trigger {
     display: none;
   }
 
-nav {
+  nav {
     height: 5.3em;
-}
+  }
 
   #navTitle {
     font-size: 4.5em;
