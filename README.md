@@ -63,6 +63,28 @@ Using this project is the best way to achieve this as it has taken precaution to
 
 # Features
 ## Existing Features
+### Top Navigation Bar
+- The top navigation bar allows users to access different parts of this project’s app/website by clicking on the links provided at the top of larger screen sized devices. It also displays the name/logo of the movie company for the users to read/see and develop name recognition for Cinemagic.
+### Side Navigation Bar
+The side navigation bar allows users to access the company’s navigation links at the side of smaller screen sized devices by clicking/tapping them. This makes the navigation links more responsive on smaller screen sizes as the side navigation bar avoids using a lot of space at the top and is hidden at the side to make room for more of the app/website content to be seen by the user. 
+### Home Page
+- The home page allows users to view available movies to be booked, from the carousel and from scrolling down the rest of the page. It also allows users to click/tap on the carousel movie images to be automatically jumped down to the corresponding section of the page for more details about the movie. 
+- The homepage allows users to view reviews about the movies on offer, created by other users of the website, by scrolling down the page to the corresponding movie sections so the user can be assisted in making a decision on which movies to book.
+- The home page allows users to book tickets, a location and a date to watch their selected movie by having them fill out a form that appears in the style of a pop-up modal, before being redirected to their bookings account page. 
+- The homepage allows users to scroll down to the bottom of the page to find information about the company telling the users who Cinemagic are by reading their about us section.
+### Sign Up Page
+- The sign up page allows users to create an account with Cinemagic in order to make bookings of the movies they wish to watch, by having them fill out a form requesting a few of their personal details.
+### Login Page
+- The login page allows users to log into the app/website to access their bookings page, by filling out the login form with the personal details they used to create an account and having those verified and authenticated to ensure they are correct.
+### My Bookings Page
+- The my bookings page allows users to read, update and delete their created bookings they made from the homepage by reading through the page and clicking/tapping on the respective buttons to open up the corresponding modals. 
+- The my bookings page allows users to leave a review on the movies they booked/watched, to be sent to the respective review sections in the home page for other users of the app/website to view and read, by filling out the form that appears as a pop-up modal once the leave a review button is clicked/tapped.
+### Administration Page
+- The administration page allows the creator of the app/website to read, update and delete the current movies and locations offered by Cinemagic by having them read the page’s contents, edit the forms on a pop-up modal and confirm the option of deleting them if chosen to do so.
+- The administration page allows the creator of the app/website to create and upload new movies and locations for the company by having them fill out forms in the pop-up modals. 
+- The administration page allows the creator of the app/website to read the user’s: sign up details, bookings and movie reviews by scrolling down the rest of the page.
+### Footer
+- The footer allows the users to view links to Cinemagic’s social media outlets and contact details by scrolling to the bottom of the page to read its contents and click/tap on the social links if interested in following their social media handles.
 
 # Technologies Used
 ## [Python](https://www.python.org/) and [Flask](https://flask.palletsprojects.com/en/1.1.x/quickstart/):
@@ -142,6 +164,7 @@ This project was deployed to Heroku using the following steps:
   - The movie carousel
   - All the modals
   - All forms in the modals 
+  - All cards of the forms
   - All tables present on the administration page
   - All the buttons
   - Both the top and side navigation bars
