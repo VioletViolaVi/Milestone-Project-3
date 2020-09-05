@@ -189,13 +189,22 @@ Using this project is the best way to achieve this as it has taken precaution to
 2. Attempt to submit the form with an email address with an invalid structure i.e: without __*@/.com*__ etc., to get an error prompt informing the user that the email they have inputted is not a valid one. 
 3. Attempt to submit the form with an input in both the username and password fields that is less than 4 characters in length and then again but with an input that is greater than 14 characters in length. On both occasions, this test should fail to ensure that the __*minlength="4"*__ and __*maxlength="14"*__ attributes are working properly.
 4. Check the password field of the form hides its inputted content from the user with small, black, circle, dots. This ensures the __*type="password"*__ is working as it should.
-5. Create an account following the instructions of the form using the: username of __*test01*__, email of __*test01@testing.com*__ and password of __*test*__, ensuring it is possible to successfully create an account.  
+5. Create an account following the instructions of the form using the: username of __*test01*__, email of __*test01@testing.com*__ and password of __*test1*__, ensuring it is possible to successfully create an account.  
 6. On completion, check that the user has been redirected to the homepage automatically, with the flash message of: __*Sign Up Successful! Welcome Test01!*__, displaying on the top of the screen and underneath the top navigation bar. Also ensure the username in the flash message starts with a capital letter to verify that the __*.capitalize()*__ method is working.
 7. Return to the sign up page and attempt to sign up again with the same username and/or email address as mentioned before. Verify that the user is not redirected to the homepage as before and the correct flash error message of: __*Username And/Or Email Already Registered!*__, appears above the form. This will prove that the __*if request.method == "POST":*__ if condition in the __*signup()*__ function of the __*app.py*__ file is working and checking the correct collection in the MongoDB database to find that someone is already registered with the same details and therefore the user would have to choose another username and/or email address.
 ### Log In link
 1. Click on the __*Log In*__ link underneath the form to check if it redirects the user to the login page to ensure the __*{{ url_for('login') }}*__ for the link works.
 ## Login.html
-
+### Overall Login page
+1. Go to the login form page.
+2. Using the chrome development tools, drag the toggle device toolbar to check that the login page’s title, form and link are all responsive for screen sizes ranging from 320px to 1200px by being clearly visible and fitting the screen well on every screen size.
+3. Run its code on both the W3C Markup Validation Service and CSS Validation Service to ensure no errors are found with its HTML and CSS.
+### Form
+1. Attempt to send the form, by clicking on the __*LOG IN*__ button, after completing the form partially or without filling in the details of the form all together, to ensure the __*required*__ attributes placed in the code prevents the form from submitting. A prompt to complete the missing part(s) of the form should appear.
+2. Attempt to login with a username and/or password that has not been registered and therefore not stored in the MongoDB database. For example, enter __*test02*__ as the username and __*test2*__ as the password. Ensure the flash error message of: __*Incorrect Username And/Or Password*__, appears above the form once the __*LOG IN*__ button is clicked. At this point, also make sure that the user is not redirected to the homepage. This ensures that the __*if request.method == "POST":*__ if condition in the __*login()*__ function of the __*app.py*__ file is working by seeing if the username entered exists in the MongoDB database. It also ensures that the hashed password stored in the database matches the hashed password created by the just logged in password.
+3. Login in with the same details used to test the sign up form. Check that the user is automatically sent to the homepage with the correct flash message stating: __*Welcome Back Test01!*__ at the top, ensuring the username in the flash message starts with a capital letter to verify that the __*.capitalize()*__ method is working. 
+### Sign Up link
+1. Click on the __*Sign Up*__ link underneath the form to check if it redirects the user to the sign up page to ensure the __*{{ url_for(signup) }}*__ for the link works.
 
 
 
