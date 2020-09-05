@@ -137,47 +137,69 @@ Using this project is the best way to achieve this as it has taken precaution to
 # Testing
 ## Base.html
 ### Links
-1. Check to see if the Google Font link is working across this project by going through each page on this app/website and ensuring the predominate font used for the text is  _*Scada*_ or its backup which is  _*sans-serif*_. 
+1. Check to see if the Google Font link is working across this project by going through each page on this app/website and ensuring the predominate font used for the text is  __*Scada*__ or its backup which is  __*sans-serif*__. 
 2. Check to see if the Font Awesome link is working across this project by going through each page on this app/website and ensuring all the icons used from Font Awesome, appears accordingly. 
 3. Check to see if the Materialize CSS and JS links are working across this project by going through each page on this app/website and ensuring the features taken from Materialize i.e: carousel, forms, modals, cards, navigation bars, tables and buttons are displayed on the pages and can be interacted with by the user.
-4. Check to see if the custom CSS link is working across this project by setting the whole page’s background to a very noticeable colour in the _*style.css*_ file, ensuring that the same background colour is displayed on the pages of the app/website. 
-5. Check to see if the jQuery CDN link is working across this project by using  _*console.log(“Hello World!”)*_ in a jQuery function, present in the  _*scripts.js*_  file and then accessing the console in the chrome development tools to see if the message can be seen from there.
-6. Check to see if the custom JS link is working across this project by using  _*console.log(“Hello World!”)*_ in a custom JavaScript function, present in the  _*scripts.js*_  file and then accessing the console in the chrome development tools to see if the message can be seen from there.
+4. Check to see if the custom CSS link is working across this project by setting the whole page’s background to a very noticeable colour in the __*style.css*__ file, ensuring that the same background colour is displayed on the pages of the app/website. 
+5. Check to see if the jQuery CDN link is working across this project by using  __*console.log(“Hello World!”)*__ in a jQuery function, present in the  __*scripts.js*__  file and then accessing the console in the chrome development tools to see if the message can be seen from there.
+6. Check to see if the custom JS link is working across this project by using  __*console.log(“Hello World!”)*__ in a custom JavaScript function, present in the  __*scripts.js*__  file and then accessing the console in the chrome development tools to see if the message can be seen from there.
 ### Page Title
 1. Go to the home page.
-2. Check the page title in the tab of the opened up brower and ensure its name is the same to the assigned name in the _*base.html*_  file.
+2. Check the page title in the tab of the opened up brower and ensure its name is the same to the assigned name in the __*base.html*__  file.
 ### Inherited templates
-1. Write the test message: _*Hello World!*_ in the _*index.html*_ file, set to inherit the code from the _*base.html*_ file.
+1. Write the test message: __*Hello World!*__ in the __*index.html*__ file, set to inherit the code from the __*base.html*__ file.
 2. Go to the home page. 
-3. Check to see if the same  _*Hello World!*_ is present on this page, as if it is then the template has successfully inherited the code.
+3. Check to see if the same __*Hello World!*__ is present on this page, as if it is then the template has successfully inherited the code.
 ### Top navigation bar
 1. Go to the home page.
 2. Using the chrome development tools’ toggle device toolbar to ensure: the navigation bar, its title, bars icon and/or links are all clearly visible and legible on different screen sizes ranging from 320px to 1200px.
 3. Drag the chrome development tools’ toggle device toolbar, to ensure the bars icon is displayed from screen sizes 320px to 992px and then removed for screen sizes at 993px or higher.
 4. Whilst continuing to drag the chrome development tools’ toggle device toolbar, ensure the navigation links for the other pages of this app/website appear on the right-hand side of the navigation bar for screen sizes greater than 993px.
 5. Hover the cursor over the newly appeared links on the navigation bar to ensure a different background colour is shown for the respective link hovered over.  
-6. Click on each link present in the navigation bar to ensure they take the user to the correct page based on what the link is called. E.g. click on the _*Sign Up*_ page to ensure the user is redirected to the page where the user can sign up to create an account. For another example, click on the _*My Bookings Page*_ to ensure the user is redirected to the page that will showcase where their booked movies are stored.
+6. Click on each link present in the navigation bar to ensure they take the user to the correct page based on what the link is called. E.g. click on the __*Sign Up*__ page to ensure the user is redirected to the page where the user can sign up to create an account. For another example, click on the __*My Bookings Page*__ to ensure the user is redirected to the page that will showcase where their booked movies are stored.
 7. Ensure the correct link options are shown in the navigation bar, based on the type of user that is interacting with the website. 
-    1. If the user is logged in as administration, ensure the links shown are: _*Home*_, _*Admin*_ and  _*Logout*_. 
-    2. If the user is logged in but not as administration, ensure the links shown are: _*Home*_, _*My Bookings*_ and  _*Logout*_. 
-    3. If the user is not logged in, ensure the links shown are: _*Home*_, _*Sign Up*_ and  _*Log In*_. 
-    4. Run its code on both the W3C Markup Validation Service and CSS Validation Service to ensure no errors are found with its HTML and CSS.
+    1. If the user is logged in as administration, ensure the links shown are: __*Home*__, __*Admin*__ and  __*Logout*__. 
+    2. If the user is logged in but not as administration, ensure the links shown are: __*Home*__, __*My Bookings*__ and __*Logout*__. 
+    3. If the user is not logged in, ensure the links shown are: __*Home*__, __*Sign Up*__ and __*Log In*__. 
+8. Run its code on both the W3C Markup Validation Service and CSS Validation Service to ensure no errors are found with its HTML and CSS.
 ### Side navigation bar
 1. Go to the home page.
 2. Using the chrome development tools, drag the toggle device toolbar to check that the bars icon, for this navigation bar, is clearly visible on different screen sizes ranging from 320px to 992px and then is removed for screen sizes at 993px or higher.
 3. Upon clicking the bars icon, ensure the current page of the app/website is covered with a dark, transparent overlay and the side navigation bar appears on the left-hand side of the screen, on top of the overlay.
 4. Check the navigation bar to ensure the links and their icons are easy to see and read then hover the cursor over them to ensure a different background colour is shown for the respective link hovered over.  
-5. Click on each link present in the navigation bar to ensure they take the user to the correct page based on what the link is called. E.g. click on the _*Sign Up*_ page to ensure the user is redirected to the page where the user can sign up to create an account. For another example, click on the _*My Bookings Page*_ to ensure the user is redirected to the page that will showcase where their booked movies are stored.
+5. Click on each link present in the navigation bar to ensure they take the user to the correct page based on what the link is called. E.g. click on the __*Sign Up*__ page to ensure the user is redirected to the page where the user can sign up to create an account. For another example, click on the __*My Bookings Page*__ to ensure the user is redirected to the page that will showcase where their booked movies are stored.
 6. Ensure the correct link options are shown in the navigation bar, based on the type of user that is interacting with the website. 
-    1. If the user is logged in as administration, ensure the links shown are: _*Home*_, _*Admin*_ and  _*Logout*_. 
-    2. If the user is logged in but not as administration, ensure the links shown are: _*Home*_, _*My Bookings*_ and  _*Logout*_. 
-    3. If the user is not logged in, ensure the links shown are: _*Home*_, _*Sign Up*_ and  _*Log In*_. 
-    4. Run its code on both the W3C Markup Validation Service and CSS Validation Service to ensure no errors are found with its HTML and CSS.
+    1. If the user is logged in as administration, ensure the links shown are: __*Home*__, __*Admin*__ and __*Logout*__. 
+    2. If the user is logged in but not as administration, ensure the links shown are: __*Home*__, __*My Bookings*__ and __*Logout*__. 
+    3. If the user is not logged in, ensure the links shown are: __*Home*__, __*Sign Up*__ and  __*Log In*__. 
+8. Run its code on both the W3C Markup Validation Service and CSS Validation Service to ensure no errors are found with its HTML and CSS.
 ### Footer
 1. Go to the home page.
 2. Using the chrome development tools, drag the toggle device toolbar to check both the social media icons and the contact details stay within the footer area without going over it and are legible on all different screen sizes, from 320px to 1200px, to ensure their responsiveness. 
 3. Whilst dragging the toggle device toolbar, also check that the footer remains at the bottom of the screen for every screen size and covers the full width of the screen without going over.
 4. Click on each social media icon and check that a separate tab opens, away from the project, to the homepage of the respective social media website.
+5. Run its code on both the W3C Markup Validation Service and CSS Validation Service to ensure no errors are found with its HTML and CSS.
+## Signup.html
+### Overall Sign Up page
+1. Go to the sign up form page.
+2. Using the chrome development tools, drag the toggle device toolbar to check that the sign up page’s title, form and link are all responsive for screen sizes ranging from 320px to 1200px by being clearly visible and fitting the screen well on every screen size.
+3. Run its code on both the W3C Markup Validation Service and CSS Validation Service to ensure no errors are found with its HTML and CSS.
+### Form
+1. Attempt to send the form, by clicking on the __*SIGN UP*__ button, after completing the form partially or without filling in the details of the form all together, to ensure the __*required*__ attributes placed in the code prevents the form from submitting. A prompt to complete the missing part(s) of the form should appear.
+2. Attempt to submit the form with an email address with an invalid structure i.e: without __*@/.com*__ etc., to get an error prompt informing the user that the email they have inputted is not a valid one. 
+3. Attempt to submit the form with an input in both the username and password fields that is less than 4 characters in length and then again but with an input that is greater than 14 characters in length. On both occasions, this test should fail to ensure that the __*minlength="4"*__ and __*maxlength="14"*__ attributes are working properly.
+4. Check the password field of the form hides its inputted content from the user with small, black, circle, dots. This ensures the __*type="password"*__ is working as it should.
+5. Create an account following the instructions of the form using the: username of __*test01*__, email of __*test01@testing.com*__ and password of __*test*__, ensuring it is possible to successfully create an account.  
+6. On completion, check that the user has been redirected to the homepage automatically, with the flash message of: __*Sign Up Successful! Welcome Test01!*__, displaying on the top of the screen and underneath the top navigation bar. Also ensure the username in the flash message starts with a capital letter to verify that the __*.capitalize()*__ method is working.
+7. Return to the sign up page and attempt to sign up again with the same username and/or email address as mentioned before. Verify that the user is not redirected to the homepage as before and the correct flash error message of: __*Username And/Or Email Already Registered!*__, appears above the form. This will prove that the __*if request.method == "POST":*__ if condition in the __*signup()*__ function of the __*app.py*__ file is working and checking the correct collection in the MongoDB database to find that someone is already registered with the same details and therefore the user would have to choose another username and/or email address.
+### Log In link
+1. Click on the __*Log In*__ link underneath the form to check if it redirects the user to the login page to ensure the __*{{ url_for('login') }}*__ for the link works.
+## Login.html
+
+
+
+
+
 
 
 # Deployment
