@@ -133,6 +133,9 @@ Using this project is the best way to achieve this as it has taken precaution to
 - This project used Balsamiq Wireframes to create mockups of what the Cinemagic app/website aimed to look like to the user, on completion.
 ## Snipping Tool
 - This project used the Snipping Tool to edit the movie posters and wireframes for the Cinemagic app/website, as images to be stored on Gitpod.
+## Jasmine Testing(https://jasmine.github.io/index.html):
+- The project used Jasmine Testing to test the functionality of the JavaScript/jQuery used in the Cinemagic app/website.
+
 
 # Testing
 ## Base.html
@@ -205,6 +208,7 @@ Using this project is the best way to achieve this as it has taken precaution to
 3. Login in with the same details used to test the sign up form. Check that the user is automatically sent to the homepage with the correct flash message stating: __*Welcome Back Test01!*__ at the top, ensuring the username in the flash message starts with a capital letter to verify that the __*.capitalize()*__ method is working. 
 ### Sign Up link
 1. Click on the __*Sign Up*__ link underneath the form to check if it redirects the user to the sign up page to ensure the __*{{ url_for(signup) }}*__ for the link works.
+## Index.html
 
 
 
