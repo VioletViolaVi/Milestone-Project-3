@@ -17,8 +17,8 @@ Using this project is the best way to achieve this as it has taken precaution to
 - As the designer of Cinemagic, I want to make the booking process appear on a modal whilst still on the homepage and then automatically direct the user to another page displaying all the information they just booked, so the user will have immediate access to their booking information for their reference.
 - As the designer of Cinemagic, I want to organise the homepage to display the movie posters alongside their respective movie details and reviews centre-align with the user’s viewpoint, so obtaining information about the movies being offered will be made easier for them.
 - As the designer of Cinemagic, I want to structure the user’s bookings page clearly with all the booked information placed in their correct sections and at the centre of the screen, so the user will easily be able to refer to their booked choices.
-- As the designer of Cinemagic, I want to provide a fully functioning “change” button tailor made for each different set of bookings, so the user can simply press that button to edit the prefilled form of their current booking if they wish to make changes.
-- As the designer of Cinemagic, I want to provide a fully functioning “delete” button tailor made for each different set of bookings, so the user can simply press that button to delete the respective movie booking they desire.
+- As the designer of Cinemagic, I want to provide a fully functioning __*change*__ button tailor made for each different set of bookings, so the user can simply press that button to edit the prefilled form of their current booking if they wish to make changes.
+- As the designer of Cinemagic, I want to provide a fully functioning __*delete*__ button tailor made for each different set of bookings, so the user can simply press that button to delete the respective movie booking they desire.
 ## Wireframes
 ![sidebar-mobile](wireframes/images/1.sidebar-mobile.PNG)
 ![sidebar-tablet](wireframes/images/2.sidebar-tablet.PNG)
@@ -138,7 +138,9 @@ Using this project is the best way to achieve this as it has taken precaution to
 ## Jasmine Testing(https://jasmine.github.io/index.html):
 - The project used Jasmine Testing to test the functionality of the JavaScript/jQuery used in the Cinemagic app/website.
 
+
 # Testing
+
 ## Base.html
 ### Links
 1. Check to see if the Google Font link is working across this project by going through each page on this app/website and ensuring the predominate font used for the text is  __*Scada*__ or its backup which is  __*sans-serif*__. 
@@ -183,6 +185,7 @@ Using this project is the best way to achieve this as it has taken precaution to
 3. Whilst dragging the toggle device toolbar, also check that the footer remains at the bottom of the screen for every screen size and covers the full width of the screen without going over.
 4. Click on each social media icon and check that a separate tab opens, away from the project, to the homepage of the respective social media website.
 5. Run its code on both the W3C Markup Validation Service and CSS Validation Service to ensure no errors are found with its HTML and CSS.
+
 ## Signup.html
 ### Overall Sign Up Page
 1. Go to the sign up form page.
@@ -198,6 +201,7 @@ Using this project is the best way to achieve this as it has taken precaution to
 7. Return to the sign up page and attempt to sign up again with the same username and/or email address as mentioned before. Verify that the user is not redirected to the homepage as before and the correct flash error message of: __*Username And/Or Email Already Registered!*__, appears above the form. This will prove that the __*if request.method == "POST":*__ if condition in the __*signup()*__ function of the __*app.py*__ file is working and checking the correct collection in the MongoDB database to find that someone is already registered with the same details and therefore the user would have to choose another username and/or email address.
 ### Log In Link
 1. Click on the __*Log In*__ link underneath the form to check if it redirects the user to the login page to ensure the __*{{ url_for('login') }}*__ for the link works.
+
 ## Login.html
 ### Overall Login Page
 1. Go to the login form page.
@@ -209,6 +213,7 @@ Using this project is the best way to achieve this as it has taken precaution to
 3. Login in with the same details used to test the sign up form. Check that the user is automatically sent to the homepage with the correct flash message stating: __*Welcome Back Test01!*__ at the top, ensuring the username in the flash message starts with a capital letter to verify that the __*.capitalize()*__ method is working. 
 ### Sign Up Link
 1. Click on the __*Sign Up*__ link underneath the form to check if it redirects the user to the sign up page to ensure the __*{{ url_for(signup) }}*__ for the link works.
+
 ## Index.html
 ### Overall Home Page
 1. Go to the home page.
@@ -253,6 +258,7 @@ Using this project is the best way to achieve this as it has taken precaution to
     1. Using __*red green refactoring*__, use Jasmine to write tests that will fail then slightly alter the code on a minimum level to get the test to pass, as seen in the [__*movieSpec.js*__](jasmine-testing/spec/movieSpec.js) file and the [__*movie.js*__](jasmine-testing/scripts/movie.js) file. For instance, when checking to see if the __*yearRange*__ variable is a number, i.e. __*3*__, write inside the __*toBe()*__ method the string __*three*__ to make the test fail. Then make the test pass by writing in the number __*3*__ instead.
 11. Click on the cross icon at the top right-hand side of the modal to ensure the modal will close when done so. Also click outside of the modal to check that this can also close the modal once opened.
 12. Fully and correctly complete the booking modal for one of the movies and submit the form. On submission, ensure the flash message of: __*Booking Successfully Added!*__ appears at the top of the screen to check the form is able to be sent once filled in appropriately.
+
 ## My_bookings.html
 ### Overall My Bookings Page
 1. Go to my bookings page.
@@ -305,6 +311,12 @@ Using this project is the best way to achieve this as it has taken precaution to
     2. Ensure the flash message stating __*Booking Successfully Deleted!*__ appears at the top of the screen.
     3. Scroll through the __*My Bookings*__ page and ensure the deleted booking is no longer present on the page. This shows the  __*remove({"_id": ObjectId(booked_details_id)})*__ method has successfully deleted the booking from the database. 
     4. View the __*booked_details*__ collection in MongoDB to confirm that the booking has been removed and is no longer present in the collection.  
+### View Session User Bookings
+1. Create two new accounts with the user names of: __*newAccount01*__ and __*newAccount02*__. 
+2. Create a new movie booking for both of these accounts and visit the __*My Bookings*__ page on separate occasions, after making movie bookings for both accounts. 
+3. When logged in as the __*newAccount01*__ user, ensure the booking details of the __*newAccount02*__ user cannot be seen and vice versa. This will show that the __*if session.user|lower == booking.booked_by|lower*__ if condition, in the __*my_bookings*__ HTML file is operating correctly; allowing the current session user to be able to only view the bookings made by them and not by others.
+
+
 ## Administration.html
 ### Overall Admin Page
 1. Go to the administration page.
@@ -314,6 +326,15 @@ Using this project is the best way to achieve this as it has taken precaution to
 
 
 
+
+
+## Tested UX Stories
+1. Cinemagic’s app/website will allow users to sign up and create an account, so they can book tickets to watch any of the advertised movies they choose.
+2. Cinemagic’s app/website will allow users to create bookings of the user’s chosen movies and document the information on a separate web page accessible to the user. This page will contain details on the: number of tickets requested, date of the movie showing and the location of the cinema requested.
+3. Cinemagic’s app/website will allow users to read the movie details and reviews of the advertised movies, so the users can make a more informed decision on which movie to select.
+4. Cinemagic’s app/website will allow users to read their booking information on their account, so they can be reminded of the: movie name, ticket quantity, showing date and location of the cinema they selected.
+5. Cinemagic’s app/website will allow users to be free to update their booking details on their accounts, so they can make changes to the: movie choice, ticket quantity, showing date and/or location of the cinema they selected; if needed/desired.
+6. Cinemagic’s app/website will allow users to be free to delete their bookings from their account, so they can declutter their account from unnecessary booking information resulting from having already seen the movie or changing their minds completely and deciding not to watch it anymore.
 
 # Deployment
 This project was deployed to Heroku using the following steps:
