@@ -47,12 +47,12 @@ Using this project is the best way to achieve this as it has taken precaution to
 ### Home Page      
 * The __*Reviews*__ button on the carousel was omitted. Instead each movie poster was made clickable where once clicked, the user would be taken to the corresponding movie review section underneath. As a result, the movie posters were fully visible to the users; not blocked in part by any buttons.
 * The __*BOOK NOW*__ button to be placed underneath the carousel was omitted. The button was left to only exist at the end of each review section making it faster and more convenient for the user to book a specific movie.  
+* To create a more consistent layout, all the movie’s images were placed on the left-hand side with their details on the right and their reviews at the bottom. Their positions were no longer to be alternated. This was to help user’s learn how to navigate through the website quickly, avoiding frustration.  
 * The stars for the star rating system were omitted from being used for the final version of the project. The decision was made to focus on the ability of the user to add descriptive comments about the different movies. It was seen as a more informative method for the user to gain a better understanding on how they might perceive the movie if they were to watch it, by scanning through the opinions left by other users.
 * For the first selection box of the booking pop-up modal, the name of the respective movie was made the default choice. The __*Ticket Quantity*__ selection box was changed into an input box so any number chosen by the user could be inputted (except 0). The title of the last selection box was altered to __*Select Location*__. Also, the __*BOOK NOW*__ button was changed to read __*SUBMIT*__ to emphasise that this was what will cause the user’s inputted data to be sent to Cinemagic. These changes were made to make it easier for the users to complete the form with ease.
 * The __*LEAVE A REVIEW*__ button was omitted from the homepage to only be present on the user’s bookings page. This was to make leaving a review simpler for the user as they would be able to reference the correct movie they had watched from the same page they were leaving a comment.
 ### My Bookings Page
-* To create a more consistent layout, all the movie’s images were placed on the left-hand side with their details on the right and their reviews at the bottom. Their positions were no longer to be alternated. This was to help user’s learn how to navigate through the website quickly, avoiding frustration.  
-* Regarding the user’s booking page, the images were replaced with their movie details i.e.: number of tickets, location of cinema, date for attendance and the owner of the booking. This aimed to provide a more descriptive account of the bookings when referencing, reading or making changes to them. Using an image was not sufficient. In addition, all the buttons were placed underneath the movie details to create a more organised structure.
+* Regarding the user’s booking page, the images were replaced with their movie details i.e.: number of tickets, location of cinema, date for attendance and the owner of the booking. This aimed to provide a more descriptive account of the bookings when referencing, reading or making changes to them. Using an image was not sufficient. In addition, all the buttons were placed underneath the movie details, for smaller screen sizes, to create a more organised structure on those formats. 
 * The __*Rate it*__ title was replaced with the __*Leave a Review*__ title in the leave a review pop-up modal because the stars were omitted; as previously mentioned.
 * The delete pop-up modal’s content was changed to include the name of the selected booked movie to be deleted instead of just the __*Are you sure?*__ confirmation question. It makes it clearer to the user which movie has been selected for deletion. Also, the __*No*__ button was moved to the left-hand side in order to be seen before the __*Yes*__ button. This was done to further help avoid the user from deleting a booking by mistake; giving them more time to confirm.
 ### Administration Page
@@ -136,7 +136,6 @@ Using this project is the best way to achieve this as it has taken precaution to
 ## Jasmine Testing(https://jasmine.github.io/index.html):
 - The project used Jasmine Testing to test the functionality of the JavaScript/jQuery used in the Cinemagic app/website.
 
-
 # Testing
 ## Base.html
 ### Links
@@ -209,6 +208,46 @@ Using this project is the best way to achieve this as it has taken precaution to
 ### Sign Up Link
 1. Click on the __*Sign Up*__ link underneath the form to check if it redirects the user to the sign up page to ensure the __*{{ url_for(signup) }}*__ for the link works.
 ## Index.html
+### Overall Home Page
+1. Go to the home page.
+2. Using the chrome development tools, drag the toggle device toolbar to check that the home page’s title, carousel and movie detail areas are all responsive for screen sizes ranging from 320px to 1200px by being clearly visible and fitting the screen well on every screen size.
+3. Run its code on both the W3C Markup Validation Service and CSS Validation Service to ensure no errors are found with its HTML and CSS.
+### Carousel
+1. Write test code using __*Jinja*__ dot notation in the HTML file in an attempt to get the images stored in the MongoDB __*movies*__ collection, with the use of __*movie.movie_poster*__. Place __*movie.movie_poster*__ inside its for loop to see if the __*movie*__  successfully iterates through the __*movies*__ MongoDB collection. This will also test if the __*.find()*__ method for retrieving data from MongoDB is functioning correctly.  
+2. Using the Jasmine testing framework, test the __*true*__ and __*false*__ values in the jQuery code of the carousel taken from Materialize, to check they are found to be the correct booleans. 
+    1. Using __*red green refactoring*__, use Jasmine to write tests that will fail then slightly alter the code on a minimum level to get the test to pass, as seen in the __*movieSpec.js*__ file. For instance, when checking to see if the __*fullWidth*__ variable is the __*true*__ boolean, write inside the __*toBe()*__ method the __*false*__ boolean to make the test fail. Then make the test pass by writing in the __*true*__ boolean instead.
+3. With the cursor, vertically slide the carousel to ensure that the image moves swiftly across the screen.
+4. Hover over the carousel indicators to make sure they increase in size when the cursor is hovered over them.
+5. Click on a carousel indicator to make sure the indicator changes colour and moves the carousel to the next respective movie in the row; partnered with the selected indicator.
+6. Click on the movie images in the carousel and check that the page jumps down to the respective section that displays the movie details, reviews and __*BOOK NOW*__ button for the same movie that was clicked on. 
+### Movie Details
+1. Add a test image to the MongoDB collection called __*movies*__. Use the __*.find()*__ method in the__*app.py*__ file to access this image in the collection and then produce it onto the HTML file. Ensure the image can be seen when the collection is being called out within its for loop.
+2. Type __*test01*__ as the key pair value of __*Rated*__ in the MongoDB __*movies*__ collection. Then use the __*.find()*__ method in the __*app.py*__ file, to bring out the __*Rated*__ value to the movie details section. Check to see that __*Rated: test01*__ is produced to ensure the data from MongoDB is being retrieved successfully. 
+### Reviews Display
+1. Test the __*.find()*__ method in the __*home()*__ function by completing the __*Leave a Review*__ modal on the __*My Bookings*__ page, for the __*Roldo*__ movie. Hit the __*SUBMIT*__ button to send the review. Once sent, view the review section of the __*Roldo*__ movie to make sure the review can be seen.
+### __*BOOK NOW*__ Buttons
+1. When not logged in, click the __*BOOK NOW*__ buttons to check that each of them redirects the user to the __*Log In*__ page, so the user can log in.
+2. When logged in and the session user is not administration, click the __*BOOK NOW*__ buttons to check that each of them open up a modal with the form needed to be completed in order to book the movies.
+3. When logged in and the session user is administration, ensure the __*BOOK NOW*__ buttons are omitted from the home page so no bookings can be made.
+### Booking Modal
+1. Click on each __*SUBMIT*__ button in every modal without completing the form to ensure it doesn’t submit. Check that an alert message to complete the forms input appears, to show the __*required*__ attribute is functioning.   
+2. Click on the first input, in each modal, to check the default option is labelled correctly, in correspondence to the movie being booked. Ensure there are no other dropdown options for this input.
+3. Attempt to type in __*test*__ into the __*Ticket Quantity*__ input to make sure it doesn’t show as only numbers have been permitted for this input with the use of the __*type="number"*__ attribute.
+4. Attempt to type in 0 into the __*Ticket Quantity*__ input in order to elicit an error message to appear stating that the number must be at least 1. This will confirm if the __*min="1"*__ attribute is working. 
+5. Click on the __*Date*__ input to ensure the datepicker appears. 
+6. Click on a date on the calendar to make sure a day can be selected and that its background and font colour change.
+7. Try each of the buttons present on the datepicker to ensure they work correctly. 
+    1. Click on the __*CLEAR*__ button and see if the datepicker automatically closes.
+    2. Click on the __*CANCEL*__ button and see if the datepicker automatically closes.
+    3. Click on the __*SELECT*__ button, after selecting a date, and see if the datepicker automatically closes and displays the selected date in the input.
+8. Click on the last input labelled __*Select Location*__ to see if the dropdown feature works.
+    1. Check that the __*.find()*__ method in the __*app.py*__ file of the __*home()*__ function for the __*locations*__ collection in the MongoDB database, is bringing out the list of locations for this input. 
+    2. Read the locations listed in the dropdown input and make sure they are being listed in alphabetical order, to confirm the __*sort("location_name", 1)*__ from the __*app.py*__ file is working. 
+9. Click on the cross icon at the top right-hand side of the modal to ensure the modal will close when done so. Also click outside of the modal to check that this can also close the modal once opened.
+10. Fully and correctly complete the booking modal for one of the movies and submit the form. On submission, ensure the flash message of: __*Booking Successfully Added!*__ appears at the top of the screen to check the form is able to be sent once filled in appropriately.
+## My_bookings.html
+
+
 
 
 
