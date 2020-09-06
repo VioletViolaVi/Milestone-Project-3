@@ -278,6 +278,8 @@
             <tr>
                 <th>User Name</th>
                 <th>Email Address</th>
+                <th>Update</th>
+                <th>Remove</th>             
             </tr>
         </thead>
         <tbody>
@@ -285,7 +287,55 @@
                 <tr>
                     <td>{{ user.user}}</td>
                     <td>{{ user.email }}</td>
+                    <td>
+                        <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminChangeUser/{{ user._id }}">CHANGE</a>          
+                    </td>               
+                    <td>
+                        <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminDeleteUsers/{{ user._id }}">DELETE</a>
+                    </td>      
                 </tr>
+
+                <!-- admin-change users: modal -->
+                <!-- modal from materialize -->
+                <div id="adminChangeUser/{{ user._id }}" class="modal">
+                    <div class="right-align">
+                        <i class="fas fa-times modal-close"></i> 
+                    </div>
+                    <div class="modal-content">   
+                        <div class="center">
+                            <h4>Change User Details</h4>
+                        </div>
+                        <form method="POST" action="{{ (url_for('admin_change_user', user_id=user._id)) }}" class="black-text">
+                            <div class="form-item">
+                                <label for="changeUserName">User Name</label>
+                                <input value="{{ user.user }}" placeholder="{{ user.user }}" id="changeUserName" name="changeUserName" class="input-field" required>
+                            </div>
+                            <div class="form-item">
+                                <label for="changeUserEmail">User Email</label>
+                                <input value="{{ user.email }}" placeholder="{{ user.email }}" id="changeUserEmail" name="changeUserEmail" class="input-field" required>
+                            </div>
+                            <br>
+                            <div class="center">
+                                <button type="submit" class="confirm-btn custom-btn btn btn-flat waves-effect waves-black deep-orange lighten-2 black-text">CONFIRM</button>
+                                <a class="cancel-btn custom-btn btn btn-flat waves-effect waves-black deep-orange lighten-2 black-text modal-close">CANCEL</a>                       
+                            </div>
+                        </form>  
+                    </div>
+                </div>
+
+                <!-- admin-delete users: modal -->
+                <!-- modal from materialize -->
+                <div id="adminDeleteUsers/{{ user._id }}" class="confirm-delete modal ">
+                    <div class="right-align">
+                        <i class="fas fa-times modal-close"></i> 
+                    </div>
+                    <div class="modal-content center">                         
+                        <h4>Delete User:<br><em><b>{{ user.user }}?</b></em></h4>
+                        <a class="custom-btn modal-close btn btn-flat waves-effect waves-black red black-text darken-text-4 modal-close">NO</a>
+                        <a href="{{ url_for('admin_delete_user', user_id=user._id) }}" class="custom-btn modal-close btn btn-flat waves-effect waves-black green black-text darken-text-4">YES</a>                          
+                    </div>
+                </div> 
+
             {% endfor %}        
         </tbody>         
     </table> 
@@ -301,7 +351,7 @@
                 <th>Movie Name</th>
                 <th>Ticket Quantity</th>
                 <th>Date</th>
-                <th>Location</th>               
+                <th>Location</th>                          
             </tr>
         </thead>
         <tbody>
@@ -311,7 +361,7 @@
                     <td>{{ booking.booked_movie }}</td>
                     <td>{{ booking.booked_ticket_quantity }}</td>
                     <td>{{ booking.booked_date }}</td>
-                    <td>{{ booking.booked_location }}</td>
+                    <td>{{ booking.booked_location }}</td>           
                 </tr>
             {% endfor %}        
         </tbody>         
@@ -327,6 +377,7 @@
                 <th>User Name</th>
                 <th>Moive Name</th>
                 <th>User Review</th>
+                <th>Remove</th>
             </tr>
         </thead>
         <tbody>
@@ -335,7 +386,24 @@
                     <td>{{ review.user }}</td>              
                     <td>{{ review.reviewed_movie_name }}</td>
                     <td>{{ review.user_review }}</td>
+                    <td>
+                        <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminDeleteUserReview/{{ review._id }}">DELETE</a>
+                    </td>       
                 </tr>
+
+                <!-- admin-delete user reviews: modal -->
+                <!-- modal from materialize -->
+                <div id="adminDeleteUserReview/{{ review._id }}" class="confirm-delete modal ">
+                    <div class="right-align">
+                        <i class="fas fa-times modal-close"></i> 
+                    </div>
+                    <div class="modal-content center">                         
+                        <h4>Delete User's Review:<br><em><b>{{ review.reviewed_movie_name }}?</b></em></h4>
+                        <a class="custom-btn modal-close btn btn-flat waves-effect waves-black red black-text darken-text-4 modal-close">NO</a>
+                        <a href="{{ url_for('admin_delete_user_review', user_review_id=review._id) }}" class="custom-btn modal-close btn btn-flat waves-effect waves-black green black-text darken-text-4">YES</a>                          
+                    </div>
+                </div>
+
             {% endfor %}
         </tbody> 
     </table>

@@ -295,6 +295,39 @@ def admin_delete_location(location_name_id):
     return redirect(url_for("admin"))
 
 
+@app.route("/admin_change_user/<user_id>", methods=["GET", "POST"])
+def admin_change_user(user_id):
+
+    # changing users from db
+    mongo.db.users.update(
+        {"_id": ObjectId(user_id)},
+        {
+            "user": request.form.get("changeUserName").lower(),
+            "email": request.form.get("changeUserEmail").lower()
+        })
+
+    flash("User Details Successfully Updated!")
+    return redirect(url_for("admin"))
+
+
+@app.route("/admin_delete_user/<user_id>")
+def admin_delete_user(user_id):
+
+    # targets users in db by their _id
+    mongo.db.users.remove({"_id": ObjectId(user_id)})
+    flash("User Successfully Deleted!")
+    return redirect(url_for("admin"))
+
+
+@app.route("/admin_delete_user_review/<user_review_id>")
+def admin_delete_user_review(user_review_id):
+
+    # targets user reviews in db by their _id
+    mongo.db.reviews.remove({"_id": ObjectId(user_review_id)})
+    flash("User Review Successfully Deleted!")
+    return redirect(url_for("admin"))
+
+
 @app.route("/logout")
 def logout():
 

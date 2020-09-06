@@ -80,9 +80,11 @@ Using this project is the best way to achieve this as it has taken precaution to
 - The my bookings page allows users to read, update and delete their created bookings they made from the homepage by reading through the page and clicking/tapping on the respective buttons to open up the corresponding modals. 
 - The my bookings page allows users to leave a review on the movies they booked/watched, to be sent to the respective review sections in the home page for other users of the app/website to view and read, by filling out the form that appears as a pop-up modal once the leave a review button is clicked/tapped.
 ### Administration Page
-- The administration page allows the creator of the app/website to read, update and delete the current movies and locations offered by Cinemagic by having them read the page’s contents, edit the forms on a pop-up modal and confirm the option of deleting them if chosen to do so.
-- The administration page allows the creator of the app/website to create and upload new movies and locations for the company by having them fill out forms in the pop-up modals. 
-- The administration page allows the creator of the app/website to read the user’s: sign up details, bookings and movie reviews by scrolling down the rest of the page.
+- The administration page allows the administrator of the app/website to read, update and delete the current movies and locations offered by Cinemagic by having them read the page’s contents, edit the forms on a pop-up modal and confirm the option of deleting them if chosen to do so.
+- The administration page allows the administrator of the app/website to create and upload new movies and locations for the company by having them fill out forms in the pop-up modals. 
+- The administration page allows the administrator of the app/website to read the user’s: sign up details, bookings and movie reviews by scrolling down the rest of the page.
+- The administration page allows the administrator of the app/website to change and/or delete the user’s sign up/login details.
+- The administration page allows the administrator of the app/website to delete the user’s reviews.
 ### Footer
 - The footer allows the users to view links to Cinemagic’s social media outlets and contact details by scrolling to the bottom of the page to read its contents and click/tap on the social links if interested in following their social media handles.
 
@@ -303,7 +305,7 @@ Using this project is the best way to achieve this as it has taken precaution to
     2. Ensure the flash message stating __*Booking Successfully Deleted!*__ appears at the top of the screen.
     3. Scroll through the __*My Bookings*__ page and ensure the deleted booking is no longer present on the page. This shows the  __*remove({"_id": ObjectId(booked_details_id)})*__ method has successfully deleted the booking from the database. 
     4. View the __*booked_details*__ collection in MongoDB to confirm that the booking has been removed and is no longer present in the collection.  
-## Admin.html
+## Administration.html
 ### Overall Admin Page
 1. Go to the administration page.
 2. Using the chrome development tools, drag the toggle device toolbar to check that the administration page’s title, buttons and tables containing the company’s: movie, location, user, user bookings and user review details are all responsive for screen sizes ranging from 320px to 1200px by being clearly visible and fitting the screen well on every screen size.
