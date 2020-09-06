@@ -216,10 +216,12 @@ Using this project is the best way to achieve this as it has taken precaution to
 1. Write test code using __*Jinja*__ dot notation in the HTML file in an attempt to get the images stored in the MongoDB __*movies*__ collection, with the use of __*movie.movie_poster*__. Place __*movie.movie_poster*__ inside its for loop to see if the __*movie*__  successfully iterates through the __*movies*__ MongoDB collection. This will also test if the __*.find()*__ method for retrieving data from MongoDB is functioning correctly.  
 2. Using the Jasmine testing framework, test the __*true*__ and __*false*__ values in the jQuery code of the carousel taken from Materialize, to check they are found to be the correct booleans. 
     1. Using __*red green refactoring*__, use Jasmine to write tests that will fail then slightly alter the code on a minimum level to get the test to pass, as seen in the __*movieSpec.js*__ file. For instance, when checking to see if the __*fullWidth*__ variable is the __*true*__ boolean, write inside the __*toBe()*__ method the __*false*__ boolean to make the test fail. Then make the test pass by writing in the __*true*__ boolean instead.
-3. With the cursor, vertically slide the carousel to ensure that the image moves swiftly across the screen.
-4. Hover over the carousel indicators to make sure they increase in size when the cursor is hovered over them.
-5. Click on a carousel indicator to make sure the indicator changes colour and moves the carousel to the next respective movie in the row; partnered with the selected indicator.
-6. Click on the movie images in the carousel and check that the page jumps down to the respective section that displays the movie details, reviews and __*BOOK NOW*__ button for the same movie that was clicked on. 
+3. Using the Jasmine testing framework, test the number values in the jQuery code of the carousel taken from Materialize, to ensure they are numbers.
+     1. Using __*red green refactoring*__, use Jasmine to write tests that will fail then slightly alter the code on a minimum level to get the test to pass, as seen in the __*movieSpec.js*__ file. For instance, when checking to see if the __*dist*__ variable is a number, i.e. __*0*__ , write inside the __*toBe()*__ method the string __*zero*__ to make the test fail. Then make the test pass by writing in the number __*0*__ instead.
+4. With the cursor, vertically slide the carousel to ensure that the image moves swiftly across the screen.
+5. Hover over the carousel indicators to make sure they increase in size when the cursor is hovered over them.
+6. Click on a carousel indicator to make sure the indicator changes colour and moves the carousel to the next respective movie in the row; partnered with the selected indicator.
+7. Click on the movie images in the carousel and check that the page jumps down to the respective section that displays the movie details, reviews and __*BOOK NOW*__ button for the same movie that was clicked on. 
 ### Movie Details
 1. Add a test image to the MongoDB collection called __*movies*__. Use the __*.find()*__ method in the__*app.py*__ file to access this image in the collection and then produce it onto the HTML file. Ensure the image can be seen when the collection is being called out within its for loop.
 2. Type __*test01*__ as the key pair value of __*Rated*__ in the MongoDB __*movies*__ collection. Then use the __*.find()*__ method in the __*app.py*__ file, to bring out the __*Rated*__ value to the movie details section. Check to see that __*Rated: test01*__ is produced to ensure the data from MongoDB is being retrieved successfully. 
@@ -243,12 +245,69 @@ Using this project is the best way to achieve this as it has taken precaution to
 8. Click on the last input labelled __*Select Location*__ to see if the dropdown feature works.
     1. Check that the __*.find()*__ method in the __*app.py*__ file of the __*home()*__ function for the __*locations*__ collection in the MongoDB database, is bringing out the list of locations for this input. 
     2. Read the locations listed in the dropdown input and make sure they are being listed in alphabetical order, to confirm the __*sort("location_name", 1)*__ from the __*app.py*__ file is working. 
-9. Click on the cross icon at the top right-hand side of the modal to ensure the modal will close when done so. Also click outside of the modal to check that this can also close the modal once opened.
-10. Fully and correctly complete the booking modal for one of the movies and submit the form. On submission, ensure the flash message of: __*Booking Successfully Added!*__ appears at the top of the screen to check the form is able to be sent once filled in appropriately.
+9. Using the Jasmine testing framework, test the __*true*__ value in the jQuery code of the datepicker taken from Materialize, to ensure the boolean is correct. 
+    1. Using __*red green refactoring*__, use Jasmine to write tests that will fail then slightly alter the code on a minimum level to get the test to pass, as seen in the __*movieSpec.js*__ file. For instance, when checking to see if the __*showClearBtn*__ variable is the __*true*__ boolean, write inside the __*toBe()*__ method the __*false*__ boolean to make the test fail. Then make the test pass by writing in the __*true*__ boolean instead.
+10. Using the Jasmine testing framework, test the number values in the jQuery code of the datepicker taken from Materialize, to ensure they are numbers.
+    1. Using __*red green refactoring*__, use Jasmine to write tests that will fail then slightly alter the code on a minimum level to get the test to pass, as seen in the __*movieSpec.js*__ file. For instance, when checking to see if the __*yearRange*__ variable is a number, i.e. __*3*__, write inside the __*toBe()*__ method the string __*three*__ to make the test fail. Then make the test pass by writing in the number __*3*__ instead.
+11. Click on the cross icon at the top right-hand side of the modal to ensure the modal will close when done so. Also click outside of the modal to check that this can also close the modal once opened.
+12. Fully and correctly complete the booking modal for one of the movies and submit the form. On submission, ensure the flash message of: __*Booking Successfully Added!*__ appears at the top of the screen to check the form is able to be sent once filled in appropriately.
 ## My_bookings.html
-
-
-
+### Overall My Bookings Page
+1. Go to my bookings page.
+2. Using the chrome development tools, drag the toggle device toolbar to check that the my bookings page’s title, booked details and buttons are all responsive for screen sizes ranging from 320px to 1200px by being clearly visible and fitting the screen well on every screen size.
+3. Run its code on both the W3C Markup Validation Service and CSS Validation Service to ensure no errors are found with its HTML and CSS.
+### Update Booking
+1. Click on the __*CHANGE*__ button to make sure the modal for changing the booking opens up.
+2. Click the __*CANCEL*__ button, cross icon in the top right-hand corner and then later outside the modal, to check that they all can close the modal without any effect to the current booking. 
+3. View the modal and ensure all the inputs are filled in with default selections that are the details of the current booking. This shows the __*booked_details*__ collection, from the MongoDB database has been successfully accessed to bring out the movie details booked from the homepage.
+4. View the first input default selected option to make sure it is the same as the booking.
+    1. Click on the first input box and make sure all the movie options offered by Cinemagic can be seen once dropped down. This will show that the __*find()*__ method in the __*my_bookings()*__ function is working. In addition, ensure the list of movies displayed is done so in alphabetical order to demonstrate the __*.sort("movie_name", 1)*__ method is also working.
+    2. Click on a different movie option in the dropdown select box to ensure the current movie can be changed in the input.
+5. View the second input default selected option to make sure it is the same as the booking.
+    1. Change the current __*Ticket Quantity*__ input to a different number to see if it can be changed.
+    2. Change the current number to 0 to elicit an error stating that the amount must be at least 1.
+    3. Remove the current number and attempt to write the string __*test*__ to ensure nothing appears in the input meaning the __*type="number"*__ attribute is working, only allowing numbers to be entered.
+    4. Delete the content in this input and submit the form to elicit the error stating that the input must be filled in before completion. This will ensure the __*required*__ attribute in its code is working.
+6. View the third input default selected option to make sure it is the same as the booking.
+    1. Select a different date from the datepicker to see if the current date can be changed on the form.
+    2. Delete the content in this input and submit the form to elicit the error stating that the input must be filled in before completion. This will ensure the __*required*__ attribute in its code is working.
+    3. Conduct the same Jasmine testing for this datepicker, as done before with the datepicker on the home page, so the boolean and number values are proven to be booleans and numbers only.
+7. View the last input default selected option to make sure it is the same as the booking.
+    1. Click on the input to ensure the dropdown options for the other locations are shown. This will show that the __*find()*__ method in the __*my_bookings()*__ function is working. In addition, ensure the list of movies displayed is done so in alphabetical order to demonstrate the __*.sort("location_name", 1)*__ method is also working.
+    2. Select a different location for the last input on the modal to see if the location can be changed on the form.
+8. Click the __*CONFIRM*__ button to see if the changes made are saved and updated to the booking.
+    1. Ensure clicking this button doesn’t redirect away from the current __*My Bookings*__ page. 
+    2. If the booking updates, then the MongoDB __*update()*__ method has been successful in targeting the correct __*_id*__ and __*ObjectId*__ to change the booking.
+    3. In addition, ensure the flash message saying:  __*Booking Successfully Updated!*__ is displayed at the top of the screen.
+### Review Movie
+1. Click on the __*LEAVE A REVIEW*__ button to make sure the modal for leaving reviews opens up.
+2. Click on the cross icon on the right-hand side and then click outside the modal to ensure both methods can close the modal without anything being written in the review text box.
+3. Open back up the modal for leaving a review and view the first input and ensure the default selected movie name is the same as the booked movie selected. Meaning the __*find()*__ method, in the __*my_bookings()*__ function, for the __movies__ collection in the MongoDB database, is working. 
+    1. Click on the movie name input to make sure no other movie options are present.
+4. Click the __*SUBMIT*__ button to submit the form without completing the review box to elicit an error stating the form cannot be submitted unless its text box has been filled in. This demonstrates the __*required*__ attribute in its code is working.
+5. Type in __*test*__ in the review box to ensure the text inputted is visible and legible.
+6. After entering some text in the review box, click the __*SUBMIT*__ button again to see if the form submits successfully.
+    1. Ensure the page is redirected back to the home page on submission, showing the __*redirect(url_for("home"))*__ is operating accordingly.
+    2. Ensure the flash message stating __*Review Successfully Posted!*__ appears at the top of the home page.
+    3. Scroll down to the respective movie that the review was made about and view the review section to see if the review, along with the name of the user who made the review, are both present. If so, the __*find()*__ method has been able to successfully access the __*reviews*__ collection in the MongoDB database and bring it out to be seen on the homepage.
+    4. Check inside the __*reviews*__ collection in the MongoDB database to see if the __*insert_one(reviews)*__ method was able to store the __*reviews*__ key pair values in there. 
+### Delete Booking
+1. Click on the __*DELETE*__ button to make sure the modal for deleting bookings opens up.
+2. Ensure the correct name of the movie selected appears in the modal.
+3. Test the modal in the following ways to ensure it can be closed:
+    1. Click on the cross icon on the right-hand side.
+    2. Click anywhere outside the modal.
+    3. Click on the __*NO*__ button inside the modal.
+4. Click on the__*YES*__ button inside the modal to delete the selected movie option. 
+    1. Ensure the modal disappears and the page is not redirected elsewhere and remains on the __*My Bookings*__ page to show the __*redirect(url_for("my_bookings"))*__ is working.
+    2. Ensure the flash message stating __*Booking Successfully Deleted!*__ appears at the top of the screen.
+    3. Scroll through the __*My Bookings*__ page and ensure the deleted booking is no longer present on the page. This shows the  __*remove({"_id": ObjectId(booked_details_id)})*__ method has successfully deleted the booking from the database. 
+    4. View the __*booked_details*__ collection in MongoDB to confirm that the booking has been removed and is no longer present in the collection.  
+## Admin.html
+### Overall Admin Page
+1. Go to the administration page.
+2. Using the chrome development tools, drag the toggle device toolbar to check that the administration page’s title, buttons and tables containing the company’s: movie, location, user, user bookings and user review details are all responsive for screen sizes ranging from 320px to 1200px by being clearly visible and fitting the screen well on every screen size.
+3. Run its code on both the W3C Markup Validation Service and CSS Validation Service to ensure no errors are found with its HTML and CSS.
 
 
 
