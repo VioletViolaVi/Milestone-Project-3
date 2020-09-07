@@ -19,38 +19,6 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-@app.route("/")
-@app.route("/home", methods=["GET", "POST"])
-def home():
-
-    # books tickets
-    if request.method == "POST":
-        bookings = {
-            "booked_movie": request.form.get("bookedMovie"),
-            "booked_ticket_quantity": request.form.get("ticketQuantity"),
-            "booked_date": request.form.get("date"),
-            "booked_location": request.form.get("location"),
-            "booked_by": session["user"].title()
-        }
-        mongo.db.booked_details.insert_one(bookings)
-        flash("Booking Successfully Added!")
-        return redirect(url_for("my_bookings"))
-
-    # movie info taken from mongo db for dropdown
-    movie_names = list(mongo.db.movies.find())
-    # location info taken from mongo db for dropdown
-    location_names = list(mongo.db.locations.find().sort("location_name", 1))
-    # reviews brought out from mongo db for homepage
-    reviews = list(mongo.db.reviews.find())
-
-    return render_template("index.html", page_title="Our Movies",
-                           page_subtitle="Reviews",
-                           page_title2="About Us",
-                           movie_names=movie_names,
-                           location_names=location_names,
-                           reviews=reviews)
-
-
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
 
@@ -115,6 +83,47 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html", page_title="Log In")
+
+
+@app.route("/logout")
+def logout():
+
+    flash("You Have Been Logged Out!")
+    # removes session cookies to logout
+    session.pop("user")
+    return redirect(url_for("home"))
+
+
+@app.route("/")
+@app.route("/home", methods=["GET", "POST"])
+def home():
+
+    # books tickets
+    if request.method == "POST":
+        bookings = {
+            "booked_movie": request.form.get("bookedMovie"),
+            "booked_ticket_quantity": request.form.get("ticketQuantity"),
+            "booked_date": request.form.get("date"),
+            "booked_location": request.form.get("location"),
+            "booked_by": session["user"].title()
+        }
+        mongo.db.booked_details.insert_one(bookings)
+        flash("Booking Successfully Added!")
+        return redirect(url_for("my_bookings"))
+
+    # movie info taken from mongo db for dropdown
+    movie_names = list(mongo.db.movies.find())
+    # location info taken from mongo db for dropdown
+    location_names = list(mongo.db.locations.find().sort("location_name", 1))
+    # reviews brought out from mongo db for homepage
+    reviews = list(mongo.db.reviews.find())
+
+    return render_template("index.html", page_title="Our Movies",
+                           page_subtitle="Reviews",
+                           page_title2="About Us",
+                           movie_names=movie_names,
+                           location_names=location_names,
+                           reviews=reviews)
 
 
 @app.route("/my_bookings", methods=["GET", "POST"])
@@ -201,27 +210,13 @@ def admin():
                            users=users)
 
 
-@app.route("/admin_add_movie", methods=["GET", "POST"])
-def admin_add_movie():
+@app.route("/admin_delete_movie/<movie_id>")
+def admin_delete_movie(movie_id):
 
-    # add movies
-    if request.method == "POST":
-
-        added_movie = {
-            "movie_name": request.form.get("addMovieName"),
-            "rating": request.form.get("addMovieRating"),
-            "duration": request.form.get("addMovieDuration"),
-            "genres": request.form.get("addMovieGenre"),
-            "synopsis": request.form.get("addMovieSynopsis"),
-            "director": request.form.get("addMovieDirector"),
-            "writer": request.form.get("addMovieWriter"),
-            "producer": request.form.get("addMovieProducer"),
-            "cast": request.form.get("addMovieCast")
-        }
-
-        mongo.db.movies.insert_one(added_movie)
-        flash("New Movie Successfully Added!")
-        return redirect(url_for("admin"))
+    # targets movies in db by their _id
+    mongo.db.movies.remove({"_id": ObjectId(movie_id)})
+    flash("Moive Successfully Deleted!")
+    return redirect(url_for("admin"))
 
 
 @app.route("/admin_change_movie/<movie_id>", methods=["GET", "POST"])
@@ -247,27 +242,26 @@ def admin_change_movie(movie_id):
     return redirect(url_for("admin"))
 
 
-@app.route("/admin_delete_movie/<movie_id>")
-def admin_delete_movie(movie_id):
+@app.route("/admin_add_movie", methods=["GET", "POST"])
+def admin_add_movie():
 
-    # targets movies in db by their _id
-    mongo.db.movies.remove({"_id": ObjectId(movie_id)})
-    flash("Moive Successfully Deleted!")
-    return redirect(url_for("admin"))
-
-
-@app.route("/admin_add_location", methods=["GET", "POST"])
-def admin_add_location():
-
-    # add locations
+    # add movies
     if request.method == "POST":
 
-        added_location = {
-            "location_name": request.form.get("addingLocations")
+        added_movie = {
+            "movie_name": request.form.get("addMovieName"),
+            "rating": request.form.get("addMovieRating"),
+            "duration": request.form.get("addMovieDuration"),
+            "genres": request.form.get("addMovieGenre"),
+            "synopsis": request.form.get("addMovieSynopsis"),
+            "director": request.form.get("addMovieDirector"),
+            "writer": request.form.get("addMovieWriter"),
+            "producer": request.form.get("addMovieProducer"),
+            "cast": request.form.get("addMovieCast")
         }
 
-        mongo.db.locations.insert_one(added_location)
-        flash("New Location Successfully Added!")
+        mongo.db.movies.insert_one(added_movie)
+        flash("New Movie Successfully Added!")
         return redirect(url_for("admin"))
 
 
@@ -293,6 +287,21 @@ def admin_delete_location(location_name_id):
     mongo.db.locations.remove({"_id": ObjectId(location_name_id)})
     flash("Location Successfully Deleted!")
     return redirect(url_for("admin"))
+
+
+@app.route("/admin_add_location", methods=["GET", "POST"])
+def admin_add_location():
+
+    # add locations
+    if request.method == "POST":
+
+        added_location = {
+            "location_name": request.form.get("addingLocations")
+        }
+
+        mongo.db.locations.insert_one(added_location)
+        flash("New Location Successfully Added!")
+        return redirect(url_for("admin"))
 
 
 @app.route("/admin_change_user/<user_id>", methods=["GET", "POST"])
@@ -326,15 +335,6 @@ def admin_delete_user_review(user_review_id):
     mongo.db.reviews.remove({"_id": ObjectId(user_review_id)})
     flash("User Review Successfully Deleted!")
     return redirect(url_for("admin"))
-
-
-@app.route("/logout")
-def logout():
-
-    flash("You Have Been Logged Out!")
-    # removes session cookies to logout
-    session.pop("user")
-    return redirect(url_for("home"))
 
 
 # DELETE LATER!!! SET DEBUG TO FALSE!!!!

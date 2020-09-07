@@ -138,9 +138,7 @@ Using this project is the best way to achieve this as it has taken precaution to
 ## Jasmine Testing(https://jasmine.github.io/index.html):
 - The project used Jasmine Testing to test the functionality of the JavaScript/jQuery used in the Cinemagic app/website.
 
-
 # Testing
-
 ## Base.html
 ### Links
 1. Check to see if the Google Font link is working across this project by going through each page on this app/website and ensuring the predominate font used for the text is  __*Scada*__ or its backup which is  __*sans-serif*__. 
@@ -185,7 +183,6 @@ Using this project is the best way to achieve this as it has taken precaution to
 3. Whilst dragging the toggle device toolbar, also check that the footer remains at the bottom of the screen for every screen size and covers the full width of the screen without going over.
 4. Click on each social media icon and check that a separate tab opens, away from the project, to the homepage of the respective social media website.
 5. Run its code on both the W3C Markup Validation Service and CSS Validation Service to ensure no errors are found with its HTML and CSS.
-
 ## Signup.html
 ### Overall Sign Up Page
 1. Go to the sign up form page.
@@ -201,7 +198,6 @@ Using this project is the best way to achieve this as it has taken precaution to
 7. Return to the sign up page and attempt to sign up again with the same username and/or email address as mentioned before. Verify that the user is not redirected to the homepage as before and the correct flash error message of: __*Username And/Or Email Already Registered!*__, appears above the form. This will prove that the __*if request.method == "POST":*__ if condition in the __*signup()*__ function of the __*app.py*__ file is working and checking the correct collection in the MongoDB database to find that someone is already registered with the same details and therefore the user would have to choose another username and/or email address.
 ### Log In Link
 1. Click on the __*Log In*__ link underneath the form to check if it redirects the user to the login page to ensure the __*{{ url_for('login') }}*__ for the link works.
-
 ## Login.html
 ### Overall Login Page
 1. Go to the login form page.
@@ -213,7 +209,6 @@ Using this project is the best way to achieve this as it has taken precaution to
 3. Login in with the same details used to test the sign up form. Check that the user is automatically sent to the homepage with the correct flash message stating: __*Welcome Back Test01!*__ at the top, ensuring the username in the flash message starts with a capital letter to verify that the __*.capitalize()*__ method is working. 
 ### Sign Up Link
 1. Click on the __*Sign Up*__ link underneath the form to check if it redirects the user to the sign up page to ensure the __*{{ url_for(signup) }}*__ for the link works.
-
 ## Index.html
 ### Overall Home Page
 1. Go to the home page.
@@ -258,7 +253,6 @@ Using this project is the best way to achieve this as it has taken precaution to
     1. Using __*red green refactoring*__, use Jasmine to write tests that will fail then slightly alter the code on a minimum level to get the test to pass, as seen in the [__*movieSpec.js*__](jasmine-testing/spec/movieSpec.js) file and the [__*movie.js*__](jasmine-testing/scripts/movie.js) file. For instance, when checking to see if the __*yearRange*__ variable is a number, i.e. __*3*__, write inside the __*toBe()*__ method the string __*three*__ to make the test fail. Then make the test pass by writing in the number __*3*__ instead.
 11. Click on the cross icon at the top right-hand side of the modal to ensure the modal will close when done so. Also click outside of the modal to check that this can also close the modal once opened.
 12. Fully and correctly complete the booking modal for one of the movies and submit the form. On submission, ensure the flash message of: __*Booking Successfully Added!*__ appears at the top of the screen to check the form is able to be sent once filled in appropriately.
-
 ## My_bookings.html
 ### Overall My Bookings Page
 1. Go to my bookings page.
@@ -275,10 +269,10 @@ Using this project is the best way to achieve this as it has taken precaution to
     1. Change the current __*Ticket Quantity*__ input to a different number to see if it can be changed.
     2. Change the current number to 0 to elicit an error stating that the amount must be at least 1.
     3. Remove the current number and attempt to write the string __*test*__ to ensure nothing appears in the input meaning the __*type="number"*__ attribute is working, only allowing numbers to be entered.
-    4. Delete the content in this input and submit the form to elicit the error stating that the input must be filled in before completion. This will ensure the __*required*__ attribute in its code is working.
+    4. Delete the content in this input and submit the form to elicit the error stating that the input must be filled in before submission. This will ensure the __*required*__ attribute in its code is working.
 6. View the third input default selected option to make sure it is the same as the booking.
     1. Select a different date from the datepicker to see if the current date can be changed on the form.
-    2. Delete the content in this input and submit the form to elicit the error stating that the input must be filled in before completion. This will ensure the __*required*__ attribute in its code is working.
+    2. Delete the content in this input and submit the form to elicit the error stating that the input must be filled in before submission. This will ensure the __*required*__ attribute in its code is working.
     3. Conduct the same Jasmine testing for this datepicker, as done before with the datepicker on the home page, so the boolean and number values are proven to be booleans and numbers only.
 7. View the last input default selected option to make sure it is the same as the booking.
     1. Click on the input to ensure the dropdown options for the other locations are shown. This will show that the __*find()*__ method in the __*my_bookings()*__ function is working. In addition, ensure the list of movies displayed is done so in alphabetical order to demonstrate the __*.sort("location_name", 1)*__ method is also working.
@@ -315,18 +309,119 @@ Using this project is the best way to achieve this as it has taken precaution to
 1. Create two new accounts with the user names of: __*newAccount01*__ and __*newAccount02*__. 
 2. Create a new movie booking for both of these accounts and visit the __*My Bookings*__ page on separate occasions, after making movie bookings for both accounts. 
 3. When logged in as the __*newAccount01*__ user, ensure the booking details of the __*newAccount02*__ user cannot be seen and vice versa. This will show that the __*if session.user|lower == booking.booked_by|lower*__ if condition, in the __*my_bookings*__ HTML file is operating correctly; allowing the current session user to be able to only view the bookings made by them and not by others.
-
-
 ## Administration.html
 ### Overall Admin Page
 1. Go to the administration page.
 2. Using the chrome development tools, drag the toggle device toolbar to check that the administration page’s title, buttons and tables containing the company’s: movie, location, user, user bookings and user review details are all responsive for screen sizes ranging from 320px to 1200px by being clearly visible and fitting the screen well on every screen size.
 3. Run its code on both the W3C Markup Validation Service and CSS Validation Service to ensure no errors are found with its HTML and CSS.
-
-
-
-
-
+### Administration Home Page
+1. Scroll through the home page, logged in as administration and check that the __**BOOK NOW*__ buttons under the review sections have been removed; therefore cannot be seen by this current session user.
+### Delete Movies
+1. Click on the __*DELETE*__ button to make sure the modal for deleting the movie opens up.
+2. Ensure the correct name of the movie selected appears in the modal.
+3. Test the modal in the following ways to ensure it can be closed:
+    1. Click on the cross icon on the right-hand side.
+    2. Click anywhere outside the modal.
+    3. Click on the __*NO*__ button inside the modal.
+4. Click on the __*YES*__ button inside the modal to delete the selected movie. 
+    1. Ensure the modal disappears and the page is not redirected elsewhere and remains on the __*Admin*__ page to show the __*redirect(url_for("admin"))*__ is working.
+5. Ensure the flash message stating __*Movie Successfully Deleted!*__ appears at the top of the screen.
+6. Scroll through the __*Admin*__ page and ensure the deleted movie is no longer present on the page. This shows the __*remove({"_id": ObjectId(movie_id)})*__ method has successfully deleted the movie from the database. 
+7. View the __*movies*__ collection in MongoDB to confirm that the movie has been removed and is no longer present in the collection.  
+### Change Movies
+1. Click on the __*CHANGE*__ button to make sure the modal for changing the movie opens up.
+2. Test the modal in the following ways to ensure it can be closed without affecting the selected movie:
+    1. Click on the cross icon on the right-hand side.
+    2. Click anywhere outside the modal.
+    3. Click on the __*CANCEL*__ button inside the modal.
+3. View the contents of the modal to ensure all the inputs are already filled in with their default movie details. This shows the __*movies*__ collection, from the MongoDB database has been successfully accessed to bring out these movie details.
+4. Delete the content from each input field and then click the __*CONFIRM*__ button to elicit the error stating that the inputs must be filled in before submission. This will ensure the __*required*__ attribute in its code is working. 
+5. Change the content from each text input field and then click the __*CONFIRM*__ button to see if the form submits. 
+    1. Ensure clicking this button doesn’t redirect away from the current __*Admin*__ page. 
+6. Ensure the flash message saying: __*Movie Successfully Updated!*__ is displayed at the top of the screen.
+7. Check the movie details section to see if the movie information has been updated. If the movie details changed, then the MongoDB __*update()*__ method has been successful in targeting the correct __*_id*__ and __*ObjectId*__ to change the movie.
+### Add Movies
+1. Click on the __*ADD MOVIE*__ button to make sure the modal for adding new movies opens up.
+2. Test the modal in the following ways to ensure it can be closed:
+    1. Click on the cross icon on the right-hand side.
+    2. Click anywhere outside the modal.
+3. View the inputs in this modal and ensure they are empty when first approached.
+4. Attempt to submit this empty form by clicking on the __*SUBMIT*__ button to elicit the error stating that all inputs must be filled in before submission. This will ensure the __*required*__ attribute in its code is working. 
+5. Fill in the form with the string __*test*__ and click the __*SUBMIT*__ button to see if this test movie gets added to the page.
+6. Ensure the page is not redirected away from the __*admin*__ page; showing the __*redirect(url_for("admin"))*__ is working.
+7. Ensure the flash message stating __*New Movie Successfully Added!*__ is displayed at the top of the screen. 
+8. Scroll down the movie section and ensure the new test movie, that has been added, can be clearly seen.
+### Change Locations 
+1. Click on the __*CHANGE*__ button to make sure the modal for changing the location opens up.
+2. Test the modal in the following ways to ensure it can be closed without affecting the selected location:
+    1. Click on the cross icon on the right-hand side.
+    2. Click anywhere outside the modal.
+    3. Click on the __*CANCEL*__ button inside the modal.
+3. View the content of the modal to ensure the input field is already filled in with its default location. This shows the __*locations*__ collection, from the MongoDB database has been successfully accessed to bring out the respective location.
+4. Delete the default content from the input field then click the __*CONFIRM*__ button to elicit the error stating that the input must be filled in before submission. This verifies that the __*required*__ attribute in its code is working. 
+5. Change the content in the already filled in input field to a different location name and then click the __*CONFIRM*__ button to see if the form submits. 
+    1. Ensure clicking this button doesn’t redirect away from the current __*Admin*__ page. 
+6. Ensure the flash message saying:  __*Location Successfully Updated!*__ is displayed at the top of the screen.
+7. Check the location section to see if the location information has been updated. If the location changed, then the MongoDB __*update()*__ method has been successful in targeting the correct __*_id*__ and __*ObjectId*__ to change the location.
+### Delete Locations 
+1. Click on the __*DELETE*__ button to make sure the modal for deleting the location opens up.
+2. Ensure the correct name of the location selected appears in the modal.
+3. Test the modal in the following ways to ensure it can be closed:
+    1. Click on the cross icon on the right-hand side.
+    2. Click anywhere outside the modal.
+    3. Click on the __*NO*__ button inside the modal.
+4. Click on the __*YES*__ button inside the modal to delete the selected location. 
+    1. Ensure the modal disappears and the page is not redirected elsewhere and remains on the __*Admin*__ page to show the __*redirect(url_for("admin"))*__ is working.
+5. Ensure the flash message stating __*Location Successfully Deleted!*__ appears at the top of the screen.
+6. Scroll through the __*Admin*__ page and ensure the deleted location is no longer present on the page. This shows the __*remove({"_id": ObjectId(location_id)})*__ method has successfully deleted the location from the database. 
+7. View the __*locations*__ collection in MongoDB to confirm that the location has been removed and is no longer present in the collection.  
+### Add Locations 
+1. Click on the __*ADD LOCATION*__ button to make sure the modal for adding new locations opens up.
+2. Test the modal in the following ways to ensure it can be closed:
+    1. Click on the cross icon on the right-hand side.
+    2. Click anywhere outside the modal.
+3. View the input in this modal and ensure it is empty when first approached.
+4. Attempt to submit this empty form by clicking on the __*SUBMIT*__ button to elicit the error stating that the input must be filled in before submission. This will ensure the __*required*__ attribute in its code is working. 
+5. Fill in the form with the string __*test*__ and click the __*SUBMIT*__ button to see if this test location gets added to the page.
+6. Ensure the page is not redirected away from the __*admin*__ page; showing the __*redirect(url_for("admin"))*__ is working.
+7. Ensure the flash message stating __*New Location Successfully Added!*__ is displayed at the top of the screen. 
+8. Scroll down to the location section and ensure the new test location, that has been added, can be clearly seen.
+### Change User Details
+1. Click on the __*CHANGE*__ button to make sure the modal for changing the user details opens up.
+2. Test the modal in the following ways to ensure it can be closed without affecting the user details:
+    1. Click on the cross icon on the right-hand side.
+    2. Click anywhere outside the modal.
+    3. Click on the __*CANCEL*__ button inside the modal.
+3. View the content of the modal to ensure the input field is already filled in with the default user details. This shows the __*users*__ collection, from the MongoDB database has been successfully accessed to bring out the respective user details.
+4. Delete the default contents from the input fields then click the __*CONFIRM*__ button to elicit the error stating that the inputs must be filled in before submission. This verifies that the __*required*__ attribute in their code is working. 
+5. Change the contents in both input fields to the string __*test*__ then click the __*CONFIRM*__ button to see if the form submits. 
+    1. Ensure clicking this button doesn’t redirect away from the current __*Admin*__ page. 
+6. Ensure the flash message saying: __*User Details Successfully Updated!*__ is displayed at the top of the screen.
+7. Check the user details section to see if the user information has been updated. If the user details changed, then the MongoDB __*update()*__ method has been successful in targeting the correct __*_id*__ and __*ObjectId*__ to change the user details.
+### Delete User Details
+1. Click on the __*DELETE*__ button to make sure the modal for deleting the user details opens up.
+1. Ensure the correct name of the user selected appears in the modal.
+2. Test the modal in the following ways to ensure it can be closed:
+    1. Click on the cross icon on the right-hand side.
+    2. Click anywhere outside the modal.
+    3. Click on the __*NO*__ button inside the modal.
+3. Click on the __*YES*__ button inside the modal to delete the selected user. 
+    1. Ensure the modal disappears and the page is not redirected elsewhere and remains on the __*Admin*__ page to show the __*redirect(url_for("admin"))*__ is working.
+4. Ensure the flash message stating __*User Successfully Deleted!*__ appears at the top of the screen.
+5. Scroll through the __*Admin*__ page and ensure the deleted user is no longer present on the page. This shows the __*remove({"_id": ObjectId(user_id)})*__ method has successfully deleted the user details from the database. 
+6. View the __*users*__ collection in MongoDB to confirm that the user details have been removed and are no longer present in the collection.  
+### Delete User Reviews
+1. Click on the __*DELETE*__ button to make sure the modal for deleting the user’s review opens up.
+    1. Ensure both the correct user name and reviewed movie name are displayed in the modal.
+2. Test the modal in the following ways to ensure it can be closed:
+    1. Click on the cross icon on the right-hand side.
+    2. Click anywhere outside the modal.
+    3. Click on the __*NO*__ button inside the modal.
+3. Click on the __*YES*__ button inside the modal to delete the selected user review. 
+    1. Ensure the modal disappears and the page is not redirected elsewhere and remains on the __*Admin*__ page to show the __*redirect(url_for("admin"))*__ is working.
+4. Ensure the flash message stating __*User Review Successfully Deleted!*__ appears at the top of the screen.
+5. Scroll through the __*Admin*__ page and ensure the deleted user review is no longer present on the page. This shows the __*remove({"_id": ObjectId(user_review_id)})*__ method has successfully deleted the user’s review from the database. 
+6. View the __*reviews*__ collection in MongoDB to confirm that the user’s review has been removed and is no longer present in the collection. 
 
 ## Tested UX Stories
 1. Cinemagic’s app/website will allow users to sign up and create an account, so they can book tickets to watch any of the advertised movies they choose.

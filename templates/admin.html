@@ -99,7 +99,7 @@
                 <th>Director</th>
                 <th>Writer</th>
                 <th>Producer</th>
-                <th>Update or Remove</th>
+                <th>Change/Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -210,8 +210,8 @@
         <thead>
             <tr>
                 <th>Location</th>
-                <th>Update</th>
-                <th>Remove</th>
+                <th>Change</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -278,8 +278,8 @@
             <tr>
                 <th>User Name</th>
                 <th>Email Address</th>
-                <th>Update</th>
-                <th>Remove</th>             
+                <th>Change</th>
+                <th>Delete</th>             
             </tr>
         </thead>
         <tbody>
@@ -377,7 +377,7 @@
                 <th>User Name</th>
                 <th>Moive Name</th>
                 <th>User Review</th>
-                <th>Remove</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -398,7 +398,7 @@
                         <i class="fas fa-times modal-close"></i> 
                     </div>
                     <div class="modal-content center">                         
-                        <h4>Delete User's Review:<br><em><b>{{ review.reviewed_movie_name }}?</b></em></h4>
+                        <h4>Delete {{ review.user }}'s Review On:<br><em><b>{{ review.reviewed_movie_name }}?</b></em></h4>
                         <a class="custom-btn modal-close btn btn-flat waves-effect waves-black red black-text darken-text-4 modal-close">NO</a>
                         <a href="{{ url_for('admin_delete_user_review', user_review_id=review._id) }}" class="custom-btn modal-close btn btn-flat waves-effect waves-black green black-text darken-text-4">YES</a>                          
                     </div>
