@@ -414,9 +414,21 @@ This is an activity diagram showing how the Cinemagic app/website is intended to
 4. Ensure the flash message stating __*User Successfully Deleted!*__ appears at the top of the screen.
 5. Scroll through the __*Admin*__ page and ensure the deleted user is no longer present on the page. This shows the __*remove({"_id": ObjectId(user_id)})*__ method has successfully deleted the user details from the database. 
 6. View the __*users*__ collection in MongoDB to confirm that the user details have been removed and are no longer present in the collection.  
+### Delete User Bookings
+1. Click on the __*DELETE*__ button to make sure the modal for deleting the user bookings opens up.
+    1. Ensure both the correct username and booked movie name are displayed in the modal.
+2. Test the modal in the following ways to ensure it can be closed:
+    1. Click on the cross icon on the right-hand side.
+    2. Click anywhere outside the modal.
+    3. Click on the __*NO*__ button inside the modal.
+3. Click on the __*YES*__ button inside the modal to delete the selected user’s booking. 
+    1. Ensure the modal disappears and the page is not redirected elsewhere and remains on the __*Admin*__ page to show the __*redirect(url_for("admin"))*__ is working.
+4. Ensure the flash message stating __*User Booking Successfully Deleted!*__ appears at the top of the screen.
+5. Scroll through the __*Admin*__ page and ensure the deleted user booking is no longer present on the page. This shows the __*remove({"_id": ObjectId(user_booking_id)})*__ method has successfully deleted the user’s booking from the database. 
+6. View the __*booked_details*__ collection in MongoDB to confirm that the user’s booking has been removed and is no longer present in the collection. 
 ### Delete User Reviews
 1. Click on the __*DELETE*__ button to make sure the modal for deleting the user’s review opens up.
-    1. Ensure both the correct user name and reviewed movie name are displayed in the modal.
+    1. Ensure both the correct username and reviewed movie name are displayed in the modal.
 2. Test the modal in the following ways to ensure it can be closed:
     1. Click on the cross icon on the right-hand side.
     2. Click anywhere outside the modal.

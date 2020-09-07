@@ -328,6 +328,15 @@ def admin_delete_user(user_id):
     return redirect(url_for("admin"))
 
 
+@app.route("/admin_delete_user_booking/<user_booking_id>")
+def admin_delete_user_booking(user_booking_id):
+
+    # targets user bookings in db by their _id
+    mongo.db.booked_details.remove({"_id": ObjectId(user_booking_id)})
+    flash("User Booking Successfully Deleted!")
+    return redirect(url_for("admin"))
+
+
 @app.route("/admin_delete_user_review/<user_review_id>")
 def admin_delete_user_review(user_review_id):
 

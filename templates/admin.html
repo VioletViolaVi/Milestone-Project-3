@@ -351,7 +351,8 @@
                 <th>Movie Name</th>
                 <th>Ticket Quantity</th>
                 <th>Date</th>
-                <th>Location</th>                          
+                <th>Location</th>  
+                <th>Delete</th>                       
             </tr>
         </thead>
         <tbody>
@@ -361,8 +362,33 @@
                     <td>{{ booking.booked_movie }}</td>
                     <td>{{ booking.booked_ticket_quantity }}</td>
                     <td>{{ booking.booked_date }}</td>
-                    <td>{{ booking.booked_location }}</td>           
+                    <td>{{ booking.booked_location }}</td>  
+                    <td>
+                        <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminDeleteUserBooking/{{ booking._id }}">DELETE</a>
+                    </td>                   
                 </tr>
+
+
+                <!-- admin-delete user bookings: modal -->
+                <!-- modal from materialize -->
+                <div id="adminDeleteUserBooking/{{ booking._id }}" class="confirm-delete modal ">
+                    <div class="right-align">
+                        <i class="fas fa-times modal-close"></i> 
+                    </div>
+                    <div class="modal-content center">                         
+                        <h4>Delete {{ booking.booked_by }}'s Booking:<br><em><b>{{ booking.booked_movie }}?</b></em></h4>
+                        <a class="custom-btn modal-close btn btn-flat waves-effect waves-black red black-text darken-text-4 modal-close">NO</a>
+                        <a href="{{ url_for('admin_delete_user_booking', user_booking_id=booking._id) }}" class="custom-btn modal-close btn btn-flat waves-effect waves-black green black-text darken-text-4">YES</a>                          
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
             {% endfor %}        
         </tbody>         
     </table>
