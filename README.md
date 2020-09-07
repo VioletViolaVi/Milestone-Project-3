@@ -89,19 +89,19 @@ Using this project is the best way to achieve this as it has taken precaution to
 - The footer allows the users to view links to Cinemagic’s social media outlets and contact details by scrolling to the bottom of the page to read its contents and click/tap on the social links if interested in following their social media handles.
 
 # Technologies Used
-## [Python](https://www.python.org/) and [Flask](https://flask.palletsprojects.com/en/1.1.x/quickstart/):
+## [Python](https://www.python.org/) and [Flask](https://flask.palletsprojects.com/en/1.1.x/quickstart/)
 - This project used Python with Flask to produce the backend code that runs on the server, to create the Cinemagic app/website.
-## OS:
+## OS
 - This project used OS to provide functions for interacting with the operating system for the Cinemagic app/website.
-## Bson.objectid:
+## Bson.objectid
 - This project used bson.objectid to enable the use of ObjectID when referring to the __*_id*__ data names within the MongoDB database, to produce the data on to the Cinemagic app/website.
-## [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/):
+## [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/)
 - This project used werkzeug.security to provide password authentication when checking for a matched password entered by the user on the Cinemagic app/website.
-## [MongoDB](https://www.mongodb.com/): 
+## [MongoDB](https://www.mongodb.com/)
 - This project used MongoDB to create, store, read, update and delete data regarding the movie details, locations, user details, user reviews and user bookings of the Cinemagic app/website. 
-## [Heroku](https://www.heroku.com/): 
+## [Heroku](https://www.heroku.com/) 
 - This project used Heroku to deploy and display the final finished version of the Cinemagic app/website.
-## PyMongo
+## [PyMongo](https://pypi.org/project/pymongo/)
 - This project used flask_pymongo to utilise the PyMongo library in order to allow for interactions with the MongoDB database through Python, for the Cinemagic app/website.
 ## Requirements.txt
 - This project used a requirements.txt file to allow Heroku to detect the Cinemagic app/website as a Python app.
@@ -113,29 +113,29 @@ Using this project is the best way to achieve this as it has taken precaution to
 - This project used CSS to add design to the basic structure and layout of the Cinemagic app/website.
 ## JavaScript
 - This project used JavaScript to add functionality to the features of the Cinemagic app/website.
-## [jQuery](https://jquery.com/):
+## [jQuery](https://jquery.com/)
 - This project used jQuery to speed up the process of adding the JavaScript functionality to the Cinemagic app/website.
-## [Materialize](https://materializecss.com/): 
+## [Materialize](https://materializecss.com/) 
 - This project used Materialize to provide the code of the movie carousel, modals, forms, buttons, tables and navigation bars present in the Cinemagic app/website.
-## [Font Awesome](https://fontawesome.com/): 
+## [Font Awesome](https://fontawesome.com/) 
 - This project used Font Awesome to provide the icons used in the Cinemagic app/website. 
-## [Google Fonts](https://fonts.google.com/): 
+## [Google Fonts](https://fonts.google.com/) 
 - This project used Google Fonts to provide the font style of the movie posters and the overall appearance of the Cinemagic app/website.
-## [Chrome Development Tools](https://developers.google.com/web/tools/chrome-devtools): 
+## [Chrome Development Tools](https://developers.google.com/web/tools/chrome-devtools) 
 - This project used Chrome Development Tools to see how responsive the Cinemagic app/website looked on different screen sizes and was also used to debug issues regarding editing code taken from external frameworks and libraries.
-## [W3C Markup Validation Service](https://validator.w3.org/): 
+## [W3C Markup Validation Service](https://validator.w3.org/) 
 - This project used W3C Markup Validation Service to check for errors, requiring correction, present in the HTML code of the Cinemagic app/website.
-## [CSS Validation Service](https://jigsaw.w3.org/css-validator/): 
+## [CSS Validation Service](https://jigsaw.w3.org/css-validator/) 
 - This project used CSS Validation Service to check for errors, requiring correction, present in the CSS code of the Cinemagic app/website.
-## [Gitpod](https://www.gitpod.io/): 
+## [Gitpod](https://www.gitpod.io/) 
 - This project used Gitpod as the editor for coding out the README file, HTML, CSS, JavaScript, jQuery and Python portions of the Cinemagic app/website. External libraries and frameworks and images and wireframes were also stored here. In addition, its terminal was used to conduct commands such as: __*git status*__, __*git add .*__, __*git commit -m “...”*__, __*git push -u heroku master*__ etc. to complete this project.
-## [GitHub](https://github.com/): 
+## [GitHub](https://github.com/) 
 - This project used GitHub to store the Cinemagic app/website saved code via the __*git push*__ command, as repositories.
-## [Balsamiq Wireframes](https://balsamiq.com/): 
+## [Balsamiq Wireframes](https://balsamiq.com/) 
 - This project used Balsamiq Wireframes to create mockups of what the Cinemagic app/website aimed to look like to the user, on completion.
 ## Snipping Tool
 - This project used the Snipping Tool to edit the movie posters and wireframes for the Cinemagic app/website, as images to be stored on Gitpod.
-## Jasmine Testing(https://jasmine.github.io/index.html):
+## [Jasmine Testing](https://jasmine.github.io/index.html)
 - The project used Jasmine Testing to test the functionality of the JavaScript/jQuery used in the Cinemagic app/website.
 
 # Testing
