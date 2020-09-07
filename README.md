@@ -19,6 +19,9 @@ Using this project is the best way to achieve this as it has taken precaution to
 - As the designer of Cinemagic, I want to structure the user’s bookings page clearly with all the booked information placed in their correct sections and at the centre of the screen, so the user will easily be able to refer to their booked choices.
 - As the designer of Cinemagic, I want to provide a fully functioning __*change*__ button tailor made for each different set of bookings, so the user can simply press that button to edit the prefilled form of their current booking if they wish to make changes.
 - As the designer of Cinemagic, I want to provide a fully functioning __*delete*__ button tailor made for each different set of bookings, so the user can simply press that button to delete the respective movie booking they desire.
+## Activity Diagram
+This is an activity diagram showing how the Cinemagic app/website is intended to be used by the user. 
+![activity-diagram](activity-diagram/movies-activity-diagram.jpg)
 ## Wireframes
 ![sidebar-mobile](wireframes/images/1.sidebar-mobile.PNG)
 ![sidebar-tablet](wireframes/images/2.sidebar-tablet.PNG)
@@ -145,8 +148,8 @@ Using this project is the best way to achieve this as it has taken precaution to
 2. Check to see if the Font Awesome link is working across this project by going through each page on this app/website and ensuring all the icons used from Font Awesome, appears accordingly. 
 3. Check to see if the Materialize CSS and JS links are working across this project by going through each page on this app/website and ensuring the features taken from Materialize i.e: carousel, forms, modals, cards, navigation bars, tables and buttons are displayed on the pages and can be interacted with by the user.
 4. Check to see if the custom CSS link is working across this project by setting the whole page’s background to a very noticeable colour in the __*style.css*__ file, ensuring that the same background colour is displayed on the pages of the app/website. 
-5. Check to see if the jQuery CDN link is working across this project by using  __*console.log(“Hello World!”)*__ in a jQuery function, present in the  __*scripts.js*__  file and then accessing the console in the chrome development tools to see if the message can be seen from there.
-6. Check to see if the custom JS link is working across this project by using  __*console.log(“Hello World!”)*__ in a custom JavaScript function, present in the  __*scripts.js*__  file and then accessing the console in the chrome development tools to see if the message can be seen from there.
+5. Check to see if the jQuery CDN link is working across this project by using __*console.log(“Hello World!”)*__ in a jQuery function, present in the  __*scripts.js*__  file and then accessing the console in the chrome development tools to see if the message can be seen from there.
+6. Check to see if the custom JS link is working across this project by using __*console.log(“Hello World!”)*__ in a custom JavaScript function, present in the  __*scripts.js*__  file and then accessing the console in the chrome development tools to see if the message can be seen from there.
 ### Page Title
 1. Go to the home page.
 2. Check the page title in the tab of the opened up brower and ensure its name is the same to the assigned name in the __*base.html*__  file.
