@@ -77,7 +77,7 @@ nav {
 }
 
 .sidenav li > a:hover {
-  background-color: rgba(255, 192, 203, 0.473);
+  background-color: rgba(218, 112, 214, 0.315);
 }
 
 .side-nav-links.black-text.waves-effect {
@@ -128,7 +128,6 @@ body {
 
 div.carousel {
   margin-bottom: 5em;
-  height: 450px;
 }
 
 .carousel .carousel-item > img {
@@ -138,7 +137,7 @@ div.carousel {
 .carousel .indicators .indicator-item {
   width: 1em;
   height: 1em;
-  background-color: pink;
+  background-color: orchid;
 }
 
 .carousel .indicators .indicator-item:hover {
@@ -147,17 +146,11 @@ div.carousel {
 }
 
 .carousel .indicators .indicator-item.active {
-  background-color: palevioletred;
+  background-color: purple;
 }
 
-div.carousel {
-  border: 0.5rem solid pink;
-}
-
-div.carousel,
-.image-and-details,
-.about-us {
-  background-color: lavenderblush;
+.image-and-details.container.purple.lighten-4 {
+  padding-top: 0.1em;
 }
 
 #image {
@@ -177,9 +170,14 @@ div.carousel,
 
 #reviews,
 .about-us {
-  border: 0.3em solid pink;
+  border: 0.3em solid mediumorchid;
   border-left: none;
   border-right: none;
+}
+
+#reviews {
+  overflow: auto;
+  height: 10em;
 }
 
 #reviews h5 {
@@ -192,6 +190,7 @@ div.carousel,
 
 .about-us p {
   font-size: 15px;
+  padding-bottom: 10px;
 }
 
 /******************************************* signup/login */
@@ -282,7 +281,7 @@ textarea {
 .datepicker-done,
 .datepicker-date-display,
 .datepicker-table td.is-selected {
-  background-color: pink;
+  background-color: orchid;
 }
 
 .dropdown-content li > a,
@@ -303,12 +302,17 @@ textarea {
   color: purple;
 }
 
+button.month-next:active,
+button.month-prev:active {
+  background-color: rgba(218, 112, 214, 0.315);
+}
+
 .datepicker-footer {
   padding-bottom: 0px;
 }
 
 .is-today {
-  color: palevioletred !important;
+  color: plum !important;
 }
 
 .datepicker-clear,
@@ -379,6 +383,23 @@ input.select-dropdown.dropdown-trigger {
 
 .admin-images {
   width: 10em;
+}
+
+/******************************************* scrollbars */
+::-webkit-scrollbar {
+  width: 1em;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: plum;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: orchid;
 }
 
 /****************************************************************************************************** BREAKPOINTS */
@@ -627,7 +648,7 @@ input.select-dropdown.dropdown-trigger {
   }
 
   .top-nav-links:hover {
-    background-color: rgba(255, 192, 203, 0.473);
+    background-color: rgba(218, 112, 214, 0.315);
   }
 
   #home {
@@ -690,6 +711,7 @@ input.select-dropdown.dropdown-trigger {
 
   .admin-btn-delete.custom-btn {
     margin-bottom: 1.5em;
+    padding-right: 1.5em;
   }
 
   /******************************************* admin */
@@ -797,6 +819,10 @@ input.select-dropdown.dropdown-trigger {
   .responsive-table.highlight thead tr th,
   .responsive-table.highlight tbody tr td {
     font-size: 1.3em;
+  }
+
+  .admin-btn-delete.custom-btn {
+    padding-right: 1.1em;
   }
 
   /******************************************* modals */

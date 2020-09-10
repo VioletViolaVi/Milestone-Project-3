@@ -1,58 +1,58 @@
-{% extends "base.html" %} {% block admin %} 
+{% extends "base.html" %} {% block admin %}
 
-    <!-- admin-add movies: modal -->
     <!-- modal from materialize -->
+    <!-- admin-add movies: modal -->
     <div id="addMoives" class="modal">
         <div class="right-align">
-            <i class="fas fa-times modal-close"></i> 
+            <i class="fas fa-times modal-close"></i>
         </div>
-        <div class="modal-content"> 
+        <div class="modal-content">
             <form method="POST" action="{{ url_for('admin_add_movie') }}" class="black-text">
                 <div class="center">
                     <h4>Add Movie</h4>
                 </div>
                 <div class="form-item">
                     <label for="addMmovieName">Movie Name</label>
-                    <input type="text" id="addMmovieName" name="addMmovieName" required>      
+                    <input type="text" id="addMmovieName" name="addMmovieName" required />
                 </div>
                 <div class="form-item">
                     <label for="addMoviePoster">Movie Image</label>
-                    <input type="text" id="addMoviePoster" name="addMoviePoster" required>      
+                    <input type="text" id="addMoviePoster" name="addMoviePoster" required />
                 </div>
                 <div class="form-item">
                     <label for="addMovieRating">Movie Rating</label>
-                    <input type="text" id="addMovieRating" name="addMovieRating" required>      
+                    <input type="text" id="addMovieRating" name="addMovieRating" required />
                 </div>
                 <div class="form-item">
                     <label for="addMovieDuration">Movie Duration</label>
-                    <input type="text" id="addMovieDuration" name="addMovieDuration" required>      
-                </div>    
+                    <input type="text" id="addMovieDuration" name="addMovieDuration" required />
+                </div>
                 <div class="form-item">
-                    <label for="addMovieGenre">Movie Genre</label>
-                    <input type="text" id="addMovieGenre" name="addMovieGenre" required>      
+                  <label for="addMovieGenre">Movie Genre</label>
+                  <input type="text" id="addMovieGenre" name="addMovieGenre" required />
                 </div>
                 <div class="form-item">
                     <label for="addMovieSynopsis">Movie Synopsis</label>
-                    <input type="text" id="addMovieSynopsis" name="addMovieSynopsis" required>      
+                    <input type="text" id="addMovieSynopsis" name="addMovieSynopsis" required />
                 </div>
                 <div class="form-item">
                     <label for="addMovieCast">Movie Cast</label>
-                    <input type="text" id="addMovieCast" name="addMovieCast" required>      
+                    <input type="text" id="addMovieCast" name="addMovieCast" required />
                 </div>
                 <div class="form-item">
                     <label for="addMovieDirector">Movie Director</label>
-                    <input type="text" id="addMovieDirector" name="addMovieDirector" required>      
+                    <input type="text" id="addMovieDirector" name="addMovieDirector" required />      
                 </div>
                 <div class="form-item">
                     <label for="addMovieWriter">Movie Writer</label>
-                    <input type="text" id="addMovieWriter" name="addMovieWriter" required>      
+                    <input type="text" id="addMovieWriter" name="addMovieWriter" required />
                 </div>
                 <div class="form-item">
                     <label for="addMovieProducer">Movie Producer</label>
-                    <input type="text" id="addMovieProducer" name="addMovieProducer" required>      
+                    <input type="text" id="addMovieProducer" name="addMovieProducer" required />              
                 </div>
                 <div class="center">
-                    <button type="submit" class="custom-btn btn btn-flat waves-effect waves-black deep-orange lighten-2 black-text">SUBMIT</button>
+                    <button type="submit" class="custom-btn btn btn-flat waves-effect waves-black deep-orange lighten-2 black-text">SUBMIT</button>                  
                 </div>
             </form>
         </div>
@@ -62,30 +62,30 @@
     <!-- modal from materialize -->
     <div id="addLocation" class="modal">
         <div class="right-align">
-            <i class="fas fa-times modal-close"></i> 
+            <i class="fas fa-times modal-close"></i>
         </div>
-        <div class="modal-content"> 
-            <form method="POST" action="{{ url_for('admin_add_location') }}" class="black-text">
+        <div class="modal-content">
+            <form method="POST" action="{{ url_for('admin_add_location') }}" class="black-text">       
                 <div class="center">
                     <h4>Add Location</h4>
                 </div>
                 <div class="form-item">
                     <label for="addingLocations">Location Name</label>
-                    <input type="text" id="addingLocations" name="addingLocations" required>      
+                    <input type="text" id="addingLocations" name="addingLocations" required />        
                 </div>
                 <div class="center">
-                    <button type="submit" class="custom-btn btn btn-flat waves-effect waves-black deep-orange lighten-2 black-text">SUBMIT</button>
+                    <button type="submit" class="custom-btn btn btn-flat waves-effect waves-black deep-orange lighten-2 black-text">SUBMIT</button>            
                 </div>
             </form>
         </div>
     </div>
-
     <div class="center">
         <h2 id="admin-title">{{ page_title }}</h2>
     </div>
 
     <!-- cinemagic movies -->
     <h4 class="admin-subtitles"><b>{{ movies_title }}</b></h4>
+
     <table class="responsive-table highlight">
         <thead>
             <tr>
@@ -106,7 +106,9 @@
             {% for movie in movie_names %}
                 <tr>
                     <td>{{ movie.movie_name }}</td>
-                    <td><img class="admin-images" src="{{ movie.movie_poster }}" alt="A picture of a movie poster showing at Cinemagic."></td>
+                    <td>
+                        <img class="admin-images" src="{{ movie.movie_poster }}" alt="A picture of a movie poster showing at Cinemagic." />
+                    </td>
                     <td>{{ movie.rating }}</td>
                     <td>{{ movie.duration }}</td>
                     <td>{{ movie.genres }}</td>
@@ -116,96 +118,99 @@
                     <td>{{ movie.writer }}</td>
                     <td>{{ movie.producer }}</td>
                     <td>
-                        <a class="admin-btn-delete custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminDeleteMovie/{{ movie._id }}">DELETE</a>
-                        <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminChangeMovie/{{ movie._id }}">CHANGE</a>                                          
+                      <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminChangeMovie/{{ movie._id }}">CHANGE</a>
+                      <a class="admin-btn-delete custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminDeleteMovie/{{ movie._id }}">DELETE</a>                             
                     </td>
                 </tr>
-
-                <!-- admin-change movies: modal -->
+                
                 <!-- modal from materialize -->
+                <!-- admin-change movies: modal -->
+
                 <div id="adminChangeMovie/{{ movie._id }}" class="modal">
-                    <div class="right-align">
-                        <i class="fas fa-times modal-close"></i> 
+                <div class="right-align">
+                    <i class="fas fa-times modal-close"></i>
+                </div>
+                <div class="modal-content">
+                    <div class="center">
+                    <h4>Change Movie Details</h4>
+                </div>
+                <form method="POST" action="{{ (url_for('admin_change_movie', movie_id=movie._id)) }}" class="black-text">
+                    <div class="form-item">
+                        <label for="changeMovieName">Movie Name</label>
+                        <input value="{{ movie.movie_name }}" placeholder="{{ movie.movie_name }}" id="changeMovieName" name="changeMovieName" class="input-field" required />        
                     </div>
-                    <div class="modal-content">   
-                        <div class="center">
-                            <h4>Change Movie Details</h4>
-                        </div>
-                        <form method="POST" action="{{ (url_for('admin_change_movie', movie_id=movie._id)) }}" class="black-text">
-                            <div class="form-item">
-                                <label for="changeMovieName">Movie Name</label>
-                                <input value="{{ movie.movie_name }}" placeholder="{{ movie.movie_name }}" id="changeMovieName" name="changeMovieName" class="input-field" required>
-                            </div>
-                            <div class="form-item">
-                                <label for="changeMoviePoster">Movie Image</label>
-                                <input value="{{ movie.movie_poster }}" placeholder="{{ movie.movie_poster }}" id="changeMoviePoster" name="changeMoviePoster" class="input-field" required>
-                            </div>                      
-                            <div class="form-item">
-                                <label for="changeMovieRating">Movie Rating</label>
-                                <input value="{{ movie.rating }}" placeholder="{{ movie.rating }}" id="changeMovieRating" name="changeMovieRating" class="input-field" required>
-                            </div>
-                            <div class="form-item">
-                                <label for="changeMovieDuration">Movie Duration</label>
-                                <input value="{{ movie.duration }}" placeholder="{{ movie.duration }}" id="changeMovieDuration" name="changeMovieDuration" class="input-field" required>
-                            </div>
-                            <div class="form-item">
-                                <label for="changeMovieGenre">Movie Genre</label>
-                                <input value="{{ movie.genres }}" placeholder="{{ movie.genres }}" id="changeMovieGenre" name="changeMovieGenre" class="input-field" required>
-                            </div>
+                    <div class="form-item">
+                        <label for="changeMoviePoster">Movie Image</label>
+                        <input value="{{ movie.movie_poster }}" placeholder="{{ movie.movie_poster }}" id="changeMoviePoster" name="changeMoviePoster" class="input-field" required />                   
+                    </div>
+                    <div class="form-item">
+                        <label for="changeMovieRating">Movie Rating</label>
+                        <input value="{{ movie.rating }}" placeholder="{{ movie.rating }}" id="changeMovieRating" name="changeMovieRating" class="input-field" required />                   
+                    </div>
+                    <div class="form-item">
+                        <label for="changeMovieDuration">Movie Duration</label>
+                        <input value="{{ movie.duration }}" placeholder="{{ movie.duration }}" id="changeMovieDuration" name="changeMovieDuration" class="input-field" required />                               
+                    </div>
+                    <div class="form-item">
+                        <label for="changeMovieGenre">Movie Genre</label>
+                        <input value="{{ movie.genres }}" placeholder="{{ movie.genres }}" id="changeMovieGenre" name="changeMovieGenre" class="input-field" required />
+                    </div>
+                    <div class="form-item">
+                        <label for="changeMovieSynopsis">Movie Synopsis</label>
+                        <input value="{{ movie.synopsis }}" placeholder="{{ movie.synopsis }}" id="changeMovieSynopsis" name="changeMovieSynopsis" class="input-field" required />                    
+                    </div>
+                    <div class="form-item">
+                        <label for="changeMovieDirector">Movie Director</label>
+                        <input value="{{ movie.director }}" placeholder="{{ movie.director }}" id="changeMovieDirector" name="changeMovieDirector" class="input-field" required />        
+                    </div>
+                    <div class="form-item">
+                        <label for="changeMovieWriter">Movie Writer</label>
+                        <input value="{{ movie.writer }}" placeholder="{{ movie.writer }}" id="changeMovieWriter" name="changeMovieWriter" class="input-field" required />
+                    </div>
+                    <div class="form-item">
+                        <label for="changeMovieProducer">Movie Producer</label>
+                        <input value="{{ movie.producer }}" placeholder="{{ movie.producer }}" id="changeMovieProducer" name="changeMovieProducer" class="input-field" required />                   
+                    </div>
+                    <div class="form-item">
+                        <label for="changeMovieCast">Movie Cast</label>
+                        <input value="{{ movie.cast }}" placeholder="{{ movie.cast }}" id="changeMovieCast" name="changeMovieCast" class="input-field" required />            
+                    </div>
+                    <br />
+                    <div class="center">
+                        <button type="submit" class="confirm-btn custom-btn btn btn-flat waves-effect waves-black deep-orange lighten-2 black-text">CONFIRM</button>                    
+                        <a class="cancel-btn custom-btn btn btn-flat waves-effect waves-black deep-orange lighten-2 black-text modal-close">CANCEL</a>  
+                    </div>
+                </form>
+              </div>
+            
+                </div>
+                <!-- admin-delete movies: modal -->    
+                <!-- modal from materialize -->
 
-                            <div class="form-item">
-                                <label for="changeMovieSynopsis">Movie Synopsis</label>
-                                <input value="{{ movie.synopsis }}" placeholder="{{ movie.synopsis }}" id="changeMovieSynopsis" name="changeMovieSynopsis" class="input-field" required>
-                            </div>                          
-
-                            <div class="form-item">
-                                <label for="changeMovieDirector">Movie Director</label>
-                                <input value="{{ movie.director }}" placeholder="{{ movie.director }}" id="changeMovieDirector" name="changeMovieDirector" class="input-field" required>
-                            </div>
-                            <div class="form-item">
-                                <label for="changeMovieWriter">Movie Writer</label>
-                                <input value="{{ movie.writer }}" placeholder="{{ movie.writer }}" id="changeMovieWriter" name="changeMovieWriter" class="input-field" required>
-                            </div>
-                            <div class="form-item">
-                                <label for="changeMovieProducer">Movie Producer</label>
-                                <input value="{{ movie.producer }}" placeholder="{{ movie.producer }}" id="changeMovieProducer" name="changeMovieProducer" class="input-field" required>
-                            </div>
-                            <div class="form-item">
-                                <label for="changeMovieCast">Movie Cast</label>
-                                <input value="{{ movie.cast }}" placeholder="{{ movie.cast }}" id="changeMovieCast" name="changeMovieCast" class="input-field" required>
-                            </div>
-                            <br>
-                            <div class="center">
-                                <button type="submit" class="confirm-btn custom-btn btn btn-flat waves-effect waves-black deep-orange lighten-2 black-text">CONFIRM</button>
-                                <a class="cancel-btn custom-btn btn btn-flat waves-effect waves-black deep-orange lighten-2 black-text modal-close">CANCEL</a>                       
-                            </div>
-                        </form>  
+                <div id="adminDeleteMovie/{{ movie._id }}" class="confirm-delete modal">
+                    <div class="right-align">
+                        <i class="fas fa-times modal-close"></i>
+                    </div>
+                    <div class="modal-content center">
+                        <h4>Delete Movie:
+                            <br /><em><b>{{ movie.movie_name }}?</b></em>
+                        </h4>
+                      <a class="custom-btn modal-close btn btn-flat waves-effect waves-black red black-text darken-text-4 modal-close">NO</a>
+                      <a href="{{ url_for('admin_delete_movie', movie_id=movie._id) }}" class="custom-btn modal-close btn btn-flat waves-effect waves-black green black-text darken-text-4">YES</a>                
                     </div>
                 </div>
-                
-                <!-- admin-delete movies: modal -->
-                <!-- modal from materialize -->
-                <div id="adminDeleteMovie/{{ movie._id }}" class="confirm-delete modal ">
-                    <div class="right-align">
-                        <i class="fas fa-times modal-close"></i> 
-                    </div>
-                    <div class="modal-content center">                         
-                        <h4>Delete Movie:<br><em><b>{{ movie.movie_name }}?</b></em></h4>
-                        <a class="custom-btn modal-close btn btn-flat waves-effect waves-black red black-text darken-text-4 modal-close">NO</a>
-                        <a href="{{ url_for('admin_delete_movie', movie_id=movie._id) }}" class="custom-btn modal-close btn btn-flat waves-effect waves-black green black-text darken-text-4">YES</a>                          
-                    </div>
-                </div>  
-            {% endfor %}        
-        </tbody>         
+            {% endfor %}
+        </tbody>
     </table>
-    <br>
+    <br />
     <div class="center">
         <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#addMoives">Add Movie</a>
     </div>
-    <hr class="hr-admin">
-
+    <hr class="hr-admin" />
+    
     <!-- cinemagic locations -->
     <h4 class="admin-subtitles"><b>{{ locations_title }}</b></h4>
+
     <table class="responsive-table highlight">
         <thead>
             <tr>
@@ -214,12 +219,13 @@
                 <th>Delete</th>
             </tr>
         </thead>
-        <tbody>
+      <tbody>
+
             {% for location_name in location_names %}
                 <tr>
                     <td>{{ location_name.location_name }}</td>
                     <td>
-                        <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminChangeLocation/{{ location_name._id }}">CHANGE</a>          
+                        <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminChangeLocation/{{ location_name._id }}">CHANGE</a>
                     </td>
                     <td>
                         <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminDeleteLocation/{{ location_name._id }}">DELETE</a>
@@ -230,118 +236,123 @@
                 <!-- modal from materialize -->
                 <div id="adminChangeLocation/{{ location_name._id }}" class="modal">
                     <div class="right-align">
-                        <i class="fas fa-times modal-close"></i> 
+                        <i class="fas fa-times modal-close"></i>
                     </div>
-                    <div class="modal-content">   
+                    <div class="modal-content">
                         <div class="center">
                             <h4>Change Movie Details</h4>
                         </div>
                         <form method="POST" action="{{ (url_for('admin_change_location', location_name_id=location_name._id)) }}" class="black-text">
                             <div class="form-item">
                                 <label for="changeLocation">Location Name</label>
-                                <input value="{{ location_name.location_name }}" placeholder="{{ location_name.location_name }}" id="changeLocation" name="changeLocation" class="input-field" required>
+                                <input value="{{ location_name.location_name }}" placeholder="{{ location_name.location_name }}" id="changeLocation" name="changeLocation" class="input-field" required />                         
                             </div>
-                            <br>
+                            <br />
                             <div class="center">
                                 <button type="submit" class="confirm-btn custom-btn btn btn-flat waves-effect waves-black deep-orange lighten-2 black-text">CONFIRM</button>
-                                <a class="cancel-btn custom-btn btn btn-flat waves-effect waves-black deep-orange lighten-2 black-text modal-close">CANCEL</a>                       
+                                <a class="cancel-btn custom-btn btn btn-flat waves-effect waves-black deep-orange lighten-2 black-text modal-close">CANCEL</a>
                             </div>
-                        </form>  
+                        </form>
                     </div>
                 </div>
 
-                <!-- admin-delete locations: modal -->
                 <!-- modal from materialize -->
-                <div id="adminDeleteLocation/{{ location_name._id }}" class="confirm-delete modal ">
+                <!-- admin-delete locations: modal -->
+                <div id="adminDeleteLocation/{{ location_name._id }}" class="confirm-delete modal">
+                    <i class="fas fa-times modal-close"></i>
                     <div class="right-align">
-                        <i class="fas fa-times modal-close"></i> 
+                </div>
+                    <div class="modal-content center">
+                        <h4>Delete Location:
+                            <br /><em><b>{{ location_name.location_name }}?</b></em>            
+                        </h4>
+                        <a class="custom-btn modal-close btn btn-flat waves-effect waves-black red black-text darken-text-4 modal-close">NO</a>                               
+                        <a href="{{ url_for('admin_delete_location', location_name_id=location_name._id) }}" class="custom-btn modal-close btn btn-flat waves-effect waves-black green black-text darken-text-4">YES</a>
                     </div>
-                    <div class="modal-content center">                         
-                        <h4>Delete Location:<br><em><b>{{ location_name.location_name }}?</b></em></h4>
-                        <a class="custom-btn modal-close btn btn-flat waves-effect waves-black red black-text darken-text-4 modal-close">NO</a>
-                        <a href="{{ url_for('admin_delete_location', location_name_id=location_name._id) }}" class="custom-btn modal-close btn btn-flat waves-effect waves-black green black-text darken-text-4">YES</a>                          
-                    </div>
-                </div>  
-            {% endfor %}        
-        </tbody>         
+                </div>
+            {% endfor %}
+
+        </tbody>
     </table>
-    <br>
+    <br />
+
     <div class="center">
-        <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#addLocation">Add Location</a>
+        <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#addLocation">Add Location</a> 
     </div>
-    <hr class="hr-admin">
+    <hr class="hr-admin" />
 
     <!-- user signup info -->
-    <h4 class="admin-subtitles"><b>{{ users_title}}</b></h4>
+    <h4 class="admin-subtitles">
+        <b>{{ users_title}}</b>
+    </h4>
     <table class="responsive-table highlight">
         <thead>
             <tr>
                 <th>User Name</th>
                 <th>Email Address</th>
                 <th>Change</th>
-                <th>Delete</th>             
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
             {% for user in users %}
+                <td>{{ user.user}}</td>
                 <tr>
-                    <td>{{ user.user}}</td>
                     <td>{{ user.email }}</td>
                     <td>
-                        <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminChangeUser/{{ user._id }}">CHANGE</a>          
-                    </td>               
+                        <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminChangeUser/{{ user._id }}">CHANGE</a>                    
+                    </td>
                     <td>
-                        <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminDeleteUsers/{{ user._id }}">DELETE</a>
-                    </td>      
+                        <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminDeleteUsers/{{ user._id }}">DELETE</a>               
+                    </td>
                 </tr>
-
                 <!-- admin-change users: modal -->
                 <!-- modal from materialize -->
                 <div id="adminChangeUser/{{ user._id }}" class="modal">
                     <div class="right-align">
-                        <i class="fas fa-times modal-close"></i> 
+                        <i class="fas fa-times modal-close"></i>
                     </div>
-                    <div class="modal-content">   
+                    <div class="modal-content">
                         <div class="center">
                             <h4>Change User Details</h4>
                         </div>
                         <form method="POST" action="{{ (url_for('admin_change_user', user_id=user._id)) }}" class="black-text">
                             <div class="form-item">
                                 <label for="changeUserName">User Name</label>
-                                <input value="{{ user.user }}" placeholder="{{ user.user }}" id="changeUserName" name="changeUserName" class="input-field" required>
+                                <input value="{{ user.user }}" placeholder="{{ user.user }}" id="changeUserName" name="changeUserName" class="input-field" required />
                             </div>
                             <div class="form-item">
                                 <label for="changeUserEmail">User Email</label>
-                                <input value="{{ user.email }}" placeholder="{{ user.email }}" id="changeUserEmail" name="changeUserEmail" class="input-field" required>
+                                <input value="{{ user.email }}" placeholder="{{ user.email }}" id="changeUserEmail" name="changeUserEmail" class="input-field" required />
                             </div>
-                            <br>
+                            <br />
                             <div class="center">
-                                <button type="submit" class="confirm-btn custom-btn btn btn-flat waves-effect waves-black deep-orange lighten-2 black-text">CONFIRM</button>
-                                <a class="cancel-btn custom-btn btn btn-flat waves-effect waves-black deep-orange lighten-2 black-text modal-close">CANCEL</a>                       
+                                <button type="submit" class="confirm-btn custom-btn btn btn-flat waves-effect waves-black deep-orange lighten-2 black-text">CONFIRM</button>                        
+                                <a class="cancel-btn custom-btn btn btn-flat waves-effect waves-black deep-orange lighten-2 black-text modal-close">CANCEL</a>
                             </div>
-                        </form>  
+                        </form>
                     </div>
                 </div>
-
                 <!-- admin-delete users: modal -->
                 <!-- modal from materialize -->
-                <div id="adminDeleteUsers/{{ user._id }}" class="confirm-delete modal ">
+                <div id="adminDeleteUsers/{{ user._id }}" class="confirm-delete modal">
                     <div class="right-align">
-                        <i class="fas fa-times modal-close"></i> 
+                        <i class="fas fa-times modal-close"></i>
                     </div>
-                    <div class="modal-content center">                         
-                        <h4>Delete User:<br><em><b>{{ user.user }}?</b></em></h4>
+                    <div class="modal-content center">
+                        <h4>Delete User:
+                            <br /><em><b>{{ user.user }}?</b></em>
+                        </h4>
                         <a class="custom-btn modal-close btn btn-flat waves-effect waves-black red black-text darken-text-4 modal-close">NO</a>
-                        <a href="{{ url_for('admin_delete_user', user_id=user._id) }}" class="custom-btn modal-close btn btn-flat waves-effect waves-black green black-text darken-text-4">YES</a>                          
+                        <a href="{{ url_for('admin_delete_user', user_id=user._id) }}" class="custom-btn modal-close btn btn-flat waves-effect waves-black green black-text darken-text-4">YES</a>
                     </div>
-                </div> 
+                </div>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br />
+    <hr class="hr-admin" />
 
-            {% endfor %}        
-        </tbody>         
-    </table> 
-    <br>
-    <hr class="hr-admin">
-    
     <!-- user bookings -->
     <h4 class="admin-subtitles"><b>{{ bookings_title }}</b></h4>
     <table class="responsive-table highlight">
@@ -351,8 +362,8 @@
                 <th>Movie Name</th>
                 <th>Ticket Quantity</th>
                 <th>Date</th>
-                <th>Location</th>  
-                <th>Delete</th>                       
+                <th>Location</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -362,41 +373,36 @@
                     <td>{{ booking.booked_movie }}</td>
                     <td>{{ booking.booked_ticket_quantity }}</td>
                     <td>{{ booking.booked_date }}</td>
-                    <td>{{ booking.booked_location }}</td>  
+                    <td>{{ booking.booked_location }}</td>
                     <td>
-                        <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminDeleteUserBooking/{{ booking._id }}">DELETE</a>
-                    </td>                   
+                        <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminDeleteUserBooking/{{ booking._id }}">DELETE</a>                  
+                    </td>
                 </tr>
-
-
                 <!-- admin-delete user bookings: modal -->
                 <!-- modal from materialize -->
-                <div id="adminDeleteUserBooking/{{ booking._id }}" class="confirm-delete modal ">
+                <div id="adminDeleteUserBooking/{{ booking._id }}" class="confirm-delete modal">                
                     <div class="right-align">
-                        <i class="fas fa-times modal-close"></i> 
+                        <i class="fas fa-times modal-close"></i>
                     </div>
-                    <div class="modal-content center">                         
-                        <h4>Delete {{ booking.booked_by }}'s Booking:<br><em><b>{{ booking.booked_movie }}?</b></em></h4>
-                        <a class="custom-btn modal-close btn btn-flat waves-effect waves-black red black-text darken-text-4 modal-close">NO</a>
-                        <a href="{{ url_for('admin_delete_user_booking', user_booking_id=booking._id) }}" class="custom-btn modal-close btn btn-flat waves-effect waves-black green black-text darken-text-4">YES</a>                          
+                    <div class="modal-content center">
+                        <h4>Delete {{ booking.booked_by }}'s Booking:
+                            <br />
+                            <em><b>{{ booking.booked_movie }}?</b></em>
+                        </h4>
+                        <a class="custom-btn modal-close btn btn-flat waves-effect waves-black red black-text darken-text-4 modal-close" >NO</a>
+                        <a href="{{ url_for('admin_delete_user_booking', user_booking_id=booking._id) }}" class="custom-btn modal-close btn btn-flat waves-effect waves-black green black-text darken-text-4">YES</a>         
                     </div>
                 </div>
-
-
-
-
-
-
-
-
-            {% endfor %}        
-        </tbody>         
+            {% endfor %}
+        </tbody>
     </table>
-    <br>
-    <hr class="hr-admin">
-    
+    <br />
+    <hr class="hr-admin" />
+
     <!-- user movie reviews -->
-    <h4 class="admin-subtitles"><b>{{ users_reviews_title }}</b></h4>
+    <h4 class="admin-subtitles">
+        <b>{{ users_reviews_title }}</b>
+    </h4>
     <table class="responsive-table highlight">
         <thead>
             <tr>
@@ -409,30 +415,32 @@
         <tbody>
             {% for review in reviews %}
                 <tr>
-                    <td>{{ review.user }}</td>              
+                    <td>{{ review.user }}</td>
                     <td>{{ review.reviewed_movie_name }}</td>
                     <td>{{ review.user_review }}</td>
                     <td>
                         <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#adminDeleteUserReview/{{ review._id }}">DELETE</a>
-                    </td>       
+                    </td>
                 </tr>
-
                 <!-- admin-delete user reviews: modal -->
                 <!-- modal from materialize -->
-                <div id="adminDeleteUserReview/{{ review._id }}" class="confirm-delete modal ">
+                <div id="adminDeleteUserReview/{{ review._id }}" class="confirm-delete modal">
                     <div class="right-align">
-                        <i class="fas fa-times modal-close"></i> 
+                        <i class="fas fa-times modal-close"></i>
                     </div>
-                    <div class="modal-content center">                         
-                        <h4>Delete {{ review.user }}'s Review On:<br><em><b>{{ review.reviewed_movie_name }}?</b></em></h4>
+                    <div class="modal-content center">
+                        <h4>Delete {{ review.user }}'s Review On:
+                            <br />
+                            <em><b>{{ review.reviewed_movie_name }}?</b></em>
+                        </h4>
                         <a class="custom-btn modal-close btn btn-flat waves-effect waves-black red black-text darken-text-4 modal-close">NO</a>
-                        <a href="{{ url_for('admin_delete_user_review', user_review_id=review._id) }}" class="custom-btn modal-close btn btn-flat waves-effect waves-black green black-text darken-text-4">YES</a>                          
+                        <a href="{{ url_for('admin_delete_user_review', user_review_id=review._id) }}" class="custom-btn modal-close btn btn-flat waves-effect waves-black green black-text darken-text-4">YES</a>
                     </div>
                 </div>
-
             {% endfor %}
-        </tbody> 
+            
+        </tbody>
     </table>
-    <hr class="hr-admin">
+    <hr class="hr-admin" />
 
 {% endblock %}

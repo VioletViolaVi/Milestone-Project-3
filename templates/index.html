@@ -14,7 +14,7 @@
     </div>
 
     {% for movie in movie_names %}
-        <div class="image-and-details container" id="container">
+        <div class="image-and-details container purple lighten-4" id="container">
             <div class="row">
                 <h5 id="{{ movie.movie_poster }}" class="center"><b>{{ movie.movie_name }}</b></h5>                
                 <div class="col s12 m4 l2 center">
@@ -45,21 +45,22 @@
                                 <p><b>~</b>{{ review.user }}</p>
                             {% endif %}
                         {% endfor %}
+            
                     </div>
                 </div>
             </div>                             
 
             {% if session.user|lower == "admin"|lower %}
                 <div class="center" style="display:none;">
-                    <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#{{ movie.movie_name }}">BOOK NOW</a>
+                    <a class="custom-btn btn waves-effect purple lighten-1 black-text modal-trigger" href="#{{ movie.movie_name }}">BOOK NOW</a>
                 </div>  
             {% elif session.user  %}
                 <div class="center">
-                    <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="#{{ movie.movie_name }}">BOOK NOW</a>
+                    <a class="custom-btn btn waves-effect purple lighten-1 black-text modal-trigger" href="#{{ movie.movie_name }}">BOOK NOW</a>
                 </div>             
             {% else %}
                 <div class="center">
-                    <a class="custom-btn btn waves-effect deep-orange lighten-2 black-text modal-trigger" href="{{ (url_for('login')) }}">BOOK NOW</a>
+                    <a class="custom-btn btn waves-effect purple lighten-1 black-text modal-trigger" href="{{ (url_for('login')) }}">BOOK NOW</a>
                 </div>  
             {% endif %}
             <hr id="hrMovieDetails">
@@ -99,7 +100,7 @@
                             </select>                      
                         </div>
                         <div class="center">
-                            <button type="submit" class="custom-btn btn btn-flat waves-effect waves-black deep-orange lighten-2 black-text">SUBMIT</button>
+                            <button type="submit" class="custom-btn btn btn-flat waves-effect waves-black purple lighten-1 black-text">SUBMIT</button>
                         </div>
                     </form>
                 </div>

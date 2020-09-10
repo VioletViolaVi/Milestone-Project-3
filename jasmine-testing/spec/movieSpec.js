@@ -1,6 +1,5 @@
 describe("Movies", function () {
   //tests to see if the following materialize datepicker and carousel true variables are booleans:
-
   describe("Check to see if showClearBtn is a boolean.", function () {
     let showClearBtn = true;
     it("It should be a boolean.", function () {
@@ -23,7 +22,6 @@ describe("Movies", function () {
   });
 
   //tests to see if the following materialize carousel false variable is a boolean:
-
   describe("Check to see if noWrap is a boolean.", function () {
     let noWrap = false;
     it("It should be a boolean.", function () {
@@ -32,7 +30,6 @@ describe("Movies", function () {
   });
 
   // tests to see if the following materialize datepicker and carousel number/string values are correct:
-
   describe("Check to see if format equates to a string.", function () {
     it("It should be a string.", function () {
       expect(format("dd mmmm, yyyy")).toBe("dd mmmm, yyyy");
