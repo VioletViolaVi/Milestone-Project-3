@@ -1,134 +1,125 @@
-{% extends "base.html" %} 
-{% block home %}
+{% extends "base.html" %} {% block home %}
 
-    <h2 class="center">{{ page_title }}</h2>
+<h2 class="center">{{ page_title }}</h2>
 
-    <div class="carousel">
-          {% for movie in movie_names %}
-              <figure>
-                  <a class="carousel-item" href="#{{ movie.movie_poster }}">
-                      <img src="{{ movie.movie_poster }}" alt="A picture of a movie called '{{ movie.movie_poster }}' showing at Cinemagic."> 
-                  </a>
-              </figure>
-          {% endfor %}
-    </div>
-
+<div class="carousel">
     {% for movie in movie_names %}
-        <div class="image-and-details container purple lighten-4" id="container">
-            <div class="row">
-                <h5 id="{{ movie.movie_poster }}" class="center"><b>{{ movie.movie_name }}</b></h5>                
-                <div class="col s12 m4 l2 center">
-                    <img id="image" src="{{ movie.movie_poster }}" alt="A picture of a movie called '{{ movie.movie_poster }}' showing at Cinemagic.">
-                </div>   
-
-                <div class="col s12 m8 l10">
-                    <div id="movieDetails">
-                        <p><b>Rated: </b>{{ movie.rating }}</p>
-                        <p><b>Duration: </b>{{ movie.duration }}</p>
-                        <p><b>Genres: </b>{{ movie.genres }}</p>
-                        <p><b>Synopsis: </b>{{ movie.synopsis }}</p>
-                        <p><b>Cast: </b>{{ movie.cast }}</p>
-                        <p><b>Directed By: </b>{{ movie.director }}</p>
-                        <p><b>Written By: </b>{{ movie.writer }}</p>            
-                        <p><b>Produced By: </b>{{ movie.producer }}</p>                        
-                    </div>
-                </div>
-            </div> 
-              
-            <div class="row">
-                <div class="col s12">
-                    <div id="reviews">
-                        <h5 class="center"><b>Reviews</b></h5>              
-                        {% for review in reviews %}
-                            {% if review.reviewed_movie_name == movie.movie_name %}
-                                <p>{{ review.user_review }}</p>
-                                <p><b>~</b>{{ review.user }}</p>
-                            {% endif %}
-                        {% endfor %}
-            
-                    </div>
-                </div>
-            </div>                             
-
-            {% if session.user|lower == "admin"|lower %}
-                <div class="center" style="display:none;">
-                    <a class="custom-btn btn waves-effect purple lighten-1 black-text modal-trigger" href="#{{ movie.movie_name }}">BOOK NOW</a>
-                </div>  
-            {% elif session.user  %}
-                <div class="center">
-                    <a class="custom-btn btn waves-effect purple lighten-1 black-text modal-trigger" href="#{{ movie.movie_name }}">BOOK NOW</a>
-                </div>             
-            {% else %}
-                <div class="center">
-                    <a class="custom-btn btn waves-effect purple lighten-1 black-text modal-trigger" href="{{ (url_for('login')) }}">BOOK NOW</a>
-                </div>  
-            {% endif %}
-            <hr id="hrMovieDetails">
-
-            <!-- book tickets: modal -->
-            <!-- modal from materialize -->
-            <div id="{{ movie.movie_name }}" class="modal">
-                <div class="right-align">
-                    <i class="fas fa-times modal-close"></i> 
-                </div>
-                <div class="modal-content">       
-                    <form method="POST" action="{{ url_for('home') }}" class="black-text">
-                        <div class="center">
-                            <h4>Book Tickets</h4>
-                        </div>
-                        <div class="form-item">
-                            <label for="bookedMovie"></label>              
-                            <select id="bookedMovie" name="bookedMovie" class="input-field" required>
-                                <option value="{{ movie.movie_name }}" selected>{{ movie.movie_name }}</option>
-                            </select>
-                        </div>
-                        <div class="form-item">
-                            <label for="ticketQuantity">Ticket Quantity</label>
-                            <input type="number" id="ticketQuantity" name="ticketQuantity" min="1" required>      
-                        </div>
-                        <div class="form-item">
-                            <label for="date">Date</label>
-                            <input id="date" name="date" type="text" class="datepicker" required>                    
-                        </div>                                
-                        <div class="form-item">
-                            <label for="location"></label>                   
-                            <select id="location" name="location" class="input-field select-boxes" required>
-                                <option value="" disabled selected>Select Location</option>
-                                {% for location_name in location_names %}
-                                    <option value="{{ location_name.location_name }}">{{ location_name.location_name }}</option>
-                                {% endfor %}
-                            </select>                      
-                        </div>
-                        <div class="center">
-                            <button type="submit" class="custom-btn btn btn-flat waves-effect waves-black purple lighten-1 black-text">SUBMIT</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>  
+    <figure>
+        <a class="carousel-item" href="#{{ movie.movie_poster }}">
+            <img src="{{ movie.movie_poster }}" alt="A picture of a movie called '{{ movie.movie_poster }}' showing at Cinemagic." />
+        </a>
+    </figure>
     {% endfor %}
+</div>
 
-    <br>
-    <div class="container">
-        <div class="row">
-            <div class="about-us center col s12">
-                <h2>{{ page_title2 }}</h2>     
-                <p>
-                    We are Cinemagic, a movie theater company that showcases the most 
-                    popular and successful movies internationally known. We pride ourselves 
-                    in providing our customers with a safe and fun environment for them to 
-                    have the ability to enjoy watching quality movies they love as part of 
-                    their entertaining days out; at all of our different locations. We focus 
-                    on selecting the most popular and in demand movies across the nation to 
-                    satisfy the needs of our customers. We concentrate on making the process 
-                    of booking your desired movies as simple and easy as possible. We believe 
-                    in bringing about magical experiences for our customers to ensure they have 
-                    the time of their lives at our theaters. We are a new kind of magic... a 
-                    special kind of magic... the best kind of magic... 
-                    <b><em>We are Cinemagic<i class="smallest fas fa-star"></i><i class="smaller fas fa-star"></i><i class="small fas fa-star"></i></em></b>
-                </p>
-            </div>                
+{% for movie in movie_names %}
+<div class="image-and-details container purple lighten-4" id="container">
+    <div class="row">
+        <h5 id="{{ movie.movie_poster }}" class="center"><b>{{ movie.movie_name }}</b></h5>
+        <div class="col s12 m4 l2 center">
+            <img id="image" src="{{ movie.movie_poster }}" alt="A picture of a movie called '{{ movie.movie_poster }}' showing at Cinemagic." />
+        </div>
+
+        <div class="col s12 m8 l10">
+            <div id="movieDetails">
+                <p><b>Rated: </b>{{ movie.rating }}</p>
+                <p><b>Duration: </b>{{ movie.duration }}</p>
+                <p><b>Genres: </b>{{ movie.genres }}</p>
+                <p><b>Synopsis: </b>{{ movie.synopsis }}</p>
+                <p><b>Cast: </b>{{ movie.cast }}</p>
+                <p><b>Directed By: </b>{{ movie.director }}</p>
+                <p><b>Written By: </b>{{ movie.writer }}</p>
+                <p><b>Produced By: </b>{{ movie.producer }}</p>
+            </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col s12">
+            <div id="reviews">
+                <h5 class="center"><b>Reviews</b></h5>
+                {% for review in reviews %} {% if review.reviewed_movie_name == movie.movie_name %}
+                <p>{{ review.user_review }}</p>
+                <p><b>~</b>{{ review.user }}</p>
+                {% endif %} {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    {% if session.user|lower == "admin"|lower %}
+    <div class="center" style="display: none;">
+        <a class="custom-btn btn waves-effect purple lighten-1 black-text modal-trigger" href="#{{ movie.movie_name }}">BOOK NOW</a>
+    </div>
+    {% elif session.user %}
+    <div class="center">
+        <a class="custom-btn btn waves-effect purple lighten-1 black-text modal-trigger" href="#{{ movie.movie_name }}">BOOK NOW</a>
+    </div>
+    {% else %}
+    <div class="center">
+        <a class="custom-btn btn waves-effect purple lighten-1 black-text modal-trigger" href="{{ (url_for('login')) }}">BOOK NOW</a>
+    </div>
+    {% endif %}
+    <hr id="hrMovieDetails" />
+
+    <!-- book tickets: modal -->
+    <!-- modal from materialize -->
+    <div id="{{ movie.movie_name }}" class="modal">
+        <div class="right-align">
+            <i class="fas fa-times modal-close"></i>
+        </div>
+        <div class="modal-content">
+            <form method="POST" action="{{ url_for('home') }}" class="black-text">
+                <div class="center">
+                    <h4>Book Tickets</h4>
+                </div>
+                <div class="form-item">
+                    <label for="bookedMovie"></label>
+                    <select id="bookedMovie" name="bookedMovie" class="input-field" required>
+                        <option value="{{ movie.movie_name }}" selected>{{ movie.movie_name }}</option>
+                    </select>
+                </div>
+                <div class="form-item">
+                    <label for="ticketQuantity">Ticket Quantity</label>
+                    <input type="number" id="ticketQuantity" name="ticketQuantity" min="1" required />
+                </div>
+                <div class="form-item">
+                    <label for="date">Date</label>
+                    <input id="date" name="date" type="text" class="datepicker" required />
+                </div>
+                <div class="form-item">
+                    <label for="location"></label>
+                    <select id="location" name="location" class="input-field select-boxes" required>
+                        <option value="" disabled selected>Select Location</option>
+                        {% for location_name in location_names %}
+                        <option value="{{ location_name.location_name }}">{{ location_name.location_name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="center">
+                    <button type="submit" class="custom-btn btn btn-flat waves-effect waves-black purple lighten-1 black-text">SUBMIT</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+<br />
+<div class="container">
+    <div class="row">
+        <div class="about-us center col s12">
+            <h2>{{ page_title2 }}</h2>
+            <p>
+                We are Cinemagic, a movie theater company that showcases the most popular and successful movies internationally known. We pride ourselves in providing our customers with a safe and fun environment for them to have the
+                ability to enjoy watching quality movies they love as part of their entertaining days out; at all of our different locations. We focus on selecting the most popular and in demand movies across the nation to satisfy the needs
+                of our customers. We concentrate on making the process of booking your desired movies as simple and easy as possible. We believe in bringing about magical experiences for our customers to ensure they have the time of their
+                lives at our theaters. We are a new kind of magic... a special kind of magic... the best kind of magic...
+                <b>
+                    <em>We are Cinemagic<i class="smallest fas fa-star"></i><i class="smaller fas fa-star"></i><i class="small fas fa-star"></i></em>
+                </b>
+            </p>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

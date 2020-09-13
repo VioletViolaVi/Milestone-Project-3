@@ -1,267 +1,219 @@
 /******************************************* universal */
+
 * {
-  padding: 0px;
-  margin: 0px;
-  box-sizing: border-box;
-  list-style: none;
-  font-family: "Scada", sans-serif;
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+	list-style: none;
+	font-family: "Scada", sans-serif;
 }
-
 .center h2 {
-  margin: 5px 0px;
-  font-size: 1.7em;
+	margin: 5px 0px;
+	font-size: 1.7em;
 }
-
 .custom-btn {
-  font-weight: 700;
+	font-weight: 700;
 }
-
 #hrMovieDetails,
 .hr-admin {
-  margin: 20px 20px 30px;
-  border-color: black;
+	margin: 20px 20px 30px;
+	border-color: black;
 }
-
 .flash_messages {
-  color: red;
-  margin: 15px 0px 5px 0px;
+	color: red;
+	margin: 15px 0px 5px 0px;
 }
-
 .smallest.fas.fa-star {
-  font-size: 0.2em;
+	font-size: 0.2em;
 }
-
 .smaller.fas.fa-star {
-  font-size: 0.3em;
+	font-size: 0.3em;
 }
-
 .small.fas.fa-star {
-  font-size: 0.4em;
+	font-size: 0.4em;
 }
-
 /******************************************* top nav (mobile) */
 
 #navTitle {
-  font-size: 3em;
-  margin: 0px;
-  font-weight: bold;
-  text-align: center;
+	font-size: 3em;
+	margin: 0px;
+	font-weight: bold;
+	text-align: center;
 }
-
 .top-nav-links {
-  display: none;
+	display: none;
 }
-
 nav {
-  height: 3.5em;
+	height: 3.5em;
 }
-
 .fas.fa-bars {
-  font-size: 2em;
-  margin: 10px 0px 0px 10px;
-  cursor: pointer;
+	font-size: 2em;
+	margin: 10px 0px 0px 10px;
+	cursor: pointer;
 }
-
 /******************************************* side nav */
 
 .sidenav {
-  width: 235px;
+	width: 235px;
 }
-
 .side-nav-links.black-text.waves-effect {
-  padding: 0px 0px 0px 10px;
+	padding: 0px 0px 0px 10px;
 }
-
 #sideNavLinksContainer {
-  margin-top: 200px;
+	margin-top: 200px;
 }
-
 .sidenav li > a:hover {
-  background-color: rgba(218, 112, 214, 0.315);
+	background-color: rgba(218, 112, 214, 0.315);
 }
-
 .side-nav-links.black-text.waves-effect {
-  font-size: 2rem;
-  margin-top: 50px;
+	font-size: 2rem;
+	margin-top: 50px;
 }
-
 /******************************************* footer */
 
 body {
-  position: relative;
-  padding-bottom: 150px;
-  min-height: 100vh;
+	position: relative;
+	padding-bottom: 150px;
+	min-height: 100vh;
 }
-
 #socials {
-  position: absolute;
-  bottom: 0;
-  height: 9rem;
-  width: 100%;
-  margin: 0px;
+	position: absolute;
+	bottom: 0;
+	height: 9rem;
+	width: 100%;
+	margin: 0px;
 }
-
 #icons {
-  padding: 0px;
-  text-align: center;
+	padding: 0px;
+	text-align: center;
 }
-
 #icons i {
-  margin-right: 0.6em;
-  font-size: 1em;
+	margin-right: 0.6em;
+	font-size: 1em;
 }
-
 #contacts {
-  padding: 0;
-  margin-top: 1.3em;
+	padding: 0;
+	margin-top: 1.3em;
 }
-
 #contacts p {
-  font-size: 1.1em;
+	font-size: 1.1em;
 }
-
 #socials .row {
-  margin-bottom: 0px;
+	margin-bottom: 0px;
 }
-
 /******************************************* homepage */
 
 div.carousel {
-  margin-bottom: 5em;
+	margin-bottom: 5em;
 }
-
 .carousel .carousel-item > img {
-  width: 145%;
+	width: 145%;
 }
-
 .carousel .indicators .indicator-item {
-  width: 1em;
-  height: 1em;
-  background-color: orchid;
+	width: 1em;
+	height: 1em;
+	background-color: orchid;
 }
-
 .carousel .indicators .indicator-item:hover {
-  width: 1.5em;
-  height: 1.5em;
+	width: 1.5em;
+	height: 1.5em;
 }
-
 .carousel .indicators .indicator-item.active {
-  background-color: purple;
+	background-color: purple;
 }
-
 .image-and-details.container.purple.lighten-4 {
-  padding-top: 0.1em;
+	padding-top: 0.1em;
 }
-
 #image {
-  height: 21.5rem;
+	height: 21.5rem;
 }
-
 #movieDetails,
 #reviews {
-  height: auto;
-  padding: 0px 0px 0px 5px;
+	height: auto;
+	padding: 0px 0px 0px 5px;
 }
-
 #movieDetails p,
 #reviews p {
-  font-size: 15px;
+	font-size: 15px;
 }
-
 #reviews,
 .about-us {
-  border: 0.3em solid mediumorchid;
-  border-left: none;
-  border-right: none;
+	border: 0.3em solid mediumorchid;
+	border-left: none;
+	border-right: none;
 }
-
 #reviews {
-  overflow: auto;
-  height: 10em;
+	overflow: auto;
+	height: 10em;
 }
-
 #reviews h5 {
-  margin-top: 5px;
+	margin-top: 5px;
 }
-
 .image-and-details .row {
-  margin-bottom: 10px;
+	margin-bottom: 10px;
 }
-
 .about-us p {
-  font-size: 15px;
-  padding-bottom: 10px;
+	font-size: 15px;
+	padding-bottom: 10px;
 }
-
 /******************************************* signup/login */
 
 .signup h2,
 .login h2 {
-  margin-top: 15px;
+	margin-top: 15px;
 }
-
 .card {
-  margin: 1em 0em 0em;
+	margin: 1em 0em 0em;
 }
-
 div.center {
-  font-size: 2rem;
+	font-size: 2rem;
 }
-
 label.black-text {
-  font-size: 1.15rem;
+	font-size: 1.15rem;
 }
-
 input#email,
 input#username,
 input#password {
-  border-bottom: 1px solid black;
+	border-bottom: 1px solid black;
 }
-
 /******************************************* my bookings */
 
 .booked-details p {
-  font-size: 0.7em;
-  margin-bottom: 5px;
+	font-size: 0.7em;
+	margin-bottom: 5px;
 }
-
 .margin-removal h4 {
-  margin-top: 0px;
+	margin-top: 0px;
 }
-
 .margin-removal {
-  margin-bottom: 0px;
+	margin-bottom: 0px;
 }
-
 /******************************************* admin */
+
 .responsive-table.highlight thead tr th,
 .responsive-table.highlight tbody tr td {
-  font-size: 1.1em;
+	font-size: 1.1em;
 }
-
 /******************************************* each modal */
+
 .modal {
-  width: 95%;
+	width: 95%;
 }
-
 .fas.fa-times {
-  font-size: 2rem;
-  padding: 5px 10px 0px 0px;
+	font-size: 2rem;
+	padding: 5px 10px 0px 0px;
 }
-
 .form-item label {
-  color: black;
-  font-size: 1.2rem;
+	color: black;
+	font-size: 1.2rem;
 }
-
 button,
 input,
 optgroup,
 select,
 textarea {
-  font-family: "Scada", sans-serif;
+	font-family: "Scada", sans-serif;
 }
-
 /******************************************* homepage modal */
 
 .datepicker-cancel,
@@ -273,588 +225,459 @@ textarea {
 .datepicker-date-display .year-text,
 .datepicker-table abbr,
 .datepicker-date-display .date-text {
-  color: black;
+	color: black;
 }
-
 .datepicker-clear,
 .datepicker-cancel,
 .datepicker-done,
 .datepicker-date-display,
 .datepicker-table td.is-selected {
-  background-color: orchid;
+	background-color: orchid;
 }
-
 .dropdown-content li > a,
 .dropdown-content li > span {
-  padding: 0px 0px 0px 16px;
-  font-size: 1.24rem;
+	padding: 0px 0px 0px 16px;
+	font-size: 1.24rem;
 }
-
 .datepicker-modal {
-  max-height: 27em;
+	max-height: 27em;
 }
-
 .datepicker-date-display {
-  padding: 5px 20px 10px;
+	padding: 5px 20px 10px;
 }
-
 .datepicker-calendar-container {
-  color: purple;
+	color: purple;
 }
-
 button.month-next:active,
 button.month-prev:active {
-  background-color: rgba(218, 112, 214, 0.315);
+	background-color: rgba(218, 112, 214, 0.315);
 }
-
 .datepicker-footer {
-  padding-bottom: 0px;
+	padding-bottom: 0px;
 }
-
 .is-today {
-  color: plum !important;
+	color: plum !important;
 }
-
 .datepicker-clear,
 .datepicker-cancel,
 .datepicker-done {
-  margin: 2px 2px 5px 10px;
-  font-weight: 900;
+	margin: 2px 2px 5px 10px;
+	font-weight: 900;
 }
-
 .select-wrapper input.select-dropdown {
-  font-size: 1.3em;
+	font-size: 1.3em;
 }
-
 .select-wrapper.select-month {
-  font-size: 0.9em;
+	font-size: 0.9em;
 }
-
 input.select-dropdown.dropdown-trigger {
-  width: 100%;
+	width: 100%;
 }
-
 .select-wrapper .select-dropdown.dropdown-trigger {
-  margin-top: 1.3rem;
-  margin-bottom: 6px;
+	margin-top: 1.3rem;
+	margin-bottom: 6px;
 }
-
 /******************************************* leave a review modal */
 
 .my-booking-custom .select-wrapper input.select-dropdown {
-  font-size: 0.8em;
+	font-size: 0.8em;
 }
-
 #commentBox {
-  height: 8em;
-  padding: 5px;
-  font-size: 1rem;
+	height: 8em;
+	padding: 5px;
+	font-size: 1rem;
 }
-
 .confirm-btn {
-  margin-right: 2rem;
+	margin-right: 2rem;
 }
-
 .cancel-btn {
-  margin-left: 2rem;
+	margin-left: 2rem;
 }
-
 /******************************************* confirmation modal */
+
 .red {
-  margin: 25px 35px 0px 0px;
+	margin: 25px 35px 0px 0px;
 }
 .green {
-  margin: 25px 0px 0px 35px;
+	margin: 25px 0px 0px 35px;
 }
-
 /******************************************* admin */
 
 #admin-title {
-  font-size: 1.6em;
+	font-size: 1.6em;
 }
-
 .admin-subtitles {
-  margin-left: 0.2em;
+	margin-left: 0.2em;
 }
-
 #ratings-header-padding {
-  padding-top: 15em;
+	padding-top: 15em;
 }
-
 .admin-images {
-  width: 10em;
+	width: 10em;
 }
-
 /******************************************* scrollbars */
+
 ::-webkit-scrollbar {
-  width: 1em;
+	width: 1em;
 }
-
 ::-webkit-scrollbar-track {
-  background: white;
+	background: white;
 }
-
 ::-webkit-scrollbar-thumb {
-  background: plum;
+	background: plum;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: orchid;
+	background: orchid;
 }
-
 /****************************************************************************************************** BREAKPOINTS */
+
 @media (min-width: 352px) {
-  /******************************************* footer */
-
-  #icons {
-    margin-top: 1.1em;
-  }
-
-  #contacts p {
-    font-size: 1.2em;
-  }
+	/******************************************* footer */
+	#icons {
+		margin-top: 1.1em;
+	}
+	#contacts p {
+		font-size: 1.2em;
+	}
 }
-
 @media (min-width: 442px) {
-  /******************************************* footer */
-
-  #icons i {
-    font-size: 1.3em;
-  }
-
-  #contacts p {
-    font-size: 1.3em;
-  }
+	/******************************************* footer */
+	#icons i {
+		font-size: 1.3em;
+	}
+	#contacts p {
+		font-size: 1.3em;
+	}
 }
-
 /* bootstrap */
+
 @media (min-width: 576px) {
-  /******************************************* top nav */
-
-  .fas.fa-bars {
-    font-size: 3em;
-    margin: 0.3em 0em 0em 0.5em;
-  }
-
-  #navTitle {
-    font-size: 4.3em;
-  }
-
-  nav {
-    height: 5em;
-  }
-
-  /******************************************* footer */
-
-  footer#socials {
-    height: 95px;
-    padding-top: 5px;
-  }
-
-  #icons {
-    margin-top: 0.2em;
-  }
-
-  #icons i {
-    margin-right: 0.9em;
-    font-size: 1.1em;
-  }
-
-  #contacts {
-    margin-top: 0.2em;
-  }
-
-  #contacts p {
-    font-size: 1.2em;
-  }
-
-  /******************************************* homepage */
-
-  .image-and-details h5 {
-    font-size: 2em;
-  }
-
-  #movieDetails p,
-  #reviews p,
-  .about-us p {
-    font-size: 17px;
-  }
-
-  /******************************************* signup/login */
-  .card {
-    margin: 10px 50px;
-  }
-
-  .card label {
-    font-size: 1.6em;
-  }
-
-  .card .card-content {
-    padding: 24px 24px 10px 24px;
-  }
-
-  /******************************************* modals */
-
-  .fas.fa-times {
-    padding: 5px 10px 0px 0px;
-  }
-
-  .modal {
-    width: 75%;
-  }
-
-  .change-booking-custom .select-wrapper input.select-dropdown,
-  .form-item label {
-    font-size: 1.4em;
-  }
-
-  input[type="number"]:not(.browser-default),
-  input[type="text"]:not(.browser-default) {
-    font-size: 1.4em;
-  }
-
-  .confirm-btn {
-    margin-right: 4rem;
-  }
-
-  .cancel-btn {
-    margin-left: 4rem;
-  }
-
-  .red {
-    margin: 0px 50px 0px 0px;
-  }
-
-  .green {
-    margin: 0px 0px 0px 50px;
-  }
-
-  .confirm-delete {
-    width: 60%;
-  }
+	/******************************************* top nav */
+	.fas.fa-bars {
+		font-size: 3em;
+		margin: 0.3em 0em 0em 0.5em;
+	}
+	#navTitle {
+		font-size: 4.3em;
+	}
+	nav {
+		height: 5em;
+	}
+	/******************************************* footer */
+	footer#socials {
+		height: 95px;
+		padding-top: 5px;
+	}
+	#icons {
+		margin-top: 0.2em;
+	}
+	#icons i {
+		margin-right: 0.9em;
+		font-size: 1.1em;
+	}
+	#contacts {
+		margin-top: 0.2em;
+	}
+	#contacts p {
+		font-size: 1.2em;
+	}
+	/******************************************* homepage */
+	.image-and-details h5 {
+		font-size: 2em;
+	}
+	#movieDetails p,
+	#reviews p,
+	.about-us p {
+		font-size: 17px;
+	}
+	/******************************************* signup/login */
+	.card {
+		margin: 10px 50px;
+	}
+	.card label {
+		font-size: 1.6em;
+	}
+	.card .card-content {
+		padding: 24px 24px 10px 24px;
+	}
+	/******************************************* modals */
+	.fas.fa-times {
+		padding: 5px 10px 0px 0px;
+	}
+	.modal {
+		width: 75%;
+	}
+	.change-booking-custom .select-wrapper input.select-dropdown,
+	.form-item label {
+		font-size: 1.4em;
+	}
+	input[type="number"]:not(.browser-default),
+	input[type="text"]:not(.browser-default) {
+		font-size: 1.4em;
+	}
+	.confirm-btn {
+		margin-right: 4rem;
+	}
+	.cancel-btn {
+		margin-left: 4rem;
+	}
+	.red {
+		margin: 0px 50px 0px 0px;
+	}
+	.green {
+		margin: 0px 0px 0px 50px;
+	}
+	.confirm-delete {
+		width: 60%;
+	}
 }
-
 @media (min-width: 601px) {
-  /******************************************* homepage */
-
-  #movieDetails p {
-    margin-left: 2.5em;
-  }
-
-  /******************************************* my bookings */
-  .booked-details p {
-    font-size: 0.8em;
-  }
-
-  .margin-removal .custom-btn {
-    margin-bottom: 2.2em;
-  }
+	/******************************************* homepage */
+	#movieDetails p {
+		margin-left: 2.5em;
+	}
+	/******************************************* my bookings */
+	.booked-details p {
+		font-size: 0.8em;
+	}
+	.margin-removal .custom-btn {
+		margin-bottom: 2.2em;
+	}
 }
-
 /* bootstrap */
+
 @media (min-width: 768px) {
-  /******************************************* footer */
-
-  footer#socials {
-    height: 100px;
-  }
-
-  #icons i {
-    font-size: 1.3em;
-    margin-right: 45px;
-  }
-
-  #contacts p {
-    font-size: 1.4em;
-  }
-
-  /******************************************* homepage */
-
-  #image {
-    height: 20rem;
-  }
-
-  #movieDetails {
-    padding: 0px;
-  }
-
-  #movieDetails p,
-  #reviews p,
-  .about-us p {
-    font-size: 15px;
-  }
-
-  #movieDetails p {
-    margin-left: -1em;
-  }
-
-  .custom-btn {
-    font-size: 1em;
-  }
-
-  /******************************************* signup/login */
-  .signup h2,
-  .login h2 {
-    margin: 35px 0px;
-  }
-
-  /******************************************* my bookings */
-  .booked-details p {
-    font-size: 1em;
-  }
-
-  .margin-removal .custom-btn {
-    margin-bottom: 2em;
-  }
-
-  /******************************************* admin */
-  .responsive-table.highlight thead tr th,
-  .responsive-table.highlight tbody tr td {
-    font-size: 1.5em;
-  }
-
-  /******************************************* modals */
-
-  #commentBox {
-    font-size: 1.2rem;
-  }
+	/******************************************* footer */
+	footer#socials {
+		height: 100px;
+	}
+	#icons i {
+		font-size: 1.3em;
+		margin-right: 45px;
+	}
+	#contacts p {
+		font-size: 1.4em;
+	}
+	/******************************************* homepage */
+	#image {
+		height: 20rem;
+	}
+	#movieDetails {
+		padding: 0px;
+	}
+	#movieDetails p,
+	#reviews p,
+	.about-us p {
+		font-size: 15px;
+	}
+	#movieDetails p {
+		margin-left: -1em;
+	}
+	.custom-btn {
+		font-size: 1em;
+	}
+	/******************************************* signup/login */
+	.signup h2,
+	.login h2 {
+		margin: 35px 0px;
+	}
+	/******************************************* my bookings */
+	.booked-details p {
+		font-size: 1em;
+	}
+	.margin-removal .custom-btn {
+		margin-bottom: 2em;
+	}
+	/******************************************* admin */
+	.responsive-table.highlight thead tr th,
+	.responsive-table.highlight tbody tr td {
+		font-size: 1.5em;
+	}
+	/******************************************* modals */
+	#commentBox {
+		font-size: 1.2rem;
+	}
 }
-
 @media (min-width: 993px) {
-  /******************************************* top nav (desktop) */
-
-  .fas.fa-bars {
-    display: none;
-  }
-
-  nav {
-    height: 5.3em;
-  }
-
-  #navTitle {
-    font-size: 4.3em;
-    text-align: left;
-  }
-
-  #topNavLinksContainer {
-    float: right;
-    margin-top: 5px;
-  }
-
-  .top-nav-links {
-    display: flex;
-    margin-right: 1rem;
-    font-size: 2.4rem;
-  }
-
-  .top-nav-links:hover {
-    background-color: rgba(218, 112, 214, 0.315);
-  }
-
-  #home {
-    margin-left: 3em;
-  }
-
-  /******************************************* footer */
-
-  footer#socials {
-    height: 106px;
-    padding-top: 0px;
-  }
-
-  #icons i {
-    font-size: 1.5em;
-  }
-
-  #contacts p {
-    font-size: 1.5em;
-  }
-
-  /******************************************* homepage */
-
-  #movieDetails p {
-    margin-left: 6em;
-  }
-
-  /******************************************* signup/login */
-
-  .signup h2,
-  .login h2 {
-    margin: 10px 0px;
-  }
-
-  .card {
-    margin: 10px 190px;
-    height: 20em;
-  }
-
-  .signup.card {
-    height: 26em;
-  }
-
-  .custom-btn {
-    margin-top: 0.8em;
-  }
-
-  /******************************************* my bookings */
-
-  .booked-details p {
-    font-size: 1em;
-  }
-
-  /******************************************* admin */
-
-  #ratings-header-padding {
-    padding-top: 15px;
-    padding-right: 1em;
-  }
-
-  .admin-btn-delete.custom-btn {
-    margin-bottom: 1.5em;
-    padding-right: 1.5em;
-  }
-
-  /******************************************* admin */
-  .responsive-table.highlight thead tr th,
-  .responsive-table.highlight tbody tr td {
-    font-size: 1em;
-  }
-
-  /******************************************* modals */
-  .modal .modal-content {
-    padding: 24px 24px 11px 24px;
-  }
-
-  .modal {
-    width: 60%;
-  }
-
-  .custom-btn {
-    margin: 0em;
-  }
-
-  div.modal-content.datepicker-container {
-    padding: 0px;
-  }
-
-  .datepicker-modal {
-    width: 35em;
-    max-height: 25em;
-  }
-
-  .confirm-btn {
-    margin-right: 6rem;
-  }
-
-  .cancel-btn {
-    margin-left: 6rem;
-  }
-
-  .red {
-    margin: 0px 50px 0px 0px;
-  }
-
-  .green {
-    margin: 0px 0px 0px 50px;
-  }
-
-  .confirm-delete.modal {
-    width: 50%;
-  }
-
-  .confirm-delete .custom-btn {
-    margin: 25px 40px 10px 40px;
-  }
+	/******************************************* top nav (desktop) */
+	.fas.fa-bars {
+		display: none;
+	}
+	nav {
+		height: 5.3em;
+	}
+	#navTitle {
+		font-size: 4.3em;
+		text-align: left;
+	}
+	#topNavLinksContainer {
+		float: right;
+		margin-top: 5px;
+	}
+	.top-nav-links {
+		display: flex;
+		margin-right: 1rem;
+		font-size: 2.4rem;
+	}
+	.top-nav-links:hover {
+		background-color: rgba(218, 112, 214, 0.315);
+	}
+	#home {
+		margin-left: 3em;
+	}
+	/******************************************* footer */
+	footer#socials {
+		height: 106px;
+		padding-top: 0px;
+	}
+	#icons i {
+		font-size: 1.5em;
+	}
+	#contacts p {
+		font-size: 1.5em;
+	}
+	/******************************************* homepage */
+	#movieDetails p {
+		margin-left: 6em;
+	}
+	/******************************************* signup/login */
+	.signup h2,
+	.login h2 {
+		margin: 10px 0px;
+	}
+	.card {
+		margin: 10px 190px;
+		height: 20em;
+	}
+	.signup.card {
+		height: 26em;
+	}
+	.custom-btn {
+		margin-top: 0.8em;
+	}
+	/******************************************* my bookings */
+	.booked-details p {
+		font-size: 1em;
+	}
+	/******************************************* admin */
+	#ratings-header-padding {
+		padding-top: 15px;
+		padding-right: 1em;
+	}
+	.admin-btn-delete.custom-btn {
+		margin-bottom: 1.5em;
+		padding-right: 1.5em;
+	}
+	/******************************************* admin */
+	.responsive-table.highlight thead tr th,
+	.responsive-table.highlight tbody tr td {
+		font-size: 1em;
+	}
+	/******************************************* modals */
+	.modal .modal-content {
+		padding: 24px 24px 11px 24px;
+	}
+	.modal {
+		width: 60%;
+	}
+	.custom-btn {
+		margin: 0em;
+	}
+	div.modal-content.datepicker-container {
+		padding: 0px;
+	}
+	.datepicker-modal {
+		width: 35em;
+		max-height: 25em;
+	}
+	.confirm-btn {
+		margin-right: 6rem;
+	}
+	.cancel-btn {
+		margin-left: 6rem;
+	}
+	.red {
+		margin: 0px 50px 0px 0px;
+	}
+	.green {
+		margin: 0px 0px 0px 50px;
+	}
+	.confirm-delete.modal {
+		width: 50%;
+	}
+	.confirm-delete .custom-btn {
+		margin: 25px 40px 10px 40px;
+	}
 }
-
 /* bootstrap */
+
 @media (min-width: 1200px) {
-  /******************************************* top nav */
-
-  #navTitle {
-    font-size: 4.5em;
-  }
-
-  #home {
-    margin-left: 12em;
-  }
-
-  /******************************************* footer */
-
-  #socials .row {
-    margin-top: 2px;
-  }
-
-  footer#socials {
-    height: 115px;
-  }
-
-  /******************************************* homepage */
-
-  #movieDetails p {
-    margin-left: 3.5em;
-  }
-
-  /******************************************* signup/login */
-  .signup h2,
-  .login h2 {
-    margin: 5px 0px;
-  }
-
-  .card {
-    margin: 10px 290px;
-  }
-
-  .custom-btn {
-    margin-top: 1em;
-  }
-
-  /******************************************* my bookings */
-
-  .margin-removal .custom-btn {
-    margin: 0em 0em 1em;
-  }
-
-  /******************************************* admin */
-  .responsive-table.highlight thead tr th,
-  .responsive-table.highlight tbody tr td {
-    font-size: 1.3em;
-  }
-
-  .admin-btn-delete.custom-btn {
-    padding-right: 1.1em;
-  }
-
-  /******************************************* modals */
-  .modal-overlay {
-    height: 135%;
-  }
-  .change-booking-custom.modal,
-  .my-booking-custom.modal {
-    width: 55%;
-  }
-
-  .change-booking-custom .modal-content {
-    padding: 0px 24px;
-  }
-
-  .change-booking-custom h4,
-  .my-booking-custom h4 {
-    margin-bottom: 0px;
-  }
-
-  .confirm-btn {
-    margin-right: 8rem;
-    margin-bottom: 0.2rem;
-  }
-
-  .cancel-btn {
-    margin-left: 8rem;
-    margin-bottom: 0.2rem;
-  }
-
-  #commentBox {
-    margin-top: 0.8em;
-    height: 8.3em;
-  }
+	/******************************************* top nav */
+	#navTitle {
+		font-size: 4.5em;
+	}
+	#home {
+		margin-left: 12em;
+	}
+	/******************************************* footer */
+	#socials .row {
+		margin-top: 2px;
+	}
+	footer#socials {
+		height: 115px;
+	}
+	/******************************************* homepage */
+	#movieDetails p {
+		margin-left: 3.5em;
+	}
+	/******************************************* signup/login */
+	.signup h2,
+	.login h2 {
+		margin: 5px 0px;
+	}
+	.card {
+		margin: 10px 290px;
+	}
+	.custom-btn {
+		margin-top: 1em;
+	}
+	/******************************************* my bookings */
+	.margin-removal .custom-btn {
+		margin: 0em 0em 1em;
+	}
+	/******************************************* admin */
+	.responsive-table.highlight thead tr th,
+	.responsive-table.highlight tbody tr td {
+		font-size: 1.3em;
+	}
+	.admin-btn-delete.custom-btn {
+		padding-right: 1.1em;
+	}
+	/******************************************* modals */
+	.modal-overlay {
+		height: 135%;
+	}
+	.change-booking-custom.modal,
+	.my-booking-custom.modal {
+		width: 55%;
+	}
+	.change-booking-custom .modal-content {
+		padding: 0px 24px;
+	}
+	.change-booking-custom h4,
+	.my-booking-custom h4 {
+		margin-bottom: 0px;
+	}
+	.confirm-btn {
+		margin-right: 8rem;
+		margin-bottom: 0.2rem;
+	}
+	.cancel-btn {
+		margin-left: 8rem;
+		margin-bottom: 0.2rem;
+	}
+	#commentBox {
+		margin-top: 0.8em;
+		height: 8.3em;
+	}
 }
