@@ -71,7 +71,8 @@ def login():
                     existing_user["pwd"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash(
-                    f"Welcome Back {request.form.get('username').capitalize()}!")
+                    f"Welcome Back \
+                        {request.form.get('username').capitalize()}!")
                 return redirect(url_for("home"))
             else:
                 # occurs when password is wrong
@@ -107,6 +108,7 @@ def home():
             "booked_location": request.form.get("location"),
             "booked_by": session["user"].title()
         }
+
         mongo.db.booked_details.insert_one(bookings)
         flash("Booking Successfully Added!")
         return redirect(url_for("my_bookings"))
