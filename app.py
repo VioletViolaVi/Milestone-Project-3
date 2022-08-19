@@ -217,7 +217,7 @@ def admin_delete_movie(movie_id):
 
     # targets movies in db by their _id
     mongo.db.movies.remove({"_id": ObjectId(movie_id)})
-    flash("Moive Successfully Deleted!")
+    flash("Movie Successfully Deleted!")
     return redirect(url_for("admin"))
 
 
